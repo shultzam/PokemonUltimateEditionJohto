@@ -1430,6 +1430,10 @@ function onLoad(saved_data)
     UI.setAttribute("gen2ToggleBtn", "isOn", selectedGens[2] )
     UI.setAttribute("gen3ToggleBtn", "isOn", selectedGens[3] )
     UI.setAttribute("gen4ToggleBtn", "isOn", selectedGens[4] )
+    UI.setAttribute("gen5ToggleBtn", "isOn", selectedGens[5] )
+    UI.setAttribute("gen6ToggleBtn", "isOn", selectedGens[6] )
+    UI.setAttribute("gen7ToggleBtn", "isOn", selectedGens[7] )
+    UI.setAttribute("gen8ToggleBtn", "isOn", selectedGens[8] )
     UI.setAttribute("customToggleBtn", "isOn", customGen )
     checkBeginState()
 end
@@ -1480,6 +1484,34 @@ end
 function gen4Toggle()
   
   selectedGens[4] = not selectedGens[4]
+  enoughPokemon()
+  checkBeginState()
+end
+
+function gen5Toggle()
+  
+  selectedGens[5] = not selectedGens[5]
+  enoughPokemon()
+  checkBeginState()
+end
+
+function gen6Toggle()
+  
+  selectedGens[6] = not selectedGens[6]
+  enoughPokemon()
+  checkBeginState()
+end
+
+function gen7Toggle()
+  
+  selectedGens[7] = not selectedGens[7]
+  enoughPokemon()
+  checkBeginState()
+end
+
+function gen8Toggle()
+  
+  selectedGens[8] = not selectedGens[8]
   enoughPokemon()
   checkBeginState()
 end
@@ -1540,6 +1572,31 @@ end
 function gen3LeadersToggle(player, isOn)
 
     setLeaders(3, isOn)
+end
+
+function gen4LeadersToggle(player, isOn)
+
+    setLeaders(4, isOn)
+end
+
+function gen5LeadersToggle(player, isOn)
+
+    setLeaders(5, isOn)
+end
+
+function gen6LeadersToggle(player, isOn)
+
+    setLeaders(6, isOn)
+end
+
+function gen7LeadersToggle(player, isOn)
+
+    setLeaders(7, isOn)
+end
+
+function gen8LeadersToggle(player, isOn)
+
+    setLeaders(8, isOn)
 end
 
 function customLeadersToggle(player, isOn)
