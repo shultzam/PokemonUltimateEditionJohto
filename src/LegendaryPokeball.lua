@@ -1,5 +1,5 @@
 local color = "legendary"
-local kantoLocations = {{12.32,23.59},{35.02,13.08},{22.55,-6.53},{-2.15,-19.43},{-22.64,12.15}}
+local kantoLocations = {{29.82, 9.39}, {33.04, 1.00}, {-22.75,-18.92}, {-27.75, -5.08}}
 
 local chipY = 2
 local hasGameStarted = false

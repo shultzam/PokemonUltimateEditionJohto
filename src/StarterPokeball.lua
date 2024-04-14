@@ -17,6 +17,8 @@ local gen3LeadersArr = {"797253", "61d7e4", "2a9746"}
 local gen4Pokeballs = {"be7627", "8079e7", "49e675", "f7a234", "fadfc3", "a63903", "9f5985" }
 local gen4EvoPokeballs = {"cccfb4", "e15056", "24a5c8", "a7d340", "bfb915"}
 
+-- TODO: add gen5, gen6, gen7, gen8
+
 local customPokeballs = {"a927cf", "acd90d", "63bb92", "88b157", "8aaeef", "915bb4", "47780a" }
 local customEvoPokeballs = {"95fee8", "8a1c9a", "7f2cd7", "0d33b3", "8faab4"}
 local customLeadersArr = {"ab33b9", "f6be1f", "be2f56"}
@@ -25,7 +27,7 @@ function onLoad()
     self.createButton({ --Apply settings button
     label="Settings", click_function="settings",
     function_owner=self, tooltip="Setup Game",
-    position={15.2,-0.1,-41.2}, rotation={0,0,0}, height=600, width=2000, font_size=300,
+    position={0.02, 1.8, 32.03}, rotation={0,0,0}, height=600, width=2000, font_size=300,
   })
 end
 
@@ -51,6 +53,26 @@ function beginSetup2(params)
         setupPokeballs(gen4EvoPokeballs, evoPokeballs)
     end
 
+    -- if params.selectedGens[5] then
+    --     setupPokeballs(gen5Pokeballs, pokeballs)
+    --     setupPokeballs(gen5EvoPokeballs, evoPokeballs)
+    -- end
+
+    -- if params.selectedGens[6] then
+    --     setupPokeballs(gen6Pokeballs, pokeballs)
+    --     setupPokeballs(gen6EvoPokeballs, evoPokeballs)
+    -- end
+
+    -- if params.selectedGens[7] then
+    --     setupPokeballs(gen7Pokeballs, pokeballs)
+    --     setupPokeballs(gen7EvoPokeballs, evoPokeballs)
+    -- end
+
+    -- if params.selectedGens[8] then
+    --     setupPokeballs(gen8Pokeballs, pokeballs)
+    --     setupPokeballs(gen8EvoPokeballs, evoPokeballs)
+    -- end
+
     if params.customGen then
         setupPokeballs(customPokeballs, pokeballs)
         setupPokeballs(customEvoPokeballs, evoPokeballs)
@@ -69,6 +91,10 @@ function beginSetup2(params)
         genTwo = params.selectedGens[2],
         genThree = params.selectedGens[3],
         genFour = params.selectedGens[4],
+        -- genFive = params.selectedGens[5],
+        -- genSix = params.selectedGens[6],
+        -- genSeven = params.selectedGens[7],
+        -- genEight = params.selectedGens[8],
     }
     
     blueRack.call("setGen", genParams)
@@ -90,11 +116,22 @@ function beginSetup2(params)
         setupGyms(gen2LeadersArr)
     elseif params.leadersGen == 3 then
         setupGyms(gen3LeadersArr)
+    -- elseif params.leadersGen == 4 then
+    --     setupGyms(gen4LeadersArr)
+    -- elseif params.leadersGen == 5 then
+    --     setupGyms(gen5LeadersArr)
+    -- elseif params.leadersGen == 6 then
+    --     setupGyms(gen6LeadersArr)
+    -- elseif params.leadersGen == 7 then
+    --     setupGyms(gen7LeadersArr)
+    -- elseif params.leadersGen == 8 then
+    --     setupGyms(gen8LeadersArr)
     elseif params.leadersGen == 0 then
         setupGyms(customLeadersArr)
     elseif params.leadersGen == -1 then -- random leaders
         
         local gen
+        -- TODO: add --[[gen4LeadersArr[1], gen5LeadersArr[1], gen6LeadersArr[1], gen7LeadersArr[1], gen8LeadersArr[1]
         local gymPokeballs = {gen1LeadersArr[1], gen2LeadersArr[1], gen3LeadersArr[1]}
         for i = 1, 8 do
             gen = math.random(1,#gymPokeballs)
@@ -106,6 +143,7 @@ function beginSetup2(params)
             gym.call("setLeaderGUID", {leader.guid})
         end
         
+        -- TODO: add --[[gen4LeadersArr[2], gen5LeadersArr[2], gen6LeadersArr[2], gen7LeadersArr[2], gen8LeadersArr[2]
         local eliteFourPokeballs = {gen1LeadersArr[2], gen2LeadersArr[2], gen3LeadersArr[2]}
         local elite4Gym = getObjectFromGUID("a0f650")
         for i = 1, 4 do
@@ -117,6 +155,7 @@ function beginSetup2(params)
             elite4Gym.call("setLeaderGUID", {leader.guid})
         end
         
+        -- TODO: add --[[gen4LeadersArr[3], gen5LeadersArr[3], gen6LeadersArr[3], gen7LeadersArr[3], gen8LeadersArr[3]
         local rivalPokeballs = {gen1LeadersArr[3], gen2LeadersArr[3], gen3LeadersArr[3]}
         local rivalGym = getObjectFromGUID("c970ca")
         gen = math.random(1,#rivalPokeballs)

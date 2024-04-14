@@ -241,7 +241,7 @@ gen2PokemonData =
   {name="Bellossom",  level=4,  types={"Grass"},              moves={"Sleep Powder", "Solar Beam"},   guids={"eda382","14e4ad","fd44a1"}  },
   {name="Marill",     level=2,  types={"Water"},              moves={"Defense Curl", "Water Gun"},    guids={"d42c6f","e76d9a"},          evoData={{cost=1, ball=BLUE, gen=2, guids={"47a0c6","1ad3a2"}}} },
   {name="Azumarill",  level=3,  types={"Water"},              moves={"Waterfall", "Rollout"},         guids={"972ac4","47a0c6","1ad3a2"}  },
-  {name="Sudowoodo",  level=3,  types={"Rock"},               moves={"Rock Throw", "Mimic"},          guids={"539dea","eeca81"}           },
+  {name="Sudowoodo",  level=3,  types={"Rock"},               moves={"Rock Throw", "Mimic"},          guids={"539dea","eeca81", "315879"}           },
   {name="Politoed",   level=6,  types={"Water"},              moves={"Hydro Pump", "Swagger"},        guids={"67f2a8","9a1b0b","b21ff9"}  },
   {name="Hoppip",     level=1,  types={"Grass", "Flying"},    moves={"Tail Whip", "Tackle"},          guids={"485f54"},                   evoData={{cost=2, ball=BLUE, gen=2, guids={"996e19"}}} },
   {name="Skiploom",   level=3,  types={"Grass", "Flying"},    moves={"Poison Powder", "Stun Spore"},  guids={"e1c8ca","996e19"},          evoData={{cost=1, ball=YELLOW, gen=2, guids={"18d441","66e564"}}} },
@@ -309,6 +309,8 @@ gen2PokemonData =
   {name="Lugia",      level=7,  types={"Psychic", "Flying"},  moves={"Future Sight", "Aeroblast"},    guids={"5e4745"}                    },
   {name="Ho-oh",      level=7,  types={"Fire", "Flying"},     moves={"Ancient Power", "Sacred Fire"}, guids={"22569b"}                    },
   {name="Celebi",     level=7,  types={"Psychic", "Grass"},   moves={"Solar Beam", "Psychic"},        guids={"4d10a7"}                    }
+
+  -- TODO: add Red Gyarados: 390ee2, level 5, Water type, Moves: {Dragon, Dragon Rage}, {Water, Dragon Rage, Waterfall}, number 130
 }
 
 gen3PokemonData =
