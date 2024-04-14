@@ -1,4 +1,4 @@
-local gymButtonPos = {-8.4,0,10.6}
+local gymButtonPos = {-8.4, 0, 10.6}
 
 local gymData = nil
 local pokemonData = nil
@@ -66,12 +66,8 @@ function recall()
 end
 
 function setLeaderGUID(params)
-
-  --print("setting gym leader guid")
-  --print(params[1])
   leaderGUID = params[1]
   gymData = Global.call("GetGymDataByGUID", {guid=leaderGUID})
-
   pokemonData = {}
   for i=1, #gymData.pokemon do
     local newPokemon = {}
