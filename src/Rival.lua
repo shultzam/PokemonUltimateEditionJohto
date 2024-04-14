@@ -1,5 +1,5 @@
-local gymButtonPos = {0,0,2}
-local victoryButtonPos = {14.3,0,-4.5}
+local gymButtonPos = {0, 0, 2}
+local victoryButtonPos = {1, 0, -6}
 
 local battleManager = "de7152"
 local leadersData = {}
