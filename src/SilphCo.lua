@@ -1,5 +1,4 @@
-local gymButtonPos = {-8.2,0,14.2}
-local rocketButtonPos = {-7.1,0,10.6}
+local rocketButtonPos = {-7.1, 0, 10.6}
 
 local gymData = nil
 local pokemonData = nil
@@ -9,20 +8,9 @@ local silphCoGUID = "19db0d"
 local battleManager = "de7152"
 
 function onSave()
-    saved_data = JSON.encode({saveGymData=gymData, savePokemonData=pokemonData})
-    return saved_data
 end
 
 function onLoad(saved_data)
-  saved_data = ""
-  if saved_data ~= "" then
-      local loaded_data = JSON.decode(saved_data)
-      if loaded_data.saveGymData ~= nil and loaded_data.savePokemonData ~= nil then
-        gymData = copyTable(loaded_data.saveGymData)
-        pokemonData = copyTable(loaded_data.savePokemonData)
-      end
-  end
-
   rocketData = Global.call("GetGymDataByGUID", {guid="559fc4"})
   rocketPokemonData = {}
   for i=1, #rocketData.pokemon do
@@ -32,58 +20,13 @@ function onLoad(saved_data)
   end
 
   self.createButton({ --Apply settings button
-      label="+", click_function="battle",
-      function_owner=self, tooltip="Start Gym Battle",
-      position= gymButtonPos, rotation={0,0,0}, height=800, width=800, font_size=20000
-  })
-  self.createButton({ --Apply settings button
       label="+", click_function="battleRocket",
       function_owner=self, tooltip="Start Team Rocket Battle",
-      position= rocketButtonPos, rotation={0,0,0}, height=800, width=800, font_size=20000
+      position= rocketButtonPos, rotation={0, 0, 0}, height=800, width=800, font_size=20000
   })
 end
-
-function battle()
-
-  if gymData == nil then return end
-
-  local params = {
-    trainerName = gymData.trainerName,
-    trainerGUID = gymData.guid,
-    gymGUID = self.getGUID(),
-    isGymLeader = true,
-    pokemon = pokemonData
-  }
-
-  local battleManager = getObjectFromGUID(battleManager)
-  local sentToArena = battleManager.call("sendToArenaGym", params)
-
-  if sentToArena then
-    self.editButton({
-        index=0, label="-", click_function="recall",
-        function_owner=self, tooltip="Recall Gym Leader"
-    })
-  end
-end
-
-function recall()
-
-  local params = {gymGUID = self.getGUID()}
-
-  local battleManager = getObjectFromGUID(battleManager)
-  battleManager.call("recallGym", params)
-
-  Global.call("PlayRouteMusic",{})
-
-  self.editButton({ --Apply settings button
-      index=0, label="+", click_function="battle",
-      function_owner=self, tooltip="Start Gym Battle"
-  })
-end
-
 
 function battleRocket()
-
   local params = {
     trainerName = rocketData.trainerName,
     trainerGUID = rocketData.guid,
@@ -104,7 +47,6 @@ function battleRocket()
 end
 
 function recallRocket()
-
   local params = {gymGUID = silphCoGUID}
 
   local battleManager = getObjectFromGUID(battleManager)
@@ -153,7 +95,7 @@ end
 
 
 function copyTable (original)
-  local copy = {}
+    local copy = {}
 	for k, v in pairs(original) do
 		if type(v) == "table" then
 			v = copyTable(v)

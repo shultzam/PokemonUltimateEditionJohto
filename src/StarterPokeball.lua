@@ -27,7 +27,7 @@ function onLoad()
     self.createButton({ --Apply settings button
     label="Settings", click_function="settings",
     function_owner=self, tooltip="Setup Game",
-    position={0.02, 1.8, 32.03}, rotation={0,0,0}, height=600, width=2000, font_size=300,
+    position={0.05, 1.8, 32.03}, rotation={0,0,0}, height=600, width=2000, font_size=300,
   })
 end
 
@@ -176,7 +176,7 @@ function beginSetup2(params)
         self.createButton({ --Apply settings button
         label="Start Game", click_function="start",
         function_owner=self, tooltip="Click to start game. Only click this when every player has a starter Pokémon.",
-        position={15.2,-0.1,-41.2}, rotation={0,0,0}, height=600, width=2000, font_size=300,
+        position={0.05, 1.8, 32.03}, rotation={0,0,0}, height=600, width=2000, font_size=300,
     })
 end
 end
