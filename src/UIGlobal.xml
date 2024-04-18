@@ -15,11 +15,11 @@
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
             <Toggle id="gen5ToggleBtn" onValueChanged="gen5Toggle" interactable="true">Gen V  (175 Pokémon) </Toggle>
-            <Toggle id="gen6ToggleBtn" onValueChanged="gen6Toggle" interactable="true">Gen VI  (XXX Pokémon) </Toggle>
+            <Toggle id="gen6ToggleBtn" onValueChanged="gen6Toggle" interactable="true">Gen VI  (72 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-            <Toggle id="gen7ToggleBtn" onValueChanged="gen7Toggle" interactable="true">Gen VII  (XXX Pokémon) </Toggle>
-            <Toggle id="gen8ToggleBtn" onValueChanged="gen8Toggle" interactable="true">Gen VIII  (XXX Pokémon) </Toggle>
+            <Toggle id="gen7ToggleBtn" onValueChanged="gen7Toggle" interactable="true">Gen VII  (88 Pokémon) </Toggle>
+            <Toggle id="gen8ToggleBtn" onValueChanged="gen8Toggle" interactable="true">Gen VIII  (96 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
             <Toggle id="customToggleBtn" onValueChanged="customToggle" interactable="true">Custom (? Pokémon) </Toggle>
