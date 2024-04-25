@@ -43,13 +43,13 @@ local orangeRack = "341ead"
 local purpleRack = "a990ef"
 local redRack = "06c308"
 local yellowRack = "fc9c59"
-local evolvePokeballGUID = {"757125", "6fd4a0", "23f409", "caf1c8", "35376b"}
+local evolvePokeballGUID = {"757125", "6fd4a0", "23f409", "caf1c8", "35376b", "f353e7"}
 local evolvedPokeballGUID = "140fbd"
 local effectDice="6a319d"
 local critDice="229313"
 local d4Dice="7c6144"
 local d6Dice="15df3c"
-local statusGUID = {burned="3b8a3d",poisoned="26c816",sleep="00dbc5",paralysed="040f66",frozen="d8769a",confused="d2fe3e"}
+local statusGUID = {burned="3b8a3d", poisoned="26c816", sleep="00dbc5", paralysed="040f66", frozen="d8769a", confused="d2fe3e"}
 
 local attackerData={
   type = nil,
@@ -77,10 +77,10 @@ local defenderData={
 }
 local defenderPokemon=nil
 
-local atkCounter="20cba6"
+local atkCounter="73b431"
 local atkMoveText={"d91743","8895de", "0390e6"}
 local atkText="c594ba"
-local defCounter="a13c0f"
+local defCounter="b76b2a"
 local defMoveText={"9e8ac1","68aee8", "8099cc"}
 local defText="0db567"
 local roundText="8ba5f3"
@@ -88,29 +88,29 @@ local arenaText="08a4fe"
 local currRound = 0
 
 -- Arena Button Positions
-local incLevelAtkPos = {x=9.1, z=6.2}
-local decLevelAtkPos = {x=7.5, z=6.2}
-local incStatusAtkPos = {x=13.92, z=6.74}
-local decStatusAtkPos = {x=12.12, z=6.74}
-local movesAtkPos = {x=11.5, z=2.4}
-local teamAtkPos = {x=13, z=2.4}
-local recallAtkPos = {x=14.5, z=2.4}
-local atkEvolve1Pos = {x=6.7, z=5}
-local atkEvolve2Pos = {x=9.9, z=5}
+local incLevelAtkPos = {x=8.10, z=6.27}
+local decLevelAtkPos = {x=6.50, z=6.27}
+local incStatusAtkPos = {x=12.92, z=6.81}
+local decStatusAtkPos = {x=11.12, z=6.81}
+local movesAtkPos = {x=10.50, z=2.47}
+local teamAtkPos = {x=12.00, z=2.47}
+local recallAtkPos = {x=13.50, z=2.47}
+local atkEvolve1Pos = {x=5.0, z=5.07}
+local atkEvolve2Pos = {x=8.90, z=5.07}
 local atkMoveZPos = 8.3
-local atkConfirmPos = {x=8.3, z=11.8}
+local atkConfirmPos = {x=7.0, z=11.87}
 
-local incLevelDefPos = {x=9.1, z=-6.2}
-local decLevelDefPos = {x=7.5, z=-6.2}
-local incStatusDefPos = {x=13.92, z=-6.74}
-local decStatusDefPos = {x=12.12, z=-6.74}
-local movesDefPos = {x=11.5, z=-2.4}
-local teamDefPos = {x=13, z=-2.4}
-local recallDefPos = {x=14.5, z=-2.4}
-local defEvolve1Pos = {x=6.7, z=-5}
-local defEvolve2Pos = {x=9.9, z=-5}
-local defMoveZPos = -8.8
-local defConfirmPos = {x=8.3, z=-11.8}
+local incLevelDefPos = {x=8.09, z=-6.14}
+local decLevelDefPos = {x=6.49, z=-6.14}
+local incStatusDefPos = {x=12.91, z=-6.60}
+local decStatusDefPos = {x=11.11, z=-6.60}
+local movesDefPos = {x=10.49, z=-2.34}
+local teamDefPos = {x=11.99, z=-2.34}
+local recallDefPos = {x=13.49, z=-2.34}
+local defEvolve1Pos = {x=5.69, z=-4.94}
+local defEvolve2Pos = {x=8.89, z=-4.94}
+local defMoveZPos = -8.85
+local defConfirmPos = {x=7.29, z=-11.74}
 
 local attackRollState = PLACING
 local defendRollState = PLACING
@@ -127,8 +127,8 @@ inBattle = false
 battleState = NO_BATTLE
 
 --Arena Positions
-local attackerPos = {pokemon={-35.11,-4.2}, dice={-35.11,-6.2}, status={-30.36,-4.38}, statusCounters={-30.36,-6.74}, item={-39.87,-4.2}, moveDice={-35.11, -8.6}}
-local defenderPos = {pokemon={-35.11, 4.2}, dice={-35.11,6.2}, status={-30.36,4.38}, statusCounters={-30.36,6.74}, item={-39.87,4.2}, moveDice={-35.11, 8.6}}
+local defenderPos = {pokemon={-36.12, 4.26}, dice={-36.12, 6.26}, status={-31.37, 4.44}, statusCounters={-31.37, 6.74}, item={-40.88, 4.26}, moveDice={-36.11, 8.66}}
+local attackerPos = {pokemon={-36.11,-4.13}, dice={-36.11,-6.13}, status={-31.36,-4.31}, statusCounters={-31.36,-6.67}, item={-40.87,-4.13}, moveDice={-36.11,-8.53}}
 
 function onLoad()
     -- Create Arena Buttons
@@ -139,8 +139,8 @@ function onLoad()
     self.createButton({label="-", click_function="decreaseAtkArena",function_owner=self, tooltip="Decrease Level",position={decLevelAtkPos.x, 1000, decLevelAtkPos.z}, height=300, width=240, font_size=200})
     self.createButton({label="+", click_function="addAtkStatus",function_owner=self, tooltip="Add Status Counter",position={incStatusAtkPos.x, 1000, incStatusAtkPos.z}, height=300, width=200, font_size=200})
     self.createButton({label="-", click_function="removeAtkStatus",function_owner=self, tooltip="Remove Status Counter",position={decStatusAtkPos.x, 1000, decStatusAtkPos.z}, height=300, width=200, font_size=200})
-    self.createButton({label="E1", click_function="evolveAtk",function_owner=self, tooltip="Choose Evolution 1",position={-41.5, 1000, -0.4}, height=300, width=240, font_size=200})
-    self.createButton({label="E2", click_function="evolveTwoAtk",function_owner=self, tooltip="Choose Evolution 2",position={-44.15, 1000, -0.4}, height=300, width=240, font_size=200})
+    self.createButton({label="E1", click_function="evolveAtk",function_owner=self, tooltip="Choose Evolution 1",position={-42.5, 1000, -0.33}, height=300, width=240, font_size=200})
+    self.createButton({label="E2", click_function="evolveTwoAtk",function_owner=self, tooltip="Choose Evolution 2",position={-45.15, 1000, -0.33}, height=300, width=240, font_size=200})
     self.createButton({label="Move 1", click_function="attackMove1", function_owner=self, position={-45, 1000, atkMoveZPos}, height=300, width=1600, font_size=200})
     self.createButton({label="Move 2", click_function="attackMove2", function_owner=self, position={-40, 1000, atkMoveZPos}, height=300, width=1600, font_size=200})
     self.createButton({label="Move 3", click_function="attackMove3", function_owner=self, position={-35, 1000, atkMoveZPos}, height=300, width=1600, font_size=200})
@@ -153,8 +153,8 @@ function onLoad()
     self.createButton({label="-", click_function="decreaseDefArena",function_owner=self, tooltip="Decrease Level",position={decLevelDefPos.x, 1000, decLevelDefPos.z}, height=300, width=240, font_size=200})
     self.createButton({label="+", click_function="addDefStatus",function_owner=self, tooltip="Add Status Counter",position={incStatusDefPos.x, 1000, incStatusDefPos.z}, height=300, width=200, font_size=200})
     self.createButton({label="-", click_function="removeDefStatus",function_owner=self, tooltip="Remove Status Counter",position={decStatusDefPos.x, 1000, decStatusDefPos.z}, height=300, width=200, font_size=200})
-    self.createButton({label="E1", click_function="evolveDef",function_owner=self, tooltip="Choose Evolution 1",position={-37, 1000, -7.25}, height=300, width=240, font_size=200})
-    self.createButton({label="E2", click_function="evolveTwoDef",function_owner=self, tooltip="Choose Evolution 2",position={-36, 1000, -7.25}, height=300, width=240, font_size=200})
+    self.createButton({label="E1", click_function="evolveDef",function_owner=self, tooltip="Choose Evolution 1",position={-38, 1000, -7.19}, height=300, width=240, font_size=200})
+    self.createButton({label="E2", click_function="evolveTwoDef",function_owner=self, tooltip="Choose Evolution 2",position={-37, 1000, -7.19}, height=300, width=240, font_size=200})
     self.createButton({label="Move 1", click_function="defenceMove1", function_owner=self, position={-45, 1000, defMoveZPos}, height=300, width=1600, font_size=200})
     self.createButton({label="Move 2", click_function="defenceMove2", function_owner=self, position={-40, 1000, defMoveZPos}, height=300, width=1600, font_size=200})
     self.createButton({label="Move 3", click_function="defenceMove3", function_owner=self, position={-35, 1000, defMoveZPos}, height=300, width=1600, font_size=200})
@@ -169,7 +169,7 @@ function onLoad()
     self.createButton({label="SELECT", click_function="multiEvo5", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
     self.createButton({label="SELECT", click_function="multiEvo6", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
     self.createButton({label="SELECT", click_function="multiEvo7", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
-
+    
     self.createButton({label="BATTLE", click_function="battleWildPokemon", function_owner=self, position={defConfirmPos.x, 1000, -6.2}, height=300, width=1600, font_size=200})
     self.createButton({label="NEXT POKEMON", click_function="flipGymLeader", function_owner=self, position={3.5, 1000, -0.6}, height=300, width=1600, font_size=200})
 

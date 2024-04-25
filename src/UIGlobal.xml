@@ -6,7 +6,7 @@
         <Text minHeight="30" fontSize="18" text="Pokemon Generations" alignment="LowerLeft" fontStyle="Bold"/>
         <Text minHeight="20" fontSize="16" text="150+ Pokémon required to start game" alignment="LowerLeft"/>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-            <Toggle id="gen1ToggleBtn" onValueChanged="gen1Toggle" interactable="true" isOn="true" >Gen I (151 Pokémon) </Toggle>
+            <Toggle id="gen1ToggleBtn" onValueChanged="gen1Toggle" interactable="true" >Gen I (151 Pokémon) </Toggle>
             <Toggle id="gen2ToggleBtn" onValueChanged="gen2Toggle" interactable="true" >Gen II (100 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
@@ -14,12 +14,12 @@
             <Toggle id="gen4ToggleBtn" onValueChanged="gen4Toggle" interactable="true">Gen IV  (107 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-            <Toggle id="gen5ToggleBtn" onValueChanged="gen5Toggle" interactable="true">Gen V  (175 Pokémon) </Toggle>
-            <Toggle id="gen6ToggleBtn" onValueChanged="gen6Toggle" interactable="true">Gen VI  (72 Pokémon) </Toggle>
+            <Toggle id="gen5ToggleBtn" onValueChanged="gen5Toggle" interactable="true">Gen V  (171 Pokémon) </Toggle>
+            <Toggle id="gen6ToggleBtn" onValueChanged="gen6Toggle" interactable="true">Gen VI  (73 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-            <Toggle id="gen7ToggleBtn" onValueChanged="gen7Toggle" interactable="true">Gen VII  (88 Pokémon) </Toggle>
-            <Toggle id="gen8ToggleBtn" onValueChanged="gen8Toggle" interactable="true">Gen VIII  (96 Pokémon) </Toggle>
+            <Toggle id="gen7ToggleBtn" onValueChanged="gen7Toggle" interactable="true">Gen VII  (111 Pokémon) </Toggle>
+            <Toggle id="gen8ToggleBtn" onValueChanged="gen8Toggle" interactable="true">Gen VIII  (133 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
             <Toggle id="customToggleBtn" onValueChanged="customToggle" interactable="true">Custom (? Pokémon) </Toggle>
