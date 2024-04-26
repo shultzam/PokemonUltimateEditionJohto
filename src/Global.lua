@@ -194,7 +194,7 @@ gen1PokemonData =
   { name = "Kabuto",      level = 4, types = { "Rock", "Water" },      moves = { "Harden", "Absorb" },             guids = { "adad5d" },                    evoData = { { cost = 2, ball = RED, gen = 1, guids = { "b99ba9" } } } },
   { name = "Kabutops",    level = 6, types = { "Rock", "Water" },      moves = { "Hydro Pump", "Slash" },          guids = { "2fbb99", "b99ba9" } },
   { name = "Aerodactyl",  level = 4, types = { "Rock", "Flying" },     moves = { "Hyper Beam", "Wing Attack" },    guids = { "b69470" } },
-  { name = "Snorlax",     level = 4, types = { "Normal" },             moves = { "Double-Edge", "Body Slam" },     guids = { "2ef955", "81f09a", "a017f9" } },
+  { name = "Snorlax",     level = 4, types = { "Normal" },             moves = { "Double-Edge", "Body Slam" },     guids = { "81f09a", "a017f9" } },
   { name = "Articuno",    level = 7, types = { "Ice", "Flying" },      moves = { "Mirror Coat", "Blizzard" },      guids = { "0e47e0" } },
   { name = "Zapdos",      level = 7, types = { "Electric", "Flying" }, moves = { "Thunder", "Drill Peck" },        guids = { "810844" } },
   { name = "Moltres",     level = 7, types = { "Fire", "Flying" },     moves = { "Sky Attack", "Fire Spin" },      guids = { "cf5cee" } },

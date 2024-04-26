@@ -144,14 +144,14 @@ function beginSetup2(params)
         setupGyms(gen3LeadersArr)
     elseif params.leadersGen == 4 then
         setupGyms(gen4LeadersArr)
-        -- elseif params.leadersGen == 5 then
-        --     setupGyms(gen5LeadersArr)
-        -- elseif params.leadersGen == 6 then
-        --     setupGyms(gen6LeadersArr)
-        -- elseif params.leadersGen == 7 then
-        --     setupGyms(gen7LeadersArr)
-        -- elseif params.leadersGen == 8 then
-        --     setupGyms(gen8LeadersArr)
+    -- elseif params.leadersGen == 5 then
+    --     setupGyms(gen5LeadersArr)
+    -- elseif params.leadersGen == 6 then
+    --     setupGyms(gen6LeadersArr)
+    -- elseif params.leadersGen == 7 then
+    --     setupGyms(gen7LeadersArr)
+    -- elseif params.leadersGen == 8 then
+    --     setupGyms(gen8LeadersArr)
     elseif params.leadersGen == 0 then
         setupGyms(customLeadersArr)
     elseif params.leadersGen == -1 then
