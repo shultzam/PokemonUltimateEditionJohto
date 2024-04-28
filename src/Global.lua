@@ -962,14 +962,14 @@ gen7PokemonData =
   { name = "Blacephalon",  level = 7, types = { "Fire" },     moves = { "Shadow Ball", "Mind Blown" },         guids = { "38816d" } },
   { name = "Zerora",       level = 7, types = { "Electric" }, moves = { "Hone Claws", "Plasma Fists" },        guids = { "3bc718" } },
   { name = "Meltan",       level = 5, types = { "Steel" },    moves = { "Flash Cannon", "Acid Armor" },        guids = { "abc2d5" } ,                     evoData = { { cost = 2, ball = LEGENDARY, gen = 7, guids = { "aec8ec" } } } }, -- TODO: This might need its own ball? Something to figure out with these special regional pokemon
-  { name = "Melmetal",     level = 7, types = { "Steel" },    moves = { "Double Iron Bash", "Hyper Beam" },    guids = { "f35bd5", "aec8ec" } },
+  { name = "Melmetal",     level = 7, types = { "Steel" },    moves = { "Dbl. Iron Bash", "Hyper Beam" },      guids = { "f35bd5", "aec8ec" } },
 
   -- Gen 7 Alolan
   { name = "Rattata",      level = 1, types = { "Dark" },     moves = { "Tail Whip", "Pursuit" },              guids = { "4a3c46" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "673f0e" } } } },
   { name = "Raticate",     level = 3, types = { "Dark" },     moves = { "Super Fang", "Crunch" },              guids = { "924294", "673f0e" } },
   { name = "Raichu",       level = 3, types = { "Electric" }, moves = { "Thunder Shock", "Psychic" },          guids = { "65a373" } },
   { name = "Sandshrew",    level = 1, types = { "Ice" },      moves = { "Powder Snow", "Defense Curl" },       guids = { "e51fcd" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "be4022" } } } },
-  { name = "Sandslash",    level = 3, types = { "Ice" },      moves = { "Metal Claw", "Icicle Claw" },         guids = { "2f3bf2", "be4022" } },
+  { name = "Sandslash",    level = 3, types = { "Ice" },      moves = { "Metal Claw", "Icicle Crash" },        guids = { "2f3bf2", "be4022" } },
   { name = "Vulpix",       level = 2, types = { "Ice" },      moves = { "Powder Snow", "Confuse Ray" },        guids = { "bb2e78" },                     evoData = { { cost = 3, ball = YELLOW, gen = 7, guids = { "e0f9e1" } } } },
   { name = "Ninetails",    level = 5, types = { "Ice" },      moves = { "Aurora Beam", "Extrasensory" },       guids = { "2a9ba9", "e0f9e1" } },
   { name = "Diglett",      level = 2, types = { "Ground" },   moves = { "Metal Claw", "Sand Attack" },         guids = { "a70b67" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "b91f7c" } } } },
@@ -985,7 +985,7 @@ gen7PokemonData =
   { name = "Marowak",      level = 5, types = { "Fire" },     moves = { "Shadow Bone", "Bone Club" },          guids = { "04850a" } },
 }
 
--- TODO: add gen 7-8
+-- TODO: add gen 8-9
 
 gen8PokemonData =
 {}
