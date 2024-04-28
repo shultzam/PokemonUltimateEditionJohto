@@ -13,7 +13,7 @@ battleScripting = false
 aiDifficulty = 0
 -- Save Data
 customGen = false
-selectedGens = { true, false, false, false, false, false, false, false, false }
+selectedGens = { false, false, false, false, false, false, false, false, false }
 
 -- Pokeball Colours
 PINK = 1
@@ -793,8 +793,8 @@ gen6PokemonData =
   { name = "Fletchling",  level = 1, types = { "Flying" },   moves = { "Growl", "Peck" },                    guids = { "10f8ac" },                     evoData = { { cost = 2, ball = BLUE, gen = 6, guids = { "d4e15c" } } } },
   { name = "Fletchinder", level = 3, types = { "Fire" },     moves = { "Razor Wind", "Ember" },              guids = { "780fa6", "d4e15c" },           evoData = { { cost = 2, ball = RED, gen = 6, guids = { "562fca", "b7ce61" } } } },
   { name = "Talonflame",  level = 5, types = { "Fire" },     moves = { "Steel Wing", "Flare Blitz" },        guids = { "2b826a", "562fca", "b7ce61" } },
-  { name = "Scatterbug",  level = 1, types = { "Bug" },      moves = { "String Shot", "Tackle" },            guids = { "2fc6c4" },                     evoData = { { cost = 1, ball = PINK, gen = 6, guids = { "4a3c46" } } } },
-  { name = "Spewpa",      level = 2, types = { "Bug" },      moves = { "Protect", "Harden" },                guids = { "7bcb6b", "4a3c46" },           evoData = { { cost = 1, ball = GREEN, gen = 6, guids = { "d4e7b2", "a619c3" } } } },
+  { name = "Scatterbug",  level = 1, types = { "Bug" },      moves = { "String Shot", "Tackle" },            guids = { "2fc6c4" },                     evoData = { { cost = 1, ball = PINK, gen = 6, guids = { "88a3f1" } } } },
+  { name = "Spewpa",      level = 2, types = { "Bug" },      moves = { "Protect", "Harden" },                guids = { "7bcb6b", "88a3f1" },           evoData = { { cost = 1, ball = GREEN, gen = 6, guids = { "d4e7b2", "a619c3" } } } },
   { name = "Vivillon",    level = 3, types = { "Bug" },      moves = { "Quiver Dance", "Gust" },             guids = { "68cecb", "d4e7b2", "a619c3" } },
   { name = "Litleo",      level = 2, types = { "Fire" },     moves = { "Noble Roar", "Ember" },              guids = { "8e2e3f" },                     evoData = { { cost = 3, ball = YELLOW, gen = 6, guids = { "318002" } } } },
   { name = "Pyroar",      level = 5, types = { "Fire" },     moves = { "Echoed Voice", "Incinerate" },       guids = { "5d4681", "318002" } },
@@ -965,7 +965,7 @@ gen7PokemonData =
   { name = "Melmetal",     level = 7, types = { "Steel" },    moves = { "Dbl. Iron Bash", "Hyper Beam" },      guids = { "f35bd5", "aec8ec" } },
 
   -- Gen 7 Alolan
-  { name = "Rattata",      level = 1, types = { "Dark" },     moves = { "Tail Whip", "Pursuit" },              guids = { "4a3c46" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "673f0e" } } } },
+  { name = "Rattata",      level = 1, types = { "Dark" },     moves = { "Tail Whip", "Pursuit" },              guids = { "8dc2dc" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "673f0e" } } } },
   { name = "Raticate",     level = 3, types = { "Dark" },     moves = { "Super Fang", "Crunch" },              guids = { "924294", "673f0e" } },
   { name = "Raichu",       level = 3, types = { "Electric" }, moves = { "Thunder Shock", "Psychic" },          guids = { "65a373" } },
   { name = "Sandshrew",    level = 1, types = { "Ice" },      moves = { "Powder Snow", "Defense Curl" },       guids = { "e51fcd" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "be4022" } } } },
@@ -2163,7 +2163,7 @@ function GetPokemonDataByGUID(params)
   local data
   for i = 1, #selectedGens do
     if selectedGens[i] then
-      --print("Searching Gen " .. i .. " data for GUID: " .. params.guid)
+      printToAll("TEMP | Searching Gen " .. i .. " data for GUID: " .. params.guid)
       data = getPokemonData(genData[i], params.guid)
       if data != nil then
         return data
@@ -2190,7 +2190,7 @@ function GetPokemonDataByName(params)
   for i = 1, #selectedGens do
     if selectedGens[i] then
       --print("Searching Gen " .. i .. " data for GUID")
-      data = getPokemonDataName(genData[i], params.guid)
+      data = getPokemonDataName(genData[i], params.name)
       if data != nil then
         return data
       end
@@ -2365,62 +2365,65 @@ function beginSetup(player, value, id)
   starterPokeball.call("beginSetup2", params)
 end
 
-function gen1Toggle()
-  selectedGens[1] = not selectedGens[1]
+-- String to boolean lookup dict.
+stringToBoolean={ ["True"]=true, ["False"]=false }
+
+function gen1Set(player, isOn)
+  selectedGens[1] = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
 
-function gen2Toggle()
-  selectedGens[2] = not selectedGens[2]
+function gen2Set(player, isOn)
+  selectedGens[2] = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
 
-function gen3Toggle()
-  selectedGens[3] = not selectedGens[3]
+function gen3Set(player, isOn)
+  selectedGens[3] = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
 
-function gen4Toggle()
-  selectedGens[4] = not selectedGens[4]
+function gen4Set(player, isOn)
+  selectedGens[4] = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
 
-function gen5Toggle()
-  selectedGens[5] = not selectedGens[5]
+function gen5Set(player, isOn)
+  selectedGens[5] = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
 
-function gen6Toggle()
-  selectedGens[6] = not selectedGens[6]
+function gen6Set(player, isOn)
+  selectedGens[6] = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
 
-function gen7Toggle()
-  selectedGens[7] = not selectedGens[7]
+function gen7Set(player, isOn)
+  selectedGens[7] = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
 
-function gen8Toggle()
-  selectedGens[8] = not selectedGens[8]
+function gen8Set(player, isOn)
+  selectedGens[8] = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
 
-function gen9Toggle()
-  selectedGens[9] = not selectedGens[9]
+function gen9Set(player, isOn)
+  selectedGens[9] = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
 
-function customToggle()
-  customGen = not customGen
+function customSet(player, isOn)
+  customGen = stringToBoolean[isOn]
   enoughPokemon()
   checkBeginState()
 end
@@ -2458,8 +2461,6 @@ function enoughPokemon()
       numPokemon = numPokemon + #pokeball.getObjects()
     end
   end
-  -- Board pokemon count. (Red Gyarados + Sudowoodo)
-  numPokemon = numPokemon + 2
 
   -- Check the final count.
   hasEnoughPokemon = numPokemon >= 150
@@ -2473,43 +2474,43 @@ function battleScriptingToggle()
   battleScripting = not battleScripting
 end
 
-function gen1LeadersToggle(player, isOn)
+function gen1LeadersSet(player, isOn)
   setLeaders(1, isOn)
 end
 
-function gen2LeadersToggle(player, isOn)
+function gen2LeadersSet(player, isOn)
   setLeaders(2, isOn)
 end
 
-function gen3LeadersToggle(player, isOn)
+function gen3LeadersSet(player, isOn)
   setLeaders(3, isOn)
 end
 
-function gen4LeadersToggle(player, isOn)
+function gen4LeadersSet(player, isOn)
   setLeaders(4, isOn)
 end
 
-function gen5LeadersToggle(player, isOn)
+function gen5LeadersSet(player, isOn)
   setLeaders(5, isOn)
 end
 
-function gen6LeadersToggle(player, isOn)
+function gen6LeadersSet(player, isOn)
   setLeaders(6, isOn)
 end
 
-function gen7LeadersToggle(player, isOn)
+function gen7LeadersSet(player, isOn)
   setLeaders(7, isOn)
 end
 
-function gen8LeadersToggle(player, isOn)
+function gen8LeadersSet(player, isOn)
   setLeaders(8, isOn)
 end
 
-function customLeadersToggle(player, isOn)
+function customLeadersSet(player, isOn)
   setLeaders(0, isOn)
 end
 
-function randomLeadersToggle(player, isOn)
+function randomLeadersSet(player, isOn)
   setLeaders(-1, isOn)
 end
 

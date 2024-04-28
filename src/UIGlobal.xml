@@ -6,42 +6,42 @@
         <Text minHeight="30" fontSize="18" text="Pokemon Generations" alignment="LowerLeft" fontStyle="Bold"/>
         <Text minHeight="20" fontSize="16" text="150+ Pokémon required to start game" alignment="LowerLeft"/>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-            <Toggle id="gen1ToggleBtn" onValueChanged="gen1Toggle" interactable="true" >Gen I (151 Pokémon) </Toggle>
-            <Toggle id="gen2ToggleBtn" onValueChanged="gen2Toggle" interactable="true" >Gen II (100 Pokémon) </Toggle>
+            <Toggle id="gen1ToggleBtn" onValueChanged="gen1Set" interactable="true" >Gen I (151 Pokémon) </Toggle>
+            <Toggle id="gen2ToggleBtn" onValueChanged="gen2Set" interactable="true" >Gen II (100 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-            <Toggle id="gen3ToggleBtn" onValueChanged="gen3Toggle" interactable="true">Gen III  (136 Pokémon) </Toggle>
-            <Toggle id="gen4ToggleBtn" onValueChanged="gen4Toggle" interactable="true">Gen IV  (107 Pokémon) </Toggle>
+            <Toggle id="gen3ToggleBtn" onValueChanged="gen3Set" interactable="true">Gen III  (136 Pokémon) </Toggle>
+            <Toggle id="gen4ToggleBtn" onValueChanged="gen4Set" interactable="true">Gen IV  (107 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-            <Toggle id="gen5ToggleBtn" onValueChanged="gen5Toggle" interactable="true">Gen V  (171 Pokémon) </Toggle>
-            <Toggle id="gen6ToggleBtn" onValueChanged="gen6Toggle" interactable="true">Gen VI  (73 Pokémon) </Toggle>
+            <Toggle id="gen5ToggleBtn" onValueChanged="gen5Set" interactable="true">Gen V  (171 Pokémon) </Toggle>
+            <Toggle id="gen6ToggleBtn" onValueChanged="gen6Set" interactable="true">Gen VI  (73 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-            <Toggle id="gen7ToggleBtn" onValueChanged="gen7Toggle" interactable="true">Gen VII  (111 Pokémon) </Toggle>
-            <Toggle id="gen8ToggleBtn" onValueChanged="gen8Toggle" interactable="true">Gen VIII  (133 Pokémon) </Toggle>
+            <Toggle id="gen7ToggleBtn" onValueChanged="gen7Set" interactable="true">Gen VII  (111 Pokémon) </Toggle>
+            <Toggle id="gen8ToggleBtn" onValueChanged="gen8Set" interactable="true">Gen VIII  (133 Pokémon) </Toggle>
         </HorizontalLayout>
         <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-            <Toggle id="customToggleBtn" onValueChanged="customToggle" interactable="true">Custom (? Pokémon) </Toggle>
+            <Toggle id="customToggleBtn" onValueChanged="customSet" interactable="true">Custom (? Pokémon) </Toggle>
         </HorizontalLayout>
         <Text minHeight="30" fontSize="18" text="Gym Leaders" alignment="LowerLeft" fontStyle="Bold"/>
         <ToggleGroup>
             <VerticalLayout padding="0" spacing="15" childForceExpandHeight="false">
                 <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-                    <Toggle isOn="true" id="gen1LeaderToggleBtn" onValueChanged="gen1LeadersToggle">Gen I</Toggle>
-                    <Toggle id="gen2LeaderToggleBtn" onValueChanged="gen2LeadersToggle" interactable="true">Gen II</Toggle>
-                    <Toggle id="gen3LeaderToggleBtn" onValueChanged="gen3LeadersToggle" interactable="true">Gen III</Toggle>
-                    <Toggle id="gen4LeaderToggleBtn" onValueChanged="gen4LeadersToggle" interactable="true">Gen IV</Toggle>
+                    <Toggle isOn="true" id="gen1LeaderToggleBtn" onValueChanged="gen1LeadersSet">Gen I</Toggle>
+                    <Toggle id="gen2LeaderToggleBtn" onValueChanged="gen2LeadersSet" interactable="true">Gen II</Toggle>
+                    <Toggle id="gen3LeaderToggleBtn" onValueChanged="gen3LeadersSet" interactable="true">Gen III</Toggle>
+                    <Toggle id="gen4LeaderToggleBtn" onValueChanged="gen4LeadersSet" interactable="true">Gen IV</Toggle>
                 </HorizontalLayout>
                 <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-                    <Toggle id="gen5LeaderToggleBtn" onValueChanged="gen5LeadersToggle" interactable="true">Gen V</Toggle>
-                    <Toggle id="gen6LeaderToggleBtn" onValueChanged="gen6LeadersToggle" interactable="true">Gen VI</Toggle>
-                    <Toggle id="gen7LeaderToggleBtn" onValueChanged="gen7LeadersToggle" interactable="true">Gen VII</Toggle>
-                    <Toggle id="gen8LeaderToggleBtn" onValueChanged="gen8LeadersToggle" interactable="true">Gen VIII</Toggle>
+                    <Toggle id="gen5LeaderToggleBtn" onValueChanged="gen5LeadersSet" interactable="true">Gen V</Toggle>
+                    <Toggle id="gen6LeaderToggleBtn" onValueChanged="gen6LeadersSet" interactable="true">Gen VI</Toggle>
+                    <Toggle id="gen7LeaderToggleBtn" onValueChanged="gen7LeadersSet" interactable="true">Gen VII</Toggle>
+                    <Toggle id="gen8LeaderToggleBtn" onValueChanged="gen8LeadersSet" interactable="true">Gen VIII</Toggle>
                 </HorizontalLayout>
                 <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
-                    <Toggle onValueChanged="customLeadersToggle" interactable="true">Custom</Toggle>
-                <Toggle onValueChanged="randomLeadersToggle" interactable="true">Random</Toggle>
+                    <Toggle onValueChanged="customLeadersSet" interactable="true">Custom</Toggle>
+                <Toggle onValueChanged="randomLeadersSet" interactable="true">Random</Toggle>
                 </HorizontalLayout>
             </VerticalLayout>
         </ToggleGroup>
