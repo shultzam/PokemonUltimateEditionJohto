@@ -13,7 +13,7 @@ battleScripting = false
 aiDifficulty = 0
 -- Save Data
 customGen = false
-selectedGens = { true, false, false }
+selectedGens = { true, false, false, false, false, false, false, false, false }
 
 -- Pokeball Colours
 PINK = 1
@@ -45,6 +45,13 @@ playlist =
 customPokemonData =
 {
   { name = "Pikachu", level = 1, types = { "Electric" }, moves = { "Electroweb", "Leer" }, guids = { "77331c" } }
+}
+
+-- Add pokemon here that are always included regardless of gens added to game.
+boardPokemonData = 
+{
+  { name = "Red Gyarados",      level = 5, types = { "Water" }, moves = { "Dragon Rage", "Waterfall" },  guids = { "390ee2" } },
+  { name = "Starter Sudowoodo", level = 3, types = { "Rock" },  moves = { "Rock Throw", "Mimic" },       guids = { "315879" } }
 }
 
 gen1PokemonData =
@@ -241,7 +248,7 @@ gen2PokemonData =
   { name = "Bellossom",  level = 4, types = { "Grass" },             moves = { "Sleep Powder", "Solar Beam" },    guids = { "eda382", "14e4ad", "fd44a1" } },
   { name = "Marill",     level = 2, types = { "Water" },             moves = { "Defense Curl", "Water Gun" },     guids = { "d42c6f", "e76d9a" },           evoData = { { cost = 1, ball = BLUE, gen = 2, guids = { "47a0c6", "1ad3a2" } } } },
   { name = "Azumarill",  level = 3, types = { "Water" },             moves = { "Waterfall", "Rollout" },          guids = { "972ac4", "47a0c6", "1ad3a2" } },
-  { name = "Sudowoodo",  level = 3, types = { "Rock" },              moves = { "Rock Throw", "Mimic" },           guids = { "539dea", "eeca81", "315879" } },
+  { name = "Sudowoodo",  level = 3, types = { "Rock" },              moves = { "Rock Throw", "Mimic" },           guids = { "539dea", "eeca81" } },
   { name = "Politoed",   level = 6, types = { "Water" },             moves = { "Hydro Pump", "Swagger" },         guids = { "67f2a8", "9a1b0b", "b21ff9" } },
   { name = "Hoppip",     level = 1, types = { "Grass", "Flying" },   moves = { "Tail Whip", "Tackle" },           guids = { "485f54" },                     evoData = { { cost = 2, ball = BLUE, gen = 2, guids = { "996e19" } } } },
   { name = "Skiploom",   level = 3, types = { "Grass", "Flying" },   moves = { "Poison Powder", "Stun Spore" },   guids = { "e1c8ca", "996e19" },           evoData = { { cost = 1, ball = YELLOW, gen = 2, guids = { "18d441", "66e564" } } } },
@@ -309,8 +316,6 @@ gen2PokemonData =
   { name = "Lugia",      level = 7, types = { "Psychic", "Flying" }, moves = { "Future Sight", "Aeroblast" },     guids = { "5e4745" } },
   { name = "Ho-oh",      level = 7, types = { "Fire", "Flying" },    moves = { "Ancient Power", "Sacred Fire" },  guids = { "22569b" } },
   { name = "Celebi",     level = 7, types = { "Psychic", "Grass" },  moves = { "Solar Beam", "Psychic" },         guids = { "4d10a7" } }
-
-  -- TODO: add Red Gyarados: 390ee2, level 5, Water type, Moves: {Dragon, Dragon Rage}, {Water, Dragon Rage, Waterfall}, number 130
 }
 
 gen3PokemonData =
@@ -624,11 +629,10 @@ gen5PokemonData =
   { name = "Roggenrola",      level = 2, types = { "Rock" },     moves = { "Sand Attack", "Headbutt" },        guids = { "f96286" },                     evoData = { { cost = 2, ball = GREEN, gen = 5, guids = { "fb2577" } } } },
   { name = "Boldore",         level = 4, types = { "Rock" },     moves = { "Rock Blast", "Iron Defense" },     guids = { "6f3eeb", "fb2577" },           evoData = { { cost = 2, ball = RED, gen = 5, guids = { "826c9d", "f3f8a9" } } } },
   { name = "Gilgalith",       level = 6, types = { "Rock" },     moves = { "Sandstorm", "Rock Slide" },        guids = { "f3f8a9", "826c9d", "f3f8a9" }, },
-
   -- Gen 5 527-550
   { name = "Woobat",          level = 1, types = { "Psychic" },  moves = { "Confusion", "Odor Sleuth" },       guids = { "6264c2" },                     evoData = { { cost = 2, ball = BLUE, gen = 5, guids = { "8f6353" } } } },
   { name = "Swoobat",         level = 3, types = { "Psychic" },  moves = { "Heart Stamp", "Gust" },            guids = { "a3b9cf", "8f6353" } },
-  { name = "Drilbur",         level = 2, types = { "Ground" },   moves = { "Fury Swipes", "Mud Slap" },        guids = { "b7fbbf" },                     evoData = { { cost = 2, ball = BLUE, gen = 5, guids = { "777dd0" } } } },
+  { name = "Drilbur",         level = 2, types = { "Ground" },   moves = { "Fury Swipes", "Mud-Slap" },        guids = { "b7fbbf" },                     evoData = { { cost = 2, ball = BLUE, gen = 5, guids = { "777dd0" } } } },
   { name = "Excadril",        level = 4, types = { "Ground" },   moves = { "Metal Claw", "Dig" },              guids = { "8ce447", "777dd0" }, },
   { name = "Audino",          level = 4, types = { "Normal" },   moves = { "Take Down", "Attract" },           guids = { "b81637" } },
   { name = "Timburr",         level = 2, types = { "Fighting" }, moves = { "low Kick", "Leer" },               guids = { "89aae4" },                     evoData = { { cost = 2, ball = BLUE, gen = 5, guids = { "e8de1c" } } } },
@@ -651,8 +655,6 @@ gen5PokemonData =
   { name = "Lilligant",       level = 4, types = { "Grass" },    moves = { "Teeter Dance", "Mega Drain" },     guids = { "28e67a", "693b62" } },
   { name = "Basculin (Blue)", level = 2, types = { "Water" },    moves = { "Aqua Jet", "Chip Away" },          guids = { "5ee961" }, },
   { name = "Basculin (Red)",  level = 2, types = { "Water" },    moves = { "Aqua Jet", "Bite" },               guids = { "8e451c" }, },
-
-
   -- Gen 5 551-576
   { name = "Sandile",         level = 2, types = { "Ground" },   moves = { "Sand Attack", "Bite" },            guids = { "0ec450" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "89573c" } } } },
   { name = "Krokorok",        level = 4, types = { "Ground" },   moves = { "Sandstorm", "Assurance" },         guids = { "9857a1", "89573c" },           evoData = { { cost = 2, ball = RED, gen = 5, guids = { "5d317d", "abaa08" } } } },
@@ -677,11 +679,10 @@ gen5PokemonData =
   { name = "Zorua",           level = 3, types = { "Dark" },     moves = { "Fury Swipes", "Fake Tears" },      guids = { "852f7a" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "99e127" } } } },
   { name = "Zorark",          level = 5, types = { "Dark" },     moves = { "Shadow Claw", "Night Daze" },      guids = { "9ea40d", "99e127" } },
   { name = "Minccino",        level = 3, types = { "Normal" },   moves = { "Baby-Doll Eyes", "Echoed Voice" }, guids = { "4619bc" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "fd401d" } } } },
-  { name = "Cinccino",        level = 4, types = { "Normal" },   moves = { "Swift", "Sing" },                  guids = { "cc407b", "fd401d" }, }, -- Cinccino Token shows level 3, presumambly should be level 4 instead
+  { name = "Cinccino",        level = 4, types = { "Normal" },   moves = { "Swift", "Sing" },                  guids = { "cc407b", "fd401d" }, },         -- TODO: Cinccino Token shows level 3, presumambly should be level 4 instead
   { name = "Gothita",         level = 2, types = { "Psychic" },  moves = { "Confusion", "Pound" },             guids = { "2c8314" },                     evoData = { { cost = 2, ball = BLUE, gen = 5, guids = { "3c3dd3" } } } },
   { name = "Gothorita",       level = 4, types = { "Psychic" },  moves = { "Psybeam", "Charm" },               guids = { "1a4be0", "3c3dd3" },           evoData = { { cost = 2, ball = RED, gen = 5, guids = { "b7fdb2", "193950" } } } },
   { name = "Gothitelle",      level = 6, types = { "Psychic" },  moves = { "Future Sight", "Fake Tears" },     guids = { "95e45e", "b7fdb2", "193950" }, },
-
   -- Gen 5 577-601
   { name = "Solosis",         level = 2, types = { "Psychic" },  moves = { "Rollout", "Charm" },               guids = { "4ffe17" },                     evoData = { { cost = 2, ball = BLUE, gen = 5, guids = { "428bdd" } } } },
   { name = "Duosion",         level = 4, types = { "Psychic" },  moves = { "Hidden Power", "Light Screen" },   guids = { "6251de", "428bdd" },           evoData = { { cost = 2, ball = RED, gen = 5, guids = { "783bd2", "e40ad5" } } } },
@@ -692,22 +693,22 @@ gen5PokemonData =
   { name = "Vanillish",       level = 4, types = { "Ice" },      moves = { "Mirror Shot", "Icy Wind" },        guids = { "a2fe81", "67e645" },           evoData = { { cost = 2, ball = RED, gen = 4, guids = { "642461", "98f88f" } } } },
   { name = "Vanilluxe",       level = 6, types = { "Ice" },      moves = { "Mirror Coat", "Blizzard" },        guids = { "c69af0", "642461", "98f88f" } },
   { name = "Deerling",        level = 2, types = { "Normal" },   moves = { "Camouflage", "Tackle" },           guids = { "7fe6be" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "2a61be" } } } }, -- Spring
-  { name = "Sawsbuck",        level = 4, types = { "Normal" },   moves = { "Take Down", "Nature Power" },      guids = { "02874b", "2a61be" }, },                                                                                    --Spring
+  { name = "Sawsbuck",        level = 4, types = { "Normal" },   moves = { "Take Down", "Nature Power" },      guids = { "02874b", "2a61be" }, },                                                                                    -- Spring
   { name = "Deerling",        level = 2, types = { "Normal" },   moves = { "Camouflage", "Tackle" },           guids = { "9ce73b" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "1f9d13" } } } }, -- Fall
-  { name = "Sawsbuck",        level = 4, types = { "Normal" },   moves = { "Take Down", "Nature Power" },      guids = { "494757", "1f9d13" }, },                                                                                    --Fall
+  { name = "Sawsbuck",        level = 4, types = { "Normal" },   moves = { "Take Down", "Nature Power" },      guids = { "494757", "1f9d13" }, },                                                                                    -- Fall
   { name = "Deerling",        level = 2, types = { "Normal" },   moves = { "Camouflage", "Tackle" },           guids = { "de2c41" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "426c52" } } } }, -- Summer
-  { name = "Sawsbuck",        level = 4, types = { "Normal" },   moves = { "Take Down", "Nature Power" },      guids = { "a1bde0", "426c52" }, },                                                                                    --Summer
+  { name = "Sawsbuck",        level = 4, types = { "Normal" },   moves = { "Take Down", "Nature Power" },      guids = { "a1bde0", "426c52" }, },                                                                                    -- Summer
   { name = "Deerling",        level = 2, types = { "Normal" },   moves = { "Camouflage", "Tackle" },           guids = { "90a5b6" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "4ef3be" } } } }, -- Winter
-  { name = "Sawsbuck",        level = 4, types = { "Normal" },   moves = { "Take Down", "Nature Power" },      guids = { "853bba", "4ef3be" }, },                                                                                    --Winter
+  { name = "Sawsbuck",        level = 4, types = { "Normal" },   moves = { "Take Down", "Nature Power" },      guids = { "853bba", "4ef3be" }, },                                                                                    -- Winter
   { name = "Emolga",          level = 3, types = { "Electric" }, moves = { "Quick Attack", "Spark" },          guids = { "21c0e7" } },
   { name = "Karrablast",      level = 3, types = { "Bug" },      moves = { "Fury Cutter", "Peck" },            guids = { "a987fe" },                     evoData = { { cost = 1, ball = YELLOW, gen = 5, guids = { "2fbc4e" } } } },
   { name = "Escavalier",      level = 4, types = { "Bug" },      moves = { "Iron Head", "Bug Buzz" },          guids = { "79dfaa", "2fbc4e" }, },
   { name = "Foongus",         level = 3, types = { "Grass" },    moves = { "Astonish", "Absorb" },             guids = { "ee2a78" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "13d1d6" } } } },
   { name = "Amoongus",        level = 5, types = { "Grass" },    moves = { "Clear Smog", "Mega Drain" },       guids = { "b61f79", "13d1d6" } },
-  { name = "Frillish",        level = 4, types = { "Water" },    moves = { "Bubble Beam", "Absorb" },          guids = { "a28f5d" },                     evoData = { { cost = 2, ball = RED, gen = 5, guids = { "8ac9cc" } } } }, --Blue
-  { name = "Jellicent",       level = 6, types = { "Water" },    moves = { "Ominous Wind", "Water Pulse" },    guids = { "15c302", "8ac9cc" } },                                                                                  --Blue
-  { name = "Frillish",        level = 4, types = { "Water" },    moves = { "Bubble Beam", "Absorb" },          guids = { "60ba9e" },                     evoData = { { cost = 2, ball = RED, gen = 5, guids = { "8fd291" } } } }, --Pink
-  { name = "Jellicent",       level = 6, types = { "Water" },    moves = { "Ominous Wind", "Water Pulse" },    guids = { "598d9a", "8fd291" } },                                                                                  --Pink
+  { name = "Frillish",        level = 4, types = { "Water" },    moves = { "Bubble Beam", "Absorb" },          guids = { "a28f5d" },                     evoData = { { cost = 2, ball = RED, gen = 5, guids = { "8ac9cc" } } } }, -- Blue
+  { name = "Jellicent",       level = 6, types = { "Water" },    moves = { "Ominous Wind", "Water Pulse" },    guids = { "15c302", "8ac9cc" } },                                                                                  -- Blue
+  { name = "Frillish",        level = 4, types = { "Water" },    moves = { "Bubble Beam", "Absorb" },          guids = { "60ba9e" },                     evoData = { { cost = 2, ball = RED, gen = 5, guids = { "8fd291" } } } }, -- Pink
+  { name = "Jellicent",       level = 6, types = { "Water" },    moves = { "Ominous Wind", "Water Pulse" },    guids = { "598d9a", "8fd291" } },                                                                                  -- Pink
   { name = "Alomomola",       level = 3, types = { "Water" },    moves = { "Safeguard", "Brine" },             guids = { "9c2e47" } },
   { name = "Joltik",          level = 2, types = { "Bug" },      moves = { "Electroweb", "Screech" },          guids = { "c4adc9" },                     evoData = { { cost = 3, ball = YELLOW, gen = 5, guids = { "4f2f10" } } } },
   { name = "Galvantula",      level = 5, types = { "Bug" },      moves = { "Discharge", "Bug Bite" },          guids = { "f79ca8", "4f2f10" } },
@@ -716,12 +717,10 @@ gen5PokemonData =
   { name = "Klink",           level = 3, types = { "Steel" },    moves = { "Thunder Shock", "Vise Grip" },     guids = { "4ee23b" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "17a2ae" } } } },
   { name = "Klang",           level = 5, types = { "Steel" },    moves = { "Mirror Shot", "Screech" },         guids = { "00b5c3", "17a2ae" },           evoData = { { cost = 1, ball = RED, gen = 5, guids = { "c5a2bf", "47e417" } } } },
   { name = "Klinklang",       level = 6, types = { "Steel" },    moves = { "Gear Grind", "Discharge" },        guids = { "5108f3", "c5a2bf", "47e417" } },
-
   -- Gen 5 602-637
   { name = "Tynamo",          level = 3, types = { "Electric" }, moves = { "Thunder Wave", "Tackle" },         guids = { "033989" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "8cec3c" } } } },
   { name = "Eelektrik",       level = 5, types = { "Electric" }, moves = { "Charge Beam", "Acid" },            guids = { "170118", "8cec3c" },           evoData = { { cost = 1, ball = RED, gen = 5, guids = { "74b8ad", "1e9b7b" } } } },
   { name = "Eelektross",      level = 6, types = { "Electric" }, moves = { "Discharge", "Crunch" },            guids = { "340824", "74b8ad", "1e9b7b" } },
-
   { name = "Elgyem",          level = 3, types = { "Psychic" },  moves = { "Headbutt", "Psybeam" },            guids = { "f5a0a7" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "9c471b" } } } },
   { name = "Beheeyem",        level = 5, types = { "Psychic" },  moves = { "Zen Headbutt", "Hidden Power" },   guids = { "aa886c", "9c471b" } },
   { name = "Litwick",         level = 3, types = { "Ghost" },    moves = { "Will-O-Whisp", "Astonish" },       guids = { "32bd77" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "c3de22" } } } },
@@ -735,7 +734,7 @@ gen5PokemonData =
   { name = "Cryogonal",       level = 4, types = { "Ice" },      moves = { "Sheer Cold", "Light Screen" },     guids = { "68294a" } },
   { name = "Shelmet",         level = 3, types = { "Bug" },      moves = { "Acid Armor", "Mega Drain" },       guids = { "898892" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "f95e65" } } } },
   { name = "Accelgor",        level = 4, types = { "Bug" },      moves = { "Me First", "U-Turn" },             guids = { "41989c", "f95e65" } },
-  { name = "Stunfisk",        level = 3, types = { "Ground" },   moves = { "Thunder Shock", "Mudslap" },       guids = { "2db3e2" } },
+  { name = "Stunfisk",        level = 3, types = { "Ground" },   moves = { "Thunder Shock", "Mud-Slap" },       guids = { "2db3e2" } },
   { name = "Mienfoo",         level = 4, types = { "Fighting" }, moves = { "Force Palm", "Calm Mind" },        guids = { "ff78e9" },                     evoData = { { cost = 2, ball = RED, gen = 5, guids = { "3e2f17" } } } },
   { name = "Mienshao",        level = 6, types = { "Fighting" }, moves = { "High Jump Kick", "Bounce" },       guids = { "ad66a7", "3e2f17" } },
   { name = "Druddigon",       level = 5, types = { "Dragon" },   moves = { "Dragon Claw", "Night Slash" },     guids = { "0dc4b0" } },
@@ -744,20 +743,17 @@ gen5PokemonData =
   { name = "Pawniard",        level = 3, types = { "Dark" },     moves = { "Metal Claw", "Slash" },            guids = { "259499" },                     evoData = { { cost = 3, ball = RED, gen = 5, guids = { "cd8ee8" } } } },
   { name = "Bisharp",         level = 6, types = { "Dark" },     moves = { "Iron Head", "Night Slash" },       guids = { "bf65c0", "cd8ee8" } },
   { name = "Bouffalant",      level = 4, types = { "Normal" },   moves = { "Head Charge", "Megahorn" },        guids = { "91e1a4" } },
-
   { name = "Rufflet",         level = 3, types = { "Flying" },   moves = { "Hone Claws", "Peck" },             guids = { "f52196" },                     evoData = { { cost = 3, ball = RED, gen = 5, guids = { "f1a656" } } } },
   { name = "Braviary",        level = 6, types = { "Flying" },   moves = { "Crush Claw", "Aerial Ace" },       guids = { "8def45", "f1a656" } },
   { name = "Vullaby",         level = 3, types = { "Dark" },     moves = { "Fury Attack", "Nasty Plot" },      guids = { "8c8d4a" },                     evoData = { { cost = 3, ball = RED, gen = 5, guids = { "d9a365" } } } },
   { name = "Mandibuzz",       level = 6, types = { "Dark" },     moves = { "Bone Rush", "Air Slash" },         guids = { "21182a", "d9a365" } },
   { name = "Heatmor",         level = 4, types = { "Fire" },     moves = { "Incinerate", "Odor Sleuth" },      guids = { "cd2a36" } },
-
   { name = "Durant",          level = 4, types = { "Bug" },      moves = { "Metal Sound", "Bug Bite" },        guids = { "96b5d6" } },
   { name = "Deino",           level = 3, types = { "Dark" },     moves = { "Assurance", "Headbutt" },          guids = { "6e0580" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "cc9679" } } } },
   { name = "Zweilous",        level = 5, types = { "Dark" },     moves = { "Dragon Pulse", "Bite" },           guids = { "751bca", "cc9679" },           evoData = { { cost = 2, ball = RED, gen = 5, guids = { "573535", "6edcb7" } } } },
   { name = "Hydreigon",       level = 7, types = { "Dark" },     moves = { "Outrage", "Crunch" },              guids = { "d1c597", "573535", "6edcb7" } },
   { name = "Larvesta",        level = 4, types = { "Bug" },      moves = { "Leech Life", "Ember" },            guids = { "ec4a46" },                     evoData = { { cost = 2, ball = RED, gen = 5, guids = { "b9c1a0" } } } },
   { name = "Volcarona",       level = 7, types = { "Bug" },      moves = { "Fiery Dance", "Hurricane" },       guids = { "ad5421", "b9c1a0" } },
-
   -- Gen 5 638-649
   { name = "Cobalion",        level = 7, types = { "Steel" },    moves = { "Sacred Sword", "Iron Head" },      guids = { "55fe44" } },
   { name = "Terrakion",       level = 7, types = { "Rock" },     moves = { "Sacred Sword", "Rock Slide" },     guids = { "21e3a7" } },
@@ -810,17 +806,16 @@ gen6PokemonData =
   { name = "Pancham",     level = 2, types = { "Fighting" }, moves = { "Arm Thrust", "Work Up" },            guids = { "bf3855" },                     evoData = { { cost = 2, ball = YELLOW, gen = 6, guids = { "cf6845" } } } },
   { name = "Pangoro",     level = 4, types = { "Fighting" }, moves = { "Circle Throw", "Night Slash" },      guids = { "097459", "cf6845" } },
   { name = "Furfrou",     level = 3, types = { "Normal" },   moves = { "Retaliate", "Charm" },               guids = { "e7d9dd" }, },
-  { name = "Espurr",      level = 2, types = { "Psychic" },  moves = { "Disarming Voice", "Confusion" },     guids = { "53beaa" },                     evoData = { { cost = 1, ball = GREEN, gen = 6, guids = { "8e85d5", "bb2e78" } } } }, -- Needs button to choose between Male or Female Evolution
-  { name = "Meowstic",    level = 3, types = { "Psychic" },  moves = { "Charm", "Psybeam" },                 guids = { "0def1f", "8e85d5", } },                                                                                             --Female
+  { name = "Espurr",      level = 2, types = { "Psychic" },  moves = { "Disarming Voice", "Confusion" },     guids = { "53beaa" },                     evoData = { { cost = 1, ball = GREEN, gen = 6, guids = { "8e85d5", "bb2e78" } } } }, -- TODO: Needs button to choose between Male or Female Evolution
+  { name = "Meowstic",    level = 3, types = { "Psychic" },  moves = { "Charm", "Psybeam" },                 guids = { "0def1f", "8e85d5", } },                                                                                             -- Female
   { name = "Meowstic",    level = 3, types = { "Psychic" },  moves = { "Sucker Punch", "Psybeam" },          guids = { "5acd1e", "bb2e78" } },                                                                                              -- Male
-
   -- Gen 6 679-700
   { name = "Honedge",     level = 3, types = { "Steel" },    moves = { "Swords Dance", "Fury Cutter" },      guids = { "fdfef9" },                     evoData = { { cost = 2, ball = YELLOW, gen = 6, guids = { "889a70" } } } },
-  { name = "Doublade",    level = 5, types = { "Steel" },    moves = { "Shadow Sneak", "Slash" },            guids = { "9dd498", "889a70" },           evoData = { { cost = 1, ball = RED, gen = 6, guids = { "52ba90", "f7ff82", "a22c4a", "cc32a1" } } } }, -- Needs a button to choose between Sword and Shield
+  { name = "Doublade",    level = 5, types = { "Steel" },    moves = { "Shadow Sneak", "Slash" },            guids = { "9dd498", "889a70" },           evoData = { { cost = 1, ball = RED, gen = 6, guids = { "52ba90", "f7ff82", "a22c4a", "cc32a1" } } } }, -- TODO: Needs a button to choose between Sword and Shield
   { name = "Aegislash",   level = 6, types = { "Steel" },    moves = { "Sacred Sword", "Iron Head" },        guids = { "64ba33", "52ba90", "f7ff82" }, },                                                                                                     -- Sword Version
   { name = "Aegislash",   level = 6, types = { "Steel" },    moves = { "Sacred Sword", "King's Shield" },    guids = { "56ac94", "a22c4a", "cc32a1" }, },                                                                                                     -- Shield Version
   { name = "Spritzee",    level = 3, types = { "Fairy" },    moves = { "Fairy Wind", "Attract" },            guids = { "ee6a18" },                     evoData = { { cost = 1, ball = BLUE, gen = 6, guids = { "b0e63a" } } } },
-  { name = "Aromatisse",  level = 4, types = { "Fairy" },    moves = { "Moonblast", "Heal Pulse" },          guids = { "ee7504", "b0e63a" }, },                                                                                                               --Double check these GUIDS and the evo GUIDS in Spritzee, they may be incorrect
+  { name = "Aromatisse",  level = 4, types = { "Fairy" },    moves = { "Moonblast", "Heal Pulse" },          guids = { "ee7504", "b0e63a" }, },
   { name = "Swirlix",     level = 3, types = { "Fairy" },    moves = { "Play Nice", "Fairy Wind" },          guids = { "bfc548" },                     evoData = { { cost = 1, ball = BLUE, gen = 6, guids = { "45a974" } } } },
   { name = "Slurpuff",    level = 4, types = { "Fairy" },    moves = { "Cotton Guard", "Play Rough" },       guids = { "5fecfe", "45a974" } },
   { name = "Inkay",       level = 2, types = { "Dark" },     moves = { "Hypnosis", "Peck" },                 guids = { "c8dc46" },                     evoData = { { cost = 2, ball = YELLOW, gen = 6, guids = { "bea82d" } } } },
@@ -837,9 +832,7 @@ gen6PokemonData =
   { name = "Tyrantrum",   level = 6, types = { "Rock" },     moves = { "Head Smash", "Dragon Claw" },        guids = { "19998d", "fc4eb1" } },
   { name = "Amaura",      level = 4, types = { "Rock" },     moves = { "Take Down", "Icy Wind" },            guids = { "43451f" },                     evoData = { { cost = 2, ball = RED, gen = 6, guids = { "bba475" } } } },
   { name = "Aurorus",     level = 6, types = { "Rock" },     moves = { "Aurora Beam", "Ancient Power" },     guids = { "234b04", "bba475" } },
-  { name = "Sylveon",     level = 5, types = { "Fairy" },    moves = { "Moonblast", "Swift" },               guids = { "7ea880" } }, -- Need to set old Evee to be able to evolve to Sylveon
-
-
+  { name = "Sylveon",     level = 5, types = { "Fairy" },    moves = { "Moonblast", "Swift" },               guids = { "7ea880" } },        -- TODO: Need to set old Evee to be able to evolve to Sylveon
   -- Gen 6 701-721
   { name = "Hawlucha",    level = 3, types = { "Fighting" }, moves = { "Hone Claws", "Flying Press" },       guids = { "ecc5ed" } },
   { name = "Dedenne",     level = 2, types = { "Electric" }, moves = { "Charm", "Nuzzle" },                  guids = { "251e0f" } },
@@ -858,7 +851,7 @@ gen6PokemonData =
   { name = "Noivern",     level = 6, types = { "Flying" },   moves = { "Dragon Pulse", "Air Slash" },        guids = { "e5a265", "1b1569" } },
   { name = "Xerneas",     level = 7, types = { "Fairy" },    moves = { "Moonblast", "Megahorn" },            guids = { "ef3078" } },
   { name = "Yveltal",     level = 7, types = { "Dark" },     moves = { "Dark Pulse", "Oblivion Wing" },      guids = { "341630" } },
-  { name = "Zygarde",     level = 7, types = { "Dragon" },   moves = { "Land's Wrath", "Glare" },            guids = { "84fad7" },                     evoData = { { cost = ITEM, ball = LEGENDARY, gen = 6, guids = { "51a0ef" } } } }, --10%
+  { name = "Zygarde",     level = 7, types = { "Dragon" },   moves = { "Land's Wrath", "Glare" },            guids = { "84fad7" },                     evoData = { { cost = ITEM, ball = LEGENDARY, gen = 6, guids = { "51a0ef" } } } }, -- 10%
   { name = "Zygarde",     level = 7, types = { "Dragon" },   moves = { "Dragon Breath", "Earthquake" },      guids = { "51a0ef" },                     evoData = { { cost = ITEM, ball = LEGENDARY, gen = 6, guids = { "ea5e61" } } } }, -- 50%
   { name = "Zygarde",     level = 7, types = { "Dragon" },   moves = { "Extreme Speed", "Outrage" },         guids = { "ea5e61" } },                                                                                                     -- Complete
   { name = "Diancie",     level = 7, types = { "Rock" },     moves = { "Diamond Storm", "Light Screen" },    guids = { "dfd970" } },
@@ -867,502 +860,665 @@ gen6PokemonData =
   { name = "Volcanion",   level = 7, types = { "Fire" },     moves = { "Steam Eruption", "Incinerate" },     guids = { "b4f0b0" } },
 }
 
--- TODO: add gen 7-8
-
 gen7PokemonData =
-{}
+{
+  -- Gen 7 722-750
+  { name = "Rowlet",       level = 1, types = { "Grass" },    moves = { "Leafage", "Growl" },                  guids = { "df9287" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "1c84d5" } } } },
+  { name = "Dartrix",      level = 3, types = { "Grass" },    moves = { "Razor Leaf", "Peck" },                guids = { "71d957", "1c84d5" },           evoData = { { cost = 2, ball = RED, gen = 7, guids = { "2416c8", "9bef15" } } } },
+  { name = "Decidueye",    level = 5, types = { "Grass" },    moves = { "Spirit Shackle", "Leaf Blade" },      guids = { "d50f86", "2416c8", "9bef15" }, },
+  { name = "Litten",       level = 1, types = { "Fire" },     moves = { "Ember", "Growl" },                    guids = { "03a2c1" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "1ae631" } } } },
+  { name = "Torracat",     level = 3, types = { "Fire" },     moves = { "Fury Swipes", "Fire Fang" },          guids = { "4d7ec6", "1ae631" },           evoData = { { cost = 2, ball = RED, gen = 7, guids = { "38e353", "45ba93" } } } },
+  { name = "Incineroar",   level = 5, types = { "Fire" },     moves = { "Flare Blitz", "Darkest Lariat" },     guids = { "3f1566", "38e353", "45ba93" }, },
+  { name = "Popplio",      level = 1, types = { "Water" },    moves = { "Water Gun", "Growl" },                guids = { "9364c2" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "454874" } } } },
+  { name = "Brionne",      level = 3, types = { "Water" },    moves = { "Icy Wind", "Aqua Jet" },              guids = { "d3529d", "454874" },           evoData = { { cost = 2, ball = RED, gen = 7, guids = { "d62cf2", "4026a1" } } } },
+  { name = "Primarina",    level = 5, types = { "Water" },    moves = { "Moonblast", "Sparkling Aria" },       guids = { "de4d6a", "d62cf2", "4026a1" }, },
+  { name = "Pikipek",      level = 1, types = { "Flying" },   moves = { "Growl", "Peck" },                     guids = { "441f65" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "5e7eae" } } } },
+  { name = "Trumbeak",     level = 3, types = { "Flying" },   moves = { "Rock Blast", "Echoed Voice" },        guids = { "c5f660", "5e7eae" },           evoData = { { cost = 2, ball = YELLOW, gen = 7, guids = { "8f7253", "4fda79" } } } },
+  { name = "Toucannon",    level = 5, types = { "Flying" },   moves = { "Beak Blast", "Hyper Voice" },         guids = { "a9acd3", "8f7253", "4fda79" } },
+  { name = "Yungoos",      level = 1, types = { "Normal" },   moves = { "Sand Attack", "Tackle" },             guids = { "195460" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "fa17b3" } } } },
+  { name = "Gumshoos",     level = 3, types = { "Normal" },   moves = { "Super Fang", "Crunch" },              guids = { "28ee0f", "fa17b3" } },
+  { name = "Grubbin",      level = 1, types = { "Bug" },      moves = { "Vise Grip", "String Shot" },          guids = { "505be7" },                     evoData = { { cost = 2, ball = GREEN, gen = 7, guids = { "545c8d" } } } },
+  { name = "Charjabug",    level = 3, types = { "Bug" },      moves = { "Mud-Slap", "Bug Bite" },              guids = { "918808", "545c8d" },           evoData = { { cost = 1, ball = YELLOW, gen = 7, guids = { "be9f22", "59664c" } } } },
+  { name = "Vikavolt",     level = 4, types = { "Bug" },      moves = { "Zap Cannon", "X-Scissor" },           guids = { "8ee928", "be9f22", "59664c" } },
+  { name = "Crabrawler",   level = 3, types = { "Fighting" }, moves = { "Rock Smash", "Crabhammer" },          guids = { "ff2869" },                     evoData = { { cost = 1, ball = YELLOW, gen = 7, guids = { "7021bf" } } } },
+  { name = "Crabominable", level = 4, types = { "Fighting" }, moves = { "Dynamic Punch", "Ice Hammer" },       guids = { "1689aa", "7021bf" } },
+  { name = "Oricorio",     level = 3, types = { "Fire" },     moves = { "Feather Dance", "Rev. Dance Fire" },  guids = { "bafd29" } },
+  { name = "Oricorio",     level = 3, types = { "Psychic" },  moves = { "Feather Dance", "Rev. Dance Psychic" }, guids = { "9f5d17" } },
+  { name = "Oricorio",     level = 3, types = { "Electric" }, moves = { "Feather Dance", "Rev. Dance Electric" }, guids = { "f22afb" } },
+  { name = "Oricorio",     level = 3, types = { "Ghost" },    moves = { "Feather Dance", "Rev. Dance Ghost" }, guids = { "a16f96" } },
+  { name = "Cutiefly",     level = 1, types = { "Bug" },      moves = { "Fairy Wind", "Absorb" },              guids = { "ffc7e4" },                     evoData = { { cost = 2, ball = GREEN, gen = 7, guids = { "9df32b" } } } },
+  { name = "Ribombee",     level = 3, types = { "Bug" },      moves = { "Dazzling Gleam", "Pollen Puff" },     guids = { "9df32b", "97144c" } },
+  { name = "Rockruff",     level = 2, types = { "Rock" },     moves = { "Howl", "Bite" },                      guids = { "2eae89" },                     evoData = { { cost = 2, ball = YELLOW, gen = 6, guids = { "802af7", "5411a7", "ff8dda" } } } },
+  { name = "Lycanroc",     level = 4, types = { "Rock" },     moves = { "Crush Claw", "Accelerock" },          guids = { "34164a", "802af7" }, }, -- Orange
+  { name = "Lycanroc",     level = 4, types = { "Rock" },     moves = { "Sucker Punch", "Accelerock" },        guids = { "9ecf49", "5411a7" }, }, -- Brown
+  { name = "Lycanroc",     level = 4, types = { "Rock" },     moves = { "Rock Slide", "Counter" },             guids = { "9af49a", "ff8dda" }, }, -- Red
+  { name = "Wishiwashi",   level = 4, types = { "Water" },    moves = { "Beat Up", "Brine" },                  guids = { "acfcee" } },
+  { name = "Mareanie",     level = 3, types = { "Poison" },   moves = { "Wide Guard", "Toxic Spikes" },        guids = { "45598a" },                     evoData = { { cost = 2, ball = RED, gen = 7, guids = { "bd3b27" } } } },
+  { name = "Toxapex",      level = 5, types = { "Poison" },   moves = { "Bane. Bunker", "Poison Jab" },        guids = { "e0c877", "bd3b27" } },
+  { name = "Mudbray",      level = 2, types = { "Ground" },   moves = { "Double Kick", "Mud-Slap" },           guids = { "482345" },                     evoData = { { cost = 2, ball = RED, gen = 7, guids = { "c06039" } } } },
+  { name = "Mudsdale",     level = 4, types = { "Ground" },   moves = { "H. Horsepower", "Stomp" },            guids = { "d66f99", "c06039" } },
+
+  -- Gen 7 751-775
+  { name = "Dewpider",     level = 1, types = { "Water" },    moves = { "Infestation", "Bubble" },             guids = { "7e97f0" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "ff2e27" } } } },
+  { name = "Araquanid",    level = 3, types = { "Water" },    moves = { "Bubble Beam", "Lunge" },              guids = { "7fe018", "ff2e27" } },
+  { name = "Fomantis",     level = 2, types = { "Grass" },    moves = { "Growth", "Leafage" },                 guids = { "e2dcdc" },                     evoData = { { cost = 2, ball = YELLOW, gen = 7, guids = { "09b260" } } } },
+  { name = "Lurantis",     level = 4, types = { "Grass" },    moves = { "Petal Blizzard", "Slash" },           guids = { "d98b01", "09b260" }, },
+  { name = "Morelull",     level = 1, types = { "Grass" },    moves = { "Astonish", "Absorb" },                guids = { "b8f494" },                     evoData = { { cost = 2, ball = GREEN, gen = 7, guids = { "e803ee" } } } },
+  { name = "Shiinotic",    level = 3, types = { "Grass" },    moves = { "Sleep Powder", "Moonblast" },         guids = { "24d418", "e803ee" }, },
+  { name = "Salandit",     level = 2, types = { "Poison" },   moves = { "Ember", "Smog" },                     guids = { "433a74" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "f517cd" } } } },
+  { name = "Salazzle",     level = 4, types = { "Poison" },   moves = { "Venom Drench", "Flame Burst" },       guids = { "73d1a4", "f517cd" } },
+  { name = "Stufful",      level = 2, types = { "Normal" },   moves = { "Baby-Doll Eyes", "Tackle" },          guids = { "6e26ce" },                     evoData = { { cost = 1, ball = BLUE, gen = 7, guids = { "91caa3" } } } },
+  { name = "Bewear",       level = 3, types = { "Normal" },   moves = { "Take Down", "Hammer Arm" },           guids = { "c3a8f1", "91caa3" } },
+  { name = "Bounsweet",    level = 2, types = { "Grass" },    moves = { "Rapid Spin", "Play Nice" },           guids = { "a96b34" },                     evoData = { { cost = 1, ball = GREEN, gen = 7, guids = { "d564cd" } } } },
+  { name = "Steenee",      level = 3, types = { "Grass" },    moves = { "Double Slap", "Magical Leaf" },       guids = { "e5f221", "d564cd" },           evoData = { { cost = 1, ball = BLUE, gen = 7, guids = { "e8a54a", "9d1fcf" } } } },
+  { name = "Tsareena",     level = 4, types = { "Grass" },    moves = { "Trop Kick", "Stomp" },                guids = { "376bc7", "e8a54a", "9d1fcf" } },
+  { name = "Comfey",       level = 3, types = { "Fairy" },    moves = { "Petal Dance", "Wrap" },               guids = { "c3291e" } },
+  { name = "Oranguru",     level = 4, types = { "Normal" },   moves = { "Zen Headbutt", "Foul Play" },         guids = { "82400d" } },
+  { name = "Passimian",    level = 4, types = { "Fighting" }, moves = { "Close Combat", "Thrash" },            guids = { "73f4a7" } },
+  { name = "Wimpod",       level = 2, types = { "Bug" },      moves = { "Struggle Bug" },                      guids = { "ce812c" },                     evoData = { { cost = 2, ball = YELLOW, gen = 7, guids = { "0042df" } } } },
+  { name = "Golisopod",    level = 4, types = { "Bug" },      moves = { "First Impression", "Razor Shell" },   guids = { "3b9008", "0042df" } },
+  { name = "Sandygast",    level = 4, types = { "Ghost" },    moves = { "Sand Tomb", "Sandstorm" },            guids = { "cc4a08" },                     evoData = { { cost = 2, ball = RED, gen = 7, guids = { "263266" } } } },
+  { name = "Palossand",    level = 6, types = { "Ghost" },    moves = { "Earth Power", "Iron Defense" },       guids = { "58aab6", "263266" } },
+  { name = "Pyukumuku",    level = 3, types = { "Water" },    moves = { "Safeguard", "Toxic" },                guids = { "6e7540" } },
+  { name = "Type: Null",   level = 4, types = { "Normal" },   moves = { "Crush Claw", "Aerial Ace" },          guids = { "814ff2" },                     evoData = { { cost = 2, ball = RED, gen = 7, guids = { "7a7849" } } } },
+  { name = "Silvally",     level = 6, types = { "Normal" },   moves = { "Multi-Attack", "Tri Attack" },        guids = { "458263", "7a7849" } },
+  { name = "Minior",       level = 4, types = { "Rock" },     moves = { "Cosmic Power", "Swift" },             guids = { "6d5742" } }, -- Pink
+  { name = "Minior",       level = 4, types = { "Rock" },     moves = { "Shell Smash", "Power Gem" },          guids = { "6c5dae" } }, -- Brown
+  { name = "Komala",       level = 6, types = { "Normal" },   moves = { "Wood Hammer", "Yawn" },               guids = { "248d7f" } },
+
+  -- Gen 7 776-809
+  { name = "Turtonator",   level = 5, types = { "Fire" },     moves = { "Dragon Pulse", "Overheat" },          guids = { "7497e6" } },
+  { name = "Togedemaru",   level = 3, types = { "Electric" }, moves = { "Zing Zap", "Rollout" },               guids = { "1778b2" } },
+  { name = "Mimikyu",      level = 4, types = { "Ghost" },    moves = { "Play Rough", "Mimic" },               guids = { "ba3859" } },
+  { name = "Bruxish",      level = 4, types = { "Water" },    moves = { "Psychic Fangs", "Crush" },             guids = { "9d31bb" } },
+  { name = "Drampa",       level = 5, types = { "Dragon" },   moves = { "Dragon Rage", "Hyper Voice" },        guids = { "c2e75e" } },
+  { name = "Dhelmise",     level = 5, types = { "Ghost" },    moves = { "Power Whip", "Anchor Shot" },         guids = { "2e8c2e" } },
+  { name = "Jangmo-o",     level = 2, types = { "Dragon" },   moves = { "Headbutt", "Screech" },               guids = { "20c6cc" },                     evoData = { { cost = 2, ball = YELLOW, gen = 7, guids = { "20c6cc" } } } },
+  { name = "Hakamo-o",     level = 4, types = { "Dragon" },   moves = { "Dragon Dance", "Sky Uppercut" },      guids = { "3671cc", "20c6cc" },           evoData = { { cost = 3, ball = RED, gen = 7, guids = { "6377a7", "79e0d1" } } } },
+  { name = "Kommo-o",      level = 7, types = { "Dragon" },   moves = { "Clanging Scales", "Close Combat" },   guids = { "51cc27", "6377a7", "79e0d1" } },
+  { name = "Tapu Koko",    level = 7, types = { "Electric" }, moves = { "Nature's Madness", "Spark" },         guids = { "d20352" } },
+  { name = "Tapu Lele",    level = 7, types = { "Psychic" },  moves = { "Nature's Madness", "Psybeam" },       guids = { "c2d946" } },
+  { name = "Tapu Bulu",    level = 7, types = { "Grass" },    moves = { "Nature's Madness", "Horn Leech" },    guids = { "d099d1" } },
+  { name = "Tapu Fini",    level = 7, types = { "Water" },    moves = { "Nature's Madness", "Water Pulse" },   guids = { "573f6c" } },
+  { name = "Cosmog",       level = 2, types = { "Psychic" },  moves = { "Teleport", "Splash" },                guids = { "4067b4" },                     evoData = { { cost = 3, ball = YELLOW, gen = 7, guids = { "dd8d38" } } } },
+  { name = "Cosmoem",      level = 5, types = { "Psychic" },  moves = { "Cosmic Power", "Teleport" },          guids = { "2d4e82", "dd8d38" },           evoData = { { cost = 2, ball = LEGENDARY, gen = 7, guids = { "5228d9", "2c0206" } } } }, -- TODO: Need a button to choose between them at evolution stage
+  { name = "Solgaleo",     level = 7, types = { "Psychic" },  moves = { "Zen Headbutt", "Sunsteel Strike" },   guids = { "2337ba", "5228d9" } },
+  { name = "Lunala",       level = 7, types = { "Psychic" },  moves = { "Moongeist Beam", "Dream Eater" },     guids = { "d118b4", "2c0206" } },
+  { name = "Nihilego",     level = 7, types = { "Rock" },     moves = { "Head Smash", "Venoshock" },           guids = { "e53d16" } },
+  { name = "Buzzwole",     level = 7, types = { "Bug" },      moves = { "Dynamic Punch", "Lunge" },            guids = { "b97547" } },
+  { name = "Pheromosa",    level = 7, types = { "Bug" },      moves = { "High Jump Kick", "Silver Wind" },     guids = { "6b596f" } },
+  { name = "Xurkitree",    level = 7, types = { "Electric" }, moves = { "Zap Cannon", "Power Whip" },          guids = { "c291b1" } },
+  { name = "Celesteela",   level = 7, types = { "Steel" },    moves = { "Iron Head", "Air Slash" },            guids = { "6b8a57" } },
+  { name = "Kartana",      level = 7, types = { "Grass" },    moves = { "Sacred Sword", "Leaf Blade" },        guids = { "94790b" } },
+  { name = "Guzzlord",     level = 7, types = { "Dark" },     moves = { "Dragon Rush", "Crunch" },             guids = { "ed1c1b" } },
+  { name = "Necrozma",     level = 7, types = { "Psychic" },  moves = { "Photon Geyser", "Night Slash" },      guids = { "ec14da" },                     evoData = { { cost = ITEM, ball = LEGENDARY, gen = 7, guids = { "c65377", "2f92e5", "370a4c" } } } }, --TODO: Needs button choice between Dusk Mane or Dawn Wings or Ultra
+  { name = "Necrozma",     level = 7, types = { "Psychic" },  moves = { "Sunsteel Strike", "Prism. Laser" },   guids = { "c65377" } },                                                                                                -- Dusk Mane
+  { name = "Necrozma",     level = 7, types = { "Psychic" },  moves = { "Moongeist Beam", "Prism. Laser" },    guids = { "2f92e5" } },                                                                                                -- Dawn Wings
+  { name = "Necrozma",     level = 7, types = { "Psychic" },  moves = { "Moongeist Beam", "Sunsteel Strike" }, guids = { "370a4c" } },                                                                                                -- Ultra
+  { name = "Magearna",     level = 7, types = { "Steel" },    moves = { "Flash Cannon", "Fleur Cannon" },      guids = { "0ac3f1" } },
+  { name = "Poipole",      level = 5, types = { "Poison" },   moves = { "Fury Attack", "Toxic" },              guids = { "6cadb0" },                     evoData = { { cost = 2, ball = LEGENDARY, gen = 7, guids = { "c42a20" } } } }, -- TODO: This might need its own ball? Something to figure out with these special regional pokemon
+  { name = "Naganadel",    level = 7, types = { "Poison" },   moves = { "Poison Jab", "Dragon Pulse" },        guids = { "4d5ae0", "c42a20" } },
+  { name = "Stakataka",    level = 7, types = { "Rock" },     moves = { "Rock Blast", "Iron Defense" },        guids = { "1446e4" } },
+  { name = "Blacephalon",  level = 7, types = { "Fire" },     moves = { "Shadow Ball", "Mind Blown" },         guids = { "38816d" } },
+  { name = "Zerora",       level = 7, types = { "Electric" }, moves = { "Hone Claws", "Plasma Fists" },        guids = { "3bc718" } },
+  { name = "Meltan",       level = 5, types = { "Steel" },    moves = { "Flash Cannon", "Acid Armor" },        guids = { "abc2d5" } ,                     evoData = { { cost = 2, ball = LEGENDARY, gen = 7, guids = { "aec8ec" } } } }, -- TODO: This might need its own ball? Something to figure out with these special regional pokemon
+  { name = "Melmetal",     level = 7, types = { "Steel" },    moves = { "Double Iron Bash", "Hyper Beam" },    guids = { "f35bd5", "aec8ec" } },
+
+  -- Gen 7 Alolan
+  { name = "Rattata",      level = 1, types = { "Dark" },     moves = { "Tail Whip", "Pursuit" },              guids = { "4a3c46" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "673f0e" } } } },
+  { name = "Raticate",     level = 3, types = { "Dark" },     moves = { "Super Fang", "Crunch" },              guids = { "924294", "673f0e" } },
+  { name = "Raichu",       level = 3, types = { "Electric" }, moves = { "Thunder Shock", "Psychic" },          guids = { "65a373" } },
+  { name = "Sandshrew",    level = 1, types = { "Ice" },      moves = { "Powder Snow", "Defense Curl" },       guids = { "e51fcd" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "be4022" } } } },
+  { name = "Sandslash",    level = 3, types = { "Ice" },      moves = { "Metal Claw", "Icicle Claw" },         guids = { "2f3bf2", "be4022" } },
+  { name = "Vulpix",       level = 2, types = { "Ice" },      moves = { "Powder Snow", "Confuse Ray" },        guids = { "bb2e78" },                     evoData = { { cost = 3, ball = YELLOW, gen = 7, guids = { "e0f9e1" } } } },
+  { name = "Ninetails",    level = 5, types = { "Ice" },      moves = { "Aurora Beam", "Extrasensory" },       guids = { "2a9ba9", "e0f9e1" } },
+  { name = "Diglett",      level = 2, types = { "Ground" },   moves = { "Metal Claw", "Sand Attack" },         guids = { "a70b67" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "b91f7c" } } } },
+  { name = "Dugtrio",      level = 4, types = { "Ground" },   moves = { "Iron Head", "Dig" },                  guids = { "f4d5cc", "b91f7c" } },
+  { name = "Meowth",       level = 2, types = { "Dark" },     moves = { "Growl", "Bite" },                     guids = { "8df15f" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "ccd8e9" } } } },
+  { name = "Persian",      level = 4, types = { "Dark" },     moves = { "Feint Attack", "Screech" },           guids = { "3986bc", "ccd8e9" } },
+  { name = "Geodude",      level = 1, types = { "Rock" },     moves = { "Rock Throw", "Charge" },              guids = { "c5d66d" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "01562b" } } } },
+  { name = "Graveler",     level = 7, types = { "Rock" },     moves = { "Thunder Punch", "Self-Destruct" },    guids = { "38fa09", "01562b" },           evoData = { { cost = 2, ball = RED, gen = 7, guids = { "b21424", "7702b6" } } } },
+  { name = "Golem",        level = 6, types = { "Rock" },     moves = { "Stone Edge", "Spark" },               guids = { "6e7cf6", "b21424", "7702b6" } },
+  { name = "Grimer",       level = 4, types = { "Poison" },   moves = { "Disable", "Bite" },                   guids = { "c9ea3a" },                     evoData = { { cost = 1, ball = RED, gen = 7, guids = { "d5d023" } } } },
+  { name = "Muk",          level = 5, types = { "Poison" },   moves = { "Poison Fang", "Crunch" },             guids = { "20e759", "d5d023" } },
+  { name = "Exeggutor",    level = 5, types = { "Grass" },    moves = { "Dragon Hammer", "Seed Bomb" },        guids = { "7ce124" } },
+  { name = "Marowak",      level = 5, types = { "Fire" },     moves = { "Shadow Bone", "Bone Club" },          guids = { "04850a" } },
+}
+
+-- TODO: add gen 7-8
 
 gen8PokemonData =
 {}
 
-genData = { gen1PokemonData, gen2PokemonData, gen3PokemonData, gen4PokemonData, gen5PokemonData, gen6PokemonData }
+gen9PokemonData =
+{}
+
+genData = { gen1PokemonData, gen2PokemonData, gen3PokemonData, gen4PokemonData, gen5PokemonData, gen6PokemonData, gen7PokemonData }
 
 moveData =
 {
+    -- Bug
+    {name="Attack Order",   power=2,      type="Bug",       dice=8, STAB=true   },
+    {name="Bug Bite",       power=2,      type="Bug",       dice=6, STAB=true   },
+    {name="Bug Buzz",       power=2,      type="Bug",       dice=6, aTAB=true,  effects={{name="AttackUp", target="Self", chance=6}} },
+    {name="Defend Order",   power=0,      type="Bug",       dice=6, STAB=false, effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Fell Stinger",   power=1,      type="Bug",       dice=6, STAB=true,  effects={{name="Custom"}} },
+    {name="First Impression",power=2,     type="Bug",       dice=6, STAB=true,  effects={{name="Priority", target="Self"}} },
+    {name="Fury Cutter",    power=1,      type="Bug",       dice=6, STAB=true,  effects={{name="Custom"}} },
+    {name="Infestation",    power=2,      type="Bug",       dice=4, STAB=true,  effects={{name="ExtraDice", target="Self", chance=4}}},
+    {name="Leech Life",     power=2,      type="Bug",       dice=6, STAB=true   },
+    {name="Lunge",          power=3,      type="Bug",       dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy"}}},
+    {name="Megahorn",       power=3,      type="Bug",       dice=6, STAB=true   },
+    {name="Pin Missile",    power=1,      type="Bug",       dice=4, STAB=true,  effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Pollen Puff",    power=3,      type="Bug",       dice=6, STAB=true   },
+    {name="Quiver Dance",   power=0,      type="Bug",       dice=6, STAB=false, effects={{name="Custom"}} },
+    {name="Signal Beam",    power=2,      type="Bug",       dice=6, STAB=true,  effects={{name="Confuse", target="Enemy", chance=6}} },
+    {name="Silver Wind",    power=2,      type="Bug",       dice=6, STAB=true,  effects={{name="AttackUp", target="Self", chance=6},{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Steamroller",    power=2,      type="Bug",       dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="String Shot",    power=0,      type="Bug",       dice=6, STAB=false  },
+    {name="Struggle Bug",   power=2,      type="Bug",       dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy"}}},
+    {name="Tail Glow",      power=0,      type="Bug",       dice=4, STAB=false, effects={{name="AttackUp2", target="Self"}} },
+    {name="Twineedle",      power=1,      type="Bug",       dice=4, STAB=true,  effects={{name="Poison", target="Enemy", chance=5},{name="ExtraDice", target="Self"}} },
+    {name="U-Turn",         power=2,      type="Bug",       dice=6, STAB=true,  effects={{name="Switch", target="Self"}} },
+    {name="X-Scissor",      power=2,      type="Bug",       dice=6, STAB=true   },
 
-  -- Bug
-  { name = "Attack Order",     power = 2,       type = "Bug",    dice = 8, STAB = true },
-  { name = "Bug Bite",         power = 2,       type = "Bug",    dice = 6, STAB = true },
-  { name = "Bug Buzz",         power = 2,       type = "Bug",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Defend Order",     power = 0,       type = "Bug",    dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Fell Stinger",     power = 1,       type = "Bug",    dice = 6, STAB = true,  effects = { { name = "???" } } },
-  { name = "First Impression", power = 2,       type = "Bug",    dice = 6, STAB = true,  effects = { { name = "Priority", target = "Self" } } },
-  { name = "Fury Cutter",      power = 1,       type = "Bug",    dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Heal Order" },
-  { name = "Infestation" },
-  { name = "Leech Life",       power = 2,       type = "Bug",    dice = 6, STAB = true },
-  { name = "Lunge" },
-  { name = "Megahorn",         power = 3,       type = "Bug",    dice = 6, STAB = true },
-  { name = "Pin Missile",      power = 1,       type = "Bug",    dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Pounce" },
-  { name = "Powder" },
-  { name = "Quiver Dance",     power = 0,       type = "Bug",    dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Rage Powder" },
-  { name = "Signal Beam",      power = 2,       type = "Bug",    dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Enemy", chance = 6 } } },
-  { name = "Silk Trap" },
-  { name = "Silver Wind",      power = 2,       type = "Bug",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 }, { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Skitter Smack" },
-  { name = "Spider Web" },
-  { name = "Steamroller",      power = 2,       type = "Bug",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Sticky Web" },
-  { name = "String Shot",      power = 0,       type = "Bug",    dice = 6, STAB = false },
-  { name = "Struggle Bug" },
-  { name = "Tail Glow",        power = 0,       type = "Bug",    dice = 4, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Twineedle",        power = 1,       type = "Bug",    dice = 4, STAB = true,  effects = { { name = "Poison", target = "Enemy", chance = 5 }, { name = "ExtraDice", target = "Self" } } },
-  { name = "U-Turn",           power = 2,       type = "Bug",    dice = 6, STAB = true,  effects = { { name = "Switch", target = "Self" } } },
-  { name = "X-Scissor",        power = 2,       type = "Bug",    dice = 6, STAB = true },
+    -- Dark
+    {name="Assurance",      power=2,      type="Dark",      dice=6, STAB=true,  effects={{name="AttackUp", target="Self", condition="Power"}} },
+    {name="Beat Up",        power="Enemy",type="Dark",      dice=6, STAB=false },
+    {name="Bite",           power=2,      type="Dark",      dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Crunch",         power=2,      type="Dark",      dice=6, STAB=true,  effects={{name="AttackUp", target="Self", chance=6}} },
+    {name="Darkest Lariat", power=3,      type="Dark",      dice=6, STAB=true  },
+    {name="Dark Pulse",     power=2,      type="Dark",      dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Embargo",        power=0,      type="Dark",      dice=6, STAB=false, effects={{name="Custom"}} },
+    {name="Fake Tears",     power=0,      type="Dark",      dice=6, STAB=false, effects={{name="AttackUp2", target="Self"}} },
+    {name="Feint Attack",   power=2,      type="Dark",      dice=6, STAB=true,  effects={{name="AttackUp", target="Self"}} },
+    {name="Foul Play",      power="Enemy",type="Dark",      dice=6, STAB=false  },
+    {name="Hone Claws",     power=0,      type="Dark",      dice=6, STAB=false, effects={{name="AttackUp2", target="Self"}}},
+    {name="Hyperspace Fury",power=3,      type="Dark",      dice=6, STAB=false, effects={{name="AttackUp", target="Self"}} },
+    {name="Knock Off",      power=3,      type="Dark",      dice=6, STAB=true,  effects={{name="Custom"}} },
+    {name="Nasty Plot",     power=0,      type="Dark",      dice=6, STAB=false, effects={{name="AttackUp2", target="Self"}} },
+    {name="Night Slash",    power=2,      type="Dark",      dice=8, STAB=true   },
+    {name="Payback",        power=2,      type="Dark",      dice=6, STAB=true,  effects={{name="Custom"}} },
+    {name="Pursuit",        power=1,      type="Dark",      dice=6, STAB=true,  effects={{name="Custom"}} }, 
+    {name="Punishment",     power=3,      type="Dark",      dice=6, STAB=true,  effects={{name="Custom"}} }, 
+    {name="Sucker Punch",   power=2,      type="Dark",      dice=6, STAB=true,  effects={{name="Priority", target="Self"}}},
+    {name="Taunt",          power=0,      type="Dark",      dice=6, STAB=false, effects={{name="Custom"}} },
+    {name="Torment",        power=0,      type="Dark",      dice=6, STAB=false, effects={{name="Custom"}} },
 
-  -- Dark
-  { name = "Assurance",        power = 2,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", condition = "Power" } } },
-  { name = "Bite",             power = 2,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Crunch",           power = 2,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Dark Pulse",       power = 2,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Embargo",          power = 0,       type = "Dark",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Fake Tears",       power = 0,       type = "Dark",   dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Feint Attack",     power = 2,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Foul Play",        power = "Enemy", type = "Dark",   dice = 6, STAB = false },
-  { name = "Hone Claws",       power = 0,       type = "Dark",   dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Hyperspace Fury",  power = 3,       type = "Dark",   dice = 6, STAB = false, effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Knock Off",        power = 3,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Nasty Plot",       power = 0,       type = "Dark",   dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Night Slash",      power = 2,       type = "Dark",   dice = 8, STAB = true },
-  { name = "Payback",          power = 2,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Pursuit",          power = 1,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Punishment",       power = 3,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Sucker Punch",     power = 2,       type = "Dark",   dice = 6, STAB = true,  effects = { { name = "Priority", target = "Self" } } },
-  { name = "Taunt",            power = 0,       type = "Dark",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Torment",          power = 0,       type = "Dark",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
+    -- Dragon
+    {name="Dragon Claw",    power=3,      type="Dragon",    dice=6, STAB=true   },
+    {name="Dragon Dance",   power=0,      type="Dragon",    dice=6, STAB=true,  effects={{name="AttackUp2", target="Self"}} },
+    {name="Dragon Breath",  power=2,      type="Dragon",    dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=5}} },
+    {name="Dragon Hammer",  power=3,      type="Dragon",    dice=6, STAB=true   },
+    {name="Dragon Pulse",   power=2,      type="Dragon",    dice=6, STAB=true   },
+    {name="Dragon Rage",    power=4,      type="Dragon",    dice=4, STAB=true,  effects={{name="Neutral", target="Self"}} },
+    {name="Dragon Rush",    power=2,      type="Dragon",    dice=4, STAB=true,  effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Dragon Tail",    power=2,      type="Dragon",    dice=6, STAB=true,  effects={{name="Switch", target="Enemy"}} },
+    {name="Dual Chop",      power=1,      type="Dragon",    dice=4, STAB=true,  effects={{name="ExtraDice", target="Self"}} },
+    {name="Clanging Scales",power=4,      type="Dragon",    dice=6, STAB=true,  effects={{name="AttackDown", target="Self"}} },
+    {name="Outrage",        power=4,      type="Dragon",    dice=6, STAB=true,  effects={{name="Confuse", target="Self", chance=5}} },
+    {name="Roar of Time",   power=4,      type="Dragon",    dice=6, STAB=true,  effects={{name="Recharge", target="Self"}} },
+    {name="Spacial Rend",   power=3,      type="Dragon",    dice=8, STAB=true   },
+    {name="Twister",        power=1,      type="Dragon",    dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy", chance=5}} },
 
-  -- Dragon
-  { name = "Dragon Claw",      power = 3,       type = "Dragon", dice = 6, STAB = true },
-  { name = "Dragon Breath",    power = 2,       type = "Dragon", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Dragon Pulse",     power = 2,       type = "Dragon", dice = 6, STAB = true }, { name = "Rage", power = 1, type = "Normal", dice = 6, STAB = true, effects = { { name = "AttackUp", target = "Self", condition = "Power" } } },
-  { name = "Dragon Rage",        power = 4,       type = "Dragon",   dice = 4, STAB = true,  effects = { { name = "Neutral", target = "Self" } } },
-  { name = "Dragon Rush",        power = 2,       type = "Dragon",   dice = 4, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Dual Chop",          power = 1,       type = "Dragon",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self" } } },
-  { name = "Outrage",            power = 4,       type = "Dragon",   dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Self", chance = 5 } } },
-  { name = "Roar of Time",       power = 4,       type = "Dragon",   dice = 6, STAB = true,  effects = { { name = "Recharge", target = "Self" } } },
-  { name = "Spacial Rend",       power = 3,       type = "Dragon",   dice = 8, STAB = true },
-  { name = "Twister",            power = 1,       type = "Dragon",   dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
+    -- Electric
+    {name="Bolt Strike",    power=5,      type="Electric",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=6}} },
+    {name="Charge",         power=0,      type="Electric",  dice=6, STAB=false,  effects={{name="AttackUp", target="Self", chance=3}} },
+    {name="Charge Beam",    power=2,      type="Electric",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self"} } },
+    {name="Discharge",      power=3,      type="Electric",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=5}} },
+    {name="Electroweb",     power=2,      type="Electric",  dice=6, STAB=true},
+    {name="Electro Ball",   power="Self", type="Electric",  dice=6, STAB=false},
+    {name="Fusion Bolt",    power=2,      type="Electric",  dice=6, STAB=false, effects={{name="ExtraDice", target="Self", chance=4}}},
+    {name="Nuzzle",         power=1,      type="Electric",  dice=6, STAB=false, effects={{name="Paralyse", target="Enemy"}}},
+    {name="Plasma Fists",   power=3,      type="Electric",  dice=6, STAB=true,  effects={{name="Custom"}}},
+    {name="Rev. Dance Electric",power=3,  type="Electric",  dice=6, STAB=true},
+    {name="Shock Wave",     power=2,      type="Electric",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self"}} },
+    {name="Spark",          power=2,      type="Electric",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=5}} },
+    {name="Thunderbolt",    power=2,      type="Electric",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=6}} },
+    {name="Thunder",        power=3,      type="Electric",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=5}} },
+    {name="Thunder Fang",   power=2,      type="Electric",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=6},{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Thunder Shock",  power=1,      type="Electric",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=6}} },
+    {name="Thunder Punch",  power=2,      type="Electric",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=6}} },
+    {name="Thunder Wave",   power=0,      type="Electric",  dice=6, STAB=false, effects={{name="Paralyse", target="Enemy"}} },
+    {name="Volt Swtich",    power=3,      type="Electric",  dice=6, STAB=true,  effects={{name="Switch", target="Self"}} },
+    {name="Wild Charge",    power=3,      type="Electric",  dice=6, STAB=false, effects={{name="Paralyse", target="Enemy", chance=5}} },
+    {name="Wildbolt Storm", power=3,      type="Electric",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=5}} },
+    {name="Zap Cannon",     power=3,      type="Electric",  dice=6, STAB=false, effects={{name="Paralyse", target="Enemy", chance=4}} },
+    {name="Zing Zap",       power=3,      type="Electric",  dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy", chance=5}} },
+    
+    -- Fairy
+    {name="Baby-Doll Eyes", power=0,      type="Fairy",     dice=6, STAB=false, effects={{name="AttackDown", target="Enemy"}} },
+    {name="Dazzling Gleam", power=2,      type="Fairy",     dice=6, STAB=true },
+    {name="Disarming Voice",power=1,      type="Fairy",     dice=6, STAB=true,  effects={{name="AttackUp", target="Self"}} },
+    {name="Charm",          power=0,      type="Fairy",     dice=6, STAB=false, effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Fairy Wind",     power=2,      type="Fairy",     dice=6, STAB=true},
+    {name="Fleur Cannon",   power=4,      type="Fairy",     dice=6, STAB=true,  effects={{name="AttackDown", target="Self"}}},
+    {name="Misty Terrain",  power=0,      type="Fairy",     dice=6, STAB=false, effects={{name="Custom"}} },
+    {name="Nature's Madness",power="Enemy",type="Fairy",    dice=6, STAB=false },
+    {name="Moonblast",      power=3,      type="Fairy",     dice=6, STAB=false, effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Play Rough",     power=3,      type="Fairy",     dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Sweet Kiss",     power=0,      type="Fairy",     dice=6, STAB=false, effects={{name="Confuse", target="Enemy", chance=2}} },
+    
+    -- Fighting
+    {name="Aura Sphere",    power=2,      type="Fighting",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self"}} },
+    {name="Arm Thrust",     power=1,      type="Fighting",  dice=4, STAB=true,  effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Bulk Up",        power=0,      type="Fighting",  dice=6, STAB=false, effects={{name="AttackDown", target="Enemy"},{name="AttackUp", target="Self"}} },
+    {name="Brick Break",    power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="Custom"}} },
+    {name="Circle Throw",   power=3,      type="Fighting",  dice=6, STAB=false, effects={{name="Switch", target="Enemy"}} },
+    {name="Counter",        power=0,      type="Fighting",  dice=6, STAB=false, effects={{name="Custom"}} },
+    {name="Close Combat",   power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="AttackDown", target="Self"}} },
+    {name="Cross Chop",     power=2,      type="Fighting",  dice=8, STAB=true},
+    {name="Detect",         power=0,      type="Fighting",  dice=6, STAB=false, effects={{name="Custom"}} },
+    {name="Double Kick",    power=1,      type="Fighting",  dice=4, STAB=true,  effects={{name="ExtraDice", target="Self"}} },
+    {name="Drain Punch",    power=3,      type="Fighting",  dice=4, STAB=true},
+    {name="Dynamic Punch",  power=2,      type="Fighting",  dice=6, STAB=true,  effects={{name="Confuse", target="Enemy", chance=4}} },
+    {name="Flying Press",   power=3,      type="Flying",    dice=6, STAB=true,  effects={{name="Custom"}}},
+    {name="Focus Blast",    power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self", chance=6}} },
+    {name="Focus Punch",    power=3,      type="Fighting",  dice=6, STAB=true},
+    {name="Force Palm",     power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="Paralyse", target="Enemy", chance=5}} },
+    {name="Hammer Arm",     power=3,      type="Fighting",  dice=6, STAB=true},
+    {name="High Jump Kick", power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="KO", target="Self", chance=6}} },
+    {name="Jump Kick",      power=2,      type="Fighting",  dice=6, STAB=true,  effects={{name="KO", target="Self", chance=6}} },
+    {name="Karate Chop",    power=1,      type="Fighting",  dice=8, STAB=true},
+    {name="Low Kick",       power=1,      type="Fighting",  dice=4, STAB=true},
+    {name="Mach Punch",     power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="Priority", target="Self"}} },
+    {name="Revenge",        power=2,      type="Fighting",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self", condition="Power"}} },
+    {name="Rock Smash",     power=2,      type="Fighting",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self", chance=5}} },
+    {name="Sacred Sword",   power=3,      type="Fighting",  dice=6, STAB=false, effects={{name="Custom"}} },
+    {name="Secret Sword",   power=3,      type="Fighting",  dice=6, STAB=false},
+    {name="Seismic Toss",   power="Self", type="Fighting",  dice=6, STAB=false, effects={{name="Neutral", target="Self"}}},
+    {name="Sky Uppercut",   power=3,      type="Fighting",  dice=6, STAB=true},
+    {name="Storm Throw",    power=3,      type="Fighting",  dice=8, STAB=true},
+    {name="Submission",     power=2,      type="Fighting",  dice=6, STAB=true,  effects={{name="KO", target="Self", chance=6}} },
+    {name="Superpower",     power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="Custom"}} },
+    {name="Triple Kick",    power=1,      type="Fighting",  dice=4, STAB=false, effects={{name="ExtraDice", target="Self", chance=2},{name="ExtraDice", target="Self", chance=2}} },
+    {name="Vital Throw",    power=2,      type="Fighting",  dice=6, STAB=true},
+    {name="Wake-up Slap",   power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="Custom"}} },
 
-  -- Electric
-  { name = "Bolt Strike",        power = 5,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 6 } } },
-  { name = "Charge Beam",        power = 2,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 3 } } },
-  { name = "Discharge",          power = 3,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Electroweb",         power = 2,       type = "Electric", dice = 6, STAB = true },
-  { name = "Electro Ball",       power = "Self",  type = "Electric", dice = 6, STAB = false },
-  { name = "Fusion Bolt",        power = 2,       type = "Electric", dice = 6, STAB = false, effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Nuzzle",             power = 1,       type = "Electric", dice = 6, STAB = false, effects = { { name = "Paralyse", target = "Enemy" } } },
-  { name = "Shock Wave",         power = 2,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Spark",              power = 2,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Thunderbolt",        power = 2,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 6 } } },
-  { name = "Thunder",            power = 3,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Thunder Fang",       power = 2,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 6 }, { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Thunder Shock",      power = 1,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 6 } } },
-  { name = "Thunder Punch",      power = 2,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 6 } } },
-  { name = "Thunder Wave",       power = 0,       type = "Electric", dice = 6, STAB = false, effects = { { name = "Paralyse", target = "Enemy" } } },
-  { name = "Volt Swtich",        power = 3,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Switch", target = "Self" } } },
-  { name = "Wild Charge",        power = 3,       type = "Electric", dice = 6, STAB = false, effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Wildbolt Storm",     power = 3,       type = "Electric", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Zap Cannon",         power = 3,       type = "Electric", dice = 6, STAB = false, effects = { { name = "Paralyse", target = "Enemy", chance = 4 } } },
+    -- Fire
+    {name="Blaze Kick",     power=3,      type="Fire",    dice=8, STAB=true,    effects={{name="Burn", target="Enemy", chance=6}} },
+    {name="Blue Flare",     power=4,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=5}} },
+    {name="Ember",          power=1,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=6}} },
+    {name="Eruption",       power=4,      type="Fire",    dice=6, STAB=true},
+    {name="Fiery Dance",    power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=4}} },
+    {name="Fire Fang",      power=2,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=6},{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Fire Blast",     power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=6}} },
+    {name="Fire Lash",      power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="AttackUp", target="Self"}} },
+    {name="Fire Punch",     power=2,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=6}} },
+    {name="Fire Spin",      power=1,      type="Fire",    dice=6, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Flame Wheel",    power=2,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=6}} },
+    {name="Flame Burst",    power=3,      type="Fire",    dice=6, STAB=true},
+    {name="Flamethrower",   power=2,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=6}} },
+    {name="Flare Blitz",    power=4,      type="Fire",    dice=6, STAB=true,    effects={{name="KO", target="Self", chance=6},{name="Burn", target="Enemy", chance=6}} },
+    {name="Fusion Flare",   power=2,      type="Fire",    dice=6, STAB=false,   effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Heat Crash",     power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="Custom", chance=4}} },
+    {name="Incinerate",     power=2,      type="Fire",    dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Inferno",        power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=4}} },
+    {name="Lava Plume",     power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=5}} },
+    {name="Magma Storm",    power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Mind Blown",     power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="KO", target="Self", chance=6}} },
+    {name="Mystical Fire",  power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="AttackDown"}} },
+    {name="Overheat",       power=4,      type="Fire",    dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Rev. Dance Fire",power=3,      type="Fire",    dice=6, STAB=true},
+    {name="Sacred Fire",    power=2,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=4}} },
+    {name="Searing Shot",   power=3,      type="Fire",    dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=5}} },
+    {name="Weather Ball Fire",power=3,    type="Fire",    dice=6, STAB=true},
+    {name="Will-O-Wisp",    power=0,      type="Fire",    dice=6, STAB=false,   effects={{name="Burn", target="Enemy", chance=2}} },
+    {name="Flame Charge",   power=2,      type="Fire",    dice=6, STAB=true,    effects={{name="Priority", target="Self"}}},
 
-  -- Fairy
-  { name = "Baby-Doll Eyes",     power = 0,       type = "Fairy",    dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Disarming Voice",    power = 1,       type = "Fairy",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Charm",              power = 0,       type = "Fairy",    dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Fairy Wind",         power = 2,       type = "Fairy",    dice = 6, STAB = true },
-  { name = "Misty Terrain",      power = 0,       type = "Fairy",    dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Moonblast",          power = 3,       type = "Fairy",    dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Play Rough",         power = 3,       type = "Fairy",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Sweet Kiss",         power = 0,       type = "Fairy",    dice = 6, STAB = false, effects = { { name = "Confuse", target = "Enemy", chance = 2 } } },
+    -- Flying
+    {name="Aerial Ace",     power=3,      type="Flying",  dice=6, STAB=true,    effects={{name="AttackUp", target="Self"}} },
+    {name="Air Cutter",     power=2,      type="Flying",  dice=8, STAB=true},
+    {name="Air Slash",      power=3,      type="Flying",  dice=8, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Aeroblast",      power=3,      type="Flying",  dice=8, STAB=true,    effects={{name="AttackUp", target="Self"}} },
+    {name="Beak Blast",     power=4,      type="Flying",  dice=6, STAB=true,    effects={{name="Burn", target="Enemy", chance=4}} },
+    {name="Bleakwind Storm",power=4,      type="Flying",  dice=6, STAB=true,    effects={{name="Freeze", target="Enemy", chance=5}} },
+    {name="Bounce",         power=2,      type="Flying",  dice=6, STAB=true,    effects={{name="Paralyse", target="Enemy", chance=5}}},
+    {name="Brave Bird",     power=4,      type="Flying",  dice=6, STAB=true,    effects={{name="KO", target="Self"}} },
+    {name="Chatter",        power=2,      type="Flying",  dice=6, STAB=true,    effects={{name="Confuse", target="Enemy", chance=6}} },
+    {name="Drill Peck",     power=3,      type="Flying",  dice=6, STAB=true},
+    {name="Gust",           power=1,      type="Flying",  dice=6, STAB=true},
+    {name="Fly",            power=3,      type="Flying",  dice=6, STAB=true},
+    {name="Feather Dance",  power=0,      type="Flying",  dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Hurricane",      power=4,      type="Flying",  dice=6, STAB=true,    effects={{name="Confuse", target="Enemy", chance=5}} },
+    {name="Mirror Move",    power=0,      type="Flying",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Oblivion Wing",  power=3,      type="Flying",  dice=6, STAB=false},
+    {name="Peck",           power=1,      type="Flying",  dice=6, STAB=true},
+    {name="Sky Attack",     power=1,      type="Flying",  dice=8, STAB=true,    effects={{name="Recharge", target="Self"},{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Sunny Day",      power=0,      type="Flying",  dice=8, STAB=true,    effects={{name="Custom"}} },
+    {name="Wing Attack",    power=2,      type="Flying",  dice=6, STAB=true},
 
-  -- Fighting
-  { name = "Aura Sphere",        power = 2,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Arm Thrust",         power = 1,       type = "Fighting", dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Bulk Up",            power = 0,       type = "Fighting", dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" }, { name = "AttackUp", target = "Self" } } },
-  { name = "Brick Break",        power = 3,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Circle Throw",       power = 3,       type = "Fighting", dice = 6, STAB = false, effects = { { name = "Switch", target = "Enemy" } } },
-  { name = "Counter",            power = 0,       type = "Fighting", dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Close Combat",       power = 3,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Self" } } },
-  { name = "Cross Chop",         power = 2,       type = "Fighting", dice = 8, STAB = true },
-  { name = "Detect",             power = 0,       type = "Fighting", dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Double Kick",        power = 1,       type = "Fighting", dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self" } } },
-  { name = "Drain Punch",        power = 3,       type = "Fighting", dice = 4, STAB = true },
-  { name = "Dynamic Punch",      power = 2,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Enemy", chance = 4 } } },
-  { name = "Flying Press",       power = 3,       type = "Flying",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Focus Blast",        power = 3,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Focus Punch",        power = 3,       type = "Fighting", dice = 6, STAB = true },
-  { name = "Force Palm",         power = 3,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Hammer Arm",         power = 3,       type = "Fighting", dice = 6, STAB = true },
-  { name = "High Jump Kick",     power = 3,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 } } },
-  { name = "Jump Kick",          power = 2,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 } } },
-  { name = "Karate Chop",        power = 1,       type = "Fighting", dice = 8, STAB = true },
-  { name = "Low Kick",           power = 1,       type = "Fighting", dice = 4, STAB = true },
-  { name = "Mach Punch",         power = 3,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "Priority", target = "Self" } } },
-  { name = "Revenge",            power = 2,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", condition = "Power" } } },
-  { name = "Sacred Sword",       power = 3,       type = "Fighting", dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Secret Sword",       power = 3,       type = "Fighting", dice = 6, STAB = false },
-  { name = "Seismic Toss",       power = "Self",  type = "Fighting", dice = 6, STAB = false, effects = { { name = "Neutral", target = "Self" } } },
-  { name = "Sky Uppercut",       power = 3,       type = "Fighting", dice = 6, STAB = true },
-  { name = "Storm Throw",        power = 3,       type = "Fighting", dice = 8, STAB = true },
-  { name = "Submission",         power = 2,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 } } },
-  { name = "Superpower",         power = 3,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Triple Kick",        power = 1,       type = "Fighting", dice = 4, STAB = false, effects = { { name = "ExtraDice", target = "Self", chance = 2 }, { name = "ExtraDice", target = "Self", chance = 2 } } },
-  { name = "Vital Throw",        power = 2,       type = "Fighting", dice = 6, STAB = true },
-  { name = "Wake-up Slap",       power = 3,       type = "Fighting", dice = 6, STAB = true,  effects = { { name = "Custom" } } },
+    -- Ghost
+    {name="Astonish",       power=1,      type="Ghost",   dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Confuse Ray",    power=0,      type="Ghost",   dice=6, STAB=false,   effects={{name="Confuse", target="Enemy"}} },
+    {name="Curse",          power=0,      type="Ghost",   dice=6, STAB=false,   effects={{name="KO", target="Self", chance=4},{name="Curse", target="Enemy"}} },
+    {name="Hex",            power=2,      type="Ghost",   dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Lick",           power=1,      type="Ghost",   dice=6, STAB=true,    effects={{name="Paralyse", target="Enemy", chance=5}} },
+    {name="Moongeist Beam", power=3,      type="Ghost",   dice=6, STAB=false},
+    {name="Night Shade",    power="Self", type="Ghost",   dice=6, STAB=false},
+    {name="Ominous Wind",   power=3,      type="Ghost",   dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=6},{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Phantom Force",  power=3,      type="Ghost",   dice=6, STAB=true},
+    {name="Rev. Dance Ghost",power=3,     type="Ghost",   dice=6, STAB=true},
+    {name="Shadow Ball",    power=3,      type="Ghost",   dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=6}}},
+    {name="Shadow Bone",    power=2,      type="Ghost",   dice=6, STAB=true},
+    {name="Shadow Claw",    power=2,      type="Ghost",   dice=8, STAB=true},
+    {name="Shadow Force",   power=4,      type="Ghost",   dice=6, STAB=true,    effects={{name="Recharge", target="Self"}} },
+    {name="Shadow Punch",   power=3,      type="Ghost",   dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=5}} },
+    {name="Shadow Sneak",   power=2,      type="Ghost",   dice=6, STAB=true,    effects={{name="Priority", target="Self"}} },
+    {name="Spectral Thief", power=3,      type="Ghost",   dice=6, STAB=true,    effects={{name="Custom"}}},
+    {name="Spirit Shackle", power=3,      type="Ghost",   dice=6, STAB=true,    effects={{name="Custom"}}},
 
-  -- Fire
-  { name = "Blaze Kick",         power = 3,       type = "Fire",     dice = 8, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 6 } } },
-  { name = "Blue Flare",         power = 4,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 5 } } },
-  { name = "Ember",              power = 1,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 6 } } },
-  { name = "Eruption",           power = 4,       type = "Fire",     dice = 6, STAB = true },
-  { name = "Fiery Dance",        power = 3,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 4 } } },
-  { name = "Fire Fang",          power = 2,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 6 }, { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Fire Blast",         power = 3,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 6 } } },
-  { name = "Fire Lash",          power = 3,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Fire Punch",         power = 2,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 6 } } },
-  { name = "Fire Spin",          power = 1,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Flame Wheel",        power = 2,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 6 } } },
-  { name = "Flame Burst",        power = 3,       type = "Fire",     dice = 6, STAB = true },
-  { name = "Flamethrower",       power = 2,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 6 } } },
-  { name = "Flare Blitz",        power = 4,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 }, { name = "Burn", target = "Enemy", chance = 6 } } },
-  { name = "Fusion Flare",       power = 2,       type = "Fire",     dice = 6, STAB = false, effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Heat Crash",         power = 3,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Custom", chance = 4 } } },
-  { name = "Incinerate",         power = 2,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Inferno",            power = 3,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 4 } } },
-  { name = "Lava Plume",         power = 3,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 5 } } },
-  { name = "Magma Storm",        power = 3,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Mystical Fire",      power = 3,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "AttackDown" } } },
-  { name = "Overheat",           power = 4,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Sacred Fire",        power = 2,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 4 } } },
-  { name = "Searing Shot",       power = 3,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 5 } } },
-  { name = "Weather Ball Fire",  power = 3,       type = "Fire",     dice = 6, STAB = true },
-  { name = "Will-O-Wisp",        power = 0,       type = "Fire",     dice = 6, STAB = false, effects = { { name = "Burn", target = "Enemy", chance = 2 } } },
-  { name = "Flame Charge",       power = 2,       type = "Fire",     dice = 6, STAB = true,  effects = { { name = "Priority", target = "Self" } } },
+    -- Grass
+    {name="Absorb",         power=1,      type="Grass",   dice=6, STAB=true},
+    {name="Aromatherapy",   power=0,      type="Grass",   dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Bullet Seed",    power=1,      type="Grass",   dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Cotton Guard",   power=0,      type="Grass",   dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Cotton Spore",   power=0,      type="Grass",   dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Grass Knot",     power=2,      type="Grass",   dice=6, STAB=true},
+    {name="Grass Whistle",  power=2,      type="Grass",   dice=6, STAB=true},
+    {name="Giga Drain",     power=3,      type="Grass",   dice=6, STAB=true},
+    {name="Horn Leech",     power=4,      type="Grass",   dice=6, STAB=true},
+    {name="Leafage",        power=2,      type="Grass",   dice=8, STAB=true},
+    {name="Leaf Blade",     power=3,      type="Grass",   dice=8, STAB=true},
+    {name="Leaf Storm",     power=4,      type="Grass",   dice=4, STAB=true,    effects={{name="AttackDown", target="Self"}} },
+    {name="Leaf Tornado",   power=3,      type="Grass",   dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=4}}},
+    {name="Magical Leaf",   power=3,      type="Grass",   dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=5}} },
+    {name="Mega Drain",     power=2,      type="Grass",   dice=6, STAB=true},
+    {name="Needle Arm",     power=3,      type="Grass",   dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Petal Blizzard", power=3,      type="Grass",   dice=6, STAB=true},
+    {name="Petal Dance",    power=3,      type="Grass",   dice=6, STAB=true,    effects={{name="Confuse", target="Self", chance=5}} },
+    {name="Power Whip",     power=3,      type="Grass",   dice=6, STAB=true},
+    {name="Razor Leaf",     power=2,      type="Grass",   dice=8, STAB=true},
+    {name="Seed Bomb",      power=3,      type="Grass",   dice=6, STAB=true},
+    {name="Seed Flare",     power=3,      type="Grass",   dice=6, STAB=true,    effects={{name="AttackUp2", target="Self", chance=4}} },
+    {name="Sleep Powder",   power=0,      type="Grass",   dice=6, STAB=false,   effects={{name="Sleep", target="Enemy", chance=3}} },
+    {name="Solar Beam",     power=3,      type="Grass",   dice=6, STAB=true,    effects={{name="Recharge", target="Self"}} },
+    {name="Spiky Shield",   power=1,      type="Grass",   dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Spore",          power=0,      type="Grass",   dice=6, STAB=false,   effects={{name="Sleep", target="Enemy"}} },
+    {name="Stun Spore",     power=0,      type="Grass",   dice=6, STAB=false,   effects={{name="Paralyse", target="Enemy", chance=3}} },
+    {name="Trop Kick",      power=3,      type="Grass",   dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy"}}},
+    {name="Vine Whip",      power=1,      type="Grass",   dice=6, STAB=true},
+    {name="Wood Hammer",    power=4,      type="Grass",   dice=6, STAB=true,    effects={{name="KO", target="Self", chance=6}} },
+    
+    -- Ground
+    {name="Bone Club",      power=2,      type="Ground",  dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Bone Rush",      power=1,      type="Ground",  dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Bonemerang",     power=2,      type="Ground",  dice=4, STAB=true,    effects={{name="ExtraDice", target="Self"}} },
+    {name="Bulldoze",       power=3,      type="Ground",  dice=6, STAB=true},
+    {name="Dig",            power=2,      type="Ground",  dice=6, STAB=true},
+    {name="Drill Run",      power=3,      type="Ground",  dice=8, STAB=true},
+    {name="Earth Power",    power=3,      type="Ground",  dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=6}} },
+    {name="Earthquake",     power=2,      type="Ground",  dice=6, STAB=true},
+    {name="Fissure",        power=0,      type="Ground",  dice=6, STAB=false,   effects={{name="KO", chance=5, target="Enemy"}} },
+    {name="H. Horsepower",  power=3,      type="Ground",  dice=6, STAB=true},
+    {name="Land's Wrath",   power=3,      type="Ground",  dice=6, STAB=false},
+    {name="Magnitude",      power=2,      type="Ground",  dice=6, STAB=false,   effects={{name="D4Dice", target="Self", chance=3},{name="ExtraDice", target="Self", chance="6"}}},
+    {name="Mud Bomb",       power=3,      type="Ground",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Mud Shot",       power=2,      type="Ground",  dice=6, STAB=false},
+    {name="Mud-Slap",       power=1,      type="Ground",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy"}} },
+    {name="Sand Attack",    power=0,      type="Ground",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy"}} },
+    {name="Sand Tomb",      power=1,      type="Ground",  dice=6, STAB=false,   effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Sandsear Storm", power=3,      type="Ground",  dice=6, STAB=false,   effects={{name="Burn", target="Enemy", chance=5}} },
+    {name="Spikes",         power=0,      type="Ground",  dice=6, STAB=false,   effects={{name="Custom"}} },
 
-  -- Flying
-  { name = "Aerial Ace",         power = 3,       type = "Flying",   dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Air Cutter",         power = 2,       type = "Flying",   dice = 8, STAB = true },
-  { name = "Air Slash",          power = 3,       type = "Flying",   dice = 8, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Aeroblast",          power = 3,       type = "Flying",   dice = 8, STAB = true,  effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Bleakwind Storm",    power = 4,       type = "Flying",   dice = 6, STAB = true,  effects = { { name = "Freeze", target = "Enemy", chance = 5 } } },
-  { name = "Bounce",             power = 2,       type = "Flying",   dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Brave Bird",         power = 4,       type = "Flying",   dice = 6, STAB = true,  effects = { { name = "KO", target = "Self" } } },
-  { name = "Chatter",            power = 2,       type = "Flying",   dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Enemy", chance = 6 } } },
-  { name = "Drill Peck",         power = 3,       type = "Flying",   dice = 6, STAB = true },
-  { name = "Gust",               power = 1,       type = "Flying",   dice = 6, STAB = true },
-  { name = "Fly",                power = 3,       type = "Flying",   dice = 6, STAB = true },
-  { name = "Feather Dance",      power = 0,       type = "Flying",   dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Hurricane",          power = 4,       type = "Flying",   dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Enemy", chance = 5 } } },
-  { name = "Mirror Move",        power = 0,       type = "Flying",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Oblivion Wing",      power = 3,       type = "Flying",   dice = 6, STAB = false },
-  { name = "Peck",               power = 1,       type = "Flying",   dice = 6, STAB = true },
-  { name = "Sky Attack",         power = 1,       type = "Flying",   dice = 8, STAB = true,  effects = { { name = "Recharge", target = "Self" }, { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Sunny Day",          power = 0,       type = "Flying",   dice = 8, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Wing Attack",        power = 2,       type = "Flying",   dice = 6, STAB = true },
+    -- Ice
+    {name="Aurora Beam",    power=2,      type="Ice",     dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Avalanche",      power=3,      type="Ice",     dice=6, STAB=true},
+    {name="Blizzard",       power=3,      type="Ice",     dice=6, STAB=true,    effects={{name="Freeze", target="Enemy", chance=6}} },
+    {name="Freeze-Dry",     power=3,      type="Ice",     dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Glaciate",       power=3,      type="Ice",     dice=6, STAB=true},
+    {name="Hail",           power=0,      type="Ice",     dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Ice Beam",       power=2,      type="Ice",     dice=6, STAB=true,    effects={{name="Freeze", target="Enemy", chance=6}} },
+    {name="Ice Fang",       power=2,      type="Ice",     dice=6, STAB=true,    effects={{name="Freeze", target="Enemy", chance=6},{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Ice Hammer",     power=3,      type="Ice",     dice=6, STAB=true},
+    {name="Ice Punch",      power=3,      type="Ice",     dice=6, STAB=true,    effects={{name="Freeze", target="Enemy", chance=6}} },
+    {name="Icicle Crash",   power=3,      type="Ice",     dice=4, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Icicle Spear",   power=1,      type="Ice",     dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Icy Wind",       power=2,      type="Ice",     dice=6, STAB=true},
+    {name="Mist",           power=0,      type="Ice",     dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Powder Snow",    power=1,      type="Ice",     dice=6, STAB=true,    effects={{name="Freeze", target="Enemy", chance=6}} },
+    {name="Sheer Cold",     power=0,      type="Ice",     dice=6, STAB=true,    effects={{name="KO", target="Enemy", chance=5}} },
+    {name="Weather Ball Ice",power=3,     type="Ice",     dice=6, STAB=true},
 
-  -- Ghost
-  { name = "Astonish",           power = 1,       type = "Ghost",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Confuse Ray",        power = 0,       type = "Ghost",    dice = 6, STAB = false, effects = { { name = "Confuse", target = "Enemy" } } },
-  { name = "Curse",              power = 0,       type = "Ghost",    dice = 6, STAB = false, effects = { { name = "KO", target = "Self", chance = 4 }, { name = "Curse", target = "Enemy" } } },
-  { name = "Hex",                power = 2,       type = "Ghost",    dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Lick",               power = 1,       type = "Ghost",    dice = 6, STAB = true,  effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Night Shade",        power = "Self",  type = "Ghost",    dice = 6, STAB = false },
-  { name = "Ominous Wind",       power = 3,       type = "Ghost",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 }, { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Phantom Force",      power = 3,       type = "Ghost",    dice = 6, STAB = true },
-  { name = "Shadow Ball",        power = 2,       type = "Ghost",    dice = 6, STAB = true },
-  { name = "Shadow Claw",        power = 2,       type = "Ghost",    dice = 8, STAB = true },
-  { name = "Shadow Force",       power = 4,       type = "Ghost",    dice = 6, STAB = true,  effects = { { name = "Recharge", target = "Self" } } },
-  { name = "Shadow Punch",       power = 3,       type = "Ghost",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 5 } } },
-  { name = "Shadow Sneak",       power = 2,       type = "Ghost",    dice = 6, STAB = true,  effects = { { name = "Priority", target = "Self" } } },
+    -- Normal
+    {name="Attract",        power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy"}} },
+    {name="Barrage",        power=1,      type="Normal",  dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Body Slam",      power=2,      type="Normal",  dice=6, STAB=false,   effects={{name="Paralyse", target="Enemy", chance=5}} },
+    {name="Bind",           power=1,      type="Normal",  dice=6, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Camouflage",     power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Chip Away",      power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Priority", target="Self"}} },
+    {name="Comet Punch",    power=1,      type="Normal",  dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Constrict",      power=1,      type="Normal",  dice=6, STAB=false},
+    {name="Conversion",     power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Conversion2",    power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Covet",          power=3,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Crush Claw",     power=3,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackUp", target="Self", chance=4}} },
+    {name="Defense Curl",   power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy"}} },
+    {name="Disable",        power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Dizzy Punch",    power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Confuse", target="Enemy", chance=5}} },
+    {name="Double-Edge",    power=3,      type="Normal",  dice=6, STAB=true,    effects={{name="KO", target="Self", chance=6}} },
+    {name="Double Hit",     power=1,      type="Normal",  dice=4, STAB=true,    effects={{name="ExtraDice", target="Self"}} },
+    {name="Double Slap",    power=1,      type="Normal",  dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Double Team",    power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy"}} },
+    {name="Echoed Voice",   power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}}},
+    {name="Egg Bomb",       power=2,      type="Normal",  dice=6, STAB=true},
+    {name="Encore",         power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Explosion",      power=5,      type="Normal",  dice=6, STAB=true,    effects={{name="KO", target="Self"}} },
+    {name="Extreme Speed",  power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Priority", target="Self"}} },
+    {name="Facade",         power=3,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Fake Out",       power=1,      type="Normal",  dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy"}} },
+    {name="False Swipe",    power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Focus Energy",   power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Fury Attack",    power=1,      type="Normal",  dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Fury Swipes",    power=1,      type="Normal",  dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Giga Impact",    power=3,      type="Normal",  dice=6, STAB=true,    effects={{name="Recharge", target="Self"}} },
+    {name="Glare",          power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Paralyse", target="Enemy"}} },
+    {name="Growl",          power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Growth",         power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackUp2", target="Self"}} },
+    {name="Guillotine",     power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="KO", target="Enemy", chance=5}} },
+    {name="Harden",         power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy"}} },
+    {name="Head Charge",    power=4,      type="Normal",  dice=6, STAB=true,    effects={{name="KO", target="Self", chance=6}} },
+    {name="Headbutt",       power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Heal Bell",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Hidden Power",   power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Horn Attack",    power=2,      type="Normal",  dice=6, STAB=true},
+    {name="Horn Drill",     power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="KO", target="Enemy", chance=5}} },
+    {name="Howl",           power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackUp", target="Self"}} },
+    {name="Hyper Beam",     power=3,      type="Normal",  dice=6, STAB=true,    effects={{name="Recharge", target="Self"}} },
+    {name="Hyper Fang",     power=2,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Hyper Voice",    power=2,      type="Normal",  dice=6, STAB=false},
+    {name="Judgement",      power=3,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Leer",           power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackUp", target="Self"}} },
+    {name="Lovely Kiss",    power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Sleep", target="Enemy", chance=3}} },
+    {name="Mean Look",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Me First",       power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Mega Kick",      power=3,      type="Normal",  dice=6, STAB=true},
+    {name="Mega Punch",     power=2,      type="Normal",  dice=6, STAB=true},
+    {name="Metronome",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Mimic",          power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Minimize",       power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy"}} },
+    {name="Multi-Attack",   power=4,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Nature Power",   power=0,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Noble Roar",     power=0,      type="Normal",  dice=6, STAB=true,    effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Odor Sleuth",    power=0,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Pay Day",        power=1,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom", chance=6}} },
+    {name="Perish Song",    power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Play Nice",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy"}} },
+    {name="Pound",          power=1,      type="Normal",  dice=6, STAB=true},
+    {name="Present",        power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Extra Dice", target="Self", chance=6}} },
+    {name="Protect",        power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Quick Attack",   power=1,      type="Normal",  dice=6, STAB=true,    effects={{name="Priority", target="Self"}} },
+    {name="Rage",           power=1,      type="Normal",  dice=6, STAB=true,    effects={{name="AttackUp", target="Self", condition="Power"}} },
+    {name="Relic Song",     power=3,      type="Normal",  dice=6, STAB=true,    effects={{name="Sleep", target="Enemy", chance=6}} },
+    {name="Rapid Spin",     power=1,      type="Normal",  dice=6, STAB=true},
+    {name="Retaliate",      power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Roar",           power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Switch", target="Enemy"}} },
+    {name="Razor Wind",     power=2,      type="Normal",  dice=8, STAB=true,    effects={{name="Recharge", target="Self"}} },
+    {name="Safeguard",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Self-Destruct",  power=4,      type="Normal",  dice=6, STAB=true,    effects={{name="KO", target="Self"}} },
+    {name="Scratch",        power=1,      type="Normal",  dice=6, STAB=true},
+    {name="Screech",        power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackUp2", target="Self"}} },
+    {name="Sharpen",        power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackUp", target="Self"}} },
+    {name="Shell Smash",    power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackUp2", target="Self"},{name="Custom"}} },
+    {name="Sing",           power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Sleep", target="Enemy", chance=4}} },
+    {name="Sketch",         power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Skull Bash",     power=3,      type="Normal",  dice=6, STAB=true,    effects={{name="Recharge", target="Self"}} },
+    {name="Slam",           power=2,      type="Normal",  dice=6, STAB=true},
+    {name="Slash",          power=2,      type="Normal",  dice=8, STAB=true},
+    {name="Smelling Salts", power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Smokescreen",    power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy"}} },
+    {name="Sonic Boom",     power=2,      type="Normal",  dice=4, STAB=false,   effects={{name="Neutral", target="Self"}} },
+    {name="Spike Cannon",   power=1,      type="Normal",  dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Splash",         power=0,      type="Normal",  dice=6, STAB=false},
+    {name="Stomp",          power=2,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Super Fang",     power="Enemy",type="Normal",  dice=6, STAB=false},
+    {name="Supersonic",     power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Confuse", target="Enemy", chance=4}} },
+    {name="Swagger",        power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Confuse", target="Enemy"}} },
+    {name="Swift",          power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="AttackUp", target="Self"}} },
+    {name="Swords Dance",   power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackUp2", target="Self"}} },
+    {name="Tackle",         power=1,      type="Normal",  dice=6, STAB=true},
+    {name="Tail Slap",      power=2,      type="Normal",  dice=4, STAB=false,   effects={{name="ExtraDice", target="Self"}} },
+    {name="Tail Whip",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackUp", target="Self"}} },
+    {name="Take Down",      power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="KO", target="Self", chance=6}} },
+    {name="Techno Blast",   power=3,      type="Normal",  dice=6, STAB=true,    effects={{name="Confuse", target="Enemy"}} },
+    {name="Teeter Dance",   power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Confuse", target="Enemy"}} },
+    {name="Thrash",         power=3,      type="Normal",  dice=6, STAB=true,    effects={{name="Confuse", target="Self", chance=5}} },
+    {name="Transform",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Tri Attack",     power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom", chance=5}} },
+    {name="Trump Card",     power=1,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Uproar",         power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Vise Grip",      power=2,      type="Normal",  dice=6, STAB=true},
+    {name="Whirlwind",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="Switch", target="Enemy"}} },
+    {name="Work Up",        power=0,      type="Normal",  dice=6, STAB=true,    effects={{name="AttackUp2", target="Self"}}},
+    {name="Wrap",           power=1,      type="Normal",  dice=6, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Wring Out",      power="Enemy",type="Normal",  dice=6, STAB=true},
+    {name="Yawn",           power=0,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
 
-  -- Grass
-  { name = "Absorb",             power = 1,       type = "Grass",    dice = 6, STAB = true },
-  { name = "Aromatherapy",       power = 0,       type = "Grass",    dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Bullet Seed",        power = 1,       type = "Grass",    dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Cotton Guard",       power = 0,       type = "Grass",    dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Cotton Spore",       power = 0,       type = "Grass",    dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Giga Drain",         power = 3,       type = "Grass",    dice = 6, STAB = true },
-  { name = "Horn Leech",         power = 4,       type = "Grass",    dice = 6, STAB = true },
-  { name = "Leaf Blade",         power = 3,       type = "Grass",    dice = 8, STAB = true },
-  { name = "Leaf Storm",         power = 4,       type = "Grass",    dice = 4, STAB = true,  effects = { { name = "AttackDown", target = "Self" } } },
-  { name = "Magical Leaf",       power = 3,       type = "Grass",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 5 } } },
-  { name = "Mega Drain",         power = 2,       type = "Grass",    dice = 6, STAB = true },
-  { name = "Needle Arm",         power = 3,       type = "Grass",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Petal Dance",        power = 3,       type = "Grass",    dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Self", chance = 5 } } },
-  { name = "Power Whip",         power = 3,       type = "Grass",    dice = 6, STAB = true },
-  { name = "Razor Leaf",         power = 2,       type = "Grass",    dice = 8, STAB = true },
-  { name = "Seed Bomb",          power = 3,       type = "Grass",    dice = 6, STAB = true },
-  { name = "Seed Flare",         power = 3,       type = "Grass",    dice = 6, STAB = true,  effects = { { name = "AttackUp2", target = "Self", chance = 4 } } },
-  { name = "Sleep Powder",       power = 0,       type = "Grass",    dice = 6, STAB = false, effects = { { name = "Sleep", target = "Enemy", chance = 3 } } },
-  { name = "Solar Beam",         power = 3,       type = "Grass",    dice = 6, STAB = true,  effects = { { name = "Recharge", target = "Self" } } },
-  { name = "Spiky Shield",       power = 1,       type = "Grass",    dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Spore",              power = 0,       type = "Grass",    dice = 6, STAB = false, effects = { { name = "Sleep", target = "Enemy" } } },
-  { name = "Stun Spore",         power = 0,       type = "Grass",    dice = 6, STAB = false, effects = { { name = "Paralyse", target = "Enemy", chance = 3 } } },
-  { name = "Vine Whip",          power = 1,       type = "Grass",    dice = 6, STAB = true },
-  { name = "Wood Hammer",        power = 4,       type = "Grass",    dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 } } },
-  { name = "Leaf Tornado",       power = 3,       type = "Grass",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 4 } } },
+    -- Poison
+    {name="Acid",           power=1,      type="Poison",  dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=6}} },
+    {name="Acid Armor",     power=0,      type="Poison",  dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Acid Spray",     power=2,      type="Poison",  dice=6, STAB=true,    effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Bane. Bunker",   power=0,      type="Poison",  dice=6, STAB=false,   effects={{name="Custom"},{name="Poison", target="Enemy", chance=4}} },
+    {name="Clear Smog",     power=3,      type="Poison",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Cross Poison",   power=3,      type="Poison",  dice=6, STAB=true},
+    {name="Coil",           power=0,      type="Poison",  dice=6, STAB=true,    effects={{name="AttackUp", target="Self"},{name="AttackDown", target="Enemy"}} },
+    {name="Poison Fang",    power=2,      type="Poison",  dice=8, STAB=true,    effects={{name="Poison", target="Enemy", chance=4}} },
+    {name="Poison Gas",     power=0,      type="Poison",  dice=6, STAB=false,   effects={{name="Poison", target="Enemy", chance=2}} },
+    {name="Poison Jab",     power=3,      type="Poison",  dice=6, STAB=true,    effects={{name="Poison", target="Enemy", chance=5}} },
+    {name="Poison Powder",  power=0,      type="Poison",  dice=6, STAB=false,   effects={{name="Poison", target="Enemy", chance=3}} },
+    {name="Poison Sting",   power=1,      type="Poison",  dice=6, STAB=true,    effects={{name="Poison", target="Enemy", chance=5}} },
+    {name="Poison Tail",    power=2,      type="Poison",  dice=8, STAB=true,    effects={{name="Poison", target="Enemy", chance=6}} },
+    {name="Smog",           power=1,      type="Poison",  dice=6, STAB=true,    effects={{name="Poison", target="Enemy", chance=4}} },
+    {name="Sludge",         power=2,      type="Poison",  dice=6, STAB=true,    effects={{name="Poison", target="Enemy", chance=5}} },
+    {name="Sludge Bomb",    power=3,      type="Poison",  dice=6, STAB=true,    effects={{name="Poison", target="Enemy", chance=5}} },
+    {name="Toxic",          power=0,      type="Poison",  dice=6, STAB=false,   effects={{name="Poison", target="Enemy", chance=2}} },
+    {name="Toxic Spikes",   power=0,      type="Poison",  dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Venom Drench",   power=0,      type="Poison",  dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Venoshock",      power=3,      type="Poison",  dice=6, STAB=false,   effects={{name="Custom"}} },
 
+    -- Psychic
+    {name="Agility",        power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackUp2", target="Self"}} },
+    {name="Amnesia",        power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Barrier",        power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Calm Mind",      power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackUp2", target="Self"}} },
+    {name="Confusion",      power=1,      type="Psychic", dice=6, STAB=true,    effects={{name="Confuse", target="Enemy", chance=6}} },
+    {name="Cosmic Power",   power=0,      type="Psychic", dice=6, STAB=true,    effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Dream Eater",    power="Sleep",type="Psychic", dice=6, STAB=false,   effects={{name="Sleep", target="Enemy", chance=4}} },
+    {name="Extrasensory",   power=2,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Future Sight",   power=3,      type="Psychic", dice=6, STAB=true,    effects={{name="Recharge", target="Self"}} },
+    {name="Heal Pulse",     power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="Custom"},{name="Recharge", target="Self"}} },
+    {name="Healing Wish",   power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="Custom"},{name="KO", target="Self"}} },
+    {name="Heart Stamp",    power=3,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Hyperspace Hole",power=3,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackUp", target="Self"}} },
+    {name="Hypnosis",       power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="Sleep", target="Enemy", chance=4}} },
+    {name="Imprison",       power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Light Screen",   power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Luster Purge",   power=3,      type="Psychic", dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=4}} },
+    {name="Magic Coat",     power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Meditate",       power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackUp", target="Self"}} },
+    {name="Mirror Coat",    power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Mist Ball",      power=3,      type="Psychic", dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=4}} },
+    {name="Photon Geyser",  power=3,      type="Psychic", dice=6, STAB=false    },
+    {name="Prism. Laser",   power=3,      type="Psychic", dice=6, STAB=false    },
+    {name="Psybeam",        power=2,      type="Psychic", dice=6, STAB=true,    effects={{name="Confuse", target="Enemy", chance=4}} },
+    {name="Psywave",        power="Self", type="Psychic", dice=6, STAB=false    },
+    {name="Psychic",        power=2,      type="Psychic", dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=6}} },
+    {name="Psychic Fangs",  power=3,      type="Psychic", dice=6, STAB=true },
+    {name="Psycho Boost",   power=4,      type="Psychic", dice=6, STAB=true     },
+    {name="Psycho Cut",     power=3,      type="Psychic", dice=8, STAB=true     },
+    {name="Psyshock",       power=3,      type="Psychic", dice=6, STAB=true     },
+    {name="Reflect",        power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Rev. Dance Psychic",power=3,   type="Psychic", dice=6, STAB=true},
+    {name="Telekinesis",    power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="Custom"}} },
+    {name="Teleport",       power=0,      type="Psychic", dice=6, STAB=false,   effects={{name="Switch", target="Self"}} },
+    {name="Zen Headbutt",   power=2,      type="Psychic", dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=5}} },
 
-  -- Ground
-  { name = "Bone Club",          power = 2,       type = "Ground",   dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Bone Rush",          power = 1,       type = "Ground",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Bonemerang",         power = 2,       type = "Ground",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self" } } },
-  { name = "Dig",                power = 2,       type = "Ground",   dice = 6, STAB = true },
-  { name = "Drill Run",          power = 3,       type = "Ground",   dice = 8, STAB = true },
-  { name = "Earth Power",        power = 3,       type = "Ground",   dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Earthquake",         power = 2,       type = "Ground",   dice = 6, STAB = true },
-  { name = "Fissure",            power = 0,       type = "Ground",   dice = 6, STAB = false, effects = { { name = "KO", chance = 5, target = "Enemy" } } },
-  { name = "Land's Wrath",       power = 3,       type = "Ground",   dice = 6, STAB = false },
-  { name = "Magnitude",          power = 2,       type = "Ground",   dice = 6, STAB = false, effects = { { name = "D4Dice", target = "Self", chance = 3 }, { name = "ExtraDice", target = "Self", chance = "6" } } },
-  { name = "Mud Bomb",           power = 3,       type = "Ground",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Mud Shot",           power = 2,       type = "Ground",   dice = 6, STAB = false },
-  { name = "Mud-Slap",           power = 1,       type = "Ground",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Sand Attack",        power = 0,       type = "Ground",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Sand Tomb",          power = 1,       type = "Ground",   dice = 6, STAB = false, effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Sandsear Storm",     power = 3,       type = "Ground",   dice = 6, STAB = false, effects = { { name = "Burn", target = "Enemy", chance = 5 } } },
-  { name = "Spikes",             power = 0,       type = "Ground",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
+    -- Rock
+    {name="Accelerock",     power=2,      type="Rock",    dice=6, STAB=true,    effects={{name="Priority", target="Self"}} },
+    {name="Ancient Power",  power=2,      type="Rock",    dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=6},{name="AttackUp", target="Self", chance=6}} },
+    {name="Diamond Storm",  power=3,      type="Rock",    dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=4}} },
+    {name="Head Smash",     power=3,      type="Rock",    dice=6, STAB=true,    effects={{name="KO", target="Self", chance=6}} },
+    {name="Power Gem",      power=2,      type="Rock",    dice=6, STAB=true},
+    {name="Rock Slide",     power=3,      type="Rock",    dice=6, STAB=true,    effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Rock Throw",     power=1,      type="Rock",    dice=6, STAB=true},
+    {name="Rollout",        power=1,      type="Rock",    dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Rock Blast",     power=1,      type="Rock",    dice=4, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}}},
+    {name="Rock Tomb",      power=3,      type="Rock",    dice=6, STAB=true},
+    {name="Rock Wrecker",   power=4,      type="Rock",    dice=6, STAB=true,    effects={{name="KO", target="Self", chance=6}} },
+    {name="Sandstorm",      power=0,      type="Rock",    dice=8, STAB=false,   effects={{name="Custom"}} },
+    {name="Stealth Rock",   power=0,      type="Rock",    dice=6, STAB=false,   effects={{name="Custom"}}},
+    {name="Stone Edge",     power=3,      type="Rock",    dice=8, STAB=true},
+    {name="Wide Guard",     power=0,      type="Rock",    dice=8, STAB=true,    effects={{"Protect", target="Self" }} },
 
-  -- Ice
-  { name = "Aurora Beam",        power = 2,       type = "Ice",      dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Avalanche",          power = 3,       type = "Ice",      dice = 6, STAB = true },
-  { name = "Blizzard",           power = 3,       type = "Ice",      dice = 6, STAB = true,  effects = { { name = "Freeze", target = "Enemy", chance = 6 } } },
-  { name = "Freeze-Dry",         power = 3,       type = "Ice",      dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Glaciate",           power = 3,       type = "Ice",      dice = 6, STAB = true },
-  { name = "Hail",               power = 0,       type = "Ice",      dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Ice Beam",           power = 2,       type = "Ice",      dice = 6, STAB = true,  effects = { { name = "Freeze", target = "Enemy", chance = 6 } } },
-  { name = "Ice Fang",           power = 2,       type = "Ice",      dice = 6, STAB = true,  effects = { { name = "Freeze", target = "Enemy", chance = 6 }, { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Ice Punch",          power = 3,       type = "Ice",      dice = 6, STAB = true,  effects = { { name = "Freeze", target = "Enemy", chance = 6 } } },
-  { name = "Icicle Crash",       power = 3,       type = "Ice",      dice = 4, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Icicle Spear",       power = 1,       type = "Ice",      dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Icy Wind",           power = 2,       type = "Ice",      dice = 6, STAB = true },
-  { name = "Mist",               power = 0,       type = "Ice",      dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Powder Snow",        power = 1,       type = "Ice",      dice = 6, STAB = true,  effects = { { name = "Freeze", target = "Enemy", chance = 6 } } },
-  { name = "Sheer Cold",         power = 0,       type = "Ice",      dice = 6, STAB = true,  effects = { { name = "KO", target = "Enemy", chance = 5 } } },
-  { name = "Weather Ball Ice",   power = 3,       type = "Ice",      dice = 6, STAB = true },
+    -- Steel
+    {name="Anchor Shot",    power=2,      type="Steel",  dice=6, STAB=true,     effects={{name="Custom"}} },
+    {name="Autotomize",     power=0,      type="Steel",  dice=6, STAB=false,    effects={{name="AttackUp2", target="Self"}} },
+    {name="Doom Desire",    power=4,      type="Steel",  dice=6, STAB=true,     effects={{name="Recharge", target="Self"}} },
+    {name="Dbl. Iron Bash", power=2,      type="Steel",  dice=4, STAB=true,     effects={{name="ExtraDice", target="Self", chance=5}} },
+    {name="Flash Cannon",   power=3,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackUp", target="Self", chance=6}} },
+    {name="Gear Grind",     power=2,      type="Steel",  dice=4, STAB=true,     effects={{name="ExtraDice", target="Self"}} },
+    {name="Gyro Ball",      power="Self", type="Steel",  dice=6, STAB=false},
+    {name="Iron Defense",   power=0,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Iron Head",      power=3,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Iron Tail",      power=2,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackUp", target="Self", chance=5}} },
+    {name="King's Shield",  power=0,      type="Steel",  dice=6, STAB=true,     effects={{name="Custom"}} },
+    {name="Magnet Bomb",    power=3,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackUp", target="Self"}} },
+    {name="Metal Burst",    power=0,      type="Steel",  dice=6, STAB=true,     effects={{name="Custom"}} },
+    {name="Metal Claw",     power=1,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackUp", target="Self", chance=6}} },
+    {name="Metal Mash",     power=1,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackUp", target="Self", chance=6}} },
+    {name="Metal Sound",    power=0,      type="Steel",  dice=6, STAB=false,    effects={{name="AttackUp2", target="Self"}} },
+    {name="Meteor Mash",    power=3,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackUp", target="Self", chance=5}} },
+    {name="Mirror Shot",    power=3,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Shift Gear",     power=0,      type="Steel",  dice=6, STAB=false,    effects={{name="AttackUp2", target="Self", chance=6}} },
+    {name="Steel Wing",     power=2,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackDown", target="Enemy", chance=6}} },
+    {name="Sunsteel Strike", power=3,     type="Steel",  dice=6, STAB=true },
 
-  -- Normal
-  { name = "Attract",            power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Barrage",            power = 1,       type = "Normal",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Body Slam",          power = 2,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Paralyse", target = "Enemy", chance = 5 } } },
-  { name = "Bind",               power = 1,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Camouflage",         power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Chip Away",          power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Priority", target = "Self" } } },
-  { name = "Comet Punch",        power = 1,       type = "Normal",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Constrict",          power = 1,       type = "Normal",   dice = 6, STAB = false },
-  { name = "Conversion",         power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Conversion2",        power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Covet",              power = 3,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Crush Claw",         power = 3,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackUp", target = "Self", chance = 4 } } },
-  { name = "Defense Curl",       power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Disable",            power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Dizzy Punch",        power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Enemy", chance = 5 } } },
-  { name = "Double-Edge",        power = 3,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 } } },
-  { name = "Double Hit",         power = 1,       type = "Normal",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self" } } },
-  { name = "Double Slap",        power = 1,       type = "Normal",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Double Team",        power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Echoed Voice",       power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Egg Bomb",           power = 2,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Encore",             power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Explosion",          power = 5,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "KO", target = "Self" } } },
-  { name = "Extreme Speed",      power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Priority", target = "Self" } } },
-  { name = "Facade",             power = 3,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Fake Out",           power = 1,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "False Swipe",        power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Focus Energy",       power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Fury Attack",        power = 1,       type = "Normal",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Fury Swipes",        power = 1,       type = "Normal",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Giga Impact",        power = 3,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Recharge", target = "Self" } } },
-  { name = "Glare",              power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Paralyse", target = "Enemy" } } },
-  { name = "Growl",              power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Growth",             power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Guillotine",         power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "KO", target = "Enemy", chance = 5 } } },
-  { name = "Harden",             power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Head Charge",        power = 4,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 } } },
-  { name = "Headbutt",           power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Heal Bell",          power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Hidden Power",       power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Horn Attack",        power = 2,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Horn Drill",         power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "KO", target = "Enemy", chance = 5 } } },
-  { name = "Howl",               power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Hyper Beam",         power = 3,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Recharge", target = "Self" } } },
-  { name = "Hyper Fang",         power = 2,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Hyper Voice",        power = 2,       type = "Normal",   dice = 6, STAB = false },
-  { name = "Judgement",          power = 3,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Leer",               power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Lovely Kiss",        power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Sleep", target = "Enemy", chance = 3 } } },
-  { name = "Mean Look",          power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Me First",           power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Mega Kick",          power = 3,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Mega Punch",         power = 2,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Metronome",          power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Mimic",              power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Minimize",           power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Nature Power",       power = 0,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Noble Roar",         power = 0,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Odor Sleuth",        power = 0,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Pay Day",            power = 1,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom", chance = 6 } } },
-  { name = "Perish Song",        power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Play Nice",          power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Pound",              power = 1,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Present",            power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Extra Dice", target = "Self", chance = 6 } } },
-  { name = "Protect",            power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Quick Attack",       power = 1,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Priority", target = "Self" } } },
-  { name = "Rage",               power = 1,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", condition = "Power" } } },
-  { name = "Relic Song",         power = 3,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Sleep", target = "Enemy", chance = 6 } } },
-  { name = "Rapid Spin",         power = 1,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Retaliate",          power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Roar",               power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Switch", target = "Enemy" } } },
-  { name = "Razor Wind",         power = 2,       type = "Normal",   dice = 8, STAB = true,  effects = { { name = "Recharge", target = "Self" } } },
-  { name = "Safeguard",          power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Self-Destruct",      power = 4,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "KO", target = "Self" } } },
-  { name = "Scratch",            power = 1,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Screech",            power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Sharpen",            power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Shell Smash",        power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" }, { name = "Custom" } } },
-  { name = "Sing",               power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Sleep", target = "Enemy", chance = 4 } } },
-  { name = "Sketch",             power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Skull Bash",         power = 3,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Recharge", target = "Self" } } },
-  { name = "Slam",               power = 2,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Slash",              power = 2,       type = "Normal",   dice = 8, STAB = true },
-  { name = "Smelling Salts",     power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Smokescreen",        power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Sonic Boom",         power = 2,       type = "Normal",   dice = 4, STAB = false, effects = { { name = "Neutral", target = "Self" } } },
-  { name = "Spike Cannon",       power = 1,       type = "Normal",   dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Splash",             power = 0,       type = "Normal",   dice = 6, STAB = false },
-  { name = "Stomp",              power = 2,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Super Fang",         power = "Enemy", type = "Normal",   dice = 6, STAB = false },
-  { name = "Supersonic",         power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Confuse", target = "Enemy", chance = 4 } } },
-  { name = "Swagger",            power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Confuse", target = "Enemy" } } },
-  { name = "Swift",              power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Swords Dance",       power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Tackle",             power = 1,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Tail Slap",          power = 2,       type = "Normal",   dice = 4, STAB = false, effects = { { name = "ExtraDice", target = "Self" } } },
-  { name = "Tail Whip",          power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Take Down",          power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 } } },
-  { name = "Techno Blast",       power = 3,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Enemy" } } },
-  { name = "Teeter Dance",       power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Confuse", target = "Enemy" } } },
-  { name = "Thrash",             power = 3,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Self", chance = 5 } } },
-  { name = "Transform",          power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Tri Attack",         power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom", chance = 5 } } },
-  { name = "Trump Card",         power = 1,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Uproar",             power = 2,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Vise Grip",          power = 2,       type = "Normal",   dice = 6, STAB = true },
-  { name = "Whirlwind",          power = 0,       type = "Normal",   dice = 6, STAB = false, effects = { { name = "Switch", target = "Enemy" } } },
-  { name = "Work Up",            power = 0,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Wrap",               power = 1,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Wring Out",          power = "Enemy", type = "Normal",   dice = 6, STAB = true },
-  { name = "Yawn",               power = 0,       type = "Normal",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-
-  -- Poison
-  { name = "Acid",               power = 1,       type = "Poison",   dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Acid Armor",         power = 0,       type = "Poison",   dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Acid Spray",         power = 2,       type = "Poison",   dice = 6, STAB = true,  effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Clear Smog",         power = 3,       type = "Poison",   dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Cross Poison",       power = 3,       type = "Poison",   dice = 6, STAB = true },
-  { name = "Coil",               power = 0,       type = "Poison",   dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self" }, { name = "AttackDown", target = "Enemy" } } },
-  { name = "Poison Fang",        power = 2,       type = "Poison",   dice = 8, STAB = true,  effects = { { name = "Poison", target = "Enemy", chance = 4 } } },
-  { name = "Poison Gas",         power = 0,       type = "Poison",   dice = 6, STAB = false, effects = { { name = "Poison", target = "Enemy", chance = 2 } } },
-  { name = "Poison Jab",         power = 3,       type = "Poison",   dice = 6, STAB = true,  effects = { { name = "Poison", target = "Enemy", chance = 5 } } },
-  { name = "Poison Powder",      power = 0,       type = "Poison",   dice = 6, STAB = false, effects = { { name = "Poison", target = "Enemy", chance = 3 } } },
-  { name = "Poison Sting",       power = 1,       type = "Poison",   dice = 6, STAB = true,  effects = { { name = "Poison", target = "Enemy", chance = 5 } } },
-  { name = "Poison Tail",        power = 2,       type = "Poison",   dice = 8, STAB = true,  effects = { { name = "Poison", target = "Enemy", chance = 6 } } },
-  { name = "Smog",               power = 1,       type = "Poison",   dice = 6, STAB = true,  effects = { { name = "Poison", target = "Enemy", chance = 4 } } },
-  { name = "Sludge",             power = 2,       type = "Poison",   dice = 6, STAB = true,  effects = { { name = "Poison", target = "Enemy", chance = 5 } } },
-  { name = "Sludge Bomb",        power = 3,       type = "Poison",   dice = 6, STAB = true,  effects = { { name = "Poison", target = "Enemy", chance = 5 } } },
-  { name = "Toxic",              power = 0,       type = "Poison",   dice = 6, STAB = false, effects = { { name = "Poison", target = "Enemy", chance = 2 } } },
-  { name = "Venoshock",          power = 3,       type = "Poison",   dice = 6, STAB = false, effects = { { name = "Custom" } } },
-
-  -- Psychic
-  { name = "Agility",            power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Amnesia",            power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Barrier",            power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Calm Mind",          power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Confusion",          power = 1,       type = "Psychic",  dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Enemy", chance = 6 } } },
-  { name = "Dream Eater",        power = "Sleep", type = "Psychic",  dice = 6, STAB = false, effects = { { name = "Sleep", target = "Enemy", chance = 4 } } },
-  { name = "Extrasensory",       power = 2,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy", chance = 6 } } },
-  { name = "Future Sight",       power = 3,       type = "Psychic",  dice = 6, STAB = true,  effects = { { name = "Recharge", target = "Self" } } },
-  { name = "Heal Pulse",         power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "Custom" }, { name = "Recharge", target = "Self" } } },
-  { name = "Healing Wish",       power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "Custom" }, { name = "KO", target = "Self" } } },
-  { name = "Heart Stamp",        power = 3,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Hyperspace Hole",    power = 3,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Hypnosis",           power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "Sleep", target = "Enemy", chance = 4 } } },
-  { name = "Imprison",           power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Light Screen",       power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Luster Purge",       power = 3,       type = "Psychic",  dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 4 } } },
-  { name = "Magic Coat",         power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Mirror Coat",        power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Mist Ball",          power = 3,       type = "Psychic",  dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 4 } } },
-  { name = "Psybeam",            power = 2,       type = "Psychic",  dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Enemy", chance = 4 } } },
-  { name = "Psywave",            power = "Self",  type = "Psychic",  dice = 6, STAB = false },
-  { name = "Psychic",            power = 2,       type = "Psychic",  dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Psycho Boost",       power = 4,       type = "Psychic",  dice = 6, STAB = true },
-  { name = "Psycho Cut",         power = 3,       type = "Psychic",  dice = 8, STAB = true },
-  { name = "Psyshock",           power = 3,       type = "Psychic",  dice = 6, STAB = true },
-  { name = "Reflect",            power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Telekinesis",        power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Teleport",           power = 0,       type = "Psychic",  dice = 6, STAB = false, effects = { { name = "Switch", target = "Self" } } },
-  { name = "Zen Headbutt",       power = 2,       type = "Psychic",  dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-
-  -- Rock
-  { name = "Ancient Power",      power = 2,       type = "Rock",     dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 6 }, { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Diamond Storm",      power = 3,       type = "Rock",     dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 4 } } },
-  { name = "Head Smash",         power = 3,       type = "Rock",     dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 } } },
-  { name = "Power Gem",          power = 2,       type = "Rock",     dice = 6, STAB = true },
-  { name = "Rock Slide",         power = 3,       type = "Rock",     dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Rock Throw",         power = 1,       type = "Rock",     dice = 6, STAB = true },
-  { name = "Rollout",            power = 1,       type = "Rock",     dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Rock Blast",         power = 1,       type = "Rock",     dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Rock Tomb",          power = 3,       type = "Rock",     dice = 6, STAB = true },
-  { name = "Rock Wrecker",       power = 4,       type = "Rock",     dice = 6, STAB = true,  effects = { { name = "KO", target = "Self", chance = 6 } } },
-  { name = "Sandstorm",          power = 0,       type = "Rock",     dice = 8, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Stealth Rock",       power = 0,       type = "Rock",     dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Stone Edge",         power = 3,       type = "Rock",     dice = 8, STAB = true },
-
-  -- Steel
-  { name = "Autotomize",         power = 0,       type = "Steel",    dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Doom Desire",        power = 4,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "Recharge", target = "Self" } } },
-  { name = "Flash Cannon",       power = 3,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Gear Grind",         power = 2,       type = "Steel",    dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self" } } },
-  { name = "Gyro Ball",          power = "Self",  type = "Steel",    dice = 6, STAB = false },
-  { name = "Iron Defense",       power = 0,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackDown2", target = "Enemy" } } },
-  { name = "Iron Head",          power = 3,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Iron Tail",          power = 2,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 5 } } },
-  { name = "King's Shield",      power = 0,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "Custom" } } },
-  { name = "Magnet Bomb",        power = 3,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self" } } },
-  { name = "Metal Claw",         power = 1,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Metal Mash",         power = 1,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 6 } } },
-  { name = "Metal Sound",        power = 0,       type = "Steel",    dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self" } } },
-  { name = "Meteor Mash",        power = 3,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Self", chance = 5 } } },
-  { name = "Mirror Shot",        power = 3,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Shift Gear",         power = 0,       type = "Steel",    dice = 6, STAB = false, effects = { { name = "AttackUp2", target = "Self", chance = 6 } } },
-  { name = "Steel Wing",         power = 2,       type = "Steel",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 6 } } },
-
-  -- Water
-  { name = "Aqua Jet",           power = 2,       type = "Water",    dice = 6, STAB = true,  effects = { { name = "Priority", target = "Self" } } },
-  { name = "Aqua Tail",          power = 2,       type = "Water",    dice = 6, STAB = true },
-  { name = "Brine",              power = 3,       type = "Water",    dice = 6, STAB = true },
-  { name = "Bubble",             power = 1,       type = "Water",    dice = 6, STAB = true },
-  { name = "Bubble Beam",        power = 2,       type = "Water",    dice = 6, STAB = true },
-  { name = "Clamp",              power = 1,       type = "Water",    dice = 4, STAB = true,  effects = { { name = "ExtraDice", target = "Self", chance = 4 } } },
-  { name = "Crabhammer",         power = 3,       type = "Water",    dice = 8, STAB = true },
-  { name = "Dive",               power = 3,       type = "Water",    dice = 6, STAB = true },
-  { name = "Hydro Pump",         power = 3,       type = "Water",    dice = 6, STAB = true },
-  { name = "Muddy Water",        power = 3,       type = "Water",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Octazooka",          power = 2,       type = "Water",    dice = 6, STAB = true,  effects = { { name = "AttackUp", target = "Enemy", chance = 4 } } },
-  { name = "Rain Dance",         power = 3,       type = "Water",    dice = 6, STAB = false, effects = { { name = "Custom" } } },
-  { name = "Razor Shell",        power = 3,       type = "Water",    dice = 8, STAB = true },
-  { name = 'Scald',              power = 3,       type = "Water",    dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 5 } } },
-  { name = 'Steam Eruption',     power = 4,       type = "Water",    dice = 6, STAB = true,  effects = { { name = "Burn", target = "Enemy", chance = 5 } } },
-  { name = "Surf",               power = 2,       type = "Water",    dice = 6, STAB = true },
-  { name = "Water Gun",          power = 1,       type = "Water",    dice = 6, STAB = true },
-  { name = "Water Pulse",        power = 2,       type = "Water",    dice = 6, STAB = true,  effects = { { name = "Confuse", target = "Enemy", chance = 6 } } },
-  { name = "Water Shuriken",     power = 2,       type = "Water",    dice = 4, STAB = true,  effects = { { name = "Priority", target = "Self" }, { name = "AttackUp", target = "Self", chance = 4 } } },
-  { name = "Water Spout",        power = 4,       type = "Water",    dice = 6, STAB = true },
-  { name = "Waterfall",          power = 2,       type = "Water",    dice = 6, STAB = true,  effects = { { name = "AttackDown", target = "Enemy", chance = 5 } } },
-  { name = "Whirlpool",          power = 1,       type = "Water",    dice = 6, STAB = true,  effects = { { name = "ExtraDice", target = "Self" } } },
-  { name = "Withdraw",           power = 0,       type = "Water",    dice = 6, STAB = false, effects = { { name = "AttackDown", target = "Enemy" } } },
-  { name = "Weather Ball Water", power = 3,       type = "Water",    dice = 6, STAB = true }
+    -- Water
+    {name="Aqua Jet",       power=2,      type="Water",  dice=6, STAB=true,     effects={{name="Priority", target="Self"}} },
+    {name="Aqua Tail",      power=2,      type="Water",  dice=6, STAB=true},
+    {name="Brine",          power=3,      type="Water",  dice=6, STAB=true},
+    {name="Bubble",         power=1,      type="Water",  dice=6, STAB=true},
+    {name="Bubble Beam",    power=2,      type="Water",  dice=6, STAB=true},
+    {name="Clamp",          power=1,      type="Water",  dice=4, STAB=true,     effects={{name="ExtraDice", target="Self", chance=4}} },
+    {name="Crabhammer",     power=3,      type="Water",  dice=8, STAB=true},
+    {name="Dive",           power=3,      type="Water",  dice=6, STAB=true},
+    {name="Hydro Pump",     power=3,      type="Water",  dice=6, STAB=true},
+    {name="Muddy Water",    power=3,      type="Water",  dice=6, STAB=true,     effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Octazooka",      power=2,      type="Water",  dice=6, STAB=true,     effects={{name="AttackUp", target="Enemy", chance=4}} },
+    {name="Rain Dance",     power=3,      type="Water",  dice=6, STAB=false,    effects={{name="Custom"}} },
+    {name="Razor Shell",    power=3,      type="Water",  dice=8, STAB=true},
+    {name='Scald',          power=3,      type="Water",  dice=6, STAB=true,     effects={{name="Burn", target="Enemy", chance=5}} },
+    {name="Sparkling Aria", power=3,      type="Water",  dice=6, STAB=true},
+    {name='Steam Eruption', power=4,      type="Water",  dice=6, STAB=true,     effects={{name="Burn", target="Enemy", chance=5}} },
+    {name="Surf",           power=2,      type="Water",  dice=6, STAB=true},
+    {name="Water Gun",      power=1,      type="Water",  dice=6, STAB=true},
+    {name="Water Pulse",    power=2,      type="Water",  dice=6, STAB=true,     effects={{name="Confuse", target="Enemy", chance=6}} },
+    {name="Water Shuriken", power=2,      type="Water",  dice=4, STAB=true,     effects={{name="Priority", target="Self"},{name="AttackUp", target="Self", chance=4}}},
+    {name="Water Spout",    power=4,      type="Water",  dice=6, STAB=true},
+    {name="Waterfall",      power=2,      type="Water",  dice=6, STAB=true,     effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Whirlpool",      power=1,      type="Water",  dice=6, STAB=true,     effects={{name="ExtraDice", target="Self"}} },
+    {name="Withdraw",       power=0,      type="Water",  dice=6, STAB=false,    effects={{name="AttackDown", target="Enemy"}} },
+    {name="Weather Ball Water",power=3,   type="Water",  dice=6, STAB=true}
 }
 
 gymData =
@@ -1378,56 +1534,56 @@ gymData =
   -- Gen I
   -- Gym Leaders
   {
-    guid = "1856e6",
+    guid = "5ad999",
     trainerName = "Brock",
     pokemon = {
       { name = "Geodude", level = 1, types = { "Rock", "Ground" }, moves = { "Defense Curl", "Tackle", "Rock Throw" } },
       { name = "Onix",    level = 2, types = { "Rock", "Ground" }, moves = { "Screech", "Bind", "Rock Throw" } } }
   },
   {
-    guid = "bb825e",
+    guid = "7e7d23",
     trainerName = "Misty",
     pokemon = {
       { name = "Staryu",  level = 3, types = { "Water" }, moves = { "Harden", "Water Gun", "Rapid Spin" } },
       { name = "Starmie", level = 3, types = { "Water" }, moves = { "Tackle", "Water Pulse", "Rapid Spin" } } }
   },
   {
-    guid = "79261f",
+    guid = "e87599",
     trainerName = "Lt. Surge",
     pokemon = {
       { name = "Voltorb", level = 3, types = { "Electric" }, moves = { "Screech", "Sonic Boom", "Shock Wave" } },
       { name = "Raichu",  level = 4, types = { "Electric" }, moves = { "Quick Attack", "Mega Kick", "Shock Wave" } } }
   },
   {
-    guid = "831b51",
+    guid = "e251b8",
     trainerName = "Erika",
     pokemon = {
       { name = "Tangela",   level = 4, types = { "Grass" },           moves = { "Poison Powder", "Giga Drain", "Vine Whip" } },
       { name = "Vileplume", level = 4, types = { "Grass", "Poison" }, moves = { "Acid", "Sleep Powder", "Petal Dance" } } }
   },
   {
-    guid = "0e26dd",
+    guid = "10246c",
     trainerName = "Koga",
     pokemon = {
       { name = "Muk",     level = 5, types = { "Poison" }, moves = { "Toxic", "Moonblast", "Sludge" } },
       { name = "Weezing", level = 6, types = { "Poison" }, moves = { "Protect", "Self-Destruct", "Sludge" } } }
   },
   {
-    guid = "d66786",
+    guid = "26c22d",
     trainerName = "Sabrina",
     pokemon = {
       { name = "Mr. Mime", level = 5, types = { "Psychic" }, moves = { "Barrier", "Psybeam", "Double Slap" } },
       { name = "Alakazam", level = 6, types = { "Psychic" }, moves = { "Reflect", "Psybeam", "Night Shade" } } }
   },
   {
-    guid = "8f1b84",
+    guid = "cca8ed",
     trainerName = "Blaine",
     pokemon = {
       { name = "Rapidash", level = 7, types = { "Fire" }, moves = { "Bounce", "Stomp", "Fire Spin" } },
       { name = "Arcanine", level = 7, types = { "Fire" }, moves = { "Crunch", "Outrage", "Flare Blitz" } } }
   },
   {
-    guid = "c55cac",
+    guid = "7cda88",
     trainerName = "Giovanni",
     pokemon = {
       { name = "Dugtrio",  level = 7, types = { "Ground" }, moves = { "Sucker Punch", "Slash", "Dig" } },
@@ -1436,28 +1592,28 @@ gymData =
 
   -- Elite Four + Champion
   {
-    guid = "b9137c",
+    guid = "bd572f",
     trainerName = "Lorelei",
     pokemon = {
       { name = "Cloyster", level = 8, types = { "Water", "Ice" }, moves = { "Protect", "Hydro Pump", "Aurora Beam" } },
       { name = "Lapras",   level = 9, types = { "Water", "Ice" }, moves = { "Body Slam", "Hydro Pump", "Blizzard" } } }
   },
   {
-    guid = "c4f40c",
+    guid = "ec4724",
     trainerName = "Bruno",
     pokemon = {
       { name = "Hitmonlee", level = 8, types = { "Fighting" }, moves = { "Mega Kick", "Rolling Kick", "High Jump Kick" } },
       { name = "Machamp",   level = 9, types = { "Fighting" }, moves = { "Earthquake", "Cross Chop", "Submission" } } }
   },
   {
-    guid = "52dc6e",
+    guid = "0a1c4c",
     trainerName = "Agatha",
     pokemon = {
       { name = "Arbok",  level = 8, types = { "Poison" }, moves = { "Glare", "Crunch", "Sludge Bomb" } },
       { name = "Gengar", level = 9, types = { "Ghost" },  moves = { "Confuse Ray", "Dream Eater", "Night Shade" } } }
   },
   {
-    guid = "78c0e0",
+    guid = "9e7552",
     trainerName = "Lance",
     pokemon = {
       { name = "Gyarados",  level = 8, types = { "Water", "Flying" },  moves = { "Hyper Beam", "Dragon Rage", "Hydro Pump" } },
@@ -1465,21 +1621,21 @@ gymData =
   },
 
   {
-    guid = "04e46d",
+    guid = "5686a8",
     trainerName = "Gary",
     pokemon = {
       { name = "Arcanine", level = 9,  types = { "Fire", "Dark" }, moves = { "Crunch", "Extreme Speed", "Flamethrower" } },
       { name = "Venusaur", level = 10, types = { "Grass" },        moves = { "Growth", "Razor Leaf", "Solar Beam" } } }
   },
   {
-    guid = "fe306a",
+    guid = "f0b286",
     trainerName = "Gary",
     pokemon = {
       { name = "Pidgeot",   level = 9,  types = { "Flying", "Normal" }, moves = { "Feather Dance", "Mirror Move", "Sky Attack" } },
       { name = "Blastoise", level = 10, types = { "Water" },            moves = { "Flash Cannon", "Blizzard", "Hydro Pump" } } }
   },
   {
-    guid = "7a6571",
+    guid = "8605d6",
     trainerName = "Gary",
     pokemon = {
       { name = "Alakazam",  level = 9,  types = { "Psychic" },        moves = { "Reflect", "Shadow Ball", "Future Sight" } },
@@ -1489,42 +1645,42 @@ gymData =
   -- Gen II
   -- Gym Leaders
   {
-    guid = "9ce6fb",
+    guid = "d9713f",
     trainerName = "Falkner",
     pokemon = {
       { name = "Pidgey",    level = 2, types = { "Flying", "Normal" }, moves = { "Sand Attack", "Tackle", "Peck" } },
       { name = "Pidgeotto", level = 2, types = { "Flying", "Normal" }, moves = { "Mud-Slap", "Tackle", "Gust" } } }
   },
   {
-    guid = "3e463b",
+    guid = "78fe04",
     trainerName = "Bugsy",
     pokemon = {
       { name = "Kakuna",  level = 3, types = { "Bug" },           moves = { "String Shot", "Harden", "Poison Sting" } },
       { name = "Scyther", level = 3, types = { "Bug", "Flying" }, moves = { "Fury Cutter", "Quick Attack", "Wing Attack" } } }
   },
   {
-    guid = "b7bc70",
+    guid = "932ee1",
     trainerName = "Whitney",
     pokemon = {
       { name = "Clefairy", level = 3, types = { "Fairy" },  moves = { "Mimic", "Metronome", "Moonblast" } },
       { name = "Miltank",  level = 4, types = { "Normal" }, moves = { "Rollout", "Stomp", "Play Rough" } } }
   },
   {
-    guid = "5f139d",
+    guid = "6c22b9",
     trainerName = "Morty",
     pokemon = {
       { name = "Haunter", level = 4, types = { "Ghost" }, moves = { "Mimic", "Hypnosis", "Night Shade" } },
       { name = "Gengar",  level = 4, types = { "Ghost" }, moves = { "Sucker Punch", "Dream Eater", "Shadow Ball" } } }
   },
   {
-    guid = "0bbc14",
+    guid = "1297c5",
     trainerName = "Chuck",
     pokemon = {
       { name = "Primeape",  level = 5, types = { "Fighting" },          moves = { "Rage", "Rock Slide", "Karate Chop" } },
       { name = "Poliwrath", level = 6, types = { "Water", "Fighting" }, moves = { "Hypnosis", "Surf", "Dynamic Punch" } } }
   },
   {
-    guid = "8f27b4",
+    guid = "9d44d1",
     trainerName = "Jasmine",
     pokemon = {
       { name = "Magnemite", level = 5, types = { "Electric", "Steel" }, moves = { "Thunder Wave", "Sonic Boom", "Thunderbolt" } },
@@ -1538,7 +1694,7 @@ gymData =
       { name = "Piloswine", level = 7, types = { "Ice", "Ground" }, moves = { "Mud Bomb", "Ice Fang", "Blizzard" } } }
   },
   {
-    guid = "aa6e6e",
+    guid = "9846bd",
     trainerName = "Clair",
     pokemon = {
       { name = "Dragonair", level = 7, types = { "Dragon" },          moves = { "Surf", "Fire Blast", "Dragon Breath" } },
@@ -1590,7 +1746,7 @@ gymData =
       { name = "Aerodactyl", level = 10, types = { "Rock", "Flying" }, moves = { "Hyper Beam", "Wing Attack", "Ancient Power" } } }
   },
   {
-    guid = "175d3c",
+    guid = "6178d5",
     trainerName = "Lance",
     pokemon = {
       { name = "Gyarados",  level = 9,  types = { "Water" },  moves = { "Hyper Beam", "Surf", "Dragon Rage" } },
@@ -1600,86 +1756,86 @@ gymData =
   -- Gym GenIII
   -- Gym Leaders
   {
-    guid = "028a01",
+    guid = "a12ffa",
     trainerName = "Roxanne",
     pokemon = {
       { name = "Geodude",  level = 2, types = { "Rock" }, moves = { "Defense Curl", "Tackle", "Rock Throw" } },
       { name = "Nosepass", level = 2, types = { "Rock" }, moves = { "Rock Tomb", "Tackle", "Rock Throw" } } }
   },
   {
-    guid = "eee9d7",
+    guid = "300c55",
     trainerName = "Brawly",
     pokemon = {
       { name = "Machop",   level = 3, types = { "Fighting" }, moves = { "Bulk Up", "Seismic Toss", "Low Kick" } },
       { name = "Makuhita", level = 3, types = { "Fighting" }, moves = { "Sand Attack", "Arm Thrust", "Knock Off" } } }
   },
   {
-    guid = "06f9af",
+    guid = "fc6195",
     trainerName = "Wattson",
     pokemon = {
-      { name = "Voltorb",   level = 3, types = { "Electric" }, moves = { "Sonic Boom", "Spark", "Self Destruct" } },
+      { name = "Voltorb",   level = 3, types = { "Electric" }, moves = { "Sonic Boom", "Spark", "Self-Destruct" } },
       { name = "Manectric", level = 4, types = { "Electric" }, moves = { "Quick Attack", "Shock Wave", "Thunder Wave" } } }
   },
   {
-    guid = "219352",
+    guid = "7fab48",
     trainerName = "Flannery",
     pokemon = {
       { name = "Slugma",  level = 4, types = { "Fire" }, moves = { "Light Screen", "Rock Slide", "Flamethrower" } },
       { name = "Torkoal", level = 4, types = { "Fire" }, moves = { "Protect", "Body Slam", "Overheat" } } }
   },
   {
-    guid = "508e05",
+    guid = "1e64be",
     trainerName = "Norman",
     pokemon = {
       { name = "Vigoroth", level = 5, types = { "Normal" }, moves = { "Feint Attack", "Slash", "Facade" } },
       { name = "Slaking",  level = 6, types = { "Normal" }, moves = { "Feint Attack", "Focus Punch", "Facade" } } }
   },
   {
-    guid = "21668a",
+    guid = "7fd11d",
     trainerName = "Winona",
     pokemon = {
       { name = "Pelipper", level = 5, types = { "Water" },  moves = { "Supersonic", "Water Pulse", "Aerial Ace" } },
       { name = "Altaria",  level = 6, types = { "Dragon" }, moves = { "Earthquake", "Dragon Breath", "Aerial Ace" } } }
   },
   {
-    guid = "29bfc7",
+    guid = "f07fbc",
     trainerName = "Tate & Liza",
     pokemon = {
       { name = "Lunatone", level = 7, types = { "Rock" }, moves = { "Light Screen", "Moonblast", "Rock Slide" } },
       { name = "Solrock",  level = 7, types = { "Rock" }, moves = { "Psychic", "Solar Beam", "Flare Blitz" } } }
   },
   {
-    guid = "505fdb",
+    guid = "02fd5e",
     trainerName = "Wallace",
     pokemon = {
-      { name = "Whiscash", level = 7, types = { "Water" }, moves = { "Amneisa", "Earthquake", "Water Pulse" } },
+      { name = "Whiscash", level = 7, types = { "Water" }, moves = { "Amnesia", "Earthquake", "Water Pulse" } },
       { name = "Milotic",  level = 7, types = { "Water" }, moves = { "Dragon Tail", "Blizzard", "Water Pulse" } } }
   },
 
   -- Elite Four
   {
-    guid = "bfdb2c",
+    guid = "c20862",
     trainerName = "Phoebe",
     pokemon = {
       { name = "Sableye",  level = 8, types = { "Dark" },  moves = { "Psychic", "Shadow Ball", "Feint Attack" } },
       { name = "Dusclops", level = 9, types = { "Ghost" }, moves = { "Future Sight", "Shadow Ball", "Ice Beam" } } }
   },
   {
-    guid = "8d5b51",
+    guid = "e7052f",
     trainerName = "Drake",
     pokemon = {
       { name = "Flygon",    level = 8, types = { "Ground" }, moves = { "Fly", "Dig", "Dragon Breath" } },
       { name = "Salamence", level = 9, types = { "Dragon" }, moves = { "Fly", "Flamethrower", "Dragon Claw" } } }
   },
   {
-    guid = "3b1f11",
+    guid = "0d0d9f",
     trainerName = "Glacia",
     pokemon = {
       { name = "Glalie",  level = 8, types = { "Ice" }, moves = { "Light Screen", "Crunch", "Ice Beam" } },
       { name = "Walrein", level = 9, types = { "Ice" }, moves = { "Sheer Cold", "Surf", "Blizzard" } } }
   },
   {
-    guid = "01b451",
+    guid = "1d1aa1",
     trainerName = "Sidney",
     pokemon = {
       { name = "Sharpedo", level = 8, types = { "Water" }, moves = { "Slash", "Surf", "Crunch" } },
@@ -1701,7 +1857,7 @@ gymData =
       { name = "Armaldo",  level = 10, types = { "Rock" },  moves = { "Slash", "X-Scissor", "Ancient Power" } } }
   },
   {
-    guid = "a27094",
+    guid = "f7b21f",
     trainerName = "Steven",
     pokemon = {
       { name = "Cradily",   level = 9,  types = { "Rock" },  moves = { "Sludge Bomb", "Giga Drain", "Ancient Power" } },
@@ -1812,7 +1968,7 @@ gymData =
       { name = "Milotic",  level = 10, types = { "Water" }, moves = { "Mirror Coat", "Surf", "Ice Beam" } } }
   },
   {
-    guid = "9d2d79",
+    guid = "076af6",
     trainerName = "Cynthia",
     pokemon = {
       { name = "Spiritomb", level = 9,  types = { "Ghost" },  moves = { "Sheer Wind", "Shadow Ball", "Dark Pulse" } },
@@ -2021,6 +2177,11 @@ function GetPokemonDataByGUID(params)
       return data
     end
   end
+  -- Check the board Pokemon.
+  data = getPokemonData(boardPokemonData, params.guid)
+  if data != nil then
+    return data
+  end
   print("No Pokémon Data Found")
 end
 
@@ -2041,6 +2202,11 @@ function GetPokemonDataByName(params)
     if data != nil then
       return data
     end
+  end
+  -- Check the board Pokemon.
+  data = getPokemonDataName(boardPokemonData, params.guid)
+  if data != nil then
+    return data
   end
   print("No Pokémon Data Found")
 end
@@ -2247,6 +2413,12 @@ function gen8Toggle()
   checkBeginState()
 end
 
+function gen9Toggle()
+  selectedGens[9] = not selectedGens[9]
+  enoughPokemon()
+  checkBeginState()
+end
+
 function customToggle()
   customGen = not customGen
   enoughPokemon()
@@ -2286,6 +2458,10 @@ function enoughPokemon()
       numPokemon = numPokemon + #pokeball.getObjects()
     end
   end
+  -- Board pokemon count. (Red Gyarados + Sudowoodo)
+  numPokemon = numPokemon + 2
+
+  -- Check the final count.
   hasEnoughPokemon = numPokemon >= 150
 end
 

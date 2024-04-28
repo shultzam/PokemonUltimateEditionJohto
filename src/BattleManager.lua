@@ -1707,27 +1707,26 @@ function sendToArenaGym(params)
   defenderPokemon = defenderData.pokemon[1]
 
   -- Gym Leader
-   local takeParams = {guid = defenderData.trainerGUID, position = {defenderPos.item[1], 1.5, defenderPos.item[2]}, rotation={0,180,0}}
+  local takeParams = {guid = defenderData.trainerGUID, position = {defenderPos.item[1], 1.5, defenderPos.item[2]}, rotation={0,180,0}}
 
-   local gym = getObjectFromGUID(params.gymGUID)
-   gym.takeObject(takeParams)
+  local gym = getObjectFromGUID(params.gymGUID)
+  gym.takeObject(takeParams)
 
-   if params.isGymLeader then
+  if params.isGymLeader then
+      -- Take Badge
+      takeParams = {position = {defenderPos.pokemon[1], 1.5, defenderPos.pokemon[2]}, rotation={0,180,0}}
+      gym.takeObject(takeParams)
 
-     -- Take Badge
-     takeParams = {position = {defenderPos.pokemon[1], 1.5, defenderPos.pokemon[2]}, rotation={0,180,0}}
-     gym.takeObject(takeParams)
-
-     Global.call("PlayGymBattleMusic",{})
-   else
-     Global.call("PlayFinalBattleMusic",{})
-   end
+      Global.call("PlayGymBattleMusic",{})
+  else
+      Global.call("PlayFinalBattleMusic",{})
+  end
 
    printToAll(defenderData.trainerName .. " wants to fight!", {r=246/255,g=192/255,b=15/255})
 
    inBattle = true
 
-   updateMoves(DEFENDER, defenderPokemon)
+   updateMoves(DEFENDER, defenderPokemon)   -- GYMS DIE HERE on sendToArenaGym errors (Gen3: Wattson, Wallace)
 
    if scriptingEnabled then
       defenderData.attackValue.level = defenderPokemon.baseLevel
