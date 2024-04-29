@@ -1,38 +1,48 @@
-local rocketButtonPos = {-7.1, 0, 10.6}
+local gymButtonPos = {0.0, 0, 2.3}
 
-local gymData = nil
-local pokemonData = nil
-local rocketData = {}
-local rocketPokemonData = {}
-local silphCoGUID = "19db0d"
 local battleManager = "de7152"
+local leadersData = {}
 
 function onSave()
+    saved_data = JSON.encode({saveLeadersData=leadersData})
+    return saved_data
 end
 
 function onLoad(saved_data)
-  rocketData = Global.call("GetGymDataByGUID", {guid="559fc4"})
-  rocketPokemonData = {}
-  for i=1, #rocketData.pokemon do
-    local newPokemon = {}
-    setNewPokemon(newPokemon, rocketData.pokemon[i])
-    table.insert(rocketPokemonData, newPokemon)
+  if saved_data ~= "" then
+      local loaded_data = JSON.decode(saved_data)
+      if loaded_data.saveLeadersData ~= nil then
+          leadersData = copyTable(loaded_data.saveLeadersData)
+      end
   end
 
   self.createButton({ --Apply settings button
-      label="+", click_function="battleRocket",
-      function_owner=self, tooltip="Start Team Rocket Battle",
-      position= rocketButtonPos, rotation={0, 0, 0}, height=800, width=800, font_size=20000
+      label="+", click_function="battle",
+      function_owner=self, tooltip="Start Silph Co. Battle",
+      position= gymButtonPos, rotation={0,0,0}, height=800, width=800, font_size=20000
   })
 end
 
-function battleRocket()
+function deleteSave() 
+  leadersData = {}
+end
+
+function battle()
+
+  if #leadersData == 0 then return end
+
+  local leaderIndex = math.random(1, #leadersData)
+  local leaderData = leadersData[leaderIndex]
+
   local params = {
-    trainerName = rocketData.trainerName,
-    trainerGUID = rocketData.guid,
-    gymGUID = silphCoGUID,
-    isGymLeader = true,
-    pokemon = rocketPokemonData
+    trainerName = leaderData.trainerName,
+    trainerGUID = leaderData.guid,
+    gymGUID = self.getGUID(),
+    isGymLeader = false,
+    isSilphCo = true,
+    isRival = false,
+    isElite4 = false,
+    pokemon = leaderData.pokemon
   }
 
   local battleManager = getObjectFromGUID(battleManager)
@@ -40,39 +50,39 @@ function battleRocket()
 
   if sentToArena then
     self.editButton({
-        index=1, label="-", click_function="recallRocket",
-        function_owner=self, tooltip="Recall Team Rocket"
+        index=0, label="-", click_function="recall",
+        function_owner=self, tooltip="Recall Silph Co. Member"
     })
   end
 end
 
-function recallRocket()
-  local params = {gymGUID = silphCoGUID}
+function recall()
 
   local battleManager = getObjectFromGUID(battleManager)
-  battleManager.call("recallGym", params)
+  battleManager.call("recallGym")
 
   Global.call("PlayRouteMusic",{})
 
   self.editButton({ --Apply settings button
-      index=1, label="+", click_function="battleRocket",
-      function_owner=self, tooltip="Start Team Rocket Battle"
+      index=0, label="+", click_function="battle",
+      function_owner=self, tooltip="Start Silph Co. Battle"
   })
 end
 
 function setLeaderGUID(params)
-
-  --print("setting gym leader guid")
-  --print(params[1])
   leaderGUID = params[1]
-  gymData = Global.call("GetGymDataByGUID", {guid=leaderGUID})
+  local gymData = Global.call("GetGymDataByGUID", {guid=leaderGUID})
 
-  pokemonData = {}
+  local leaderData = {guid= gymData.guid, trainerName= gymData.trainerName}
+  local pokemonData = {}
   for i=1, #gymData.pokemon do
     local newPokemon = {}
     setNewPokemon(newPokemon, gymData.pokemon[i])
     table.insert(pokemonData, newPokemon)
   end
+  leaderData.pokemon = pokemonData
+
+  table.insert(leadersData, leaderData)
 end
 
 function setNewPokemon(data, newPokemonData)
@@ -95,7 +105,7 @@ end
 
 
 function copyTable (original)
-    local copy = {}
+  local copy = {}
 	for k, v in pairs(original) do
 		if type(v) == "table" then
 			v = copyTable(v)

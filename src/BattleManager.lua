@@ -1718,8 +1718,15 @@ function sendToArenaGym(params)
       gym.takeObject(takeParams)
 
       Global.call("PlayGymBattleMusic",{})
-  else
+  elseif params.isSilphCo then
+      Global.call("PlaySilphCoBattleMusic",{})
+  elseif params.isElite4 then
       Global.call("PlayFinalBattleMusic",{})
+  elseif params.isRival then
+      Global.call("PlayCynthiaRivalMusic",{})
+  else
+      print("ERROR: uncertain which battle music to play")
+      Global.call("PlayGymBattleMusic",{})
   end
 
    printToAll(defenderData.trainerName .. " wants to fight!", {r=246/255,g=192/255,b=15/255})

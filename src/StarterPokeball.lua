@@ -4,35 +4,35 @@ local gyms = { "20bcd5", "ec01e5", "f2f4fe", "d8dc51", "22cc88", "b564fd", "c4bd
 
 local gen1Pokeballs = { "681d76", "d7d981", "818525", "30391b", "758036", "bb73fd", "78fdbb" }
 local gen1EvoPokeballs = { "e9d043", "7de53d", "f30baf", "ceb9a5", "5293ec" }
-local gen1LeadersArr = { "1adc9d", "8b26e1", "3ddf5f" }
+local gen1LeadersArr = { "1adc9d", "8b26e1", "3ddf5f", "c3b5fb" }
 
 local gen2Pokeballs = { "d87f03", "2fd969", "2c76f4", "710bab", "521e8b", "9f4fb9", "f5d806" }
 local gen2EvoPokeballs = { "c6e80b", "d86df8", "f59319", "538c67", "6f201a" }
-local gen2LeadersArr = { "d6be18", "c3650f", "ec20b2" }
+local gen2LeadersArr = { "d6be18", "c3650f", "ec20b2", "e68807" }
 
 local gen3Pokeballs = { "e05c61", "b3ede1", "80c3c3", "5ded3e", "4f4570", "ee7d71", "feea6b" }
 local gen3EvoPokeballs = { "31b1ec", "9b3ecb", "613cb1", "1b49a8", "8d3dfb" }
-local gen3LeadersArr = { "797253", "61d7e4", "2a9746" }
+local gen3LeadersArr = { "797253", "61d7e4", "2a9746", "a926ef" }
 
 local gen4Pokeballs = { "be7627", "8079e7", "49e675", "f7a234", "fadfc3", "a63903", "9f5985" }
 local gen4EvoPokeballs = { "cccfb4", "e15056", "24a5c8", "a7d340", "bfb915" }
-local gen4LeadersArr = { "d6b981", "9b50d1", "537124" }
+local gen4LeadersArr = { "d6b981", "9b50d1", "537124", "e98f45" }
 
 local gen5Pokeballs = { "291a17", "890df4", "1341cb", "6ee713", "de1f71", "48a192", "296ec5" }
 local gen5EvoPokeballs = { "db9cda", "425115", "aefa83", "cb4ad6", "e16953", "8abcf1" }
-local gen5LeadersArr = { "cd0374", "fe76e1", "3869d0" }
+local gen5LeadersArr = { "cd0374", "fe76e1", "3869d0", "524ba4" }
 
 local gen6Pokeballs = { "590ae3", "d80d72", "ce15ef", "9fe972", "7f1ebb", "401e23", "1fa353" }
 local gen6EvoPokeballs = { "315a95", "f02e17", "943c81", "c67911", "de7f1f", "750e11" }
-local gen6LeadersArr = { "150632", "c85052", "ba0a27" }
+local gen6LeadersArr = { "150632", "c85052", "ba0a27", "5498d4" }
 
 local gen7Pokeballs = { "426038", "b3a265", "a77d5e", "44c820", "4903d2", "652a56", "405d8e" }
 local gen7EvoPokeballs = { "6d2737", "2b7b9b", "79e3f4", "21ba50", "74eeff", "432142" }
-local gen7LeadersArr = { "58ca45", "157ff9", "eeba9c" }
+local gen7LeadersArr = { "58ca45", "157ff9", "eeba9c", "72fcef" }
 
 local gen8Pokeballs = { "307988", "09cb0e", "99b8aa", "d6ef76", "0faf4d", "ad4ceb", "a1750a" }
 local gen8EvoPokeballs = { "bc1673", "4f7b73", "2d873a", "a32b0d", "d2b2ca", "637026" }
-local gen8LeadersArr = { "227356", "b47fe7", "8e8fd2" }
+local gen8LeadersArr = { "227356", "b47fe7", "8e8fd2", "96992a" }
 
 -- TODO: add gen 9
 
@@ -141,7 +141,7 @@ function beginSetup2(params)
     tmpelite4Gym.call("deleteSave")
     tmprivalGym.call("deleteSave")
 
-    -- TODO: add/uncomment out gens 6,7,8 below
+    -- TODO: add/uncomment out gens 7,8 below
 
     -- gyms
     if params.leadersGen == 1 then
@@ -154,8 +154,8 @@ function beginSetup2(params)
         setupGyms(gen4LeadersArr)
     elseif params.leadersGen == 5 then
         setupGyms(gen5LeadersArr)
-    -- elseif params.leadersGen == 6 then
-    --     setupGyms(gen6LeadersArr)
+    elseif params.leadersGen == 6 then
+        setupGyms(gen6LeadersArr)
     -- elseif params.leadersGen == 7 then
     --     setupGyms(gen7LeadersArr)
     -- elseif params.leadersGen == 8 then
@@ -165,8 +165,8 @@ function beginSetup2(params)
     elseif params.leadersGen == -1 then
         -- random leaders
         local gen
-        -- , gen6LeadersArr[1], gen7LeadersArr[1], gen8LeadersArr[1]
-        local gymPokeballs = { gen1LeadersArr[1], gen2LeadersArr[1], gen3LeadersArr[1], gen4LeadersArr[1], gen5LeadersArr[1] }
+        -- , gen7LeadersArr[1], gen8LeadersArr[1], gen9LeadersArr[1]
+        local gymPokeballs = { gen1LeadersArr[1], gen2LeadersArr[1], gen3LeadersArr[1], gen4LeadersArr[1], gen5LeadersArr[1], gen6LeadersArr[1] }
         for i = 1, 8 do
             gen = math.random(1, #gymPokeballs)
             local gymsPokeball = getObjectFromGUID(gymPokeballs[gen])
@@ -177,8 +177,8 @@ function beginSetup2(params)
             gym.call("setLeaderGUID", { leader.guid })
         end
 
-        -- , gen6LeadersArr[2], gen7LeadersArr[2], gen8LeadersArr[2]
-        local eliteFourPokeballs = { gen1LeadersArr[2], gen2LeadersArr[2], gen3LeadersArr[2], gen4LeadersArr[2], gen5LeadersArr[2] }
+        -- , gen7LeadersArr[2], gen8LeadersArr[2], gen9LeadersArr[2]
+        local eliteFourPokeballs = { gen1LeadersArr[2], gen2LeadersArr[2], gen3LeadersArr[2], gen4LeadersArr[2], gen5LeadersArr[2], gen6LeadersArr[2] }
         local elite4Gym = getObjectFromGUID("a0f650")
         for i = 1, 4 do
             gen = math.random(1, #eliteFourPokeballs)
@@ -189,8 +189,8 @@ function beginSetup2(params)
             elite4Gym.call("setLeaderGUID", { leader.guid })
         end
 
-        -- , gen6LeadersArr[3], gen7LeadersArr[3], gen8LeadersArr[3]
-        local rivalPokeballs = { gen1LeadersArr[3], gen2LeadersArr[3], gen3LeadersArr[3], gen4LeadersArr[3], gen5LeadersArr[3] }
+        -- , gen7LeadersArr[3], gen8LeadersArr[3], gen9LeadersArr[3]
+        local rivalPokeballs = { gen1LeadersArr[3], gen2LeadersArr[3], gen3LeadersArr[3], gen4LeadersArr[3], gen5LeadersArr[3], gen6LeadersArr[3] }
         local rivalGym = getObjectFromGUID("c970ca")
         gen = math.random(1, #rivalPokeballs)
         local rivalPokeball = getObjectFromGUID(rivalPokeballs[math.random(1, #rivalPokeballs)])
@@ -198,6 +198,16 @@ function beginSetup2(params)
         local leader = rivalPokeball.takeObject({})
         rivalGym.putObject(leader)
         rivalGym.call("setLeaderGUID", { leader.guid })
+
+        -- gen9LeadersArr[4]
+        local silphCoPokeballs = { gen1LeadersArr[4], gen2LeadersArr[4], gen3LeadersArr[4], gen4LeadersArr[4], gen5LeadersArr[4], gen6LeadersArr[4], gen7LeadersArr[4], gen8LeadersArr[4] }
+        local silphCoGym = getObjectFromGUID("19db0d")
+        gen = math.random(1, #silphCoPokeballs)
+        local silphCoPokeball = getObjectFromGUID(silphCoPokeballs[math.random(1, #silphCoPokeballs)])
+        silphCoPokeball.shuffle()
+        local leader = silphCoPokeball.takeObject({})
+        silphCoGym.putObject(leader)
+        silphCoGym.call("setLeaderGUID", { leader.guid })
     end
 
     self.removeButton(0)
@@ -264,6 +274,14 @@ function setupGyms(leadersArr)
         rivalGym.putObject(leader)
         rivalGym.call("setLeaderGUID", { leader.guid })
     end
+
+    local silphCoGym = getObjectFromGUID("19db0d")
+    local silphCoPokeball = getObjectFromGUID(leadersArr[4])
+    for i = 1, #silphCoPokeball.getObjects() do
+        leader = silphCoPokeball.takeObject({})
+        silphCoGym.putObject(leader)
+        silphCoGym.call("setLeaderGUID", { leader.guid })
+    end
 end
 
 function start()
@@ -294,7 +312,7 @@ function start()
         end
     end
 
-    Global.call("PlayRouteMusic", {})
+    Global.call("PlayRouteMusic",{})
 
     -- Deal out all pokeballs
     local dealGreen = function() greenPokeball.call("begin") end
@@ -314,7 +332,7 @@ function start()
 end
 
 function settings()
-    Global.call("ShowSettingsPopup", {})
+    Global.call("ShowSettingsPopup",{})
 end
 
 function hasEnoughCustomLeaders()

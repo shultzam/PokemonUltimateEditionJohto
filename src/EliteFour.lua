@@ -39,6 +39,9 @@ function battle()
     trainerGUID = leaderData.guid,
     gymGUID = self.getGUID(),
     isGymLeader = false,
+    isSilphCo = false,
+    isRival = false,
+    isElite4 = true,
     pokemon = leaderData.pokemon
   }
 

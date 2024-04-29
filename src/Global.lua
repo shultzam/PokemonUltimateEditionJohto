@@ -13,6 +13,11 @@ battleScripting = false
 aiDifficulty = 0
 -- Save Data
 customGen = false
+
+--[[ TODO: Lua cannot handle sparse arrays and, apparenly, false terms can create sparse array
+           behavior (see https://stackoverflow.com/a/17974661). But if these are strings, the 
+           inconsistent behavior cannot occur. Don't overthink it, I am sad too.
+]]
 selectedGens = { false, false, false, false, false, false, false, false, false }
 
 -- Pokeball Colours
@@ -1122,6 +1127,7 @@ moveData =
     {name="Karate Chop",    power=1,      type="Fighting",  dice=8, STAB=true},
     {name="Low Kick",       power=1,      type="Fighting",  dice=4, STAB=true},
     {name="Mach Punch",     power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="Priority", target="Self"}} },
+    {name="Power-Up Punch", power=3,      type="Fighting",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self"}} },
     {name="Revenge",        power=2,      type="Fighting",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self", condition="Power"}} },
     {name="Rock Smash",     power=2,      type="Fighting",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self", chance=5}} },
     {name="Sacred Sword",   power=3,      type="Fighting",  dice=6, STAB=false, effects={{name="Custom"}} },
@@ -1523,13 +1529,79 @@ moveData =
 
 gymData =
 {
+  -- GenI Team Rocket
   {
-    guid = "559fc4",
+    guid = "0f87c4",
     trainerName = "Team Rocket",
     pokemon = {
-      { name = "Kangaskhan", level = 5, types = { "Normal" },           moves = { "Comet Punch", "Rage", "Slash" } },
-      { name = "Nidoqueen",  level = 6, types = { "Poison", "Ground" }, moves = { "Scratch", "Poison Sting", "Body Slam" } } }
+      { name = "Weezing", level = 5,  types = { "Poison" },            moves = { "Smokescreen", "Sludge", "Self-Destruct" } },
+      { name = "Arbok",   level = 6,  types = { "Poison" },            moves = { "Screech", "Acid", "Bite" } } 
+    }
   },
+  -- GenII Team Rocket
+  {
+    guid = "81131f",
+    trainerName = "Team Rocket",
+    pokemon = {
+      { name = "Kangaskhan", level = 5, types = { "Normal" },           moves = { "Comet Punch", "Rage", "Sucker Punch" } },
+      { name = "Nidoqueen",  level = 6, types = { "Poison", "Ground" }, moves = { "Poison Fang", "Body Slam", "Bite" } }
+    }
+  },
+  -- GenIII Team Rocket
+  {
+    guid = "d91038",
+    trainerName = "Team Rocket",
+    pokemon = {
+      { name = "Camerupt",   level = 5, types = { "Fire", "Ground" },     moves = { "Fissure", "Ember", "Earthquake" } },
+      { name = "Sharpedo",   level = 6, types = { "Water", "Dark" },      moves = { "Swagger", "Aqua Jet", "Crunch" } }
+    }
+  },
+  -- GenIV Team Rocket
+  {
+    guid = "25a357",
+    trainerName = "Team Galactic",
+    pokemon = {
+      { name = "Crobat",     level = 5, types = { "Poison", "Flying" },   moves = { "Poison Fang", "Air Cutter", "Bite" } },
+      { name = "Honchkrow",  level = 6, types = { "Dark", "Flying" },     moves = { "Night Shade", "Drill Peck", "Feint Attack" } }
+    }
+  },
+  -- GenV Team Rocket
+  {
+    guid = "c6bb6e",
+    trainerName = "Team Plasma",
+    pokemon = {
+      { name = "Zoroark",    level = 5, types = { "Dark" },               moves = { "Fury Swipes", "Hone Claws", "Feint Attack" } },
+      { name = "Hydreigon",  level = 6, types = { "Dark", "Dragon" },     moves = { "Tri Attack", "Assurance", "Dragon Breath" } }
+    }
+  },
+  -- GenVI Team Rocket
+  {
+    guid = "edb9ad",
+    trainerName = "Team Flare",
+    pokemon = {
+      { name = "Liepard",    level = 5, types = { "Dark" },               moves = { "Fury Swipes", "Hone Claws", "Play Rough" } },
+      { name = "Pyroar",     level = 6, types = { "Fire", "Normal" },     moves = { "Noble Roar", "Crunch", "Flamethrower" } }
+    }
+  },
+  -- GenVII Team Rocket
+  {
+    guid = "85a301",
+    trainerName = "Team Rocket",
+    pokemon = {
+      { name = "Golisopod",  level = 5, types = { "Bug", "Water" },       moves = { "Swords Dance", "Razor Shell", "First Impression" } },
+      { name = "Bewear",     level = 6, types = { "Normal", "Fighting" }, moves = { "Take Down", "Payback", "Hammer Arm" } }
+    }
+  },
+  -- GenVIII Team Rocket
+  {
+    guid = "a5c540",
+    trainerName = "Team Yell",
+    pokemon = {
+      { name = "Linoone",    level = 5, types = { "Dark", "Normal" },     moves = { "Night Slash", "Sucker Punch", "Tail Slap" } },
+      { name = "Thievul",    level = 6, types = { "Dark" },               moves = { "Slash", "Hone Claws", "Pin Missile" } }
+    }
+  },
+  -- TODO: GenIX Team Rocket
 
   -- Gen I
   -- Gym Leaders
@@ -1978,7 +2050,7 @@ gymData =
   -- Gym GenV
   -- Gym Leaders
   {
-    guid = "9d2d79",
+    guid = "4ad822",
     trainerName = "Cheren",
     pokemon = {
       { name = "Patrat",   level = 2, types = { "Normal" }, moves = { "Work Up", "Tackle", "Bite" } },
@@ -2085,6 +2157,117 @@ gymData =
       { name = "Bouffalant", level = 9,  types = { "Normal" }, moves = { "Stone Edge", "Megahorn", "Head Charge" } },
       { name = "Volcarona",  level = 10, types = { "Bug" },    moves = { "Overheat", "Bug Buzz", "Hyper Beam" } } }
   },
+
+  -- Gym GenVI
+  -- Gym Leaders
+  {
+    guid = "b09f56",
+    trainerName = "Viola",
+    pokemon = {
+      { name = "Surskit", level = 2, types = { "Bug" }, moves = { "Quick Attack", "Bubble", "Infestation" } },
+      { name = "Vivillon", level = 2, types = { "Bug" }, moves = { "Harden", "Gust", "Infestation" } } }
+  },
+  {
+    guid = "913644",
+    trainerName = "Grant",
+    pokemon = {
+      { name = "Amaura", level = 3, types = { "Rock" }, moves = { "Thunder Wave", "Take Down", "Rock Tomb" } },
+      { name = "Tyrunt", level = 3, types = { "Rock" }, moves = { "Bite", "Stomp", "Rock Tomb" } } }
+  },
+  {
+    guid = "dd267b",
+    trainerName = "Korrina",
+    pokemon = {
+        { name = "Hawlucha", level = 3, types = { "Fighting" }, moves = { "Hone Claws", "Wing Attack", "Flying Press" } },
+        { name = "Lucario", level = 4, types = { "Fighting" }, moves = { "Metal Sound", "Bone Rush", "Power-Up Punch" } } }
+  },
+  {
+    guid = "bc4cea",
+    trainerName = "Ramos",
+    pokemon = {
+      { name = "Weepinbell", level = 4, types = { "Grass" }, moves = { "Poison Powder", "Acid", "Grass Knot" } },
+      { name = "Gogoat", level = 4, types = { "Grass" }, moves = { "Bulldoze", "Take Down", "Razor Leaf" } } }
+  },
+  {
+    guid = "f67255",
+    trainerName = "Clemont",
+    pokemon = {
+      { name = "Magneton", level = 5, types = { "Electric" }, moves = { "Tri Attack", "Mirror Shot", "Thunderbolt" } },
+      { name = "Heliolisk", level = 6, types = { "Electric" }, moves = { "Dark Pulse", "Focus Blast", "Thunderbolt" } } }
+  },
+  {
+    guid = "18bfc2",
+    trainerName = "Valerie",
+    pokemon = {
+      { name = "Mawile", level = 5, types = { "Steel" }, moves = { "Iron Defense", "Crunch", "Play Rough" } },
+      { name = "Sylveon", level = 6, types = { "Fairy" }, moves = { "Charm", "Swift", "Dazzling Gleam" } } }
+  },
+  {
+    guid = "2abaeb",
+    trainerName = "Olympia",
+    pokemon = {
+      { name = "Slowking", level = 7, types = { "Water" }, moves = { "Calm Mind", "Power Gem", "Psychic" } },
+      { name = "Meowstic", level = 7, types = { "Psychic" }, moves = { "Calm Mind", "Shadow Ball", "Psychic" } } }
+  },
+  {
+    guid = "bdc2f5",
+    trainerName = "Wulfric",
+    pokemon = {
+      { name = "Cryogonal",level = 7, types = { "Ice" }, moves = { "Confuse Ray", "Flash Cannon", "Ice Beam" } },
+      { name = "Avalugg",  level = 7, types = { "Ice" }, moves = { "Crunch", "Iron Defense", "Avalanche" } } }
+  },
+
+  -- Elite Four
+  {
+    guid = "889940",
+    trainerName = "Wikstrom",
+    pokemon = {
+      { name = "Klefki", level = 8, types = { "Steel" }, moves = { "Spikes", "Dazzling Gleam", "Flash Cannon" } },
+      { name = "Aegislash", level = 9, types = { "Steel" }, moves = { "Shadow Claw", "Sacred Sword", "Iron Head" } } }
+  },
+  {
+    guid = "c087f9",
+    trainerName = "Siebold",
+    pokemon = {
+      { name = "Clawitzer",  level = 8, types = { "Water" }, moves = { "Dark Pulse", "Aura Sphere", "Water Pulse" } },
+      { name = "Barbaracle", level = 9, types = { "Rock" }, moves = { "Stone Edge", "Cross Chop", "Razor Shell" } } }
+  },
+  {
+    guid = "182d74",
+    trainerName = "Drasna",
+    pokemon = {
+      { name = "Dragalge", level = 8, types = { "Poison" }, moves = { "Surf", "Sludge Bomb", "Dragon Pulse" } },
+      { name = "Noivern", level = 9, types = { "Flying" }, moves = { "Super Fang", "Air Slash", "Dragon Pulse" } } }
+  },
+  {
+    guid = "7749a1",
+    trainerName = "Malva",
+    pokemon = {
+      { name = "Pyroar", level = 8, types = { "Fire" }, moves = { "Noble Roar", "Wild Charge", "Flamethrower" } },
+      { name = "Talonflame",  level = 9, types = { "Fire" }, moves = { "Steel Wing", "Brave Bird", "Flare Blitz" } } }
+  },
+  -- Champion
+  {
+    guid = "12326f",
+    trainerName = "Diantha",
+    pokemon = {
+      { name = "Goodra", level = 9, types = { "Dragon" }, moves = { "Muddy Water", "Fire Blast", "Dragon Pulse" } },
+      { name = "Gardevoir", level = 10, types = { "Psychic" }, moves = { "Shadow Ball", "Psychic", "Moonblast" } } }
+  },
+  {
+    guid = "7faa66",
+    trainerName = "Diantha",
+    pokemon = {
+      { name = "Gourgeist", level = 9, types = { "Ghost" }, moves = { "Shadow Sneak", "Phantom Force", "Seed Bomb" } },
+      { name = "Aurorus", level = 10, types = { "Rock" }, moves = { "Reflect", "Thunder", "Blizzard" } } }
+  },
+  {
+    guid = "94f594",
+    trainerName = "Diantha",
+    pokemon = {
+      { name = "Hawlucha", level = 9, types = { "Fighting" }, moves = { "Swords Dance", "Poison Jab", "Flying Press" } },
+      { name = "Tyrantrum", level = 10, types = { "Rock" }, moves = { "Crunch", "Dragon Claw", "Head Smash" } } }
+  },
 }
 
 typeData =
@@ -2162,8 +2345,8 @@ end
 function GetPokemonDataByGUID(params)
   local data
   for i = 1, #selectedGens do
+    --printToAll("TEMP | serching Gen " .. i .. " for GUID: " .. params.guid)
     if selectedGens[i] then
-      printToAll("TEMP | Searching Gen " .. i .. " data for GUID: " .. params.guid)
       data = getPokemonData(genData[i], params.guid)
       if data != nil then
         return data
@@ -2182,7 +2365,7 @@ function GetPokemonDataByGUID(params)
   if data != nil then
     return data
   end
-  print("No Pokémon Data Found")
+  print("No Pokémon Data Found for GUID: " .. params.guid)
 end
 
 function GetPokemonDataByName(params)
@@ -2366,7 +2549,8 @@ function beginSetup(player, value, id)
 end
 
 -- String to boolean lookup dict.
-stringToBoolean={ ["True"]=true, ["False"]=false }
+-- TODO: what if this lookup fails?
+stringToBoolean = { ["True"]=true, ["true"]=true, ["False"]=false, ["false"]=false }
 
 function gen1Set(player, isOn)
   selectedGens[1] = stringToBoolean[isOn]
@@ -2609,4 +2793,26 @@ function PlayVictoryMusic()
     title = "Victory Music"
   }
   MusicPlayer.setCurrentAudioclip(parameters)
+end
+
+function PlayCynthiaRivalMusic()
+  currentTrack = MusicPlayer.playlistIndex + 1
+  parameters =
+  {
+    url = "http://cloud-3.steamusercontent.com/ugc/2465233915448687664/638298CFD4041533322CB8E537B98923EAA776EE/",
+    title = "Cynthia Battle Music"
+  }
+  MusicPlayer.setCurrentAudioclip(parameters)
+  MusicPlayer.repeat_track = true
+end
+
+function PlaySilphCoBattleMusic()
+  currentTrack = MusicPlayer.playlistIndex + 1
+  parameters =
+  {
+    url = "http://cloud-3.steamusercontent.com/ugc/2465233915448769574/09A09106156072F227DB6D44211395F1545DFB9C/",
+    title = "Silph Co. Battle Music"
+  }
+  MusicPlayer.setCurrentAudioclip(parameters)
+  MusicPlayer.repeat_track = true
 end
