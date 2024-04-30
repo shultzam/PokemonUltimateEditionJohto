@@ -16,8 +16,8 @@ customGen = false
 
 --[[ 
   NOTE: Lua cannot handle sparse arrays and, apparenly, false terms can create sparse array
-        behavior (see https://stackoverflow.com/a/17974661). An online interpret suggests
-        true/false is immune but somthing funky is going on here where *sometimes* only 
+        behavior (see https://stackoverflow.com/a/17974661). An online interpreter suggests
+        true/false is immune but something funky is going on here where *sometimes* only 
         gens 1-4 are considered enabled. ]]
 selectedGens = {true,true,true,true,true,true,true,true,true}
 
@@ -792,8 +792,8 @@ gen6PokemonData =
   { name = "Braixen",     level = 3, types = { "Fire" },     moves = { "Fire Spin", "Light Screen" },        guids = { "c5d7f0", "2b10a5" },           evoData = { { cost = 2, ball = RED, gen = 6, guids = { "9d0714", "ab189f" } } } },
   { name = "Delphox",     level = 5, types = { "Fire" },     moves = { "Mystical Fire", "Psyshock" },        guids = { "cab045", "9d0714", "ab189f" }, },
   { name = "Froakie",     level = 1, types = { "Water" },    moves = { "Quick Attack", "Bubble" },           guids = { "2e6ec8" },                     evoData = { { cost = 2, ball = BLUE, gen = 6, guids = { "d74138" } } } },
-  { name = "Frogadier",   level = 3, types = { "Water" },    moves = { "Water Pulse", "Bounce" },            guids = { "2ac3d0", "d74138" },           evoData = { { cost = 2, ball = RED, gen = 6, guids = { "5dbd84", "678720" } } } },
-  { name = "Greninja",    level = 5, types = { "Water" },    moves = { "Water Shuriken", "Night Slash" },    guids = { "149c36", "5dbd84", "678720" }, },
+  { name = "Frogadier",   level = 3, types = { "Water" },    moves = { "Water Pulse", "Bounce" },            guids = { "2ac3d0", "d74138" },           evoData = { { cost = 2, ball = RED, gen = 6, guids = { "5dbd84", "3bf77c" } } } },
+  { name = "Greninja",    level = 5, types = { "Water" },    moves = { "Water Shuriken", "Night Slash" },    guids = { "6e82bc", "5dbd84", "3bf77c" }, },
   { name = "Bunnelby",    level = 1, types = { "Normal" },   moves = { "Double Slap", "Leer" },              guids = { "dd60c8" },                     evoData = { { cost = 2, ball = BLUE, gen = 6, guids = { "fa6708" } } } },
   { name = "Diggersby",   level = 3, types = { "Normal" },   moves = { "Super Fang", "Dig" },                guids = { "f7395c", "fa6708" } },
   { name = "Fletchling",  level = 1, types = { "Flying" },   moves = { "Growl", "Peck" },                    guids = { "10f8ac" },                     evoData = { { cost = 2, ball = BLUE, gen = 6, guids = { "d4e15c" } } } },
@@ -1024,8 +1024,8 @@ gen8PokemonData =
   { name = "Yamper",        level = 1, types = { "Electric" }, moves = { "Nuzzle", "Roar" }, guids = { "71d863" }, evoData = { { cost = 2, ball = BLUE, gen = 8, guids = { "d10387"} } } },
   { name = "Boltund",       level = 3, types = { "Electric" }, moves = { "Wild Charge", "Bite" },   guids = { "fa69eb","d10387"}  }, 
   { name = "Rolycoly",      level = 1, types = { "Rock" }, moves = { "Rock Polish", "Rapid Spin" },   guids = { "152d0a"}, evoData = { { cost = 2, ball = BLUE, gen = 8, guids = { "19ffab"} } } }, 
-  { name = "Carkol",        level = 3, types = { "Rock" }, moves = { "Rock Blast", "Flame Charge" },   guids = { "7e1e68","19ffab"}, evoData = { { cost = 2, ball = BLUE, gen = 8, guids = { "5eecb1","678720"} } }  },
-  { name = "Coalossal",     level = 5, types = { "Rock" }, moves = { "Ancient Power", "Incinerate" }, guids = { "6ac20e","5eecb1","678720" } },
+  { name = "Carkol",        level = 3, types = { "Rock" }, moves = { "Rock Blast", "Flame Charge" },   guids = { "7e1e68","19ffab"}, evoData = { { cost = 2, ball = RED, gen = 8, guids = { "678720","5eecb1"} } }  },
+  { name = "Coalossal",     level = 5, types = { "Rock" }, moves = { "Ancient Power", "Incinerate" }, guids = { "6ac20e","678720","5eecb1" } },
   { name = "Applin",        level = 2, types = { "Grass" }, moves = { "Astonish", "Withdraw" },  guids = { "5d39a1" }, evoData = { { cost = 2, ball = YELLOW, gen = 8, guids = { "889a70" } }, { cost = 2, ball = YELLOW, gen = 8, guids = { "7ea880" } } }},
   { name = "Flapple",       level = 4, types = { "Grass" }, moves = { "Grav Apple", "Dragon Pulse" }, guids = { "beb575","889a70" } },
   { name = "Appletun",      level = 4, types = { "Grass" }, moves = { "Apple Acid", "Dragon Pulse" },  guids = { "a26f34","7ea880" }},
@@ -2553,7 +2553,7 @@ end
 function GetPokemonDataByGUID(params)
   local data
   for i = 1, #selectedGens do
-    printToAll("TEMP | serching Gen " .. i .. " for GUID: " .. params.guid)
+    --printToAll("TEMP | serching Gen " .. i .. " for GUID: " .. params.guid)
     if selectedGens[i] then
       data = getPokemonData(genData[i], params.guid)
       if data != nil then
