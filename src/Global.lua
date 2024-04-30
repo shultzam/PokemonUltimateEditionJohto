@@ -2248,10 +2248,10 @@ gymData =
       { name = "Milotic",  level = 10, types = { "Water" }, moves = { "Mirror Coat", "Surf", "Ice Beam" } } }
   },
   {
-    guid = "076af6",
+    guid = "9d2d79",
     trainerName = "Cynthia",
     pokemon = {
-      { name = "Spiritomb", level = 9,  types = { "Ghost" },  moves = { "Sheer Wind", "Shadow Ball", "Dark Pulse" } },
+      { name = "Spiritomb", level = 9,  types = { "Ghost" },  moves = { "Silver Wind", "Shadow Ball", "Dark Pulse" } },
       { name = "Garchomp",  level = 10, types = { "Dragon" }, moves = { "Earthquake", "Dragon Rush", "Giga Impact" } } }
   },
 
