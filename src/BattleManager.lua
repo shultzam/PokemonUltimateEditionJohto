@@ -84,7 +84,7 @@ local defCounter="b76b2a"
 local defMoveText={"9e8ac1","68aee8", "8099cc"}
 local defText="0db567"
 local roundText="8ba5f3"
-local arenaText="08a4fe"
+local arenaTextGUID="f0b393"
 local currRound = 0
 
 -- Arena Button Positions
@@ -249,7 +249,7 @@ function setScriptingEnabled(enabled)
 end
 
 function setBattleState(state)
-  local arenaText = getObjectFromGUID("08a4fe")
+  local arenaText = getObjectFromGUID(arenaTextGUID)
   battleState = state
   if battleState == SELECT_MOVE then
     arenaText.TextTool.setValue("SELECT MOVE")
@@ -258,9 +258,9 @@ function setBattleState(state)
   elseif battleState == ROLL_ATTACK then
     arenaText.TextTool.setValue("ROLL ATTACK")
   elseif battleState == PRE_MOVE_RESOLVE_STATUS or battleState == RESOLVE_STATUS then
-      arenaText.TextTool.setValue("RESOLVE STATUS")
+    arenaText.TextTool.setValue("RESOLVE STATUS")
   elseif battleState == SELECT_POKEMON then
-      arenaText.TextTool.setValue("SELECT POKEMON")
+    arenaText.TextTool.setValue("SELECT POKEMON")
   elseif battleState == NO_BATTLE then
     arenaText.TextTool.setValue("ARENA")
   end
@@ -1823,7 +1823,6 @@ end
 function recallGym()
 
   local gymLeader = getObjectFromGUID(defenderData.trainerGUID)
-
   local gym = getObjectFromGUID(defenderData.gymGUID)
   gym.putObject(gymLeader)
 
@@ -3213,4 +3212,18 @@ function showFlipGymButton(visible)
 
   local yPos = visible and 0.5 or 1000
   self.editButton({index=35, position={2.6, yPos, -0.6}})
+end
+
+-- Helper function to print a table.
+function dump_table(o)
+  if type(o) == 'table' then
+      local s = '{ '
+      for k,v in pairs(o) do
+        if type(k) ~= 'number' then k = '"'..k..'"' end
+        s = s .. '['..k..'] = ' .. dump_table(v) .. ','
+      end
+      return s .. '} '
+  else
+      return tostring(o)
+  end
 end
