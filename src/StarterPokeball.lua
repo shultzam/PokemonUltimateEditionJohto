@@ -160,6 +160,8 @@ function beginSetup2(params)
     --     setupGyms(gen7LeadersArr)
     -- elseif params.leadersGen == 8 then
     --     setupGyms(gen8LeadersArr)
+    -- elseif params.leadersGen == 9 then
+    --     setupGyms(gen9LeadersArr)
     elseif params.leadersGen == 0 then
         setupGyms(customLeadersArr)
     elseif params.leadersGen == -1 then
@@ -256,7 +258,9 @@ function setupGyms(leadersArr)
         local gym = getObjectFromGUID(gyms[i])
         leader = gymsPokeball.takeObject({})
         gym.putObject(leader)
+        --printToAll("TEMP | setting gym " .. i .. " leader GUID: " .. leader.guid)
         gym.call("setLeaderGUID", { leader.guid })
+        --printToAll("TEMP | called  setLeaderGUID")
     end
 
     local elite4Gym = getObjectFromGUID("a0f650")
@@ -264,7 +268,9 @@ function setupGyms(leadersArr)
     for i = 1, #elite4Pokeball.getObjects() do
         leader = elite4Pokeball.takeObject({})
         elite4Gym.putObject(leader)
+        --printToAll("TEMP | setting elite " .. i .. " leader GUID: " .. leader.guid)
         elite4Gym.call("setLeaderGUID", { leader.guid })
+        --printToAll("TEMP | called  setLeaderGUID")
     end
 
     local rivalGym = getObjectFromGUID("c970ca")
@@ -272,7 +278,9 @@ function setupGyms(leadersArr)
     for i = 1, #rivalPokeball.getObjects() do
         leader = rivalPokeball.takeObject({})
         rivalGym.putObject(leader)
+        --printToAll("TEMP | setting rival " .. i .. " leader GUID: " .. leader.guid)
         rivalGym.call("setLeaderGUID", { leader.guid })
+        --printToAll("TEMP | called  setLeaderGUID")
     end
 
     local silphCoGym = getObjectFromGUID("19db0d")
@@ -280,7 +288,9 @@ function setupGyms(leadersArr)
     for i = 1, #silphCoPokeball.getObjects() do
         leader = silphCoPokeball.takeObject({})
         silphCoGym.putObject(leader)
+        --printToAll("TEMP | setting silphco " .. i .. " leader GUID: " .. leader.guid)
         silphCoGym.call("setLeaderGUID", { leader.guid })
+        --printToAll("TEMP | called  setLeaderGUID")
     end
 end
 
@@ -360,3 +370,18 @@ function hasEnoughCustomLeaders()
 
     return enoughCards
 end
+
+-- Helper function to print a table.
+function dump_table(o)
+    if type(o) == 'table' then
+       local s = '{ '
+       for k,v in pairs(o) do
+          if type(k) ~= 'number' then k = '"'..k..'"' end
+          s = s .. '['..k..'] = ' .. dump_table(v) .. ','
+       end
+       return s .. '} '
+    else
+       return tostring(o)
+    end
+end
+ 

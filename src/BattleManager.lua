@@ -98,7 +98,7 @@ local recallAtkPos = {x=13.50, z=2.47}
 local atkEvolve1Pos = {x=5.0, z=5.07}
 local atkEvolve2Pos = {x=8.90, z=5.07}
 local atkMoveZPos = 8.3
-local atkConfirmPos = {x=7.0, z=11.87}
+local atkConfirmPos = {x=7.29, z=11.87}
 
 local incLevelDefPos = {x=8.09, z=-6.14}
 local decLevelDefPos = {x=6.49, z=-6.14}
@@ -2261,7 +2261,7 @@ function calculateEffectiveness(isAttacker, moves, type)
     if moves[i] ~= nil then
 
       local moveData = moves[i]
-      local xPos = -33.03 - (buttonWidths * 0.5)
+      local xPos = -33.88 - (buttonWidths * 0.5)
       moveText.setPosition({xPos + (3.7*(i-1)), 1, textZPos})
       moveData.status = DEFAULT
 
@@ -3085,7 +3085,7 @@ function showMoveButtons(isAttacker)
 
   local numMoves = #moves
   local buttonWidths = (numMoves*3.2) + ((numMoves-1) + 0.5)
-  local xPos = 10.35 - (buttonWidths * 0.5)
+  local xPos = 9.60 - (buttonWidths * 0.5)
 
   for i=1, numMoves do
     local moveName = tostring(moves[i].name)
@@ -3212,5 +3212,5 @@ end
 function showFlipGymButton(visible)
 
   local yPos = visible and 0.5 or 1000
-  self.editButton({index=35, position={3.5, yPos, -0.6}})
+  self.editButton({index=35, position={2.6, yPos, -0.6}})
 end
