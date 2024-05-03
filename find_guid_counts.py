@@ -35,5 +35,5 @@ def extract_unique_words(path: str):
 if __name__ == '__main__':
     result = extract_unique_words(path='./src/Global.lua')
     for key, value in result.items():
-        if value > 1:
+        if value > 2:
             print('UUID {} appears {} times !!'.format(key, value))

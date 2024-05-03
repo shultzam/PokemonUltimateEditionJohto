@@ -322,8 +322,6 @@ function start()
         end
     end
 
-    Global.call("PlayRouteMusic",{})
-
     -- Deal out all pokeballs
     local dealGreen = function() greenPokeball.call("begin") end
     local dealBlue = function() bluePokeball.call("begin") end
@@ -339,9 +337,12 @@ function start()
     Wait.time(dealRed, 8)
     Wait.time(dealLegendary, 10)
     Wait.time(destroy, 10)
+
+    Global.call("PlayRouteMusic",{})
 end
 
 function settings()
+    Global.call("PlayOpeningMusic",{})
     Global.call("ShowSettingsPopup",{})
 end
 

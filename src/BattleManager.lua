@@ -79,10 +79,10 @@ local defenderPokemon=nil
 
 local atkCounter="73b431"
 local atkMoveText={"d91743","8895de", "0390e6"}
-local atkText="c594ba"
+local atkText="a5671b"
 local defCounter="b76b2a"
 local defMoveText={"9e8ac1","68aee8", "8099cc"}
-local defText="0db567"
+local defText="e6c686"
 local roundText="8ba5f3"
 local arenaTextGUID="f0b393"
 local currRound = 0
