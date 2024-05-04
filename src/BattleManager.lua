@@ -1720,6 +1720,10 @@ function sendToArenaGym(params)
       Global.call("PlayGymBattleMusic",{})
   elseif params.isSilphCo then
       Global.call("PlaySilphCoBattleMusic",{})
+
+      -- Take Masterball
+      takeParams = {position = {defenderPos.pokemon[1], 1.5, defenderPos.pokemon[2]}, rotation={0,180,0}}
+      gym.takeObject(takeParams)
   elseif params.isElite4 then
       Global.call("PlayFinalBattleMusic",{})
   elseif params.isRival then
@@ -1762,19 +1766,15 @@ function sendToArenaTrainer(params)
     return false
   end
 
-  --printToAll("TEMP | BM::sendToArenaTrainer calling setTrainerType(ATTACKER, TRAINER, params)")
   setTrainerType(ATTACKER, TRAINER, params)
 
   -- Gym Leader
   local takeParams = {position = {attackerPos.pokemon[1], 1.5, attackerPos.pokemon[2]}, rotation={0,180,0}}
-  --printToAll("TEMP | BM::sendToArenaTrainer, takeParams: " .. dump_table(takeParams))
 
   local pokeball = getObjectFromGUID(params.pokeballGUID)
-  --printToAll("TEMP | BM::sendToArenaTrainer, pokeball == nil: " .. tostring(pokeball == nil))
   pokeball.shuffle()
   local pokemon = pokeball.takeObject(takeParams)
   local pokemonGUID = pokemon.getGUID()
-  --printToAll("TEMP | BM::sendToArenaTrainer, pokemonGUID: " .. pokemonGUID)
   local pokemonData = Global.call("GetPokemonDataByGUID",{guid=pokemonGUID})
   attackerPokemon = {}
   setNewPokemon(attackerPokemon, pokemonData, pokemonGUID)
