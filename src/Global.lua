@@ -42,7 +42,6 @@ playlist =
   { url = "http://cloud-3.steamusercontent.com/ugc/1023948871898697980/2D46041C40896534AC54D157FC6C3CAC1F00A7E9/", title = "Route Music 2" },
   { url = "http://cloud-3.steamusercontent.com/ugc/1023948871898696675/0CC89B7B48CAF248149CF2DE43DADBC1FDD260E2/", title = "Route Music 3" },
   { url = "http://cloud-3.steamusercontent.com/ugc/1023948871898694456/A95CDF7833368368BFB8EDCDB6E77E19785F3B7F/", title = "Route Music 4" },
-  { url = "http://cloud-3.steamusercontent.com/ugc/2469738072713823244/223B28FB6853FB92E4DCD5DA0F5BF57D53C166EF/", title = "Gen III Route 110" },
   { url = "http://cloud-3.steamusercontent.com/ugc/2469738072713830665/51AFCA6A1D2F74287F7065D153AE4893CFE65EE4/", title = "Gen V Route 10" },
   { url = "http://cloud-3.steamusercontent.com/ugc/2469738072713833558/A53A7FA0DDCE1D5B076B323E61F603370D958414/", title = "Gen VIII Route 209" },
   { url = "http://cloud-3.steamusercontent.com/ugc/2469738072713839101/D00A83FF04F6E8E7EC93A284D1264B3A88618721/", title = "Gen VIII Route 201" },
@@ -813,7 +812,7 @@ gen6PokemonData =
   { name = "Flabebe",     level = 1, types = { "Fairy" },    moves = { "Fairy Wind", "Tackle" },             guids = { "de8ea6" },                     evoData = { { cost = 2, ball = GREEN, gen = 6, guids = { "342092" } } } },
   { name = "Floette",     level = 3, types = { "Fairy" },    moves = { "Misty Terrain", "Magical Leaf" },    guids = { "ed9c70", "342092" },           evoData = { { cost = 1, ball = BLUE, gen = 6, guids = { "f389c7", "b23f51" } } } },
   { name = "Florges",     level = 4, types = { "Fairy" },    moves = { "Petal Dance", "Moonblast" },         guids = { "cd9f20", "f389c7", "b23f51" }, },
-  { name = "Skiddo",      level = 2, types = { "Grass" },    moves = { "Take Down", "vine Whip" },           guids = { "0d26ba" },                     evoData = { { cost = 2, ball = YELLOW, gen = 6, guids = { "2ab034" } } } },
+  { name = "Skiddo",      level = 2, types = { "Grass" },    moves = { "Take Down", "Vine Whip" },           guids = { "0d26ba" },                     evoData = { { cost = 2, ball = YELLOW, gen = 6, guids = { "2ab034" } } } },
   { name = "Gogoat",      level = 4, types = { "Grass" },    moves = { "Aerial Ace", "Horn Leech" },         guids = { "b1e400", "2ab034" }, },
   { name = "Pancham",     level = 2, types = { "Fighting" }, moves = { "Arm Thrust", "Work Up" },            guids = { "bf3855" },                     evoData = { { cost = 2, ball = YELLOW, gen = 6, guids = { "cf6845" } } } },
   { name = "Pangoro",     level = 4, types = { "Fighting" }, moves = { "Circle Throw", "Night Slash" },      guids = { "068e59", "cf6845" } },
@@ -1280,6 +1279,7 @@ moveData =
     {name="Spring. Storm",  power=3,      type="Fairy",     dice=6, STAB=false, effects={{name="AttackDown", target="Enemy", chance=6},{name="AttackUp", target="Self", chance=6}} },
     {name="Strange Steam",  power=3,      type="Fairy",     dice=6, STAB=false, effects={{name="Confuse", target="Enemy", chanc=6}} },
     {name="Sweet Kiss",     power=0,      type="Fairy",     dice=6, STAB=false, effects={{name="Confuse", target="Enemy", chance=2}} },
+    {name="Draining Kiss",  power=2,      type="Fairy",     dice=6, STAB=false},
     
     -- Fighting
     {name="Aura Sphere",    power=2,      type="Fighting",  dice=6, STAB=true,  effects={{name="AttackUp", target="Self"}} },
@@ -1599,6 +1599,8 @@ moveData =
     {name="Wrap",           power=1,      type="Normal",  dice=6, STAB=true,    effects={{name="ExtraDice", target="Self", chance=4}} },
     {name="Wring Out",      power="Enemy",type="Normal",  dice=6, STAB=true},
     {name="Yawn",           power=0,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
+    {name="Captivate",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
+    {name="Rock Climb",     power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Confuse", target="Enemy", chance=5}} },
 
     -- Poison
     {name="Acid",           power=1,      type="Poison",  dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=6}} },
@@ -1707,6 +1709,7 @@ moveData =
     {name="Shift Gear",     power=0,      type="Steel",  dice=6, STAB=false,    effects={{name="AttackUp2", target="Self", chance=6}} },
     {name="Steel Wing",     power=2,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackDown", target="Enemy", chance=6}} },
     {name="Sunsteel Strike", power=3,     type="Steel",  dice=6, STAB=true },
+    {name="Heavy Slam",     power=3,      type="Steel",  dice=6, STAB=true },
 
     -- Water
     {name="Aqua Jet",       power=2,      type="Water",  dice=6, STAB=true,     effects={{name="Priority", target="Self"}} },
@@ -2038,7 +2041,7 @@ gymData =
       { name = "Dragonite", level = 10, types = { "Dragon" }, moves = { "Hyper Beam", "Blizzard", "Thunder" } } }
   },
 
-  -- Gym GenIII
+  -- Gen III
   -- Gym Leaders
   {
     guid = "a12ffa",
@@ -2149,7 +2152,7 @@ gymData =
       { name = "Metagross", level = 10, types = { "Steel" }, moves = { "Psychic", "Meteor Mash", "Giga Impact" } } }
   },
 
-  -- Gym GenIV
+  -- Gen IV
   -- Gym Leaders
   {
     guid = "837e35",
@@ -2253,14 +2256,14 @@ gymData =
       { name = "Milotic",  level = 10, types = { "Water" }, moves = { "Mirror Coat", "Surf", "Ice Beam" } } }
   },
   {
-    guid = "9d2d79",
+    guid = "25281e",
     trainerName = "Cynthia",
     pokemon = {
       { name = "Spiritomb", level = 9,  types = { "Ghost" },  moves = { "Silver Wind", "Shadow Ball", "Dark Pulse" } },
       { name = "Garchomp",  level = 10, types = { "Dragon" }, moves = { "Earthquake", "Dragon Rush", "Giga Impact" } } }
   },
 
-  -- Gym GenV
+  -- Gen V
   -- Gym Leaders
   {
     guid = "4ad822",
@@ -2270,49 +2273,49 @@ gymData =
       { name = "Lillipup", level = 2, types = { "Normal" }, moves = { "Work Up", "Quick Attack", "Bite" } } }
   },
   {
-    guid = "2abaeb",
+    guid = "f01b5f",
     trainerName = "Roxie",
     pokemon = {
       { name = "Koffing",    level = 3, types = { "Poison" }, moves = { "Smog", "Tackle", "Assurance" } },
       { name = "Whirlipede", level = 3, types = { "Bug" },    moves = { "Venoshock", "Protect", "Pursuit" } } }
   },
   {
-    guid = "18bfc2",
+    guid = "d5fe45",
     trainerName = "Burgh",
     pokemon = {
       { name = "Dwebble",  level = 3, types = { "Bug" }, moves = { "Sand Attack", "Struggle Bug", "Feint Attack" } },
       { name = "Leavanny", level = 4, types = { "Bug" }, moves = { "Grass Whistle", "Struggle Bug", "Razor Leaf" } } }
   },
   {
-    guid = "f67255",
+    guid = "098cee",
     trainerName = "Elesa",
     pokemon = {
       { name = "Emolga",    level = 4, types = { "Electric" }, moves = { "Thunder Wave", "Pursuit", "Spark" } },
       { name = "Zebstrika", level = 4, types = { "Electric" }, moves = { "Take Down", "Pursuit", "Shock Wave" } } }
   },
   {
-    guid = "bc4cea",
+    guid = "de22b0",
     trainerName = "Clay",
     pokemon = {
       { name = "Krokorok",  level = 5, types = { "Ground" }, moves = { "Swagger", "Sand Tomb", "Crunch" } },
       { name = "Excadrill", level = 6, types = { "Ground" }, moves = { "Slash", "Bulldoze", "Metal Claw" } } }
   },
   {
-    guid = "dd267b",
+    guid = "22f826",
     trainerName = "Skyla",
     pokemon = {
       { name = "Swoobat", level = 5, types = { "Psychic" }, moves = { "Amnesia", "Assurance", "Heart Stamp" } },
       { name = "Swanna",  level = 6, types = { "Water" },   moves = { "Feather Dance", "Bubble Beam", "Air Slash" } } }
   },
   {
-    guid = "913644",
+    guid = "9414b7",
     trainerName = "Drayden",
     pokemon = {
       { name = "Druddigon", level = 7, types = { "Dragon" }, moves = { "Crunch", "Slash", "Revenge" } },
       { name = "Haxorus",   level = 7, types = { "Dragon" }, moves = { "Night Slash", "Slash", "Dragon Tail" } } }
   },
   {
-    guid = "b09f56",
+    guid = "052a06",
     trainerName = "Marlon",
     pokemon = {
       { name = "Carracosta", level = 7, types = { "Water" }, moves = { "Shell Smash", "Rock Slide", "Scald" } },
@@ -2371,7 +2374,7 @@ gymData =
       { name = "Volcarona",  level = 10, types = { "Bug" },    moves = { "Overheat", "Bug Buzz", "Hyper Beam" } } }
   },
 
-  -- Gym GenVI
+  -- Gen VI
   -- Gym Leaders
   {
     guid = "c49242",
@@ -2432,28 +2435,28 @@ gymData =
 
   -- Elite Four
   {
-    guid = "889940",
+    guid = "970078",
     trainerName = "Wikstrom",
     pokemon = {
       { name = "Klefki", level = 8, types = { "Steel" }, moves = { "Spikes", "Dazzling Gleam", "Flash Cannon" } },
       { name = "Aegislash", level = 9, types = { "Steel" }, moves = { "Shadow Claw", "Sacred Sword", "Iron Head" } } }
   },
   {
-    guid = "c087f9",
+    guid = "dfa5a5",
     trainerName = "Siebold",
     pokemon = {
       { name = "Clawitzer",  level = 8, types = { "Water" }, moves = { "Dark Pulse", "Aura Sphere", "Water Pulse" } },
       { name = "Barbaracle", level = 9, types = { "Rock" }, moves = { "Stone Edge", "Cross Chop", "Razor Shell" } } }
   },
   {
-    guid = "182d74",
+    guid = "3c4256",
     trainerName = "Drasna",
     pokemon = {
       { name = "Dragalge", level = 8, types = { "Poison" }, moves = { "Surf", "Sludge Bomb", "Dragon Pulse" } },
       { name = "Noivern", level = 9, types = { "Flying" }, moves = { "Super Fang", "Air Slash", "Dragon Pulse" } } }
   },
   {
-    guid = "7749a1",
+    guid = "c4d767",
     trainerName = "Malva",
     pokemon = {
       { name = "Pyroar", level = 8, types = { "Fire" }, moves = { "Noble Roar", "Wild Charge", "Flamethrower" } },
@@ -2461,25 +2464,224 @@ gymData =
   },
   -- Champion
   {
-    guid = "12326f",
+    guid = "a20a02",
     trainerName = "Diantha",
     pokemon = {
       { name = "Goodra", level = 9, types = { "Dragon" }, moves = { "Muddy Water", "Fire Blast", "Dragon Pulse" } },
       { name = "Gardevoir", level = 10, types = { "Psychic" }, moves = { "Shadow Ball", "Psychic", "Moonblast" } } }
   },
   {
-    guid = "7faa66",
+    guid = "4e871f",
     trainerName = "Diantha",
     pokemon = {
       { name = "Gourgeist", level = 9, types = { "Ghost" }, moves = { "Shadow Sneak", "Phantom Force", "Seed Bomb" } },
       { name = "Aurorus", level = 10, types = { "Rock" }, moves = { "Reflect", "Thunder", "Blizzard" } } }
   },
   {
-    guid = "94f594",
+    guid = "e9ea83",
     trainerName = "Diantha",
     pokemon = {
       { name = "Hawlucha", level = 9, types = { "Fighting" }, moves = { "Swords Dance", "Poison Jab", "Flying Press" } },
       { name = "Tyrantrum", level = 10, types = { "Rock" }, moves = { "Crunch", "Dragon Claw", "Head Smash" } } }
+  },
+
+  -- Gen VII
+  -- Gym Leaders
+  {
+    guid = "9d2d79",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 1,
+    pokemon = {
+      { name = "Yungoos", level = 2, types = { "Normal" }, moves = { "Super Fang", "Sand Attack", "Bite" } },
+      { name = "Gumshoos", level = 2, types = { "Normal" }, moves = { "Hyper Fang", "Sand Attack", "Bite" } } }
+  },
+  {
+    guid = "18bfc2",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 1,
+    pokemon = {
+      { name = "Rattata", level = 2, types = { "Dark" }, moves = { "Tail Whip", "Tackle", "Bite" } },
+      { name = "Raticate", level = 2, types = { "Dark" }, moves = { "Tail Whip", "Quick Attack", "Bite" } } }
+  },
+  {
+    guid = "bc4cea",
+    trainerName = "Hala",
+    gen = 7,
+    gymTier = 2,
+    pokemon = {
+        { name = "Makuhita", level = 3, types = { "Fighting" }, moves = { "Fake Out", "Sand Attack", "Arm Thrust" } },
+        { name = "Crabrawler", level = 3, types = { "Fighting" }, moves = { "Leer", "Pursuit", "Power-Up Punch" } } }
+  },
+  {
+    guid = "f67255",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 3,
+    pokemon = {
+      { name = "Salazzle", level = 3, types = { "Poison" }, moves = { "Poison Fang", "Ember", "Nasty Plot" } },
+      { name = "Marowak", level = 4, types = { "Fire" }, moves = { "Bonemerang", "Flame Wheel", "Shadow Bone" } } }
+  },
+  {
+    guid = "2abaeb",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 3,
+    pokemon = {
+      { name = "Comfey", level = 3, types = { "Fairy" }, moves = { "Growth", "Grass Knot", "Draining Kiss" } },
+      { name = "Lurantis", level = 4, types = { "Grass" }, moves = { "X-Scissor", "Leaf Blade", "Night Slash" } } }
+  },
+  {
+    guid = "dd267b",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 3,
+    pokemon = {
+      { name = "Salandit", level = 3, types = { "Poison" }, moves = { "Smog", "Ember", "Dragon Pulse" } },
+      { name = "Salazzle", level = 4, types = { "Poison" }, moves = { "Smog", "Flamethrower", "Swagger" } } }
+  },
+  {
+    guid = "913644",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 3,
+    pokemon = {
+      { name = "Masquerain", level = 3, types = { "Bug" }, moves = { "Bug Buzz", "Ominous Wind", "Gust" } },
+      { name = "Araquanid", level = 4, types = { "Water" }, moves = { "Infestation", "Crunch", "Bubble Beam" } } }
+  },
+  {
+    guid = "b09f56",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 3,
+    pokemon = {
+      { name = "Alomomola", level = 3, types = { "Water" }, moves = { "Protect", "Double Slap", "Brine" } },
+      { name = "Wishiwashi", level = 4, types = { "Water" }, moves = { "Take Down", "Feint Attack", "Brine" } } }
+  },
+  {
+    guid = "294927",
+    trainerName = "Olivia",
+    gen = 7,
+    gymTier = 4,
+    pokemon = {
+      { name = "Boldore", level = 4, types = { "Rock" }, moves = { "Mud-Slap", "Headbutt", "Rock Blast" } },
+      { name = "Lycanroc", level = 4, types = { "Rock" }, moves = { "Bite", "Rock Throw", "Stone Edge" } } }
+  },
+  {
+    guid = "59c455",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 5,
+    pokemon = {
+      { name = "Banette", level = 5, types = { "Ghost" }, moves = { "Will-O-Wisp", "Sucker Punch", "Phantom Force" } },
+      { name = "Mimikyu", level = 6, types = { "Ghost" }, moves = { "Charm", "Wood Hammer", "Shadow Claw" } } }
+  },
+  {
+    guid = "890b4e",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 5,
+    pokemon = {
+      { name = "Dedenne", level = 5, types = { "Electric" }, moves = { "Charm", "Charge Beam", "Play Rough" } },
+      { name = "Togedemaru", level = 6, types = { "Electric" }, moves = { "Rollout", "Charge Beam", "Zing Zap" } } }
+  },
+  {
+    guid = "922673",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 5,
+    pokemon = {
+      { name = "Charjabug", level = 5, types = { "Bug" }, moves = { "Iron Defense", "Bug Bite", "Spark" } },
+      { name = "Vikavolt", level = 6, types = { "Bug" }, moves = { "Air Slash", "Bug Buzz", "Thunderbolt" } } }
+  },
+  {
+    guid = "75f2f1",
+    trainerName = "Nanu",
+    gen = 7,
+    gymTier = 6,
+    pokemon = {
+      { name = "Krokorok", level = 5, types = { "Ground" }, moves = { "Swagger", "Earthquake", "Crunch" } },
+      { name = "Persian", level = 6, types = { "Dark" }, moves = { "Slash", "Power Gem", "Dark Pulse" } } }
+  },
+  {
+    guid = "d0c8e0",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 7,
+    pokemon = {
+      { name = "Hakammo-o", level = 7, types = { "Dragon" }, moves = { "Noble Roar", "Dragon Claw", "Sky Uppercut" } },
+      { name = "Kommo-o", level = 7, types = { "Dragon" }, moves = { "Noble Roar", "Dragon Tail", "Close Combat" } } }
+  },
+  {
+    guid = "b74bcc",
+    trainerName = "Totem",
+    gen = 7,
+    gymTier = 7,
+    pokemon = {
+      { name = "Blissy", level = 7, types = { "Normal" }, moves = { "Light Screen", "Egg Bomb", "Double-Edge" } },
+      { name = "Ribombee", level = 7, types = { "Bug" }, moves = { "Struggle Bug", "Dazzling Gleam", "Silver Wind" } } }
+  },
+  {
+    guid = "8baab3",
+    trainerName = "Hapu",
+    gen = 7,
+    gymTier = 8,
+    pokemon = {
+      { name = "Flygon", level = 7, types = { "Ground" }, moves = { "Dragon Breath", "Rock Slide", "Earth Power" } },
+      { name = "Mudsdale", level = 7, types = { "Ground" }, moves = { "Counter", "Heavy Slam", "Earthquake" } } }
+   },
+  
+  -- Elite Four
+  {
+    guid = "182d74",
+    trainerName = "Olivia",
+    pokemon = {
+      { name = "Probopass", level = 8, types = { "Rock" }, moves = { "Power Gem", "Thunder Wave", "Earth Power" } },
+      { name = "Lycanroc", level = 9, types = { "Rock" }, moves = { "Stone Edge", "Counter", "Rock Climb" } } }
+  },
+  {
+    guid = "7749a1",
+    trainerName = "Molayne",
+    pokemon = {
+      { name = "Metagross",  level = 8, types = { "Steel" }, moves = { "Hammer Arm", "Meteor Mash", "Zen Headbutt" } },
+      { name = "Dugtrio", level = 9, types = { "Ground" }, moves = { "Stone Edge", "Iron Head", "Earthquake" } } }
+  },
+  {
+    guid = "c087f9",
+    trainerName = "Kahili",
+    pokemon = {
+      { name = "Oricorio", level = 8, types = { "Fire" }, moves = { "Teeter Dance", "Air Slash", "Rev. Dance Fire" } },
+      { name = "Toucannon", level = 9, types = { "Flying" }, moves = { "Hyper Voice", "Aerial Ace", "Flash Cannon" } } }
+  },
+  {
+    guid = "889940",
+    trainerName = "Acerola",
+    pokemon = {
+      { name = "Dhelmise", level = 8, types = { "Ghost" }, moves = { "Slam", "Energy Ball", "Shadow Ball" } },
+      { name = "Palossand",  level = 9, types = { "Ghost" }, moves = { "Iron Defense", "Earth Power", "Shadow Ball" } } }
+  },
+  -- Champion
+  {
+    guid = "94f594",
+    trainerName = "Kukui",
+    pokemon = {
+      { name = "Ninetales", level = 9, types = { "Ice" }, moves = { "Dazzling Gleam", "Ice Shard", "Blizzard" } },
+      { name = "Primarina", level = 10, types = { "Water" }, moves = { "Captivate", "Sparkling Aria", "Moonblast" } } }
+  },
+  {
+    guid = "7faa66",
+    trainerName = "Kukui",
+    pokemon = {
+      { name = "Lycanroc", level = 9, types = { "Rock" }, moves = { "Crunch", "Accelerock", "Stone Edge" } },
+      { name = "Incineroar", level = 10, types = { "Fire" }, moves = { "Darkest Lariat", "Cross Chop", "Flare Blitz" } } }
+  },
+  {
+    guid = "12326f",
+    trainerName = "Hau",
+    pokemon = {
+      { name = "Raichu", level = 9, types = { "Electric" }, moves = { "Thunderbolt", "Psychic", "Focus Blast" } },
+      { name = "Decidueye", level = 10, types = { "Grass" }, moves = { "Nasty Plot", "Spirit Shackle", "Leaf Blade" } } }
   },
 }
 
@@ -2705,6 +2907,53 @@ function GetAIDifficulty()
   return aiDifficulty
 end
 
+-- Shallow-copy a table. If our gym data gets more complicated (nested tables, etc.) we will need a
+-- deep copy instead.
+function ShallowCopy(orig_table)
+  local orig_type = type(orig_table)
+  local copy
+  if orig_type == 'table' then
+      copy = {}
+      for orig_key, orig_value in pairs(orig_table) do
+          copy[orig_key] = orig_value
+      end
+  else -- number, string, boolean, etc
+      copy = orig_table
+  end
+  return copy
+end
+
+-- Function to filter gym data on the "gen" and "gymTier" attribute. If you call this on 
+-- gym data without  the genn and gymTier attributes the return table will just be an empty {}.
+function FilterGymDataOnTier(gen, tier)
+  if gymData == nil then return {} end
+
+  local new_index = 1
+  local temp_arr = ShallowCopy(gymData)
+  local size_orig = #temp_arr
+  for old_index, v in ipairs(temp_arr) do
+      if v.gen == gen and v.gymTier == tier then
+          temp_arr[new_index] = v
+          new_index = new_index + 1
+      end
+  end
+  for i = new_index, size_orig do temp_arr[i] = nil end
+  return temp_arr
+end
+
+-- Retrieves a GUID randomly from the list of gym leaders for a gen and tier.
+function RandomGymGuidOfTier(params)
+  if gymData == nil then return 0 end
+
+  local new_list = FilterGymDataOnTier(params.gen, params.tier)
+  if #new_list > 0 then
+    return new_list[math.random(#new_list)].guid
+  end
+
+  printToAll("Failed to find gym leader options for gen " .. tostring(params.gen) .. ", tier " .. tostring(params.tier))
+  return 0
+end
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --  SETUP
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2754,6 +3003,13 @@ function beginSetup(player, value, id)
     leadersGen = leadersGen,
     randomStarters = randomStarters
   }
+
+  --[[ Initialize the random seed. I know, why 3? Well, when I only did this once Gen VII Gym 5
+       deployed the same gym every. single. time. despite having 3 options. I added two more and
+       things felt more random. Maybe we should add 3 more? *thinking* ]]
+  math.randomseed(os.time())
+  math.randomseed(os.time())
+  math.randomseed(os.time())
 
   local battleManager = getObjectFromGUID("de7152")
   battleManager.call("setScriptingEnabled", battleScripting)

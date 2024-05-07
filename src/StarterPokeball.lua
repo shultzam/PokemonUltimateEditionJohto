@@ -145,42 +145,50 @@ function beginSetup2(params)
 
     -- gyms
     if params.leadersGen == 1 then
-        setupGyms(gen1LeadersArr)
+        setupGyms(gen1LeadersArr, 1)
     elseif params.leadersGen == 2 then
-        setupGyms(gen2LeadersArr)
+        setupGyms(gen2LeadersArr, 2)
     elseif params.leadersGen == 3 then
-        setupGyms(gen3LeadersArr)
+        setupGyms(gen3LeadersArr, 3)
     elseif params.leadersGen == 4 then
-        setupGyms(gen4LeadersArr)
+        setupGyms(gen4LeadersArr, 4)
     elseif params.leadersGen == 5 then
-        setupGyms(gen5LeadersArr)
+        setupGyms(gen5LeadersArr, 5)
     elseif params.leadersGen == 6 then
-        setupGyms(gen6LeadersArr)
-    -- elseif params.leadersGen == 7 then
-    --     setupGyms(gen7LeadersArr)
+        setupGyms(gen6LeadersArr, 6)
+    elseif params.leadersGen == 7 then
+        setupGyms(gen7LeadersArr, 7)
     -- elseif params.leadersGen == 8 then
-    --     setupGyms(gen8LeadersArr)
+    --     setupGyms(gen8LeadersArr, 8)
     -- elseif params.leadersGen == 9 then
-    --     setupGyms(gen9LeadersArr)
+    --     setupGyms(gen9LeadersArr, 9)
     elseif params.leadersGen == 0 then
-        setupGyms(customLeadersArr)
+        setupGyms(customLeadersArr, "custom")
     elseif params.leadersGen == -1 then
         -- random leaders
         local gen
-        -- , gen7LeadersArr[1], gen8LeadersArr[1], gen9LeadersArr[1]
-        local gymPokeballs = { gen1LeadersArr[1], gen2LeadersArr[1], gen3LeadersArr[1], gen4LeadersArr[1], gen5LeadersArr[1], gen6LeadersArr[1] }
+        -- gen8LeadersArr[1], gen9LeadersArr[1]
+        local gymPokeballs = { gen1LeadersArr[1], gen2LeadersArr[1], gen3LeadersArr[1], gen4LeadersArr[1], gen5LeadersArr[1], gen6LeadersArr[1], gen7LeadersArr[1] }
         for i = 1, 8 do
             gen = math.random(1, #gymPokeballs)
             local gymsPokeball = getObjectFromGUID(gymPokeballs[gen])
             local gym = getObjectFromGUID(gyms[i])
-            local cardIndex = 8 - i
-            local leader = gymsPokeball.takeObject({ index = cardIndex })
+            local leader
+            if gymsPokeball.hasTag("MultipleGymLeaders") then
+                local leaderGuid = Global.call("RandomGymGuidOfTier", {gen=gen, tier=i})
+                leader = gymsPokeball.takeObject({ guid = leaderGuid })
+            else
+                local cardIndex = 8 - i
+                leader = gymsPokeball.takeObject({ index = cardIndex })
+            end
+
+            -- Put the retrieved gym leader into the gym.
             gym.putObject(leader)
             gym.call("setLeaderGUID", { leader.guid })
         end
 
-        -- , gen7LeadersArr[2], gen8LeadersArr[2], gen9LeadersArr[2]
-        local eliteFourPokeballs = { gen1LeadersArr[2], gen2LeadersArr[2], gen3LeadersArr[2], gen4LeadersArr[2], gen5LeadersArr[2], gen6LeadersArr[2] }
+        -- , gen8LeadersArr[2], gen9LeadersArr[2]
+        local eliteFourPokeballs = { gen1LeadersArr[2], gen2LeadersArr[2], gen3LeadersArr[2], gen4LeadersArr[2], gen5LeadersArr[2], gen6LeadersArr[2], gen7LeadersArr[2] }
         local elite4Gym = getObjectFromGUID("a0f650")
         for i = 1, 4 do
             gen = math.random(1, #eliteFourPokeballs)
@@ -191,8 +199,8 @@ function beginSetup2(params)
             elite4Gym.call("setLeaderGUID", { leader.guid })
         end
 
-        -- , gen7LeadersArr[3], gen8LeadersArr[3], gen9LeadersArr[3]
-        local rivalPokeballs = { gen1LeadersArr[3], gen2LeadersArr[3], gen3LeadersArr[3], gen4LeadersArr[3], gen5LeadersArr[3], gen6LeadersArr[3] }
+        -- , gen8LeadersArr[3], gen9LeadersArr[3]
+        local rivalPokeballs = { gen1LeadersArr[3], gen2LeadersArr[3], gen3LeadersArr[3], gen4LeadersArr[3], gen5LeadersArr[3], gen6LeadersArr[3], gen7LeadersArr[3] }
         local rivalGym = getObjectFromGUID("c970ca")
         gen = math.random(1, #rivalPokeballs)
         local rivalPokeball = getObjectFromGUID(rivalPokeballs[math.random(1, #rivalPokeballs)])
@@ -251,16 +259,24 @@ function setupPokeballs(pokeballArr, targetPokeballArr)
 end
 
 -- Moves gym leader cards into respective gyms
-function setupGyms(leadersArr)
+function setupGyms(leadersArr, gen)
     local leader
-    local gymsPokeball = getObjectFromGUID(leadersArr[1])
+    local gymsPokeball = getObjectFromGUID(leadersArr[1])    
     for i = 1, 8 do
         local gym = getObjectFromGUID(gyms[i])
-        leader = gymsPokeball.takeObject({})
+        -- If this gym has multiple gym leader options per gym, we need to get creative about retrieving the correct gym.
+        if gymsPokeball.hasTag("MultipleGymLeaders") then
+            local leaderGuid = Global.call("RandomGymGuidOfTier", {gen=gen, tier=i})
+            leader = gymsPokeball.takeObject({ guid = leaderGuid })
+        else
+            leader = gymsPokeball.takeObject({})
+        end
+
+        -- Put the retrieved gym leader into the gym.
         gym.putObject(leader)
-        --printToAll("TEMP | setting gym " .. i .. " leader GUID: " .. leader.guid)
+        -- printToAll("TEMP | setting gym " .. i .. " leader GUID: " .. leader.guid)
         gym.call("setLeaderGUID", { leader.guid })
-        --printToAll("TEMP | called  setLeaderGUID")
+        -- printToAll("TEMP | called  setLeaderGUID")
     end
 
     local elite4Gym = getObjectFromGUID("a0f650")
@@ -268,9 +284,9 @@ function setupGyms(leadersArr)
     for i = 1, #elite4Pokeball.getObjects() do
         leader = elite4Pokeball.takeObject({})
         elite4Gym.putObject(leader)
-        --printToAll("TEMP | setting elite " .. i .. " leader GUID: " .. leader.guid)
+        -- printToAll("TEMP | setting elite " .. i .. " leader GUID: " .. leader.guid)
         elite4Gym.call("setLeaderGUID", { leader.guid })
-        --printToAll("TEMP | called  setLeaderGUID")
+        -- printToAll("TEMP | called  setLeaderGUID")
     end
 
     local rivalGym = getObjectFromGUID("c970ca")
@@ -278,9 +294,9 @@ function setupGyms(leadersArr)
     for i = 1, #rivalPokeball.getObjects() do
         leader = rivalPokeball.takeObject({})
         rivalGym.putObject(leader)
-        --printToAll("TEMP | setting rival " .. i .. " leader GUID: " .. leader.guid)
+        -- printToAll("TEMP | setting rival " .. i .. " leader GUID: " .. leader.guid)
         rivalGym.call("setLeaderGUID", { leader.guid })
-        --printToAll("TEMP | called  setLeaderGUID")
+        -- printToAll("TEMP | called  setLeaderGUID")
     end
 
     local silphCoGym = getObjectFromGUID("19db0d")
@@ -288,9 +304,9 @@ function setupGyms(leadersArr)
     for i = 1, #silphCoPokeball.getObjects() do
         leader = silphCoPokeball.takeObject({})
         silphCoGym.putObject(leader)
-        --printToAll("TEMP | setting silphco " .. i .. " leader GUID: " .. leader.guid)
+        -- printToAll("TEMP | setting silphco " .. i .. " leader GUID: " .. leader.guid)
         silphCoGym.call("setLeaderGUID", { leader.guid })
-        --printToAll("TEMP | called  setLeaderGUID")
+        -- printToAll("TEMP | called  setLeaderGUID")
     end
 end
 
@@ -306,7 +322,7 @@ function start()
 
     local itemDeck = getObjectFromGUID("30f8c1")
     local eventDeck = getObjectFromGUID("656d8c")
-    local tmDeck = getObjectFromGUID("875e79")
+    local tmDeck = getObjectFromGUID("6177d1")
     itemDeck.shuffle()
     eventDeck.shuffle()
     tmDeck.shuffle()
@@ -385,4 +401,3 @@ function dump_table(o)
        return tostring(o)
     end
 end
- 
