@@ -49,6 +49,24 @@ playlist =
   { url = "http://cloud-3.steamusercontent.com/ugc/2469738072713845152/8C7AF47689CE1827BF64C68D710A231B4A943F33/", title = "Gen VIII Route 216" },
 }
 
+teamRocketPlaylist =
+{
+  { url = "http://cloud-3.steamusercontent.com/ugc/2465233915448769574/09A09106156072F227DB6D44211395F1545DFB9C/", title = "Silph Co. Battle Music" },
+  { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351494466/E735E7793EFD0FB37790D2B6E394FAB5DBBE9419/", title = "Rocket Powered Disaster 20" },
+  { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351495962/FCA4C8DFB2639C2F56347C3B5968881ACF22066B/", title = "Rocket Powered Disaster" }
+}
+
+battlePlaylist =
+{
+  { url = "http://cloud-3.steamusercontent.com/ugc/1023949407635181294/DF75C7F7429A20B290E9C39CA1A391F5217CB3BB/", title = "Gym Battle Music 1" },
+  { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351469017/83C3A3A8906183F09ED5F3FBED856E3DE94BF847/", title = "A Formidable Opponent Appears"},
+  { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351472196/9F8A243CFFDF2783A35AF2B8E34CDDAF90BCE76C/", title = "Gym Battle Music - Track 14"},
+  { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351474956/24853183DAFC85171508106801F146DAFF5FD9A7/", title = "Gym Battle Music - Scramble" },
+  { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351479148/191BEBD2158D686534CD2CFC3D75B10E88FB2994/", title = "Gym Battle Music - Absolute Death" },
+  { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351481972/9CFAC33E67467F93004DEAA08084922D5BBEEE7A/", title = "Gym Battle Music - Kanto" },
+  { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351490133/C15770511BBAEE88551E1C332FCD8A26A4F543EB/", title = "Gym Battle Music - Johto" }
+}
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --  DATA
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -281,7 +299,7 @@ gen2PokemonData =
   { name = "Girafarig",  level = 2, types = { "Normal", "Psychic" }, moves = { "Confusion", "Tackle" },           guids = { "1fc55d" } },
   { name = "Pineco",     level = 2, types = { "Bug" },               moves = { "Protect", "Tackle" },             guids = { "0d263c" },                     evoData = { { cost = 2, ball = YELLOW, gen = 2, guids = { "7b0bfe" } } } },
   { name = "Forretress", level = 4, types = { "Bug", "Steel" },      moves = { "Double-Edge", "Spikes" },         guids = { "669297", "7b0bfe" } },
-  { name = "Dunsparce",  level = 1, types = { "Normal" },            moves = { "Glare", "Rage" },                 guids = { "e86d8a" } },
+  { name = "Dunsparce",  level = 1, types = { "Normal" },            moves = { "Glare", "Rage" },                 guids = { "e86d8a" } },     -- TODO: needs evolution added
   { name = "Gligar",     level = 4, types = { "Ground", "Flying" },  moves = { "Feint Attack", "Quick Attack" },  guids = { "f15436" },                     evoData = { { cost = 1, ball = YELLOW, gen = 4, guids = { "96a4fa" } } } },
   { name = "Steelix",    level = 4, types = { "Steel", "Ground" },   moves = { "Iron Tail", "Crunch" },           guids = { "93482a", "9248b4" } },
   { name = "Snubbull",   level = 2, types = { "Fairy" },             moves = { "Charm", "Rage" },                 guids = { "d85741" },                     evoData = { { cost = 1, ball = BLUE, gen = 2, guids = { "5351ec" } } } },
@@ -414,7 +432,7 @@ gen3PokemonData =
   { name = "Trapich",    level = 2, types = { "Ground" },   moves = { "Sand Attack", "Bite" },                guids = { "4c47d2" },                     evoData = { { cost = 2, ball = YELLOW, gen = 3, guids = { "17e4c4" } } } },
   { name = "Vibrava",    level = 4, types = { "Ground" },   moves = { "Crunch", "Dig" },                      guids = { "df1c5c", "17e4c4" },           evoData = { { cost = 2, ball = RED, gen = 3, guids = { "7bb147", "5974bb" } } } },
   { name = "Flygon",     level = 6, types = { "Ground" },   moves = { "Dragon Breath", "Sand Tomb" },         guids = { "7574b6", "7bb147", "5974bb" } },
-  { name = "Cacnea",     level = 2, types = { "Grass" },    moves = { "Pin Missile", "Absorb" },              guids = { "62770e" },                     evoData = { { cost = 2, ball = YELLOW, gen = 3, guids = { "16b950" } } } },
+  { name = "Cacnea",     level = 2, types = { "Grass" },    moves = { "Pin Missile", "Absorb" },              guids = { "62770e" },                     evoData = { { cost = 2, ball = BLUE, gen = 3, guids = { "16b950" } } } },
   { name = "Cactune",    level = 4, types = { "Grass" },    moves = { "Needle Arm", "Spikes" },               guids = { "f8b287", "16b950" } },
   { name = "Swablu",     level = 2, types = { "Flying" },   moves = { "Sing", "Peck" },                       guids = { "6b6c4b" },                     evoData = { { cost = 3, ball = RED, gen = 3, guids = { "d2b5c5" } } } },
   { name = "Altaria",    level = 5, types = { "Dragon" },   moves = { "Dragon Breath", "Sky Attack" },        guids = { "10ef80", "d2b5c5" } },
@@ -1210,9 +1228,10 @@ moveData =
     {name="Snarl",          power=3,      type="Dark",      dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy"}}},
     {name="Sucker Punch",   power=2,      type="Dark",      dice=6, STAB=true,  effects={{name="Priority", target="Self"}}},
     {name="Taunt",          power=0,      type="Dark",      dice=6, STAB=false, effects={{name="Custom"}} },
-    {name="Thief",          power=3,      type="Dark",      dice=6, STAB=true, effects={{name="Custom"}} },
+    {name="Thief",          power=3,      type="Dark",      dice=6, STAB=true,  effects={{name="Custom"}} },
     {name="Torment",        power=0,      type="Dark",      dice=6, STAB=false, effects={{name="Custom"}} },
     {name="Wicked Blow",    power=3,      type="Dark",      dice=8, STAB=true   },
+    {name="Throat Chop",    power=3,      type="Dark",      dice=6, STAB=true },
 
     -- Dragon
     {name="D-max Cannon",   power=3,      type="Dragon",    dice=6, STAB=true,  effects={{name="Custom"}}},
@@ -1232,6 +1251,7 @@ moveData =
     {name="Roar of Time",   power=4,      type="Dragon",    dice=6, STAB=true,  effects={{name="Recharge", target="Self"}} },
     {name="Spacial Rend",   power=3,      type="Dragon",    dice=8, STAB=true   },
     {name="Twister",        power=1,      type="Dragon",    dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy", chance=5}} },
+    {name="Breaking Swipe", power=3,      type="Dragon",    dice=6, STAB=true,  effects={{name="AttackDown", target="Enemy"}} },
 
     -- Electric
     {name="Aura Wheel",     power=4,      type="Electric",  dice=6, STAB=true,  effects={{name="Custom"}}},
@@ -1601,6 +1621,7 @@ moveData =
     {name="Yawn",           power=0,      type="Normal",  dice=6, STAB=true,    effects={{name="Custom"}} },
     {name="Captivate",      power=0,      type="Normal",  dice=6, STAB=false,   effects={{name="AttackDown2", target="Enemy"}} },
     {name="Rock Climb",     power=2,      type="Normal",  dice=6, STAB=true,    effects={{name="Confuse", target="Enemy", chance=5}} },
+    {name="Strength",       power=2,      type="Normal",  dice=6, STAB=true},
 
     -- Poison
     {name="Acid",           power=1,      type="Poison",  dice=6, STAB=true,    effects={{name="AttackUp", target="Self", chance=6}} },
@@ -1710,6 +1731,8 @@ moveData =
     {name="Steel Wing",     power=2,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackDown", target="Enemy", chance=6}} },
     {name="Sunsteel Strike", power=3,     type="Steel",  dice=6, STAB=true },
     {name="Heavy Slam",     power=3,      type="Steel",  dice=6, STAB=true },
+    {name="Smart Strike",   power=2,      type="Steel",  dice=6, STAB=true,     effects={{name="AttackUp", target="Self"}} },
+
 
     -- Water
     {name="Aqua Jet",       power=2,      type="Water",  dice=6, STAB=true,     effects={{name="Priority", target="Self"}} },
@@ -2634,28 +2657,28 @@ gymData =
   
   -- Elite Four
   {
-    guid = "182d74",
+    guid = "7c12f8",
     trainerName = "Olivia",
     pokemon = {
       { name = "Probopass", level = 8, types = { "Rock" }, moves = { "Power Gem", "Thunder Wave", "Earth Power" } },
       { name = "Lycanroc", level = 9, types = { "Rock" }, moves = { "Stone Edge", "Counter", "Rock Climb" } } }
   },
   {
-    guid = "7749a1",
+    guid = "c34329",
     trainerName = "Molayne",
     pokemon = {
       { name = "Metagross",  level = 8, types = { "Steel" }, moves = { "Hammer Arm", "Meteor Mash", "Zen Headbutt" } },
       { name = "Dugtrio", level = 9, types = { "Ground" }, moves = { "Stone Edge", "Iron Head", "Earthquake" } } }
   },
   {
-    guid = "c087f9",
+    guid = "504061",
     trainerName = "Kahili",
     pokemon = {
       { name = "Oricorio", level = 8, types = { "Fire" }, moves = { "Teeter Dance", "Air Slash", "Rev. Dance Fire" } },
       { name = "Toucannon", level = 9, types = { "Flying" }, moves = { "Hyper Voice", "Aerial Ace", "Flash Cannon" } } }
   },
   {
-    guid = "889940",
+    guid = "b9bd0e",
     trainerName = "Acerola",
     pokemon = {
       { name = "Dhelmise", level = 8, types = { "Ghost" }, moves = { "Slam", "Energy Ball", "Shadow Ball" } },
@@ -2682,6 +2705,151 @@ gymData =
     pokemon = {
       { name = "Raichu", level = 9, types = { "Electric" }, moves = { "Thunderbolt", "Psychic", "Focus Blast" } },
       { name = "Decidueye", level = 10, types = { "Grass" }, moves = { "Nasty Plot", "Spirit Shackle", "Leaf Blade" } } }
+  },
+
+  -- Gen VIII
+  -- Gym Leaders
+  {
+    guid = "182d74",
+    trainerName = "Milo",
+    gen = 8,
+    gymTier = 1,
+    pokemon = {
+      { name = "Gossifleur", level = 2, types = { "Grass" }, moves = { "Tackle", "Rapid Spin", "Magical Leaf" } },
+      { name = "Eldegoss", level = 2, types = { "Grass" }, moves = { "Tackle", "Leafage", "Magical Leaf" } } }
+  },
+  {
+    guid = "c087f9",
+    trainerName = "Nessa",
+    gen = 8,
+    gymTier = 2,
+    pokemon = {
+      { name = "Arrokuda", level = 3, types = { "Water" }, moves = { "Fury Attack", "Bite", "Aqua Jet" } },
+      { name = "Drednaw", level = 3, types = { "Water" }, moves = { "Headbutt", "Bite", "Razor Shell" } } }
+  },
+  {
+    guid = "08b1a8",
+    trainerName = "Kabu",
+    gen = 8,
+    gymTier = 3,
+    pokemon = {
+      { name = "Arcanine", level = 3, types = { "Fire" }, moves = { "Will-O-Wisp", "Bite", "Flame Wheel" } },
+      { name = "Centiskorch", level = 4, types = { "Fire" }, moves = { "Coil", "Bug Bite", "Flame Wheel" } } }
+  },
+  {
+    guid = "4f251c",
+    trainerName = "Bea",
+    gen = 8,
+    gymTier = 4,
+    pokemon = {
+        { name = "Sirfetch'd", level = 4, types = { "Fighting" }, moves = { "Detect", "Brutal Swing", "Revenge" } },
+        { name = "Machamp", level = 4, types = { "Fighting" }, moves = { "Strength", "Knock Off", "Revenge" } } }
+  },
+  {
+    guid = "cad1a8",
+    trainerName = "Allister",
+    gen = 8,
+    gymTier = 4,
+    pokemon = {
+        { name = "Cursola", level = 4, types = { "Ghost" }, moves = { "Curse", "Ancient Power", "Hex" } },
+        { name = "Gengar", level = 4, types = { "Ghost" }, moves = { "Hypnosis", "Venoshock", "Hex" } } }
+  },
+  {
+    guid = "7749a1",
+    trainerName = "Opal",
+    gen = 8,
+    gymTier = 5,
+    pokemon = {
+      { name = "Weezing", level = 5, types = { "Poison" }, moves = { "Fairy Wind", "Sludge", "Strange Steam" } },
+      { name = "Alcremie", level = 5, types = { "Fairy" }, moves = { "Sweet Kiss", "Acid Armor", "Draining Kiss" } } }
+  },
+  {
+    guid = "3ec0f8",
+    trainerName = "Melony",
+    gen = 8,
+    gymTier = 6,
+    pokemon = {
+      { name = "Darmanitan", level = 5, types = { "Ice" }, moves = { "Icicle Crash", "Fire Fang", "Headbutt" } },
+      { name = "Lapras", level = 6, types = { "Water" }, moves = { "Ice Beam", "Surf", "Sing" } } }
+  },
+  {
+    guid = "889940",
+    trainerName = "Gordie",
+    gen = 8,
+    gymTier = 6,
+    pokemon = {
+      { name = "Stonjourner", level = 5, types = { "Rock" }, moves = { "Stealth Rock", "Body Slam", "Rock Tomb" } },
+      { name = "Coalossal", level = 5, types = { "Rock" }, moves = { "Rock Blast", "Heat Crash", "Rock Tomb" } } }
+  },
+  {
+    guid = "519731",
+    trainerName = "Piers",
+    gen = 8,
+    gymTier = 7,
+    pokemon = {
+      { name = "Skuntank", level = 7, types = { "Poison" }, moves = { "Screech", "Sucker Punch", "Snarl" } },
+      { name = "Obstagoon", level = 7, types = { "Dark" }, moves = { "Counter", "Shadow Claw", "Throat Chop" } } }
+  },
+  {
+    guid = "1752ad",
+    trainerName = "Raihan",
+    gen = 8,
+    gymTier = 8,
+    pokemon = {
+      { name = "Sandaconda", level = 7, types = { "Protect" }, moves = { "Protect", "Fire Fang", "Earth Power" } },
+      { name = "Duraludon", level = 7, types = { "Steel" }, moves = { "Stone Edge", "Iron Head", "Breaking Swipe" } } }
+  },
+
+  -- Elite Four
+  {
+    guid = "5c28d7",
+    trainerName = "Hop",
+    pokemon = {
+      { name = "Corviknight", level = 8, types = { "Flying" }, moves = { "Light Screen", "Steel Wing", "Drill Peck" } },
+      { name = "Zacian", level = 9, types = { "Fairy" }, moves = { "Swords Dance", "Behemoth Bash", "Play Rough" } } }
+  },
+  {
+    guid = "cb76dc",
+    trainerName = "Marnie",
+    pokemon = {
+      { name = "Morpeko",  level = 8, types = { "Electric" }, moves = { "Seed Bomb", "Bite", "Aura Wheel" } },
+      { name = "Grimmsnarl", level = 9, types = { "Dark" }, moves = { "Spirit Break", "Darkest Lariat", "Play Rough" } } }
+  },
+  {
+    guid = "6af720",
+    trainerName = "Hop",
+    pokemon = {
+      { name = "Dubwool", level = 8, types = { "Normal" }, moves = { "Zen Headbutt", "Headbutt", "Double-Edge" } },
+      { name = "Zamazenta", level = 9, types = { "Fighting" }, moves = { "Iron Defense", "Behemoth Bash", "Close Combat" } } }
+  },
+  {
+    guid = "7ed3ee",
+    trainerName = "Bede",
+    pokemon = {
+      { name = "Rapidash", level = 8, types = { "Psychic" }, moves = { "Smart Strike", "Zen Headbutt", "Dazzling Gleam" } },
+      { name = "Hatterene",  level = 9, types = { "Psychic" }, moves = { "Dark Pulse", "Psychic", "Dazzling Gleam" } } }
+  },
+  -- Champion
+  {
+    guid = "cf8621",
+    trainerName = "Leon",
+    pokemon = {
+      { name = "Cinderace", level = 9, types = { "Fire" }, moves = { "Bounce", "Flame Charge", "Pyro Ball" } },
+      { name = "Aegislash", level = 10, types = { "Steel" }, moves = { "Sacred Sword", "Shadow Ball", "Flash Cannon" } } }
+  },
+  {
+    guid = "cbea60",
+    trainerName = "Leon",
+    pokemon = {
+      { name = "Rillaboom", level = 9, types = { "Grass" }, moves = { "Knock Off", "Razor Leaf", "Drum Beating" } },
+      { name = "Dragapult", level = 10, types = { "Dragon" }, moves = { "Dragon Darts", "Shadow Ball", "Dragon Breath" } } }
+  },
+  {
+    guid = "f0b4c9",
+    trainerName = "Leon",
+    pokemon = {
+      { name = "Inteleon", level = 9, types = { "Water" }, moves = { "Tearful Look", "Liquidation", "Snipe Shot" } },
+      { name = "Charizard", level = 10, types = { "Fire" }, moves = { "Ancient Power", "Air Slash", "Fire Blast" } } }
   },
 }
 
@@ -3249,11 +3417,7 @@ end
 
 function PlayGymBattleMusic()
   currentTrack = MusicPlayer.playlistIndex + 1
-  parameters =
-  {
-    url = "http://cloud-3.steamusercontent.com/ugc/1023949407635181294/DF75C7F7429A20B290E9C39CA1A391F5217CB3BB/",
-    title = "Battle Music"
-  }
+  parameters = battlePlaylist[math.random(#battlePlaylist)]
   MusicPlayer.setCurrentAudioclip(parameters)
   MusicPlayer.repeat_track = true
 end
@@ -3263,7 +3427,7 @@ function PlayFinalBattleMusic()
   parameters =
   {
     url = "http://cloud-3.steamusercontent.com/ugc/1023948871898724461/766C5BF1EB28C474D2366F8223F98C5F083770D0/",
-    title = "Battle Music"
+    title = "Elite 4 Battle Music"
   }
   MusicPlayer.setCurrentAudioclip(parameters)
   MusicPlayer.repeat_track = true
@@ -3291,11 +3455,21 @@ end
 
 function PlaySilphCoBattleMusic()
   currentTrack = MusicPlayer.playlistIndex + 1
-  parameters =
-  {
-    url = "http://cloud-3.steamusercontent.com/ugc/2465233915448769574/09A09106156072F227DB6D44211395F1545DFB9C/",
-    title = "Silph Co. Battle Music"
-  }
+  parameters = teamRocketPlaylist[math.random(#teamRocketPlaylist)]
   MusicPlayer.setCurrentAudioclip(parameters)
   MusicPlayer.repeat_track = true
+end
+
+-- Helper function to print a table.
+  function dump_table(o)
+    if type(o) == 'table' then
+       local s = '{ '
+       for k,v in pairs(o) do
+          if type(k) ~= 'number' then k = '"'..k..'"' end
+          s = s .. '['..k..'] = ' .. dump_table(v) .. ','
+       end
+       return s .. '} '
+    else
+       return tostring(o)
+    end
 end

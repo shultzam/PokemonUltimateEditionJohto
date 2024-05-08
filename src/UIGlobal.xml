@@ -39,7 +39,7 @@
                 <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
                     <Toggle id="gen7LeaderToggleBtn" onValueChanged="gen7LeadersSet" interactable="true">Gen VII</Toggle>
                     <Toggle id="gen8LeaderToggleBtn" onValueChanged="gen8LeadersSet" interactable="true">Gen VIII</Toggle>
-                    <Toggle id="gen9LeaderToggleBtn" onValueChanged="gen9LeadersSet" interactable="true">Gen VIII</Toggle>
+                    <Toggle id="gen9LeaderToggleBtn" onValueChanged="gen9LeadersSet" interactable="true">Gen IX</Toggle>
                 </HorizontalLayout>
                 <HorizontalLayout padding="0" spacing="15" childForceExpandHeight="false">
                     <Toggle onValueChanged="customLeadersSet" interactable="true">Custom</Toggle>
