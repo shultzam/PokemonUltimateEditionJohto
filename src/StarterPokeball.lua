@@ -271,7 +271,7 @@ function setupGyms(leadersArr, gen)
         -- If this gym has multiple gym leader options per gym, we need to get creative about retrieving the correct gym.
         if gymsPokeball.hasTag("MultipleGymLeaders") then
             local leaderGuid = Global.call("RandomGymGuidOfTier", {gen=gen, tier=i})
-            printToAll("TEMP | taking gym leader " .. tostring(leaderGuid) .. " from pokeball: " .. gymsPokeball.guid)
+            --printToAll("TEMP | taking gym leader " .. tostring(leaderGuid) .. " from pokeball: " .. gymsPokeball.guid)
             leader = gymsPokeball.takeObject({ guid = leaderGuid })
         else
             leader = gymsPokeball.takeObject({})
