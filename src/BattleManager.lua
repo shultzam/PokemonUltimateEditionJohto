@@ -169,6 +169,7 @@ function onLoad()
     self.createButton({label="SELECT", click_function="multiEvo5", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
     self.createButton({label="SELECT", click_function="multiEvo6", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
     self.createButton({label="SELECT", click_function="multiEvo7", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
+    self.createButton({label="SELECT", click_function="multiEvo8", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
     
     self.createButton({label="BATTLE", click_function="battleWildPokemon", function_owner=self, position={defConfirmPos.x, 1000, -6.2}, height=300, width=1600, font_size=200})
     self.createButton({label="NEXT POKEMON", click_function="flipGymLeader", function_owner=self, position={3.5, 1000, -0.6}, height=300, width=1600, font_size=200})
@@ -226,7 +227,7 @@ function battleWildPokemon()
         if numMoves > 1 then
           showConfirmButton(DEFENDER, "RANDOM MOVE")
         end
-        self.editButton({index=34, label="END BATTLE"})
+        self.editButton({index=35, label="END BATTLE"})
       end
     else
       inBattle = false
@@ -236,7 +237,7 @@ function battleWildPokemon()
 
       clearPokemonData(DEFENDER)
       clearTrainerData(DEFENDER)
-      self.editButton({index=34, label="BATTLE"})
+      self.editButton({index=35, label="BATTLE"})
 
       Global.call("PlayRouteMusic",{})
     end
@@ -2931,6 +2932,11 @@ function multiEvo7()
   multiEvolve(7)
 end
 
+function multiEvo8()
+
+  multiEvolve(8)
+end
+
 function multiEvolve(index)
 
   multiEvolving = false
@@ -3186,7 +3192,7 @@ end
 function showWildPokemonButton(visible)
 
   local yPos = visible and 0.4 or 1000
-  self.editButton({index=34, position={defConfirmPos.x, yPos, -6.2}})
+  self.editButton({index=35, position={defConfirmPos.x, yPos, -6.2}})
 end
 
 function showMultiEvoButtons(evoData)
@@ -3207,7 +3213,7 @@ end
 function hideMultiEvoButtons()
 
   local buttonIndex = 26
-  for i=1, 7 do
+  for i=1, 8 do
       self.editButton({index=buttonIndex+i, position={0, 1000, 0}})
   end
 end
@@ -3215,7 +3221,7 @@ end
 function showFlipGymButton(visible)
 
   local yPos = visible and 0.5 or 1000
-  self.editButton({index=35, position={2.6, yPos, -0.6}})
+  self.editButton({index=36, position={2.6, yPos, -0.6}})
 end
 
 -- Helper function to print a table.
