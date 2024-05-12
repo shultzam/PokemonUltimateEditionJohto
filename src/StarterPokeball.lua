@@ -34,7 +34,7 @@ local gen8Pokeballs = { "307988", "09cb0e", "99b8aa", "d6ef76", "0faf4d", "ad4ce
 local gen8EvoPokeballs = { "bc1673", "4f7b73", "2d873a", "a32b0d", "d2b2ca", "637026" }
 local gen8LeadersArr = { "227356", "b47fe7", "8e8fd2", "96992a" }
 
-local gen9Pokeballs = { "3168f8", "de981e", "7ced83", "345260", "d63e7c", "3fcea5", "ae0453" }
+local gen9Pokeballs = { "3168f8", "de981e", "7ced83", "345260", "d63e7c", "3fcea5", "79df8a" }
 local gen9EvoPokeballs = { "9c010b", "03ea82", "4217d6", "6ae5c4", "8963b5", "0dc3f5" }
 local gen9LeadersArr = { "e4988b", "7269d7", "80f567", "6f3326" }
 
@@ -221,9 +221,15 @@ function beginSetup2(params)
         gen = math.random(1, #silphCoPokeballs)
         local silphCoPokeball = getObjectFromGUID(silphCoPokeballs[math.random(1, #silphCoPokeballs)])
         silphCoPokeball.shuffle()
-        local leader = silphCoPokeball.takeObject({})
-        silphCoGym.putObject(leader)
-        silphCoGym.call("setLeaderGUID", { leader.guid })
+        local teamRocketLeader
+        if silphCoPokeball.hasTag("MultipleGymLeaders") then
+            local leaderGuid = Global.call("RandomGymGuidOfTier", {gen=gen, tier=11})       -- 11 signifes Team Rocket.
+            teamRocketLeader = silphCoPokeball.takeObject({ guid = leaderGuid })
+        else
+            teamRocketLeader = silphCoPokeball.takeObject({})
+        end
+        silphCoGym.putObject(teamRocketLeader)
+        silphCoGym.call("setLeaderGUID", { teamRocketLeader.guid })
     end
 
     self.removeButton(0)
@@ -309,10 +315,16 @@ function setupGyms(leadersArr, gen)
     local silphCoGym = getObjectFromGUID("19db0d")
     local silphCoPokeball = getObjectFromGUID(leadersArr[4])
     for i = 1, #silphCoPokeball.getObjects() do
-        leader = silphCoPokeball.takeObject({})
-        silphCoGym.putObject(leader)
-        --printToAll("TEMP | setting silphco " .. i .. " leader GUID: " .. leader.guid)
-        silphCoGym.call("setLeaderGUID", { leader.guid })
+        local teamRocketLeader
+        if silphCoPokeball.hasTag("MultipleGymLeaders") then
+            local leaderGuid = Global.call("RandomGymGuidOfTier", {gen=gen, tier=11})       -- 11 signifes Team Rocket.
+            teamRocketLeader = silphCoPokeball.takeObject({ guid = leaderGuid })
+        else
+            teamRocketLeader = silphCoPokeball.takeObject({})
+        end
+        silphCoGym.putObject(teamRocketLeader)
+        --printToAll("TEMP | setting silphco " .. i .. " leader GUID: " .. teamRocketLeader.guid)
+        silphCoGym.call("setLeaderGUID", { teamRocketLeader.guid })
         --printToAll("TEMP | called  setLeaderGUID")
     end
 end

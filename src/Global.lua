@@ -146,7 +146,7 @@ gen1PokemonData =
   { name = "Psyduck",     level = 2, types = { "Water" },              moves = { "Fury Swipes", "Disable" },       guids = { "eeee17" },                    evoData = { { cost = 3, ball = RED, gen = 1, guids = { "4696b8" } } } },
   { name = "Golduck",     level = 5, types = { "Water" },              moves = { "Confusion", "Hydro Pump" },      guids = { "5b9964", "4696b8" } },
   { name = "Mankey",      level = 2, types = { "Fighting" },           moves = { "Low Kick", "Scratch" },          guids = { "c8da5c" },                    evoData = { { cost = 2, ball = YELLOW, gen = 1, guids = { "8b1126" } } } },
-  { name = "Primeape",    level = 4, types = { "Fighting" },           moves = { "Seismic Toss", "Thrash" },       guids = { "a237dd", "8b1126" } },
+  { name = "Primeape",    level = 4, types = { "Fighting" },           moves = { "Seismic Toss", "Thrash" },       guids = { "a237dd", "8b1126" },          evoData = { { cost = 1, ball = RED, gen = 9, guids = { "b68eb7", "6b4dfa" } } } },
   { name = "Growlithe",   level = 2, types = { "Fire" },               moves = { "Ember", "Roar" },                guids = { "7c2b34" },                    evoData = { { cost = 3, ball = YELLOW, gen = 1, guids = { "43d4c1" } } } },
   { name = "Arcanine",    level = 5, types = { "Fire" },               moves = { "Flamethrower", "Bite" },         guids = { "e52b25", "43d4c1" } },
   { name = "Poliwag",     level = 2, types = { "Water" },              moves = { "Hypnosis", "Bubble" },           guids = { "ecd6a3" },                    evoData = { { cost = 2, ball = BLUE, gen = 1, guids = { "10f79d" } } } },
@@ -306,10 +306,10 @@ gen2PokemonData =
   -- Gen 2 201-251
   { name = "Unown",      level = 1, types = { "Psychic" },           moves = { "Hidden Power" },                  guids = { "0dc6f9" } },
   { name = "Wobbuffet",  level = 2, types = { "Psychic" },           moves = { "Safeguard", "Counter" },          guids = { "5dd7a5", "0bbbae" } },
-  { name = "Girafarig",  level = 2, types = { "Normal", "Psychic" }, moves = { "Confusion", "Tackle" },           guids = { "1fc55d" } },
+  { name = "Girafarig",  level = 2, types = { "Normal", "Psychic" }, moves = { "Confusion", "Tackle" },           guids = { "1fc55d" },                     evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "f18198" } } } },
   { name = "Pineco",     level = 2, types = { "Bug" },               moves = { "Protect", "Tackle" },             guids = { "0d263c" },                     evoData = { { cost = 2, ball = YELLOW, gen = 2, guids = { "7b0bfe" } } } },
   { name = "Forretress", level = 4, types = { "Bug", "Steel" },      moves = { "Double-Edge", "Spikes" },         guids = { "669297", "7b0bfe" } },
-  { name = "Dunsparce",  level = 1, types = { "Normal" },            moves = { "Rage", "Glare" },                 guids = { "e86d8a" } },     -- TODO: needs evolution added when gen IX
+  { name = "Dunsparce",  level = 1, types = { "Normal" },            moves = { "Rage", "Glare" },                 guids = { "e86d8a" },                     evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "9c40ab" } } } },
   { name = "Gligar",     level = 4, types = { "Ground", "Flying" },  moves = { "Feint Attack", "Quick Attack" },  guids = { "f15436" },                     evoData = { { cost = 1, ball = YELLOW, gen = 4, guids = { "96a4fa" } } } },
   { name = "Steelix",    level = 4, types = { "Steel", "Ground" },   moves = { "Iron Tail", "Crunch" },           guids = { "93482a", "9248b4" } },
   { name = "Snubbull",   level = 2, types = { "Fairy" },             moves = { "Charm", "Rage" },                 guids = { "d85741" },                     evoData = { { cost = 1, ball = BLUE, gen = 2, guids = { "5351ec" } } } },
@@ -780,7 +780,7 @@ gen5PokemonData =
   { name = "Golett",          level = 3, types = { "Ground" },   moves = { "Dynamic Punch", "Iron Defense" },  guids = { "181a0d" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "3cbe89" } } } },
   { name = "Golurk",          level = 5, types = { "Ground" },   moves = { "Shadow Punch", "Earthquake" },     guids = { "209c3f", "3cbe89" } },
   { name = "Pawniard",        level = 3, types = { "Dark" },     moves = { "Metal Claw", "Slash" },            guids = { "259499" },                     evoData = { { cost = 3, ball = RED, gen = 5, guids = { "cd8ee8" } } } },
-  { name = "Bisharp",         level = 5, types = { "Dark" },     moves = { "Iron Head", "Night Slash" },       guids = { "bf65c0", "cd8ee8" },           evoData = { { cost = 1, ball = RED, gen = 9, guids = { "c0f1c4", "b857d5" } } } },
+  { name = "Bisharp",         level = 5, types = { "Dark" },     moves = { "Iron Head", "Night Slash" },       guids = { "bf65c0", "cd8ee8" },           evoData = { { cost = 1, ball = RED, gen = 9, guids = { "d49464", "8625f7" } } } },
   { name = "Bouffalant",      level = 4, types = { "Normal" },   moves = { "Head Charge", "Megahorn" },        guids = { "91e1a4" } },
   { name = "Rufflet",         level = 3, types = { "Flying" },   moves = { "Hone Claws", "Peck" },             guids = { "f52196" },                     evoData = { { cost = 3, ball = RED, gen = 5, guids = { "f1a656" } }, { cost = 3, ball = RED, gen = 8, guids = { "aaa239" } } } },
   { name = "Braviary",        level = 6, types = { "Flying" },   moves = { "Crush Claw", "Aerial Ace" },       guids = { "8def45", "f1a656" } },
@@ -1061,7 +1061,7 @@ gen8PokemonData =
   { name = "Rolycoly",      level = 1, types = { "Rock" }, moves = { "Rock Polish", "Rapid Spin" },   guids = { "152d0a"}, evoData = { { cost = 2, ball = BLUE, gen = 8, guids = { "19ffab"} } } }, 
   { name = "Carkol",        level = 3, types = { "Rock" }, moves = { "Rock Blast", "Flame Charge" },   guids = { "7e1e68", "19ffab"}, evoData = { { cost = 2, ball = RED, gen = 8, guids = { "678720", "5eecb1"} } }  },
   { name = "Coalossal",     level = 5, types = { "Rock" }, moves = { "Ancient Power", "Incinerate" }, guids = { "6ac20e", "678720", "5eecb1" } },
-  { name = "Applin",        level = 2, types = { "Grass" }, moves = { "Astonish", "Withdraw" },  guids = { "5d39a1" }, evoData = { { cost = 2, ball = YELLOW, gen = 8, guids = { "508cc7" } }, { cost = 2, ball = YELLOW, gen = 8, guids = { "3a326b" } }, { cost = 2, ball = YELLOW, gen = 9, guids = { "4d183c" } } }},
+  { name = "Applin",        level = 2, types = { "Grass" }, moves = { "Astonish", "Withdraw" },  guids = { "5d39a1" }, evoData = { { cost = 2, ball = YELLOW, gen = 8, guids = { "508cc7" } }, { cost = 2, ball = YELLOW, gen = 8, guids = { "3a326b" } }, { cost = 2, ball = YELLOW, gen = 9, guids = { "951a30" } } }},
   { name = "Flapple",       level = 4, types = { "Grass" }, moves = { "Grav Apple", "Dragon Pulse" }, guids = { "beb575", "508cc7" } },
   { name = "Appletun",      level = 4, types = { "Grass" }, moves = { "Apple Acid", "Dragon Pulse" },  guids = { "a26f34", "3a326b" }},
   { name = "Silicobra",     level = 3, types = { "Ground" }, moves = { "Sandstorm", "Wrap" }, guids = { "2f1d01" }, evoData = { { cost = 2, ball = YELLOW, gen = 8, guids = { "3e0da6"} } } },
@@ -1110,7 +1110,7 @@ gen8PokemonData =
   { name = "Arctozolt",     level = 4, types = { "Electric" }, moves = { "Ancient Power", "Freeze-Dry" }, guids = { "21422d"} }, 
   { name = "Dracovish",     level = 4, types = { "Water" }, moves = { "Dragon Rush", "Ancient Power" }, guids = { "79900c"} }, 
   { name = "Arctovish",     level = 4, types = { "Water" }, moves = { "Ancient Power", "Liquidation" }, guids = { "d8d24a"} }, 
-  { name = "Duraludon",     level = 5, types = { "Steel" }, moves = { "Metal Claw", "Dragon Claw" }, guids = { "19c226" }, evoData = { { cost = 1, ball = red, gen = 9, guids = { "f98edb" } } }  }, 
+  { name = "Duraludon",     level = 5, types = { "Steel" }, moves = { "Metal Claw", "Dragon Claw" }, guids = { "19c226" }, evoData = { { cost = 1, ball = red, gen = 9, guids = { "3a6873" } } }  }, 
   { name = "Dreepy",        level = 2, types = { "Dragon" }, moves = { "Infestation", "Astonish" }, guids = { "947a92" }, evoData = { { cost = 3, ball = YELLOW, gen = 8, guids = { "b9b3ac" } } }  }, 
   { name = "Drakloak",      level = 5, types = { "Dragon" }, moves = { "Double Hit", "Dragon Pulse" }, guids = { "0dd987", "b9b3ac" }, evoData = { { cost = 2, ball = RED, gen = 8, guids = { "0fafd7", "89c1a8" } } } }, 
   { name = "Dragapult",     level = 7, types = { "Dragon" }, moves = { "Dragon Darts", "Phantom Force" }, guids = { "ccc405", "0fafd7", "89c1a8" } },
@@ -1183,145 +1183,145 @@ gen8PokemonData =
 gen9PokemonData =
 {
   -- Gen 9 906-925
-  { name = "Sprigatito",    level = 1, types = { "Grass" }, moves = { "Tail Whip", "Leafage" },    guids = { "840b3b" },               evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "448e88" } } } },
-  { name = "Floragato",     level = 3, types = { "Grass" }, moves = { "Hone Claws", "Seed Bomb" },   guids = { "d2423a", "448e88" },     evoData = { { cost = 2, ball = RED, gen = 9, guids = { "cc1724", "6c1211" } } } },
-  { name = "Meowscarada",   level = 5, types = { "Grass" }, moves = { "Flower Trick", "Knock Off" },     guids = { "2ab286", "cc1724", "6c1211" }, },
-  { name = "Fuecoco",       level = 1, types = { "Fire" }, moves = { "Ember", "Leer" },         guids = { "e326b1" },               evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "3c3c7d" } } } },
-  { name = "Crocalor",      level = 3, types = { "Fire" }, moves = { "Incinerate", "Bite" }, guids = { "f59613", "3c3c7d" },   evoData = { { cost = 2, ball = RED, gen = 9, guids = { "153c03", "e5f020" } } } },
-  { name = "Skeledirge",    level = 5, types = { "Fire" }, moves = { "Shadow Ball", "Torch Song" }, guids = { "43ed89", "153c03", "e5f020" }, },
-  { name = "Quaxly",        level = 1, types = { "Water" }, moves = { "Water Gun", "Growl" },    guids = { "bf1330" },               evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "4c57d9" } } } },
-  { name = "Quaxwell",      level = 3, types = { "Water" }, moves = { "Feather Dance", "Aqua Jet" }, guids = { "9c2aa3", "4c57d9" },    evoData = { { cost = 2, ball = RED, gen = 9, guids = { "d9d173", "d146b9" } } } },
-  { name = "Quaquaval",     level = 5, types = { "Water" }, moves = { "Aqua Step", "Counter" }, guids = { "24dc8c", "d9d173", "d146b9" }, },
-  { name = "Lechonk",       level = 1, types = { "Normal" }, moves = { "Tackle", "Tail Whip" },          guids = { "b25acd" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "3f6770" } }, { cost = 2, ball = BLUE, gen = 9, guids = { "2011d7" } } } },
-  { name = "Oinkologne",    level = 3, types = { "Normal" }, moves = { "Headbutt", "Yawn" },  guids = { "044b29", "3f6770" } },
-  { name = "Oinkologne",    level = 3, types = { "Normal" }, moves = { "Take Down", "Work Up" }, guids = { "d40cd0", "2011d7" } },
-  { name = "Tarontula",     level = 1, types = { "Bug" }, moves = { "String Shot", "Tackle" },     guids = { "a1eb51" },     evoData = { { cost = 2, ball = GREEN, gen = 9, guids = { "896cc3" } } } },
-  { name = "Spidops",       level = 3, types = { "Bug" }, moves = { "Circle Throw", "Silk Trap" }, guids = { "9f49fc", "896cc3" } },
-  { name = "Nymble",        level = 1, types = { "Bug" }, moves = { "Double Kick", "Leer" }, guids = { "f63986" },              evoData = { { cost = 2, ball = GREEN, gen = 9, guids = { "f22a49" } } } },
-  { name = "Lokix",         level = 3, types = { "Bug" }, moves = { "First Impression", "Assurance" },     guids = { "66f201", "f22a49" } },
-  { name = "Pawmi",         level = 1, types = { "Electric" }, moves = { "Nuzzle", "Growl" }, guids = { "721055" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "bcde10" } } }            },
-  { name = "Pawmo",         level = 3, types = { "Electric" }, moves = { "Arm Thrust", "Spark" },      guids = { "7ed536", "bcde10" }, evoData = { { cost = 1, ball = YELLOW, gen = 9, guids = { "ce8bd3", "208ac6" } } } },
-  { name = "Pawmot",        level = 4, types = { "Electric" }, moves = { "Revival Blessing", "Discharge" }, guids = { "ce24c2", "ce8bd3", "208ac6" } },
-  { name = "Tandemaus",     level = 2, types = { "Normal" }, moves = { "Baby-Doll Eyes", "Super Fang" },     guids = { "80f0ac" }, evoData = { { cost = 1, ball = GREEN, gen = 9, guids = { "96cd42" } } }  }, 
-  { name = "Maushold",      level = 3, types = { "Normal" }, moves = { "Pop. Bomb", "Beat Up" },     guids = { "b1e9f5", "96cd42" }  },
+  { name = "Sprigatito",    level = 1, types = { "Grass" }, moves = { "Tail Whip", "Leafage" },    guids = { "49980a" },               evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "d04b95" } } } },
+  { name = "Floragato",     level = 3, types = { "Grass" }, moves = { "Hone Claws", "Seed Bomb" },   guids = { "195a4d", "d04b95" },     evoData = { { cost = 2, ball = RED, gen = 9, guids = { "2b0cec", "603216" } } } },
+  { name = "Meowscarada",   level = 5, types = { "Grass" }, moves = { "Flower Trick", "Knock Off" },     guids = { "7b87eb", "2b0cec", "603216" }, },
+  { name = "Fuecoco",       level = 1, types = { "Fire" }, moves = { "Ember", "Leer" },         guids = { "53ad3b" },               evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "2a93fc" } } } },
+  { name = "Crocalor",      level = 3, types = { "Fire" }, moves = { "Incinerate", "Bite" }, guids = { "f49cc4", "2a93fc" },   evoData = { { cost = 2, ball = RED, gen = 9, guids = { "0528b7", "91d3a3" } } } },
+  { name = "Skeledirge",    level = 5, types = { "Fire" }, moves = { "Shadow Ball", "Torch Song" }, guids = { "6b9ddf", "0528b7", "91d3a3" }, },
+  { name = "Quaxly",        level = 1, types = { "Water" }, moves = { "Water Gun", "Growl" },    guids = { "4a2233" },               evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "76b74f" } } } },
+  { name = "Quaxwell",      level = 3, types = { "Water" }, moves = { "Feather Dance", "Aqua Jet" }, guids = { "dc2818", "76b74f" },    evoData = { { cost = 2, ball = RED, gen = 9, guids = { "517d88", "7bf3d4" } } } },
+  { name = "Quaquaval",     level = 5, types = { "Water" }, moves = { "Aqua Step", "Counter" }, guids = { "07d04b", "517d88", "7bf3d4" }, },
+  { name = "Lechonk",       level = 1, types = { "Normal" }, moves = { "Tackle", "Tail Whip" }, guids = { "fa7a0e" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "731928" } }, { cost = 2, ball = BLUE, gen = 9, guids = { "9bc692" } } } },
+  { name = "Oinkologne",    level = 3, types = { "Normal" }, moves = { "Headbutt", "Yawn" },  guids = { "286c12", "731928" } },
+  { name = "Oinkologne",    level = 3, types = { "Normal" }, moves = { "Take Down", "Work Up" }, guids = { "4a7427", "9bc692" } },
+  { name = "Tarontula",     level = 1, types = { "Bug" }, moves = { "String Shot", "Tackle" },     guids = { "990287" },     evoData = { { cost = 2, ball = GREEN, gen = 9, guids = { "c3494f" } } } },
+  { name = "Spidops",       level = 3, types = { "Bug" }, moves = { "Circle Throw", "Silk Trap" }, guids = { "df9262", "c3494f" } },
+  { name = "Nymble",        level = 1, types = { "Bug" }, moves = { "Double Kick", "Leer" }, guids = { "6bf5d7" },              evoData = { { cost = 2, ball = GREEN, gen = 9, guids = { "a8959f" } } } },
+  { name = "Lokix",         level = 3, types = { "Bug" }, moves = { "First Impression", "Assurance" },     guids = { "2f2f62", "a8959f" } },
+  { name = "Pawmi",         level = 1, types = { "Electric" }, moves = { "Nuzzle", "Growl" }, guids = { "6126de" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "27ce58" } } }            },
+  { name = "Pawmo",         level = 3, types = { "Electric" }, moves = { "Arm Thrust", "Spark" },      guids = { "63603f", "27ce58" }, evoData = { { cost = 1, ball = YELLOW, gen = 9, guids = { "d01611", "508f9a" } } } },
+  { name = "Pawmot",        level = 4, types = { "Electric" }, moves = { "Revival Blessing", "Discharge" }, guids = { "b34f73", "d01611", "508f9a" } },
+  { name = "Tandemaus",     level = 2, types = { "Normal" }, moves = { "Baby-Doll Eyes", "Super Fang" },     guids = { "4400f3" }, evoData = { { cost = 1, ball = GREEN, gen = 9, guids = { "d8928e" } } }  }, 
+  { name = "Maushold",      level = 3, types = { "Normal" }, moves = { "Pop. Bomb", "Beat Up" },     guids = { "eb502b", "d8928e" }  },
 
   -- Gen 9 926-949
-  { name = "Fidough",       level = 1, types = { "Fairy" }, moves = { "Baby-Doll Eyes", "Covet" }, guids = { "f3ee09" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "d8bbfb" } } } },
-  { name = "Dachsbun",      level = 3, types = { "Fairy" }, moves = { "Play Rough", "Crunch" },   guids = { "fae935", "d8bbfb" }  }, 
-  { name = "Smoliv",        level = 2, types = { "Grass" }, moves = { "Growth", "Absorb" },   guids = { "2f746f" }, evoData = { { cost = 1, ball = GREEN, gen = 9, guids = { "38608e" } } } }, 
-  { name = "Dolliv",        level = 3, types = { "Grass" }, moves = { "Seed Bomb", "Tackle" },   guids = { "8963d0", "38608e" }, evoData = { { cost = 2, ball = YELLOW, gen = 9, guids = { "95f5ec", "789bb7" } } }  },
-  { name = "Arboliva",      level = 5, types = { "Grass" }, moves = { "Grassy Terrain", "Terrain Pulse" }, guids = { "da05f7", "95f5ec", "789bb7" } },
-  { name = "Squawkabilly",  level = 3, types = { "Flying" }, moves = { "Mimic", "Fly" },  guids = { "5e6d5b" } },
-  { name = "Nacli",         level = 2, types = { "Rock" }, moves = { "Rock Throw", "Harden" }, guids = { "c389dc" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "6c43b6" } } } },
-  { name = "Naclstack",     level = 4, types = { "Rock" }, moves = { "Salt Cure", "Mud Shot" },  guids = { "f4fae6", "6c43b6" }, evoData = { { cost = 2, ball = RED, gen = 9, guids = { "ce25ce", "f4a8fd" } } }},
-  { name = "Garganacl",     level = 6, types = { "Rock" }, moves = { "Hammer Arm", "Stone Edge" }, guids = { "8ecd7c", "ce25ce", "f4a8fd" } },
-  { name = "Charcadet",     level = 3, types = { "Fire" }, moves = { "Flame Charge", "Astonish" }, guids = { "09fbe4" },  evoData = { { cost = 1, ball = YELLOW, gen = 9, guids = { "e3ea6a" } }, { cost = 1, ball = YELLOW, gen = 9, guids = { "106ec1" } } } },
-  { name = "Armarouge",     level = 4, types = { "Fire" }, moves = { "Lava Plume", "Psyshock" },  guids = { "5e8404", "e3ea6a" } }, 
-  { name = "Ceruledge",     level = 4, types = { "Fire" }, moves = { "Shadow Claw", "Fire Spin" }, guids = { "2e3116", "106ec1" } }, 
-  { name = "Tadbulb",       level = 2, types = { "Electric" }, moves = { "Thunder Shock", "Mud-Slap" },     guids = { "8eeede" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "d0ace3" } } } }, 
-  { name = "Bellibolt",     level = 3, types = { "Electric" }, moves = { "Sucker Punch", "Discharge" },  guids = { "fb3a1b", "d0ace3" } }, 
-  { name = "Wattrel",       level = 2, types = { "Electric" }, moves = { "Growl", "Peck" },    guids = { "29d7e6" },  evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "668410" } } }},
-  { name = "Kilowattrel",   level = 4, types = { "Electric" }, moves = { "Dual Wingbeat", "Spark" },    guids = { "e5cf25", "668410" },  },
-  { name = "Maschiff",      level = 2, types = { "Dark" }, moves = { "Bite", "Roar" }, guids = { "8294a8" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "3bf355" } } } },
-  { name = "Mabosstiff",    level = 4, types = { "Dark" }, moves = { "Double-Edge", "Jaw Lock" },   guids = { "3a30ee", "3bf355" } }, 
-  { name = "Shroodle",      level = 2, types = { "Poison" }, moves = { "Fury Swipes", "Acid Spray" }, guids = { "b05743" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "5cea53" } } }  },
-  { name = "Grafaiai",      level = 3, types = { "Poison" }, moves = { "Poison Jab", "Slash" }, guids = { "a5154f", "5cea53" } },
-  { name = "Bramblin",      level = 3, types = { "Grass" }, moves = { "Bullet Seed", "Rollout" }, guids = { "b92d11" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "1e9505" } } } }, 
-  { name = "Brambleghast",  level = 4, types = { "Grass" }, moves = { "Phantom Force", "Mega Drain" },  guids = { "a05833", "1e9505" } }, 
-  { name = "Toedscool",     level = 2, types = { "Ground" }, moves = { "Absorb", "Wrap" },    guids = { "3c9c1f" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "75ff13" } } }    },
-  { name = "Toedscruel",    level = 4, types = { "Ground" }, moves = { "Power Whip", "Mud Shot" },  guids = { "822b90", "75ff13" } },
+  { name = "Fidough",       level = 1, types = { "Fairy" }, moves = { "Baby-Doll Eyes", "Covet" }, guids = { "4e8b42" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "acaf9b" } } } },
+  { name = "Dachsbun",      level = 3, types = { "Fairy" }, moves = { "Play Rough", "Crunch" },   guids = { "90d0bb", "acaf9b" }  }, 
+  { name = "Smoliv",        level = 2, types = { "Grass" }, moves = { "Growth", "Absorb" },   guids = { "478ad3" }, evoData = { { cost = 1, ball = GREEN, gen = 9, guids = { "70af04" } } } }, 
+  { name = "Dolliv",        level = 3, types = { "Grass" }, moves = { "Seed Bomb", "Tackle" },   guids = { "c00c7c", "70af04" }, evoData = { { cost = 2, ball = YELLOW, gen = 9, guids = { "46e56c", "8bf8dd" } } }  },
+  { name = "Arboliva",      level = 5, types = { "Grass" }, moves = { "Grassy Terrain", "Terrain Pulse" }, guids = { "31acf0", "46e56c", "8bf8dd" } },
+  { name = "Squawkabilly",  level = 3, types = { "Flying" }, moves = { "Mimic", "Fly" },  guids = { "1968bc" } },
+  { name = "Nacli",         level = 2, types = { "Rock" }, moves = { "Rock Throw", "Harden" }, guids = { "3b9f04" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "0d54a8" } } } },
+  { name = "Naclstack",     level = 4, types = { "Rock" }, moves = { "Salt Cure", "Mud Shot" },  guids = { "69cf19", "0d54a8" }, evoData = { { cost = 2, ball = RED, gen = 9, guids = { "1c0e4e", "7c6d2b" } } }},
+  { name = "Garganacl",     level = 6, types = { "Rock" }, moves = { "Hammer Arm", "Stone Edge" }, guids = { "9aaabb", "1c0e4e", "7c6d2b" } },
+  { name = "Charcadet",     level = 3, types = { "Fire" }, moves = { "Flame Charge", "Astonish" }, guids = { "0f63f8" },  evoData = { { cost = 1, ball = YELLOW, gen = 9, guids = { "7a4b5f" } }, { cost = 1, ball = YELLOW, gen = 9, guids = { "3fc935" } } } },
+  { name = "Armarouge",     level = 4, types = { "Fire" }, moves = { "Lava Plume", "Psyshock" },  guids = { "72da86", "7a4b5f" } }, 
+  { name = "Ceruledge",     level = 4, types = { "Fire" }, moves = { "Shadow Claw", "Fire Spin" }, guids = { "9d5def", "3fc935" } }, 
+  { name = "Tadbulb",       level = 2, types = { "Electric" }, moves = { "Thunder Shock", "Mud-Slap" },     guids = { "fc24d2" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "7dbae8" } } } }, 
+  { name = "Bellibolt",     level = 3, types = { "Electric" }, moves = { "Sucker Punch", "Discharge" },  guids = { "d11554", "7dbae8" } }, 
+  { name = "Wattrel",       level = 2, types = { "Electric" }, moves = { "Growl", "Peck" },    guids = { "388592" },  evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "a10303" } } }},
+  { name = "Kilowattrel",   level = 4, types = { "Electric" }, moves = { "Dual Wingbeat", "Spark" },    guids = { "81d760", "a10303" },  },
+  { name = "Maschiff",      level = 2, types = { "Dark" }, moves = { "Bite", "Roar" }, guids = { "8cb576" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "41dfa5" } } } },
+  { name = "Mabosstiff",    level = 4, types = { "Dark" }, moves = { "Double-Edge", "Jaw Lock" },   guids = { "3e9b8c", "41dfa5" } }, 
+  { name = "Shroodle",      level = 2, types = { "Poison" }, moves = { "Fury Swipes", "Acid Spray" }, guids = { "bd638c" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "74dde9" } } }  },
+  { name = "Grafaiai",      level = 3, types = { "Poison" }, moves = { "Poison Jab", "Slash" }, guids = { "32bf28", "74dde9" } },
+  { name = "Bramblin",      level = 3, types = { "Grass" }, moves = { "Bullet Seed", "Rollout" }, guids = { "845718" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "6160d0" } } } }, 
+  { name = "Brambleghast",  level = 4, types = { "Grass" }, moves = { "Phantom Force", "Mega Drain" },  guids = { "651132", "6160d0" } }, 
+  { name = "Toedscool",     level = 2, types = { "Ground" }, moves = { "Absorb", "Wrap" },    guids = { "81b348" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "fdc646" } } }    },
+  { name = "Toedscruel",    level = 4, types = { "Ground" }, moves = { "Power Whip", "Mud Shot" },  guids = { "73fe95", "fdc646" } },
 
   -- Gen 9 950-975
-  { name = "Klawf",         level = 4, types = { "Rock" }, moves = { "Rock Slide", "X-Scissor" }, guids = { "39d99b" } },
-  { name = "Capsakid",      level = 3, types = { "Grass" }, moves = { "Headbutt", "Leafage" },       guids = { "eefd2d" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "7f2c52" } } } }, 
-  { name = "Scovillain",    level = 4, types = { "Grass" }, moves = { "Flamethrower", "Spicy Extract" }, guids = { "bd7e8a", "7f2c52" } },
-  { name = "Rellor",        level = 3, types = { "Bug" }, moves = { "Struggle Bug", "Rollout" },   guids = { "f6a4f3" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "f3c6fe" } } }  },
-  { name = "Rabsca",        level = 4, types = { "Bug" }, moves = { "Bug Buzz", "Psychic" },      guids = { "3d2152", "f3c6fe" } },
-  { name = "Flittle",       level = 3, types = { "Psychic" }, moves = { "Confusion", "Peck" },       guids = { "93013d" }, evoData = { { cost = 2, ball = RED, gen = 9, guids = { "d3d9a3" } } } },
-  { name = "Espathra",      level = 5, types = { "Psychic" }, moves = { "Feather Dance", "Lumina Crash" }, guids = { "a0533a", "d3d9a3" } }, 
-  { name = "Tinkatink",     level = 2, types = { "Fairy" }, moves = { "Astonish", "Fairy Wind" }, guids = { "503155" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "870e00" } } } }, 
-  { name = "Tinkatuff",     level = 4, types = { "Fairy" }, moves = { "Flash Cannon", "Brutal Swing" }, guids = { "dfa516", "870e00" }, evoData = { { cost = 2, ball = RED, gen = 9, guids = { "1c4a26", "32eea1" } } } },
-  { name = "Tinkaton",      level = 6, types = { "Fairy" }, moves = { "Gigaton Hammer", "Play Rough" }, guids = { "38b37e", "1c4a26", "32eea1" } }, 
-  { name = "Wiglett",       level = 2, types = { "Water" }, moves = { "Mud-Slap", "Aqua Jet" }, guids = { "fa7ae0" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "8672e6" } } } },
-  { name = "Wugtrio",       level = 4, types = { "Water" }, moves = { "Sucker Punch", "Triple Dive" }, guids = { "8c4ed5", "8672e6" } },
-  { name = "Bombirdier",    level = 4, types = { "Flying" }, moves = { "Dual Wingbeat", "Knock Off" }, guids = { "dc6943" } },
-  { name = "Finizen",       level = 5, types = { "Water" }, moves = { "Double Hit", "Aqua Jet" }, guids = { "75968f" }, evoData = { { cost = 1, ball = RED, gen = 9, guids = { "a865e5" } }, { cost = 1, ball = RED, gen = 9, guids = { "5dabb2" } } } },
-  { name = "Palafin",       level = 6, types = { "Water" }, moves = { "Close Combat", "Jet Punch" }, guids = { "4cf8c2", "5dabb2" } },
-  { name = "Palafin",       level = 6, types = { "Water" }, moves = { "Zen Headbutt", "Flip Turn" }, guids = { "b84776", "a865e5" } },
-  { name = "Varoom",        level = 3, types = { "Steel" }, moves = { "Screech", "Smog" }, guids = { "97fa96" }, evoData = { { cost = 2, ball = RED, gen = 9, guids = { "e53f81" } } } }, 
-  { name = "Revavroom",     level = 5, types = { "Steel" }, moves = { "Spin Out", "Sludge" }, guids = { "e3df2c", "e53f81" } }, 
-  { name = "Cyclizar",      level = 4, types = { "Dragon" }, moves = { "Dragon Rush", "Quick Attack" }, guids = { "c255b3"  } },
-  { name = "Orthworm",      level = 3, types = { "Steel" }, moves = { "Earthquake", "Iron Tail" }, guids = { "01691c" } }, 
-  { name = "Glimmet",       level = 2, types = { "Rock" }, moves = { "Toxic Spikes", "Rock Throw" }, guids = { "ccf33f" }, evoData = { { cost = 2, ball = YELLOW, gen = 9, guids = { "dcaebe" } } } },
-  { name = "Glimmora",      level = 4, types = { "Rock" }, moves = { "Ancient Power", "Mortal Spin" }, guids = { "651596", "dcaebe" } },
-  { name = "Greavard",      level = 2, types = { "Ghost" }, moves = { "Growl", "Lick" }, guids = { "f4e718" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "0bc6b0" } } } },
-  { name = "Houndstone",    level = 4, types = { "Ghost" }, moves = { "Last Respects", "Dig" }, guids = { "1495ad", "0bc6b0" } },                   
-  { name = "Flamigo",       level = 3, types = { "Flying" }, moves = { "Double Kick", "Air Slash" }, guids = { "872287" } }, 
-  { name = "Cetoddle",      level = 3, types = { "Ice" }, moves = { "Echoed Voice", "Ice Shard" }, guids = { "2be31a" }, evoData = { { cost = 1, ball = YELLOW, gen = 9, guids = { "ce159e" } } } }, 
-  { name = "Cetitan",       level = 4, types = { "Ice" }, moves = { "Double-Edge", "Ice Spinner" }, guids = { "9df61b", "ce159e" } },
+  { name = "Klawf",         level = 4, types = { "Rock" }, moves = { "Rock Slide", "X-Scissor" }, guids = { "3478a3" } },
+  { name = "Capsakid",      level = 3, types = { "Grass" }, moves = { "Headbutt", "Leafage" },       guids = { "136e8c" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "feb4ee" } } } }, 
+  { name = "Scovillain",    level = 4, types = { "Grass" }, moves = { "Flamethrower", "Spicy Extract" }, guids = { "89e811", "feb4ee" } },
+  { name = "Rellor",        level = 3, types = { "Bug" }, moves = { "Struggle Bug", "Rollout" },   guids = { "e30571" }, evoData = { { cost = 1, ball = BLUE, gen = 9, guids = { "ba0ca7" } } }  },
+  { name = "Rabsca",        level = 4, types = { "Bug" }, moves = { "Bug Buzz", "Psychic" },      guids = { "2de0bb", "ba0ca7" } },
+  { name = "Flittle",       level = 3, types = { "Psychic" }, moves = { "Confusion", "Peck" },       guids = { "ee1263" }, evoData = { { cost = 2, ball = RED, gen = 9, guids = { "ba6a6d" } } } },
+  { name = "Espathra",      level = 5, types = { "Psychic" }, moves = { "Feather Dance", "Lumina Crash" }, guids = { "857c58", "ba6a6d" } }, 
+  { name = "Tinkatink",     level = 2, types = { "Fairy" }, moves = { "Astonish", "Fairy Wind" }, guids = { "c3d19f" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "e71fa5" } } } }, 
+  { name = "Tinkatuff",     level = 4, types = { "Fairy" }, moves = { "Flash Cannon", "Brutal Swing" }, guids = { "e7f434", "e71fa5" }, evoData = { { cost = 2, ball = RED, gen = 9, guids = { "746894", "b76ffe" } } } },
+  { name = "Tinkaton",      level = 6, types = { "Fairy" }, moves = { "Gigaton Hammer", "Play Rough" }, guids = { "1dd00a", "746894", "b76ffe" } }, 
+  { name = "Wiglett",       level = 2, types = { "Water" }, moves = { "Mud-Slap", "Aqua Jet" }, guids = { "525157" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "f7f56d" } } } },
+  { name = "Wugtrio",       level = 4, types = { "Water" }, moves = { "Sucker Punch", "Triple Dive" }, guids = { "a82b90", "f7f56d" } },
+  { name = "Bombirdier",    level = 4, types = { "Flying" }, moves = { "Dual Wingbeat", "Knock Off" }, guids = { "ed2e7c" } },
+  { name = "Finizen",       level = 5, types = { "Water" }, moves = { "Double Hit", "Aqua Jet" }, guids = { "0873a6" }, evoData = { { cost = 1, ball = RED, gen = 9, guids = { "ffb871" } }, { cost = 1, ball = RED, gen = 9, guids = { "e40792" } } } },
+  { name = "Palafin",       level = 6, types = { "Water" }, moves = { "Close Combat", "Jet Punch" }, guids = { "b40995", "e40792" } },
+  { name = "Palafin",       level = 6, types = { "Water" }, moves = { "Zen Headbutt", "Flip Turn" }, guids = { "fd6f39", "ffb871" } },
+  { name = "Varoom",        level = 3, types = { "Steel" }, moves = { "Screech", "Smog" }, guids = { "039292" }, evoData = { { cost = 2, ball = RED, gen = 9, guids = { "f620af" } } } }, 
+  { name = "Revavroom",     level = 5, types = { "Steel" }, moves = { "Spin Out", "Sludge" }, guids = { "fd6f39", "f620af" } }, 
+  { name = "Cyclizar",      level = 4, types = { "Dragon" }, moves = { "Dragon Rush", "Quick Attack" }, guids = { "7282b5"  } },
+  { name = "Orthworm",      level = 3, types = { "Steel" }, moves = { "Earthquake", "Iron Tail" }, guids = { "9b54aa" } }, 
+  { name = "Glimmet",       level = 2, types = { "Rock" }, moves = { "Toxic Spikes", "Rock Throw" }, guids = { "731ab7" }, evoData = { { cost = 2, ball = YELLOW, gen = 9, guids = { "58f282" } } } },
+  { name = "Glimmora",      level = 4, types = { "Rock" }, moves = { "Ancient Power", "Mortal Spin" }, guids = { "137bbd", "58f282" } },
+  { name = "Greavard",      level = 2, types = { "Ghost" }, moves = { "Growl", "Lick" }, guids = { "f0f80b" }, evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "54b1df" } } } },
+  { name = "Houndstone",    level = 4, types = { "Ghost" }, moves = { "Last Respects", "Dig" }, guids = { "b7d0d5", "54b1df" } },                   
+  { name = "Flamigo",       level = 3, types = { "Flying" }, moves = { "Double Kick", "Air Slash" }, guids = { "29bdc6" } }, 
+  { name = "Cetoddle",      level = 3, types = { "Ice" }, moves = { "Echoed Voice", "Ice Shard" }, guids = { "cc2b2f" }, evoData = { { cost = 1, ball = YELLOW, gen = 9, guids = { "3a0f0c" } } } }, 
+  { name = "Cetitan",       level = 4, types = { "Ice" }, moves = { "Double-Edge", "Ice Spinner" }, guids = { "22914e", "3a0f0c" } },
   
   --Gen 9 976-1000
-  { name = "Veluza",        level = 3, types = { "Water" }, moves = { "Psychic Fangs", "Fillet Away" }, guids = { "796055" } }, 
-  { name = "Dondozo",       level = 4, types = { "Water" }, moves = { "Wave Crash", "Order Up" }, guids = { "8197eb" }  }, 
-  { name = "Tatsugiri",     level = 3, types = { "Dragon" }, moves = { "Water Pulse", "Dragon Pulse" }, guids = { "4e1487" } },    -- Water
-  { name = "Tatsugiri",     level = 3, types = { "Dragon" }, moves = { "Mirror Coat", "Dragon Pulse" }, guids = { "13b7ac" } },    -- Psychic
-  { name = "Tatsugiri",     level = 3, types = { "Dragon" }, moves = { "Nasty Plot", "Dragon Pulse" }, guids = { "b4b342" } },     -- Dark
-  { name = "Annihilape",    level = 5, types = { "Fighting" }, moves = { "Cross Chop", "Rage Fist" }, guids = { "90ae84", "60b8c2", "0d9411" } },
-  { name = "Clodsire",      level = 3, types = { "Poison" }, moves = { "Poison Tail", "Mud Shot" }, guids = { "39ef5d", "713238" }},
-  { name = "Farigiraf",     level = 3, types = { "Normal" }, moves = { "Twin Beam", "Stomp" }, guids = { "a0da82", "ed2029" } }, 
-  { name = "Dudunsparce",   level = 3, types = { "Normal" }, moves = { "Drill Run", "Hyper Drill" }, guids = { "96d47a", "0b18ad" }  },
-  { name = "Kingambit",     level = 6, types = { "Dark" }, moves = { "Kowtow Cleave", "Iron Head" }, guids = { "192b70", "c0f1c4", "b857d5" } },
-  { name = "Great Tusk",    level = 5, types = { "Ground" }, moves = { "Brick Break", "Bulldoze" }, guids = { "695b85" } },
-  { name = "Scream Tail",   level = 3, types = { "Fairy" }, moves = { "Play Rough", "Psychic Fangs" }, guids = { "b380d1" } }, 
-  { name = "Brute Bonnet",  level = 4, types = { "Grass" }, moves = { "Sucker Punch", "Mega Drain" }, guids = { "472190" } }, 
-  { name = "Flutter Mane",  level = 4, types = { "Ghost" }, moves = { "Phantom Force", "Moonblast" }, guids = { "24bb16" } },
-  { name = "Slither Wing",  level = 6, types = { "Bug" }, moves = { "Superpower", "Bug Bite" }, guids = { "c20208" } }, 
-  { name = "Sandy Shocks",  level = 4, types = { "Electric" }, moves = { "Earth Power", "Discharge" }, guids = { "c46deb" }  }, 
-  { name = "Iron Treads",   level = 5, types = { "Ground" }, moves = { "Iron Head", "Earthquake" }, guids = { "932724" } }, 
-  { name = "Iron Bundle",   level = 3, types = { "Ice" }, moves = { "Freeze-Dry", "Flip Turn" }, guids = { "67e5e5" } },
-  { name = "Iron Hands",    level = 4, types = { "Fighting" }, moves = { "Thunder Punch", "Arm Thrust" }, guids = { "4eb522" } }, 
-  { name = "Iron Jugulis",  level = 7, types = { "Dark" }, moves = { "Dark Pulse", "Air Slash" }, guids = { "d59b3d" } },
-  { name = "Iron Moth",     level = 6, types = { "Fire" }, moves = { "Sludge Wave", "Overheat" }, guids = { "b69555" } }, 
-  { name = "Iron Thorns",   level = 7, types = { "Rock" }, moves = { "Thunder Fang", "Stone Edge" }, guids = { "810e81" }  }, 
-  { name = "Frigibax",      level = 2, types = { "Dragon" }, moves = { "Icy Wind", "Leer" }, guids = { "1b0d95" }, evoData = { { cost = 2, ball = YELLOW, gen = 9, guids = { "07e2b5" } } } }, 
-  { name = "Arctibax",      level = 4, types = { "Dragon" }, moves = { "Dragon Claw", "Bite" }, guids = { "3784f0", "07e2b5" }, evoData = { { cost = 3, ball = RED, gen = 9, guids = { "48cd1f", "e7c940" } } } }, 
-  { name = "Baxcalibur",    level = 7, types = { "Dragon" }, moves = { "Icicle Crash", "Glaive Rush" }, guids = { "cbb0b7", "48cd1f", "e7c940" } },
-  { name = "Gimmighoul",    level = 3, types = { "Ghost" }, moves = { "Astonish", "Tackle" }, guids = { "5d0ce4" }, evoData = { { cost = 3, ball = RED, gen = 9, guids = { "283d6c" } } } },
-  { name = "Gholdengo",     level = 6, types = { "Steel" }, moves = { "Shadow Ball", "Make It Rain" }, guids = { "e77cfb", "283d6c" } },
+  { name = "Veluza",        level = 3, types = { "Water" }, moves = { "Psychic Fangs", "Fillet Away" }, guids = { "f19255" } }, 
+  { name = "Dondozo",       level = 4, types = { "Water" }, moves = { "Wave Crash", "Order Up" }, guids = { "1703be" }  }, 
+  { name = "Tatsugiri",     level = 3, types = { "Dragon" }, moves = { "Water Pulse", "Dragon Pulse" }, guids = { "799368" } },    -- Water
+  { name = "Tatsugiri",     level = 3, types = { "Dragon" }, moves = { "Mirror Coat", "Dragon Pulse" }, guids = { "6e1311" } },    -- Psychic
+  { name = "Tatsugiri",     level = 3, types = { "Dragon" }, moves = { "Nasty Plot", "Dragon Pulse" }, guids = { "a3ec4b" } },     -- Dark
+  { name = "Annihilape",    level = 5, types = { "Fighting" }, moves = { "Cross Chop", "Rage Fist" }, guids = { "87727d", "b68eb7", "6b4dfa" } },
+  { name = "Clodsire",      level = 3, types = { "Poison" }, moves = { "Poison Tail", "Mud Shot" }, guids = { "11f231", "9299e4" }},
+  { name = "Farigiraf",     level = 3, types = { "Normal" }, moves = { "Twin Beam", "Stomp" }, guids = { "ec3c21", "f18198" } }, 
+  { name = "Dudunsparce",   level = 3, types = { "Normal" }, moves = { "Drill Run", "Hyper Drill" }, guids = { "f840fc", "9c40ab" }  },
+  { name = "Kingambit",     level = 6, types = { "Dark" }, moves = { "Kowtow Cleave", "Iron Head" }, guids = { "97afd6", "d49464", "8625f7" } },
+  { name = "Great Tusk",    level = 5, types = { "Ground" }, moves = { "Brick Break", "Bulldoze" }, guids = { "00e061" } },
+  { name = "Scream Tail",   level = 3, types = { "Fairy" }, moves = { "Play Rough", "Psychic Fangs" }, guids = { "d2d1fc" } }, 
+  { name = "Brute Bonnet",  level = 4, types = { "Grass" }, moves = { "Sucker Punch", "Mega Drain" }, guids = { "d97f22" } }, 
+  { name = "Flutter Mane",  level = 4, types = { "Ghost" }, moves = { "Phantom Force", "Moonblast" }, guids = { "60305f" } },
+  { name = "Slither Wing",  level = 6, types = { "Bug" }, moves = { "Superpower", "Bug Bite" }, guids = { "163a86" } }, 
+  { name = "Sandy Shocks",  level = 4, types = { "Electric" }, moves = { "Earth Power", "Discharge" }, guids = { "c61a67" } }, 
+  { name = "Iron Treads",   level = 5, types = { "Ground" }, moves = { "Iron Head", "Earthquake" }, guids = { "2bba66" } }, 
+  { name = "Iron Bundle",   level = 3, types = { "Ice" }, moves = { "Freeze-Dry", "Flip Turn" }, guids = { "90d798" } },
+  { name = "Iron Hands",    level = 4, types = { "Fighting" }, moves = { "Thunder Punch", "Arm Thrust" }, guids = { "7b45a3" } }, 
+  { name = "Iron Jugulis",  level = 7, types = { "Dark" }, moves = { "Dark Pulse", "Air Slash" }, guids = { "ff30bd" } },
+  { name = "Iron Moth",     level = 6, types = { "Fire" }, moves = { "Sludge Wave", "Overheat" }, guids = { "68bff5" } }, 
+  { name = "Iron Thorns",   level = 7, types = { "Rock" }, moves = { "Thunder Fang", "Stone Edge" }, guids = { "38c0c7" }  }, 
+  { name = "Frigibax",      level = 2, types = { "Dragon" }, moves = { "Icy Wind", "Leer" }, guids = { "3f40d1" }, evoData = { { cost = 2, ball = YELLOW, gen = 9, guids = { "907d41" } } } }, 
+  { name = "Arctibax",      level = 4, types = { "Dragon" }, moves = { "Dragon Claw", "Bite" }, guids = { "33a8b3", "907d41" }, evoData = { { cost = 3, ball = RED, gen = 9, guids = { "1dad71", "805f61" } } } }, 
+  { name = "Baxcalibur",    level = 7, types = { "Dragon" }, moves = { "Icicle Crash", "Glaive Rush" }, guids = { "1d7ffe", "1dad71", "805f61" } },
+  { name = "Gimmighoul",    level = 3, types = { "Ghost" }, moves = { "Astonish", "Tackle" }, guids = { "c63945" }, evoData = { { cost = 3, ball = RED, gen = 9, guids = { "fa534f" } } } },
+  { name = "Gholdengo",     level = 6, types = { "Steel" }, moves = { "Shadow Ball", "Make It Rain" }, guids = { "38ac21", "fa534f" } },
 
---Gen 9 1001-1025
-  { name = "Wo-Chien",      level = 7, types = { "Grass" }, moves = { "Leaf Storm", "Ruination" }, guids = { "e9936f" }  },
-  { name = "Chien-Pao",     level = 7, types = { "Ice" }, moves = { "Icicle Crash", "Ruination" }, guids = { "bb6406" } }, 
-  { name = "Ting-Lu",       level = 7, types = { "Ground" }, moves = { "Earth Power", "Ruination" }, guids = { "c4aa1a" } },
-  { name = "Chi-Yu",        level = 7, types = { "Fire" }, moves = { "Lava Plume", "Ruination" }, guids = { "d7eb52" }  },
+  --Gen 9 1001-1025
+  { name = "Wo-Chien",      level = 7, types = { "Grass" }, moves = { "Leaf Storm", "Ruination" }, guids = { "f9f24e" }  },
+  { name = "Chien-Pao",     level = 7, types = { "Ice" }, moves = { "Icicle Crash", "Ruination" }, guids = { "a4d468" } }, 
+  { name = "Ting-Lu",       level = 7, types = { "Ground" }, moves = { "Earth Power", "Ruination" }, guids = { "c37f93" } },
+  { name = "Chi-Yu",        level = 7, types = { "Fire" }, moves = { "Lava Plume", "Ruination" }, guids = { "b9c9fd" }  },
   { name = "Roaring Moon",  level = 7, types = { "Dragon" }, moves = { "Night Slash", "Dragon Claw" }, guids = { "b4c860" } },
-  { name = "Iron Valiant",  level = 5, types = { "Fairy" }, moves = { "Close Combat", "Spirit Break" }, guids = { "833369" } },
-  { name = "Koraidon",      level = 7, types = { "Ground" }, moves = { "Collision Course", "Outrage" }, guids = { "50ca55" } }, 
-  { name = "Miraidon",      level = 7, types = { "Electric" }, moves = { "Electro Drift", "Outrage" }, guids = { "3b65df" } },
-  { name = "Walking Wake",  level = 7, types = { "Water" }, moves = { "Dragon Breath", "Hydro Pump" }, guids = { "5bf5fc" } },
-  { name = "Iron Leaves",   level = 7, types = { "Grass" }, moves = { "Solar Blade", "Psyblade" }, guids = { "0bbee0" } },
-  { name = "Dipplin",       level = 4, types = { "Grass" }, moves = { "Infestation", "Dragon Tail" }, guids = { "6d4b0c", "4d183c" }, evoData = { { cost = 1, ball = RED, gen = 9, guids = { "dd1465", "4c9044" } } } }, 
-  { name = "Hydrapple",     level = 5, types = { "Grass" }, moves = { "Fickle Beam", "Syrup Bomb" }, guids = { "c9bcd2", "dd1465", "4c9044" } },
-  { name = "Poltchageist",  level = 3, types = { "Grass" }, moves = { "Astonish", "Absorb" }, guids = { "c5d643" }, evoData = { { cost = 1, ball = BLUE , gen = 9, guids = { "e22035" } } } }, 
-  { name = "Sinistcha",     level = 4, types = { "Grass" }, moves = { "Matcha Gotcha", "Hex" }, guids = { "5f71c5", "e22035" } },
-  { name = "Okidogi",       level = 7, types = { "Fighting" }, moves = { "Force Palm", "Poison Jab" }, guids = { "63b9b8" } }, 
-  { name = "Munkidori",     level = 7, types = { "Psychic" }, moves = { "Sludge Wave", "Future Sight" }, guids = { "bd3c79" } },
-  { name = "Fezandipiti",   level = 7, types = { "Fairy" }, moves = { "Cross Poison", "Moonblast" }, guids = { "67a0c8" } },
-  { name = "Ogerpon",       level = 7, types = { "Grass" }, moves = { "Ivy Cudgel Grass", "Counter" }, guids = { "2b251d" } },   -- Grass
-  { name = "Ogerpon",       level = 7, types = { "Rock" }, moves = { "Ivy Cudgel Rock", "Counter" }, guids = { "9de504" } },     -- Rock
-  { name = "Ogerpon",       level = 7, types = { "Fire" }, moves = { "Ivy Cudgel Fire", "Counter" }, guids = { "1f2fba" } },     -- Fire
-  { name = "Ogerpon",       level = 7, types = { "Water" }, moves = { "Ivy Cudgel Water", "Counter" }, guids = { "583390" } },   -- Water
-  { name = "Archaludon",    level = 6, types = { "Steel" }, moves = { "Electro Shot", "Breaking Swipe" }, guids = { "b68023", "f98edb" } },
-  { name = "Gouging Fire",  level = 7, types = { "Fire" }, moves = { "Raging Fury", "Dragon Claw" }, guids = { "6f4f56" } },
-  { name = "Raging Bolt",   level = 7, types = { "Electric" }, moves = { "Dragon Hammer", "Thunderclap" }, guids = { "9e4d91" } }, 
-  { name = "Iron Boulder",  level = 7, types = { "Rock" }, moves = { "Mighty Cleave", "Psycho Cut" }, guids = { "15e02e" } }, 
-  { name = "Iron Crown",    level = 7, types = { "Steel" }, moves = { "Tachyon Cutter", "Future Sight" }, guids = { "6a3a8b" } },
-  { name = "Terapagos",     level = 7, types = { "Normal" }, moves = { "Tera Starstorm", "Protect" }, guids = { "42c853" } }, 
-  { name = "Pecharunt",     level = 7, types = { "Poison" }, moves = { "Malignant Chain", "Shadow Ball" }, guids = { "e6a854" } }, 
-  { name = "Tauros",        level = 4, types = { "Fighting" }, moves = { "Double-Edge", "Raging Bull" }, guids = { "3b7462" } },   -- Fighting
-  { name = "Tauros",        level = 4, types = { "Water" }, moves = { "Double Kick", "Raging Bull" }, guids = { "ea98f9" }  },     -- Water
-  { name = "Tauros",        level = 4, types = { "Fire" }, moves = { "Double Kick", "Raging Bull" }, guids = { "431e0e" } },       -- Fire
-  { name = "Wooper",        level = 1, types = { "Poison" }, moves = { "Toxic Spikes", "Slam" }, guids = { "30fe7c" }, evoData = { { cost = 2, ball = BLUE , gen = 9, guids = { "713238" } } } },
+  { name = "Iron Valiant",  level = 5, types = { "Fairy" }, moves = { "Close Combat", "Spirit Break" }, guids = { "d1f07b" } },
+  { name = "Koraidon",      level = 7, types = { "Ground" }, moves = { "Collision Course", "Outrage" }, guids = { "a7a93a" } }, 
+  { name = "Miraidon",      level = 7, types = { "Electric" }, moves = { "Electro Drift", "Outrage" }, guids = { "c00d7b" } },
+  { name = "Walking Wake",  level = 7, types = { "Water" }, moves = { "Dragon Breath", "Hydro Pump" }, guids = { "f1495e" } },
+  { name = "Iron Leaves",   level = 7, types = { "Grass" }, moves = { "Solar Blade", "Psyblade" }, guids = { "6519a8" } },
+  { name = "Dipplin",       level = 4, types = { "Grass" }, moves = { "Infestation", "Dragon Tail" }, guids = { "2990ba", "951a30" }, evoData = { { cost = 1, ball = RED, gen = 9, guids = { "7b9062", "e5ee39" } } } }, 
+  { name = "Hydrapple",     level = 5, types = { "Grass" }, moves = { "Fickle Beam", "Syrup Bomb" }, guids = { "dcee5f", "7b9062", "e5ee39" } },
+  { name = "Poltchageist",  level = 3, types = { "Grass" }, moves = { "Astonish", "Absorb" }, guids = { "147af7" }, evoData = { { cost = 1, ball = BLUE , gen = 9, guids = { "fae06f" } } } }, 
+  { name = "Sinistcha",     level = 4, types = { "Grass" }, moves = { "Matcha Gotcha", "Hex" }, guids = { "9df0d7", "fae06f" } },
+  { name = "Okidogi",       level = 7, types = { "Fighting" }, moves = { "Force Palm", "Poison Jab" }, guids = { "e4b697" } }, 
+  { name = "Munkidori",     level = 7, types = { "Psychic" }, moves = { "Sludge Wave", "Future Sight" }, guids = { "db6cf9" } },
+  { name = "Fezandipiti",   level = 7, types = { "Fairy" }, moves = { "Cross Poison", "Moonblast" }, guids = { "855095" } },
+  { name = "Ogerpon",       level = 7, types = { "Grass" }, moves = { "Ivy Cudgel Grass", "Counter" }, guids = { "a92e73" } },   -- Grass
+  { name = "Ogerpon",       level = 7, types = { "Rock" }, moves = { "Ivy Cudgel Rock", "Counter" }, guids = { "210bcc" } },     -- Rock
+  { name = "Ogerpon",       level = 7, types = { "Fire" }, moves = { "Ivy Cudgel Fire", "Counter" }, guids = { "480b42" } },     -- Fire
+  { name = "Ogerpon",       level = 7, types = { "Water" }, moves = { "Ivy Cudgel Water", "Counter" }, guids = { "ce1aac" } },   -- Water
+  { name = "Archaludon",    level = 6, types = { "Steel" }, moves = { "Electro Shot", "Breaking Swipe" }, guids = { "3d2744", "3a6873" } },
+  { name = "Gouging Fire",  level = 7, types = { "Fire" }, moves = { "Raging Fury", "Dragon Claw" }, guids = { "ae5249" } },
+  { name = "Raging Bolt",   level = 7, types = { "Electric" }, moves = { "Dragon Hammer", "Thunderclap" }, guids = { "d32bf4" } }, 
+  { name = "Iron Boulder",  level = 7, types = { "Rock" }, moves = { "Mighty Cleave", "Psycho Cut" }, guids = { "fa15fd" } }, 
+  { name = "Iron Crown",    level = 7, types = { "Steel" }, moves = { "Tachyon Cutter", "Future Sight" }, guids = { "fae0a8" } },
+  { name = "Terapagos",     level = 7, types = { "Normal" }, moves = { "Tera Starstorm", "Protect" }, guids = { "686877" } }, 
+  { name = "Pecharunt",     level = 7, types = { "Poison" }, moves = { "Malignant Chain", "Shadow Ball" }, guids = { "114b25" } }, 
+  { name = "Tauros",        level = 4, types = { "Fighting" }, moves = { "Double-Edge", "Raging Bull" }, guids = { "16d4a9" } },   -- Fighting
+  { name = "Tauros",        level = 4, types = { "Water" }, moves = { "Double Kick", "Raging Bull" }, guids = { "e464b6" }  },     -- Water
+  { name = "Tauros",        level = 4, types = { "Fire" }, moves = { "Double Kick", "Raging Bull" }, guids = { "723f82" } },       -- Fire
+  { name = "Wooper",        level = 1, types = { "Poison" }, moves = { "Toxic Spikes", "Slam" }, guids = { "d95619" }, evoData = { { cost = 2, ball = BLUE , gen = 9, guids = { "9299e4" } } } },
 }
 
 genData = { gen1PokemonData, gen2PokemonData, gen3PokemonData, gen4PokemonData, gen5PokemonData, gen6PokemonData, gen7PokemonData, gen8PokemonData, gen9PokemonData }
@@ -2056,7 +2056,57 @@ gymData =
       { name = "Thievul",    level = 6, types = { "Dark" },               moves = { "Slash", "Hone Claws", "Pin Missile" } }
     }
   },
-  -- TODO: GenIX Team Rocket
+  -- GenIX Team Rocket
+  {
+    guid = "5bf887",
+    trainerName = "Team Star",
+    gen = 9,
+    gymTier = 11,   -- Signifies Team Rocket
+    pokemon = {
+      { name = "Dachsbun",   level = 5, types = { "Fairy" },              moves = { "Crunch", "Mud-Slap", "Play Rough" } },
+      { name = "Revavroom",  level = 6, types = { "Fairy" },              moves = { "Spin Out", "Confuse Ray", "Magical Torque" } }
+    }
+  },
+  {
+    guid = "d32942",
+    trainerName = "Team Star",
+    gen = 9,
+    gymTier = 11,   -- Signifies Team Rocket
+    pokemon = {
+      { name = "Torkoal",    level = 5, types = { "Fire" },               moves = { "Iron Defense", "Clear Smog", "Flame Wheel" } },
+      { name = "Revavroom",  level = 6, types = { "Fire" },               moves = { "Swift", "Screech", "Blazing Torque" } }
+    }
+  },
+  {
+    guid = "7e5fa6",
+    trainerName = "Team Star",
+    gen = 9,
+    gymTier = 11,   -- Signifies Team Rocket
+    pokemon = {
+      { name = "Pawniard",   level = 5, types = { "Dark", "Steel" },      moves = { "Aerial Ace", "Metal Claw", "Furry Cutter" } },
+      { name = "Revavroom",  level = 6, types = { "Dark" },               moves = { "Swift", "Metal Sound", "Wicked Torque" } }
+    }
+  },
+  {
+    guid = "148183",
+    trainerName = "Team Star",
+    gen = 9,
+    gymTier = 11,   -- Signifies Team Rocket
+    pokemon = {
+      { name = "Annihilape", level = 5, types = { "Fighting", "Ghost" },  moves = { "Rage Fist", "Fire Punch", "Ice Punch" } },
+      { name = "Revavroom",  level = 6, types = { "Fighting" },           moves = { "Spin Out", "H. Horsepower", "Combat Torque" } }
+    }
+  },
+  {
+    guid = "908116",
+    trainerName = "Team Star",
+    gen = 9,
+    gymTier = 11,   -- Signifies Team Rocket
+    pokemon = {
+      { name = "Skuntank",   level = 5, types = { "Poison", "Dark" },     moves = { "Sucker Punch", "Venoshock", "Fury Swipes" } },
+      { name = "Revavroom",  level = 6, types = { "Poison" },             moves = { "Spin Out", "Flame Charge", "Noxious Torque" } }
+    }
+  },
 
   -- Gen I
   -- Gym Leaders
@@ -3066,6 +3116,116 @@ gymData =
     pokemon = {
       { name = "Inteleon", level = 9, types = { "Water" }, moves = { "Tearful Look", "Liquidation", "Snipe Shot" } },
       { name = "Charizard", level = 10, types = { "Fire" }, moves = { "Ancient Power", "Air Slash", "Fire Blast" } } }
+  },
+
+  -- Gen IX
+  -- Gym Leaders
+  {
+    guid = "45dc59",
+    trainerName = "Katy",
+    pokemon = {
+      { name = "Tarountula",level = 2, types = { "Bug"}, moves = { "Tackle", "Assurance", "Bug Bite" } },
+      { name = "Teddiursa", level = 2, types = { "Bug" }, moves = { "Scratch", "Fury Swipes", "Fury Cutter" } } }
+  },
+  {
+    guid = "ad920b",
+    trainerName = "Brassius",
+    pokemon = {
+      { name = "Smoliv",  level = 3, types = { "Grass"},           moves = { "Tackle", "Growth", "Razor Leaf" } },
+      { name = "Sudowoodo", level = 3, types = { "Grass" }, moves = { "Counter", "Rock Throw", "Trailblaze" } } }
+  },
+  {
+    guid = "7875a3",
+    trainerName = "Iono",
+    pokemon = {
+      { name = "Bellibolt", level = 3, types = { "Electric" },  moves = { "Water", "Mud-Slap", "Spark" } },
+      { name = "Mismagius",  level = 4, types = { "Electric" }, moves = { "Confuse Ray", "Hex", "Spark" } } }
+  },
+  {
+    guid = "68208c",
+    trainerName = "Kofu",
+    pokemon = {
+      { name = "Wugtrio", level = 4, types = { "Water" }, moves = { "Headbutt", "Mud-Slap", "Water Pulse" } },
+      { name = "Crabominable",  level = 4, types = { "Water" }, moves = { "Slam", "Rock Smash", "Crabhammer" } } }
+  },
+  {
+    guid = "51d9fc",
+    trainerName = "Larry",
+    pokemon = {
+      { name = "Dudunsparce",  level = 5, types = { "Normal" },          moves = { "Glare", "Drill Run", "Hyper Drill" } },
+      { name = "Staraptor", level = 6, types = { "Normal" }, moves = { "Close Combat", "Aerial Ace", "Facade" } } }
+  },
+  {
+    guid = "e99877",
+    trainerName = "Ryme",
+    pokemon = {
+      { name = "Houndstone", level = 5, types = { "Ghost" }, moves = { "Play Rough", "Crunch", "Phantom Force" } },
+      { name = "Ghost",   level = 6, types = { "Ghost" },   moves = { "Hyper Voice", "Discharge", "Hex" } } }
+  },
+  {
+    guid = "8a4bc5",
+    trainerName = "Tulip",
+    pokemon = {
+      { name = "Farigiraf",   level = 7, types = { "Normal" },  moves = { "Stomp", "Zen Headbutt", "Crunch" } },
+      { name = "Florges", level = 7, types = { "Psychic" }, moves = { "Moonblast", "Psychic", "Petal Blizzard" } } }
+  },
+  {
+    guid = "808b43",
+    trainerName = "Grusha",
+    pokemon = {
+      { name = "Cetitan", level = 7, types = { "Ice" },          moves = { "Double-Edge", "Liquidation", "Ice Shard" } },
+      { name = "Altaria",   level = 7, types = { "Ice" }, moves = { "Dragon Pulse", "Hurricane", "Ice Beam" } } }
+  },
+
+  -- Elite Four + champion
+  {
+    guid = "47ed30",
+    trainerName = "Larry",
+    pokemon = {
+      { name = "Tropius", level = 8, types = { "Grass" },    moves = { "Dragon Pulse", "Solar Beam", "Air Slash" } },
+      { name = "Flamigo", level = 9, types = { "Flying" }, moves = { "Liquidation", "Close Combat", "Brave Bird" } } }
+  },
+  {
+    guid = "7b612c",
+    trainerName = "Hassel",
+    pokemon = {
+      { name = "Flapple",     level = 8, types = { "Grass" }, moves = { "Seed Bomb", "Dragon Rush", "Aerial Ace" } },
+      { name = "Braxcalibur", level = 9, types = { "Dragon" },     moves = { "Brick Break", "Glaive Rush", "Icicle Crash" } } }
+  },
+  {
+    guid = "e625ec",
+    trainerName = "Rika",
+    pokemon = {
+      { name = "Camerupt", level = 8, types = { "Fire" }, moves = { "Flash Cannon", "Earth Power", "Fire Blast" } },
+      { name = "Clodsire",   level = 9, types = { "Ground" }, moves = { "Protect", "Earthquake", "Poison Jab" } } }
+  },
+  {
+    guid = "49c164",
+    trainerName = "Poppy",
+    pokemon = {
+      { name = "Corviknight",  level = 8, types = { "Flying" },         moves = { "Body Press", "Iron Head", "Brave Bird" } },
+      { name = "Tinkaton", level = 9, types = { "Steel"}, moves = { "Play Rough", "Gigaton Hammer", "Stone Edge" } } }
+  },
+  {
+    guid = "d2e704",
+    trainerName = "Geeta",
+    pokemon = {
+      { name = "Avalugg", level = 9,  types = { "Ice" }, moves = { "Earthquake", "Crunch", "Avalanche" } },
+      { name = "Veluza", level = 10, types = { "Water" },   moves = { "Psycho Cut", "Liquidation", "Ice Fang" } } }
+  },
+  {
+    guid = "971eca",
+    trainerName = "Geeta",
+    pokemon = {
+      { name = "Gogoat",  level = 9,  types = { "Grass" }, moves = { "Zen Headbutt", "Bulk Up", "Horn Leech" } },
+      { name = "Kingambit", level = 10, types = { "Dark" }, moves = { "Stone Edge", "Kowtow Cleave", "Iron Head" } } }
+  },
+  {
+    guid = "275bc9",
+    trainerName = "Geeta",
+    pokemon = {
+      { name = "Espathra",  level = 9,  types = { "Psychic" },  moves = { "Lumina Crash", "Dazzling Gleam", "Feather Dance" } },
+      { name = "Glimmora", level = 10, types = { "Rock" }, moves = { "Tera Blast", "Sludge Wave", "Earth Power" } } }
   },
 }
 
