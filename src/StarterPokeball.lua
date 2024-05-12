@@ -34,7 +34,9 @@ local gen8Pokeballs = { "307988", "09cb0e", "99b8aa", "d6ef76", "0faf4d", "ad4ce
 local gen8EvoPokeballs = { "bc1673", "4f7b73", "2d873a", "a32b0d", "d2b2ca", "637026" }
 local gen8LeadersArr = { "227356", "b47fe7", "8e8fd2", "96992a" }
 
--- TODO: add gen 9
+local gen9Pokeballs = { "3168f8", "de981e", "7ced83", "345260", "d63e7c", "3fcea5", "ae0453" }
+local gen9EvoPokeballs = { "9c010b", "03ea82", "4217d6", "6ae5c4", "8963b5", "0dc3f5" }
+local gen9LeadersArr = { "e4988b", "7269d7", "80f567", "6f3326" }
 
 local customPokeballs = { "a927cf", "acd90d", "63bb92", "88b157", "8aaeef", "915bb4", "47780a" }
 local customEvoPokeballs = { "95fee8", "8a1c9a", "7f2cd7", "0d33b3", "8faab4" }
@@ -98,11 +100,10 @@ function beginSetup2(params)
         setupPokeballs(gen8EvoPokeballs, evoPokeballs)
     end
 
-    -- TODO: add gen9 functionality
-    -- if params.selectedGens[9] then
-    --     setupPokeballs(gen9Pokeballs, pokeballs)
-    --     setupPokeballs(gen9EvoPokeballs, evoPokeballs)
-    -- end
+    if params.selectedGens[9] then
+        setupPokeballs(gen9Pokeballs, pokeballs)
+        setupPokeballs(gen9EvoPokeballs, evoPokeballs)
+    end
 
     if params.customGen then
         setupPokeballs(customPokeballs, pokeballs)
@@ -135,13 +136,18 @@ function beginSetup2(params)
     redRack.call("setGen", genParams)
     yellowRack.call("setGen", genParams)
 
+    -- Collect the cross gen pokemon evolutions from gens we didn't select. This allows pokemon
+    -- to evolve into all of their evolutions no matter what.
+    enableCrossGen = Global.call("GetCrossGenEnabled")
+    if enableCrossGen then
+        collectCrossGenEvoPokemon(params.selectedGens)
+    end
+
     -- delete Saves on starting
     local tmpelite4Gym = getObjectFromGUID("a0f650")
     local tmprivalGym = getObjectFromGUID("c970ca")
     tmpelite4Gym.call("deleteSave")
     tmprivalGym.call("deleteSave")
-
-    -- TODO: add/uncomment out gens 7,8 below
 
     -- gyms
     if params.leadersGen == 1 then
@@ -167,8 +173,7 @@ function beginSetup2(params)
     elseif params.leadersGen == -1 then
         -- random leaders
         local gen
-        -- gen9LeadersArr[1]
-        local gymPokeballs = { gen1LeadersArr[1], gen2LeadersArr[1], gen3LeadersArr[1], gen4LeadersArr[1], gen5LeadersArr[1], gen6LeadersArr[1], gen7LeadersArr[1], gen8LeadersArr[1] }
+        local gymPokeballs = { gen1LeadersArr[1], gen2LeadersArr[1], gen3LeadersArr[1], gen4LeadersArr[1], gen5LeadersArr[1], gen6LeadersArr[1], gen7LeadersArr[1], gen8LeadersArr[1], gen9LeadersArr[1] }
         for i = 1, 8 do
             gen = math.random(1, #gymPokeballs)
             local gymsPokeball = getObjectFromGUID(gymPokeballs[gen])
@@ -187,8 +192,7 @@ function beginSetup2(params)
             gym.call("setLeaderGUID", { leader.guid })
         end
 
-        --, gen9LeadersArr[2]
-        local eliteFourPokeballs = { gen1LeadersArr[2], gen2LeadersArr[2], gen3LeadersArr[2], gen4LeadersArr[2], gen5LeadersArr[2], gen6LeadersArr[2], gen7LeadersArr[2], gen8LeadersArr[2] }
+        local eliteFourPokeballs = { gen1LeadersArr[2], gen2LeadersArr[2], gen3LeadersArr[2], gen4LeadersArr[2], gen5LeadersArr[2], gen6LeadersArr[2], gen7LeadersArr[2], gen8LeadersArr[2], gen9LeadersArr[2] }
         local elite4Gym = getObjectFromGUID("a0f650")
         for i = 1, 4 do
             gen = math.random(1, #eliteFourPokeballs)
@@ -199,8 +203,7 @@ function beginSetup2(params)
             elite4Gym.call("setLeaderGUID", { leader.guid })
         end
 
-        --, gen9LeadersArr[3]
-        local rivalPokeballs = { gen1LeadersArr[3], gen2LeadersArr[3], gen3LeadersArr[3], gen4LeadersArr[3], gen5LeadersArr[3], gen6LeadersArr[3], gen7LeadersArr[3], gen8LeadersArr[3] }
+        local rivalPokeballs = { gen1LeadersArr[3], gen2LeadersArr[3], gen3LeadersArr[3], gen4LeadersArr[3], gen5LeadersArr[3], gen6LeadersArr[3], gen7LeadersArr[3], gen8LeadersArr[3], gen9LeadersArr[3] }
         local rivalGym = getObjectFromGUID("c970ca")
         for i = 1, 3 do
             gen = math.random(1, #rivalPokeballs)
@@ -213,8 +216,7 @@ function beginSetup2(params)
             --printToAll("TEMP | called rival setLeaderGUID")
         end
 
-        -- gen9LeadersArr[4]
-        local silphCoPokeballs = { gen1LeadersArr[4], gen2LeadersArr[4], gen3LeadersArr[4], gen4LeadersArr[4], gen5LeadersArr[4], gen6LeadersArr[4], gen7LeadersArr[4], gen8LeadersArr[4] }
+        local silphCoPokeballs = { gen1LeadersArr[4], gen2LeadersArr[4], gen3LeadersArr[4], gen4LeadersArr[4], gen5LeadersArr[4], gen6LeadersArr[4], gen7LeadersArr[4], gen8LeadersArr[4], gen9LeadersArr[4] }
         local silphCoGym = getObjectFromGUID("19db0d")
         gen = math.random(1, #silphCoPokeballs)
         local silphCoPokeball = getObjectFromGUID(silphCoPokeballs[math.random(1, #silphCoPokeballs)])
@@ -312,6 +314,16 @@ function setupGyms(leadersArr, gen)
         --printToAll("TEMP | setting silphco " .. i .. " leader GUID: " .. leader.guid)
         silphCoGym.call("setLeaderGUID", { leader.guid })
         --printToAll("TEMP | called  setLeaderGUID")
+    end
+end
+
+-- TODO
+function collectCrossGenEvoPokemon(selectedGens)
+    -- Loop through the selected gens.
+    for i = 1, #selectedGens do
+        if selectedGens[i] then
+
+        end
     end
 end
 
