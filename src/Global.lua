@@ -3138,7 +3138,7 @@ gymData =
     guid = "7875a3",
     trainerName = "Iono",
     pokemon = {
-      { name = "Bellibolt", level = 3, types = { "Electric" },  moves = { "Water", "Mud-Slap", "Spark" } },
+      { name = "Bellibolt", level = 3, types = { "Electric" },  moves = { "Water Gun", "Mud-Slap", "Spark" } },
       { name = "Mismagius",  level = 4, types = { "Electric" }, moves = { "Confuse Ray", "Hex", "Spark" } } }
   },
   {
@@ -3486,6 +3486,11 @@ function FilterGymDataOnTier(gen, tier)
 end
 
 -- Retrieves a GUID randomly from the list of gym leaders for a gen and tier.
+-- gen argument:
+--    gyms  : 1-8
+--    elite4: 9
+--    rival : 10
+--    TR    : 11
 function RandomGymGuidOfTier(params)
   if gymData == nil then return 0 end
 
@@ -3710,6 +3715,10 @@ end
 
 function gen8LeadersSet(player, isOn)
   setLeaders(8, isOn)
+end
+
+function gen9LeadersSet(player, isOn)
+  setLeaders(9, isOn)
 end
 
 function customLeadersSet(player, isOn)
