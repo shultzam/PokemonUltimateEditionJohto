@@ -14,9 +14,6 @@ aiDifficulty = 0
 -- Save Data
 customGen = false
 
--- Disable this to prevent Pokémon from evolving into gens not selected during setup.
-isCrossGenEnabled = true
-
 --[[ 
   NOTE: Lua cannot handle sparse arrays and, apparenly, false terms can create sparse array
         behavior (see https://stackoverflow.com/a/17974661). An online interpreter suggests
@@ -1325,10 +1322,6 @@ gen9PokemonData =
 }
 
 genData = { gen1PokemonData, gen2PokemonData, gen3PokemonData, gen4PokemonData, gen5PokemonData, gen6PokemonData, gen7PokemonData, gen8PokemonData, gen9PokemonData }
-
--- This table will hold the cross gen data for pokemon evolutions not in selected gens.
-missingCrossGenData = 
-{}
 
 moveData =
 {
@@ -3305,7 +3298,7 @@ function GetPokemonDataByGUID(params)
   local data
   for i = 1, #selectedGens do
     --printToAll("TEMP | serching Gen " .. i .. " for GUID: " .. params.guid)
-    if selectedGens[i] or isCrossGenEnabled then
+    if selectedGens[i] then
       data = getPokemonData(genData[i], params.guid)
       if data != nil then
         return data
@@ -3327,10 +3320,20 @@ function GetPokemonDataByGUID(params)
   print("No Pokémon Data Found for GUID: " .. params.guid)
 end
 
+function GetAnyPokemonDataByGUID(params)
+  for i = 1, #selectedGens do
+    local data = getPokemonData(genData[i], params.guid)
+    if data != nil then
+      return data
+    end
+  end
+  print("No Pokémon Name Found for GUID: " .. params.guid)
+end
+
 function GetPokemonDataByName(params)
   local data
   for i = 1, #selectedGens do
-    if selectedGens[i] or isCrossGenEnabled then
+    if selectedGens[i] then
       --print("Searching Gen " .. i .. " data for GUID")
       data = getPokemonDataName(genData[i], params.name)
       if data != nil then
@@ -3501,11 +3504,6 @@ function RandomGymGuidOfTier(params)
 
   printToAll("Failed to find gym leader options for gen " .. tostring(params.gen) .. ", tier " .. tostring(params.tier))
   return 0
-end
-
--- Simple function used to return if cross gen evolving is enabled.
-function GetCrossGenEnabled()
-  return isCrossGenEnabled
 end
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------

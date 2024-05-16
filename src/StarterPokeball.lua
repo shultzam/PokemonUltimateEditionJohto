@@ -137,13 +137,6 @@ function beginSetup2(params)
     redRack.call("setGen", genParams)
     yellowRack.call("setGen", genParams)
 
-    -- Collect the cross gen pokemon evolutions from gens we didn't select. This allows pokemon
-    -- to evolve into all of their evolutions no matter what.
-    enableCrossGen = Global.call("GetCrossGenEnabled")
-    if enableCrossGen then
-        collectCrossGenEvoPokemon(params.selectedGens)
-    end
-
     -- delete Saves on starting
     local tmpelite4Gym = getObjectFromGUID("a0f650")
     local tmprivalGym = getObjectFromGUID("c970ca")
@@ -333,16 +326,6 @@ function setupGyms(leadersArr, gen)
     --printToAll("TEMP | called  setLeaderGUID")
 end
 
--- TODO
-function collectCrossGenEvoPokemon(selectedGens)
-    -- Loop through the selected gens.
-    for i = 1, #selectedGens do
-        if selectedGens[i] then
-
-        end
-    end
-end
-
 function start()
     local pinkPokeball = getObjectFromGUID("9c4411")
     local greenPokeball = getObjectFromGUID("c988ea")
@@ -354,11 +337,13 @@ function start()
     self.removeButton(0)
 
     local itemDeck = getObjectFromGUID("30f8c1")
-    local eventDeck = getObjectFromGUID("656d8c")
-    local tmDeck = getObjectFromGUID("6177d1")
     itemDeck.shuffle()
+    local eventDeck = getObjectFromGUID("656d8c")
     eventDeck.shuffle()
+    local tmDeck = getObjectFromGUID("6177d1")
     tmDeck.shuffle()
+    local pokeballDeck = getObjectFromGUID("e8bcad")
+    pokeballDeck.shuffle()
 
     local pinkPokeball = getObjectFromGUID("9c4411")
     -- Move Starter Pokémon to Pink Pokéball

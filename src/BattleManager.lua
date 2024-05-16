@@ -2501,8 +2501,15 @@ function evolvePoke(params)
     local evoList = {}
     for i=1, #pokemonData.evoData do
       local evolution = pokemonData.evoData[i]
-      if selectedGens[evolution.gen] and evolution.cost <= diceLevel then
-        table.insert(evoList, evolution)
+      if evolution.cost <= diceLevel then
+        if selectedGens[evolution.gen] then
+          table.insert(evoList, evolution)
+        else
+          for _, evoGuid in ipairs(evolution.guids) do
+            local unallowedPokemon = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
+            printToAll("Evolving to " .. tostring(unallowedPokemon.name) .. " not available due to gen " .. tostring(evolution.gen) .. " not being enabled")
+          end
+        end
       end
     end
 
