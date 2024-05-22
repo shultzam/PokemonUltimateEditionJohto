@@ -1759,7 +1759,6 @@ function sendToArenaGym(params)
 end
 
 function sendToArenaTrainer(params)
-  --printToAll("TEMP | BM::sendToArenaTrainer, params: " .. dump_table(params))
   if attackerData.type ~= nil then
     print ("There is already a Pokémon in the arena")
     return false
@@ -2436,6 +2435,17 @@ end
 
 function updateEvolveButtons(params, slotData, level)
 
+  --[[
+      if evolution.attachCard ~= nil then
+        printToAll(evolvingPokemon.name .. " may only evolve if the " .. tostring(evolution.attachCard) .. " card is attached..")
+      end
+      if evolution.playedCard ~= nil then
+        printToAll(evolvingPokemon.name .. " may only evolve if the " .. tostring(evolution.playedCard) .. " card is played..")
+      end
+  ]]
+  -- printToAll("TEMP | BM::updateEvolveButtons params: " .. dump_table(params))
+  -- printToAll("TEMP | BM::updateEvolveButtons level: " .. tostring(level))
+
   local buttonParams = {
       inArena = params.inArena,
       isAttacker = params.isAttacker,
@@ -2453,12 +2463,23 @@ function updateEvolveButtons(params, slotData, level)
   if evoData ~= nil then
     for i=1, #evoData do
       local evolution = evoData[i]
-      if selectedGens[evolution.gen] and evolution.cost <= level then
-        table.insert(evoList, evolution)
+      if selectedGens[evolution.gen] then 
+        if type(evolution.cost) == "string" then 
+          for _, evoGuid in ipairs(evolution.guids) do
+            local evoData = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
+            printToAll(evolution.cost .. " required to be played or attached to evolve into " .. evoData.name)
+            table.insert(evoList, evolution)
+            break
+          end
+        elseif evolution.cost <= level then
+          table.insert(evoList, evolution)
+        end
       end
     end
   end
   local numEvos = #evoList
+
+  --printToAll("TEMP | BM::updateEvolveButtons numEvos: " .. tostring(numEvos))
 
   if numEvos > 0 then
 
@@ -2485,7 +2506,7 @@ end
 
 
 function evolvePoke(params)
-
+    --printToAll("TEMP | BM::evolvePoke params: " .. dump_table(params))
     local pokemonData = params.slotData
     local selectedGens = Global.call("GetSelectedGens")
     local rack = getObjectFromGUID(params.rackGUID)
@@ -2501,13 +2522,21 @@ function evolvePoke(params)
     local evoList = {}
     for i=1, #pokemonData.evoData do
       local evolution = pokemonData.evoData[i]
-      if evolution.cost <= diceLevel then
+      if type(evolution.cost) == "string" then
+        for _, evoGuid in ipairs(evolution.guids) do
+          local evoData = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
+          printToAll(evolution.cost .. " required to be played or attached to evolve into " .. evoData.name)
+          table.insert(evoList, evolution)
+          break
+        end
+      elseif evolution.cost <= diceLevel then
         if selectedGens[evolution.gen] then
           table.insert(evoList, evolution)
         else
           for _, evoGuid in ipairs(evolution.guids) do
             local unallowedPokemon = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
             printToAll("Evolving to " .. tostring(unallowedPokemon.name) .. " not available due to gen " .. tostring(evolution.gen) .. " not being enabled")
+            break
           end
         end
       end
@@ -2567,6 +2596,30 @@ function evolvePoke(params)
           if evolvedPokemon ~= nil then
             break
           end
+      end
+
+      -- If the ballGuid field is present, that indicates that the pokemon may not be in the standard evo pokeball.
+      -- The is relevant in scenarios where:
+      --    pokemon evolve cyclically (Morpeko)
+      if evolvedPokemon == nil and evoData.ballGuid ~= nil then
+        local overriddenPokeball = getObjectFromGUID(evoData.ballGuid)
+        pokemonInPokeball = overriddenPokeball.getObjects()
+
+        for i=1, #pokemonInPokeball do
+          pokeObj = pokemonInPokeball[i]
+          local pokeGUID = pokeObj.guid
+          for j=1, #evoGUIDS do
+            if pokeGUID == evoGUIDS[j] then
+              evolvedPokemonData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
+              evolvedPokemon = overriddenPokeball.takeObject({guid=pokeGUID})
+              evolvedPokemonGUID = pokeGUID
+            end
+          end
+
+          if evolvedPokemon ~= nil then
+            break
+          end
+        end
       end
 
       setNewPokemon(pokemonData, evolvedPokemonData, evolvedPokemonGUID)
@@ -2630,6 +2683,8 @@ function refreshPokemon(params)
         castParams.origin = rack.positionToWorld(origin)
         hits = Physics.cast(castParams)
 
+        --printToAll("TEMP | BM::refreshPokemon initial check, #hits: " .. tostring(#hits))
+
         if #hits ~= 0 then
 
           -- Show slot buttons
@@ -2652,6 +2707,8 @@ function refreshPokemon(params)
           castParams.origin = rack.positionToWorld(origin)
           hits = Physics.cast(castParams)
 
+          --printToAll("TEMP | BM::refreshPokemon calculating level, #hits: " .. tostring(#hits))
+
           -- Calculate level + Show Evolve Button
           if #hits ~= 0 then
               newSlotData.levelDiceGUID = hits[1].hit_object.guid
@@ -2665,6 +2722,10 @@ function refreshPokemon(params)
           else
               newSlotData.levelDiceGUID = nil
               newSlotData.diceLevel = 0
+
+              params.index = i
+              params.inArena = false
+              updateEvolveButtons(params, newSlotData, 0)
           end
         elseif #hits == 0 then -- Empty Slot
 

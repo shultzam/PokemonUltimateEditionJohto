@@ -10,7 +10,7 @@ function onSave()
 end
 
 function onLoad(saved_data)
-  saved_data = ""
+  --saved_data = ""
   if saved_data ~= "" then
       local loaded_data = JSON.decode(saved_data)
       if loaded_data.saveGymData ~= nil and loaded_data.savePokemonData ~= nil then

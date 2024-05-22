@@ -50,7 +50,7 @@ function onLoad()
   self.createButton({label="POINTS", click_function="rackCalcPoints", function_owner=self, tooltip="Calculate Points", position={-0.80, yLoc, -0.79}, rotation={0,0,0}, height=60, width=150, font_size=30})
   self.createButton({label="FIGURE", click_function="panToPlayer", function_owner=self, tooltip="Move Camera to Trainer Figure", position={-1.37, yLoc, -0.815}, rotation={0,0,0}, height=52, width=150, font_size=30})
   self.createButton({label="ARENA", click_function="showArena", function_owner=Global, tooltip="Move Camera to Arena", position={-1.37, yLoc, -0.92}, rotation={0,0,0}, height=52, width=150, font_size=30})
-  self.createButton({label="OFF", click_function="toggleAutoCamera", function_owner=self, tooltip="", position={-1.108, yLoc, -0.815}, rotation={0,0,0}, height=52, width=90, font_size=30})
+  self.createButton({label="OFF", click_function="toggleAutoCamera", function_owner=self, tooltip="Toggle Auto Camera", position={-1.108, yLoc, -0.815}, rotation={0,0,0}, height=52, width=90, font_size=30})
 
   for i=1, 6 do
       local xPos = -1.6 + ( 0.59 * (i-1))
@@ -207,7 +207,12 @@ function rackEvolve(index, oneOrTwo)
 
     local pokemonData = rackData[index]
     local evolveData = pokemonData.evoData[1]
-    local evolveCost = evolveData.cost
+    local evolveCost
+    if type(evolveData.cost) == "string" then 
+        evolveCost = 0
+    else
+        evolveCost = evolveData.cost
+    end
 
     local evolveData = getObjectFromGUID(battleManager).call("evolvePoke", evolveParams)
 

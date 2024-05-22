@@ -1,6 +1,6 @@
 local pokeballs = { "ec1e4b", "9c4411", "c988ea", "2cf16d", "986cb5", "f66036", "e46f90" }
 local evoPokeballs = { "757125", "6fd4a0", "23f409", "caf1c8", "35376b", "f353e7" }
-local gyms = { "20bcd5", "ec01e5", "f2f4fe", "d8dc51", "22cc88", "b564fd", "c4bd30", "c9dd73" }
+local gyms = { "20bcd5", "ec01e5", "f2f4fe", "d8dc51", "b564fd", "22cc88", "c4bd30", "c9dd73" }
 
 local gen1Pokeballs = { "681d76", "d7d981", "818525", "30391b", "758036", "bb73fd", "78fdbb" }
 local gen1EvoPokeballs = { "e9d043", "7de53d", "f30baf", "ceb9a5", "5293ec" }
@@ -11,7 +11,7 @@ local gen2EvoPokeballs = { "c6e80b", "d86df8", "f59319", "538c67", "6f201a" }
 local gen2LeadersArr = { "d6be18", "c3650f", "ec20b2", "e68807" }
 
 local gen3Pokeballs = { "e05c61", "b3ede1", "80c3c3", "5ded3e", "4f4570", "ee7d71", "feea6b" }
-local gen3EvoPokeballs = { "31b1ec", "9b3ecb", "613cb1", "1b49a8", "8d3dfb" }
+local gen3EvoPokeballs = { "31b1ec", "9b3ecb", "613cb1", "1b49a8", "8d3dfb", "fd9bcb" }
 local gen3LeadersArr = { "797253", "61d7e4", "2a9746", "a926ef" }
 
 local gen4Pokeballs = { "be7627", "8079e7", "49e675", "f7a234", "fadfc3", "a63903", "9f5985" }
@@ -344,6 +344,12 @@ function start()
     tmDeck.shuffle()
     local pokeballDeck = getObjectFromGUID("e8bcad")
     pokeballDeck.shuffle()
+    local zCrystalDeck = getObjectFromGUID("f54b30")
+    zCrystalDeck.shuffle()
+    local typeBoosterDeck = getObjectFromGUID("13497d")
+    typeBoosterDeck.shuffle()
+    local teraTypesDeck = getObjectFromGUID("591a08")
+    teraTypesDeck.shuffle()
 
     local pinkPokeball = getObjectFromGUID("9c4411")
     -- Move Starter Pokémon to Pink Pokéball
