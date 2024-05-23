@@ -2264,7 +2264,7 @@ function calculateEffectiveness(isAttacker, moves, type)
     if moves[i] ~= nil then
 
       local moveData = moves[i]
-      local xPos = -33.88 - (buttonWidths * 0.5)
+      local xPos = -33.99 - (buttonWidths * 0.5)
       moveText.setPosition({xPos + (3.7*(i-1)), 1, textZPos})
       moveData.status = DEFAULT
 
@@ -2435,17 +2435,6 @@ end
 
 function updateEvolveButtons(params, slotData, level)
 
-  --[[
-      if evolution.attachCard ~= nil then
-        printToAll(evolvingPokemon.name .. " may only evolve if the " .. tostring(evolution.attachCard) .. " card is attached..")
-      end
-      if evolution.playedCard ~= nil then
-        printToAll(evolvingPokemon.name .. " may only evolve if the " .. tostring(evolution.playedCard) .. " card is played..")
-      end
-  ]]
-  -- printToAll("TEMP | BM::updateEvolveButtons params: " .. dump_table(params))
-  -- printToAll("TEMP | BM::updateEvolveButtons level: " .. tostring(level))
-
   local buttonParams = {
       inArena = params.inArena,
       isAttacker = params.isAttacker,
@@ -2478,9 +2467,6 @@ function updateEvolveButtons(params, slotData, level)
     end
   end
   local numEvos = #evoList
-
-  --printToAll("TEMP | BM::updateEvolveButtons numEvos: " .. tostring(numEvos))
-
   if numEvos > 0 then
 
     buttonParams.numEvos = numEvos
@@ -2506,7 +2492,6 @@ end
 
 
 function evolvePoke(params)
-    --printToAll("TEMP | BM::evolvePoke params: " .. dump_table(params))
     local pokemonData = params.slotData
     local selectedGens = Global.call("GetSelectedGens")
     local rack = getObjectFromGUID(params.rackGUID)
@@ -2525,7 +2510,7 @@ function evolvePoke(params)
       if type(evolution.cost) == "string" then
         for _, evoGuid in ipairs(evolution.guids) do
           local evoData = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
-          printToAll(evolution.cost .. " required to be played or attached to evolve into " .. evoData.name)
+          printToAll(evolution.cost .. " is required to be played or attached to evolve into " .. evoData.name)
           table.insert(evoList, evolution)
           break
         end
@@ -2683,8 +2668,6 @@ function refreshPokemon(params)
         castParams.origin = rack.positionToWorld(origin)
         hits = Physics.cast(castParams)
 
-        --printToAll("TEMP | BM::refreshPokemon initial check, #hits: " .. tostring(#hits))
-
         if #hits ~= 0 then
 
           -- Show slot buttons
@@ -2706,8 +2689,6 @@ function refreshPokemon(params)
           local origin = {xPositions[i] - 0.20, 1.5, params.pokemonZPos - 0.13}
           castParams.origin = rack.positionToWorld(origin)
           hits = Physics.cast(castParams)
-
-          --printToAll("TEMP | BM::refreshPokemon calculating level, #hits: " .. tostring(#hits))
 
           -- Calculate level + Show Evolve Button
           if #hits ~= 0 then
@@ -3162,7 +3143,7 @@ function showMoveButtons(isAttacker)
 
   local numMoves = #moves
   local buttonWidths = (numMoves*3.2) + ((numMoves-1) + 0.5)
-  local xPos = 9.60 - (buttonWidths * 0.5)
+  local xPos = 9.34 - (buttonWidths * 0.5)
 
   for i=1, numMoves do
     local moveName = tostring(moves[i].name)

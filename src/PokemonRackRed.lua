@@ -495,3 +495,17 @@ function evolveTwoArena(attDefParams)
         rackEvolve(arenaIndex, 2)
     end
 end
+
+-- Helper function to print a table.
+function dump_table(o)
+    if type(o) == 'table' then
+        local s = '{ '
+        for k,v in pairs(o) do
+            if type(k) ~= 'number' then k = '"'..k..'"' end
+            s = s .. '['..k..'] = ' .. dump_table(v) .. ','
+        end
+        return s .. '} '
+    else
+        return tostring(o)
+    end
+end

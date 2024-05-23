@@ -350,6 +350,8 @@ function start()
     typeBoosterDeck.shuffle()
     local teraTypesDeck = getObjectFromGUID("591a08")
     teraTypesDeck.shuffle()
+    local boostItemsDeck = getObjectFromGUID("acfa1d")
+    boostItemsDeck.shuffle()
 
     local pinkPokeball = getObjectFromGUID("9c4411")
     -- Move Starter Pokémon to Pink Pokéball
