@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 local playerColour = "Yellow"
 
-local diceBagGUID = "71fc53"
+local diceBagGUID = "3c7dbc"
 local figureGUID = "f5f4be"
 
 local evolveRotation = 180
