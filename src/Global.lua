@@ -749,7 +749,7 @@ gen5PokemonData =
   { name = "Frillish",        level = 4, types = { "Water" },    moves = { "Bubble Beam", "Absorb" },          guids = { "60ba9e" },                     evoData = { { cost = 2, ball = RED, gen = 5, guids = { "8fd291" } } } }, -- Pink
   { name = "Jellicent",       level = 6, types = { "Water" },    moves = { "Ominous Wind", "Water Pulse" },    guids = { "598d9a", "8fd291" } },                                                                                  -- Pink
   { name = "Alomomola",       level = 3, types = { "Water" },    moves = { "Safeguard", "Brine" },             guids = { "9c2e47" } },
-  { name = "Joltik",          level = 2, types = { "Bug" },      moves = { "Electroweb", "Screech" },          guids = { "c4adc9" },                     evoData = { { cost = 3, ball = YELLOW, gen = 5, guids = { "4f2f10" } } } },
+  { name = "Joltik",          level = 2, types = { "Bug" },      moves = { "Fury Cutter", "Absorb" },          guids = { "c4adc9" },                     evoData = { { cost = 3, ball = YELLOW, gen = 5, guids = { "4f2f10" } } } },
   { name = "Galvantula",      level = 5, types = { "Bug" },      moves = { "Discharge", "Bug Bite" },          guids = { "f79ca8", "4f2f10" } },
   { name = "Ferroseed",       level = 3, types = { "Grass" },    moves = { "Pin Missile", "Mirror Shot" },     guids = { "4801d8" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "d1ce01" } } } },
   { name = "Ferrothorn",      level = 5, types = { "Grass" },    moves = { "Iron Defense", "Power Whip" },     guids = { "1419cf", "d1ce01" } },
@@ -820,7 +820,7 @@ gen6PokemonData =
   -- Gen 6 650-678
   { name = "Chespin",     level = 1, types = { "Grass" },    moves = { "Growl", "Vine Whip" },               guids = { "68e630" },                     evoData = { { cost = 2, ball = BLUE, gen = 6, guids = { "742ae2" } } } },
   { name = "Quilladin",   level = 3, types = { "Grass" },    moves = { "Pin Missile", "Needle Arm" },        guids = { "001c72", "742ae2" },           evoData = { { cost = 2, ball = RED, gen = 6, guids = { "4b2bfb", "b1fb69" } } } },
-  { name = "Chesnaught",  level = 5, types = { "Grass" },    moves = { "Spiky Shield", "Hammer Arm" },       guids = { "ec07ee", "4b2bfb", "b1fb69" }, },
+  { name = "Chesnaught",  level = 5, types = { "Grass" },    moves = { "Spiky Shield", "Hammer Arm" },       guids = { "9377c5", "4b2bfb", "b1fb69" }, },
   { name = "Fennekin",    level = 1, types = { "Fire" },     moves = { "Ember", "Howl" },                    guids = { "311f76" },                     evoData = { { cost = 2, ball = BLUE, gen = 6, guids = { "2b10a5" } } } },
   { name = "Braixen",     level = 3, types = { "Fire" },     moves = { "Fire Spin", "Light Screen" },        guids = { "c5d7f0", "2b10a5" },           evoData = { { cost = 2, ball = RED, gen = 6, guids = { "9d0714", "ab189f" } } } },
   { name = "Delphox",     level = 5, types = { "Fire" },     moves = { "Mystical Fire", "Psyshock" },        guids = { "cab045", "9d0714", "ab189f" }, },
@@ -1018,7 +1018,7 @@ gen7PokemonData =
   { name = "Alolan Meowth",       level = 2, types = { "Dark" },     moves = { "Growl", "Bite" },                     guids = { "8df15f" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "ccd8e9" } } } },
   { name = "Alolan Persian",      level = 4, types = { "Dark" },     moves = { "Feint Attack", "Screech" },           guids = { "3986bc", "ccd8e9" } },
   { name = "Alolan Geodude",      level = 1, types = { "Rock" },     moves = { "Rock Throw", "Charge" },              guids = { "c5d66d" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "01562b" } } } },
-  { name = "Alolan Graveler",     level = 4, typew = { "Rock" },     moves = { "Thunder Punch", "Self-Destruct" },    guids = { "38fa09", "01562b" },           evoData = { { cost = 2, ball = RED, gen = 7, guids = { "b21424", "7702b6" } } } },
+  { name = "Alolan Graveler",     level = 4, types = { "Rock" },     moves = { "Thunder Punch", "Self-Destruct" },    guids = { "38fa09", "01562b" },           evoData = { { cost = 2, ball = RED, gen = 7, guids = { "b21424", "7702b6" } } } },
   { name = "Alolan Golem",        level = 6, types = { "Rock" },     moves = { "Stone Edge", "Spark" },               guids = { "6e7cf6", "b21424", "7702b6" } },
   { name = "Alolan Grimer",       level = 4, types = { "Poison" },   moves = { "Disable", "Bite" },                   guids = { "c9ea3a" },                     evoData = { { cost = 1, ball = RED, gen = 7, guids = { "d5d023" } } } },
   { name = "Alolan Muk",          level = 5, types = { "Poison" },   moves = { "Poison Fang", "Crunch" },             guids = { "20e759", "d5d023" } },
@@ -1112,7 +1112,7 @@ gen8PokemonData =
   { name = "Arctozolt",     level = 4, types = { "Electric" }, moves = { "Ancient Power", "Freeze-Dry" }, guids = { "21422d"} }, 
   { name = "Dracovish",     level = 4, types = { "Water" }, moves = { "Dragon Rush", "Ancient Power" }, guids = { "79900c"} }, 
   { name = "Arctovish",     level = 4, types = { "Water" }, moves = { "Ancient Power", "Liquidation" }, guids = { "d8d24a"} }, 
-  { name = "Duraludon",     level = 5, types = { "Steel" }, moves = { "Metal Claw", "Dragon Claw" }, guids = { "19c226" }, evoData = { { cost = 1, ball = red, gen = 9, guids = { "3a6873" } } }  }, 
+  { name = "Duraludon",     level = 5, types = { "Steel" }, moves = { "Metal Claw", "Dragon Claw" }, guids = { "19c226" }, evoData = { { cost = 1, ball = RED, gen = 9, guids = { "3a6873" } } }  }, 
   { name = "Dreepy",        level = 2, types = { "Dragon" }, moves = { "Infestation", "Astonish" }, guids = { "947a92" }, evoData = { { cost = 3, ball = YELLOW, gen = 8, guids = { "b9b3ac" } } }  }, 
   { name = "Drakloak",      level = 5, types = { "Dragon" }, moves = { "Double Hit", "Dragon Pulse" }, guids = { "0dd987", "b9b3ac" }, evoData = { { cost = 2, ball = RED, gen = 8, guids = { "0fafd7", "89c1a8" } } } }, 
   { name = "Dragapult",     level = 7, types = { "Dragon" }, moves = { "Dragon Darts", "Phantom Force" }, guids = { "ccc405", "0fafd7", "89c1a8" } },
@@ -2291,7 +2291,7 @@ gymData =
     trainerName = "Clair",
     pokemon = {
       { name = "Dragonair", level = 7, types = { "Dragon" },          moves = { "Surf", "Fire Blast", "Dragon Breath" } },
-      { name = "Kingdra",   level = 7, types = { "Dragon", "Water" }, moves = { "Surf", "Hyper Beam", "Dragon Breath" } } }
+      { name = "Kingdra",   level = 7, types = { "Water", "Dragon" }, moves = { "Surf", "Hyper Beam", "Dragon Breath" } } }
   },
 
   -- Elite Four + champion
@@ -3078,7 +3078,7 @@ gymData =
     gen = 8,
     gymTier = 8,
     pokemon = {
-      { name = "Sandaconda", level = 7, types = { "Protect" }, moves = { "Protect", "Fire Fang", "Earth Power" } },
+      { name = "Sandaconda", level = 7, types = { "Ground" }, moves = { "Protect", "Fire Fang", "Earth Power" } },
       { name = "Duraludon", level = 7, types = { "Steel" }, moves = { "Stone Edge", "Iron Head", "Breaking Swipe" } } }
   },
 
