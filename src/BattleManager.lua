@@ -88,8 +88,8 @@ local arenaTextGUID="f0b393"
 local currRound = 0
 
 -- Arena Button Positions
-local incLevelAtkPos = {x=8.10, z=6.27}
-local decLevelAtkPos = {x=6.50, z=6.27}
+local incLevelAtkPos = {x=8.14, z=6.28}
+local decLevelAtkPos = {x=6.53, z=6.28}
 local incStatusAtkPos = {x=12.98, z=6.81}
 local decStatusAtkPos = {x=11.18, z=6.81}
 local movesAtkPos = {x=10.50, z=2.47}
@@ -100,8 +100,8 @@ local atkEvolve2Pos = {x=8.90, z=5.07}
 local atkMoveZPos = 8.3
 local atkConfirmPos = {x=7.29, z=11.87}
 
-local incLevelDefPos = {x=8.09, z=-6.14}
-local decLevelDefPos = {x=6.49, z=-6.14}
+local incLevelDefPos = {x=8.14, z=-6.12}
+local decLevelDefPos = {x=6.53, z=-6.12}
 local incStatusDefPos = {x=12.98, z=-6.60}
 local decStatusDefPos = {x=11.18, z=-6.60}
 local movesDefPos = {x=10.49, z=-2.34}
@@ -127,8 +127,8 @@ inBattle = false
 battleState = NO_BATTLE
 
 --Arena Positions
-local defenderPos = {pokemon={-36.01, 4.19}, dice={-36.12, 6.26}, status={-31.25, 4.44}, statusCounters={-31.25, 6.72}, item={-40.88, 4.26}, moveDice={-36.11, 8.66}}
-local attackerPos = {pokemon={-36.11,-4.23}, dice={-36.11,-6.13}, status={-31.25,-4.31}, statusCounters={-31.25,-6.74}, item={-40.87,-4.13}, moveDice={-36.11,-8.53}}
+local defenderPos = {pokemon={-36.01, 4.19}, dice={-36.03, 6.26}, status={-31.25, 4.44}, statusCounters={-31.25, 6.72}, item={-40.87, 4.26}, moveDice={-36.11, 8.66}}
+local attackerPos = {pokemon={-36.06,-4.23}, dice={-36.03,-6.15}, status={-31.25,-4.31}, statusCounters={-31.25,-6.74}, item={-40.87,-4.13}, moveDice={-36.11,-8.53}}
 
 function onLoad()
     -- Create Arena Buttons
