@@ -1932,6 +1932,7 @@ function sendToArena(params)
     castParams.origin = rack.positionToWorld(origin)
     local itemHits = Physics.cast(castParams)
     hasTMCard = false
+    local tmMoveData
     if #itemHits ~= 0 then
       local itemCard = getObjectFromGUID(itemHits[1].hit_object.guid)
       if itemCard.hasTag("Item") then
@@ -1940,12 +1941,9 @@ function sendToArena(params)
         itemCard.setRotation({0, 180, 0})
 
         if itemCard.hasTag("TM") then
-          hasTMCard = true
-          if pokemonMoves[1].isTM == false then
-            local tmData = Global.call("GetTmDataByGUID", itemCard.getGUID())
-            local moveData = copyTable(Global.call("GetMoveDataByName", tmData.move))
-            moveData.isTM = true
-            table.insert(pokemonMoves, 1, moveData)
+          local tmData = Global.call("GetTmDataByGUID", itemCard.getGUID())
+          if tmData ~= nil then
+            tmMoveData = copyTable(Global.call("GetMoveDataByName", tmData.move))
           end
         end
       end
@@ -1980,7 +1978,7 @@ function sendToArena(params)
 
     updateEvolveButtons(params, pokemonData, diceLevel)
 
-    updateMoves(params.isAttacker, pokemonData)
+    updateMoves(params.isAttacker, pokemonData, tmMoveData)
 
     if scriptingEnabled then
 
@@ -2217,9 +2215,9 @@ function clearDice(isAttacker)
   end
 end
 
-function updateMoves(isAttacker, data)
+function updateMoves(isAttacker, data, tmMoveData)
 
-  showMoveButtons(isAttacker)
+  showMoveButtons(isAttacker, tmMoveData)
   updateTypeEffectiveness()
 
 end
@@ -2617,7 +2615,17 @@ function evolvePoke(params)
         setNewPokemon(data, evolvedPokemonData, evolvedPokemonGUID)
         position = {tokenPosition.pokemon[1], 2, tokenPosition.pokemon[2]}
         evolvedPokemon.setPosition(position)
-        updateMoves(params.isAttacker, pokemonData)
+
+        -- Check if there is a TM card present.
+        local tmMoveData = nil
+        if data.itemCardGUID ~= nil then
+          local tmData = Global.call("GetTmDataByGUID", data.itemCardGUID)
+          if tmData ~= nil then
+            tmMoveData = copyTable(Global.call("GetMoveDataByName", tmData.move))
+          end
+        end
+
+        updateMoves(params.isAttacker, pokemonData, tmMoveData)
 
       else
         position = {params.pokemonXPos[params.index], 1, params.pokemonZPos}
@@ -3129,7 +3137,7 @@ end
 -- ARENA BUTTONS
 --------------------------------------------------------------------------------
 
-function showMoveButtons(isAttacker)
+function showMoveButtons(isAttacker, tmMoveData)
 
   if isAttacker then
     buttonIndex = 8
@@ -3142,6 +3150,10 @@ function showMoveButtons(isAttacker)
   end
 
   local numMoves = #moves
+  if tmMoveData ~= nil then
+    numMoves = numMoves + 1
+    table.insert(moves, 1, tmMoveData)
+  end
   local buttonWidths = (numMoves*3.2) + ((numMoves-1) + 0.5)
   local xPos = 9.38 - (buttonWidths * 0.5)
 

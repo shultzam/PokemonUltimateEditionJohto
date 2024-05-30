@@ -2099,7 +2099,7 @@ gymData =
     gen = 9,
     gymTier = 11,   -- Signifies Team Rocket
     pokemon = {
-      { name = "Pawniard",   level = 5, types = { "Dark", "Steel" },      moves = { "Aerial Ace", "Metal Claw", "Furry Cutter" } },
+      { name = "Pawniard",   level = 5, types = { "Dark", "Steel" },      moves = { "Aerial Ace", "Metal Claw", "Fury Cutter" } },
       { name = "Revavroom",  level = 6, types = { "Dark" },               moves = { "Swift", "Metal Sound", "Wicked Torque" } }
     }
   },
@@ -3269,36 +3269,91 @@ typeData =
 
 tmData =
 {
-  { guid = "4a45a3", move = "Body Slam" },
-  { guid = "745ecf", move = "Bubble Beam" },
-  { guid = "d27b1b", move = "Counter" },
-  { guid = "13a856", move = "Dig" },
-  { guid = "b2e24d", move = "Double-Edge" },
-  { guid = "a6fb79", move = "Dragon Rage" },
-  { guid = "084a17", move = "Earthquake" },
-  { guid = "14ef52", move = "Fissure" },
-  { guid = "891c3b", move = "Horn Drill" },
-  { guid = "f91f7a", move = "Hyper Beam" },
-  { guid = "dc75e7", move = "Ice Beam" },
-  { guid = "895553", move = "Mega Drain" },
-  { guid = "0a0adf", move = "Metronome" },
-  { guid = "23537a", move = "Mimic" },
-  { guid = "79c3f6", move = "Pay Day" },
-  { guid = "99286f", move = "Psychic" },
-  { guid = "b23894", move = "Psywave" },
-  { guid = "ad8b9c", move = "Reflect" },
-  { guid = "dbf2c8", move = "Razor Wind" },
-  { guid = "7d8029", move = "Rock Slide" },
-  { guid = "945e69", move = "Seismic Toss" },
-  { guid = "28f8ea", move = "Self-Destruct" },
-  { guid = "8e245d", move = "Solar Beam" },
-  { guid = "987bb8", move = "Swords Dance" },
-  { guid = "16d087", move = "Teleport" },
-  { guid = "b5d272", move = "Thunderbolt" },
-  { guid = "8623fb", move = "Thunder Wave" },
-  { guid = "e6b811", move = "Toxic" },
-  { guid = "7c32ac", move = "Tri Attack" },
-  { guid = "5caa62", move = "Whirlwind" },
+  { guid = "359a56", move = "Aerial Ace" },  
+  { guid = "5b8981", move = "Attract" },
+  { guid = "a04888", move = "Blizzard" },
+  { guid = "67cf83", move = "Body Slam" },
+  { guid = "4cae29", move = "Brick Break" },
+  { guid = "1d4d83", move = "Bubble Beam" },
+  { guid = "625682", move = "Bullet Seed" },
+  { guid = "a1d00f", move = "Bulk Up" },
+  { guid = "c0dd30", move = "Calm Mind" },
+  { guid = "2f2184", move = "Counter" },
+  { guid = "6a0215", move = "Detect" },
+  { guid = "923a11", move = "Dig" },
+  { guid = "375a97", move = "Double-Edge" },
+  { guid = "b40de0", move = "Double Team" },
+  { guid = "ebda3e", move = "Dragon Breath" },
+  { guid = "c51f03", move = "Dragon Claw" },
+  { guid = "7fc16e", move = "Dragon Rage" },
+  { guid = "5884d5", move = "Dream Eater" },
+  { guid = "589820", move = "Earthquake" },
+  { guid = "979837", move = "Egg Bomb" },
+  { guid = "d367c3", move = "Explosion" },
+  { guid = "a37980", move = "Facade" },
+  { guid = "b01bc8", move = "Fissure" },
+  { guid = "5f1dfa", move = "Fire Blast" },
+  { guid = "799228", move = "Fire Punch" },
+  { guid = "0f9ebe", move = "Flamethrower" },
+  { guid = "763873", move = "Focus Punch" },
+  { guid = "e8b6dd", move = "Giga Drain" },
+  { guid = "8bf926", move = "Headbutt" },
+  { guid = "a6457a", move = "Hidden Power" },
+  { guid = "f52e5b", move = "Horn Drill" },
+  { guid = "e6f314", move = "Hyper Beam" },
+  { guid = "632af0", move = "Ice Beam" },
+  { guid = "b80e18", move = "Ice Punch" },
+  { guid = "2f1c01", move = "Icy Wind" },
+  { guid = "b54b26", move = "Iron Tail" },
+  { guid = "0c0649", move = "Light Screen" },
+  { guid = "171be0", move = "Mega Drain" },
+  { guid = "8cafd6", move = "Mega Kick" },
+  { guid = "6da38d", move = "Mega Punch" },
+  { guid = "034664", move = "Metronome" },
+  { guid = "28d66f", move = "Mimic" },
+  { guid = "28d66f", move = "Mud-Slap" },
+  { guid = "69a698", move = "Overheat" },
+  { guid = "cd5ec1", move = "Pay Day" },
+  { guid = "60cdbe", move = "Protect" },
+  { guid = "ee0804", move = "Psychic" },
+  { guid = "daa9df", move = "Psywave" },
+  { guid = "a293ff", move = "Rage" },
+  { guid = "ddadad", move = "Razor Wind" },
+  { guid = "42d14b", move = "Reflect" },
+  { guid = "a1c9d5", move = "Roar" },
+  { guid = "79d996", move = "Rock Slide" },
+  { guid = "f8df98", move = "Rock Tomb" },
+  { guid = "4c7f77", move = "Safeguard" },
+  { guid = "89e169", move = "Secret Power" },
+  { guid = "b80fe2", move = "Seismic Toss" },
+  { guid = "be622c", move = "Self-Destruct" },
+  { guid = "4e39c9", move = "Shock Wave" },
+  { guid = "2f2fe7", move = "Shadow Ball" },
+  { guid = "c68f39", move = "Skull Bash" },
+  { guid = "2722b5", move = "Sky Attack" },
+  { guid = "6452f8", move = "Sludge Bomb" },
+  { guid = "435fa1", move = "Snatch" },
+  { guid = "789ef1", move = "Snore" },
+  { guid = "3d1471", move = "Solar Beam" },
+  { guid = "fd548b", move = "Steel Wing" },
+  { guid = "957e05", move = "Submission" },
+  { guid = "1a1cf7", move = "Swift" },
+  { guid = "350919", move = "Swords Dance" },
+  { guid = "d6b5f1", move = "Take Down" },
+  { guid = "e3d82f", move = "Taunt" },
+  { guid = "18e489", move = "Teleport" },
+  { guid = "999325", move = "Thief" },
+  { guid = "89a0fa", move = "Thunder" },
+  { guid = "dfb8f7", move = "Thunderbolt" },
+  { guid = "e66c72", move = "Thunder Punch" },
+  { guid = "f50cf9", move = "Thunder Wave" },
+  { guid = "287692", move = "Torment" },
+  { guid = "5afe6d", move = "Toxic" },
+  { guid = "bf5f6e", move = "Tri Attack" },
+  { guid = "51d612", move = "Water Gun" },
+  { guid = "1d4fed", move = "Water Pulse" },
+  { guid = "a3034c", move = "Whirlwind" },
+  { guid = "0a6b86", move = "Zap Cannon" },
 }
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -3451,8 +3506,8 @@ function GetMoveDataByGUID(params)
   for abcdefg = 1, #moveData do
     local data = moveData[abcdefg]
     local guids4 = data.guids
-    for efghijk = 1, #guids4 do
-      if guids4[efghijk] == params.guid then
+    for index = 1, #guids4 do
+      if guids4[index] == params.guid then
         return data
       end
     end
@@ -3467,6 +3522,7 @@ function GetTmDataByGUID(params)
       return data
     end
   end
+  return nil
 end
 
 function GetSelectedGens()
