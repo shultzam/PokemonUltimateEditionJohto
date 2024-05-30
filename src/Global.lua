@@ -52,7 +52,7 @@ playlist =
 
 teamRocketPlaylist =
 {
-  { url = "http://cloud-3.steamusercontent.com/ugc/2465233915448769574/09A09106156072F227DB6D44211395F1545DFB9C/", title = "Silph Co. Battle Music" },
+  { url = "http://cloud-3.steamusercontent.com/ugc/2465233915448769574/09A09106156072F227DB6D44211395F1545DFB9C/", title = "Team Rocket Battle Music" },
   { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351494466/E735E7793EFD0FB37790D2B6E394FAB5DBBE9419/", title = "Rocket Powered Disaster 20" },
   { url = "http://cloud-3.steamusercontent.com/ugc/2469738708351495962/FCA4C8DFB2639C2F56347C3B5968881ACF22066B/", title = "Rocket Powered Disaster" }
 }
@@ -388,7 +388,7 @@ gen3PokemonData =
   { name = "Wingull",    level = 1, types = { "Water" },    moves = { "Water Gun", "Mist" },                  guids = { "018621" },                     evoData = { { cost = 2, ball = BLUE, gen = 3, guids = { "b53aec" } } } },
   { name = "Pelipper",   level = 3, types = { "Water" },    moves = { "Water Pulse", "Wing Attack" },         guids = { "3fd851", "b53aec" } },
   { name = "Ralts",      level = 1, types = { "Psychic" },  moves = { "Confusion" },                          guids = { "92ca7a" },                     evoData = { { cost = 2, ball = BLUE, gen = 3, guids = { "61a3fe" } } } },
-  { name = "Kirlia",     level = 3, types = { "Psychic" },  moves = { "Will-O-Wisp", "Psychic" },             guids = { "260dd4", "61a3fe" },           evoData = { { cost = 2, ball = RED, gen = 3, guids = { "a58279", "9ef381" } }, { cost = 2, ball = RED, gen = 4, guids = { "491632", "2956c7" } } } },
+  { name = "Kirlia",     level = 3, types = { "Psychic" },  moves = { "Will-O-Wisp", "Psychic" },             guids = { "260dd4", "61a3fe" },           evoData = { { cost = 2, ball = RED, gen = 4, guids = { "491632", "2956c7" } }, { cost = 2, ball = RED, gen = 3, guids = { "a58279", "9ef381" } } } },
   { name = "Gardevoir",  level = 5, types = { "Psychic" },  moves = { "Shock Wave", "Future Sight" },         guids = { "fe8f9a", "a58279", "9ef381" } },
   { name = "Surskit",    level = 1, types = { "Bug" },      moves = { "Bubble" },                             guids = { "f47f95" },                     evoData = { { cost = 2, ball = GREEN, gen = 3, guids = { "899d71" } } } },
   { name = "Masquerain", level = 3, types = { "Bug" },      moves = { "Silver Wind", "Bubble Beam" },         guids = { "6f6a4b", "899d71" } },
@@ -653,9 +653,9 @@ gen5PokemonData =
   { name = "Purrloin",        level = 1, types = { "Dark" },     moves = { "Fury Swipes", "Assurance" },       guids = { "c28158" },                     evoData = { { cost = 2, ball = BLUE, gen = 5, guids = { "5a5d10" } } } },
   { name = "Liepard",         level = 3, types = { "Dark" },     moves = { "Hone Claws", "Slash" },            guids = { "3f7259", "5a5d10" } },
   { name = "Pansage",         level = 2, types = { "Grass" },    moves = { "Fury Swipes", "Vine Whip" },       guids = { "eec2b1" },                     evoData = { { cost = 1, ball = GREEN, gen = 5, guids = { "23924b" } } } },
-  { name = "Pansage",         level = 3, types = { "Grass" },    moves = { "Seed Bomb", "Bite" },              guids = { "a6b59b", "23924b" } },
+  { name = "Simisage",        level = 3, types = { "Grass" },    moves = { "Seed Bomb", "Bite" },              guids = { "a6b59b", "23924b" } },
   { name = "Pansear",         level = 2, types = { "Fire" },     moves = { "Fury Swipes", "Flame Charge" },    guids = { "2597b5" },                     evoData = { { cost = 1, ball = GREEN, gen = 5, guids = { "404ff7" } } } },
-  { name = "Simisear",        level = 3, types = { "Fire" },     moves = { "Flame Burst", "Bite" },            guids = { "265b2a" }, },
+  { name = "Simisear",        level = 3, types = { "Fire" },     moves = { "Flame Burst", "Bite" },            guids = { "265b2a", "404ff7" } },
   { name = "Panpour",         level = 2, types = { "Water" },    moves = { "Fury Swipes", "Water Gun" },       guids = { "3da3a1" },                     evoData = { { cost = 1, ball = GREEN, gen = 5, guids = { "a0d19e" } } } },
   { name = "Simipour",        level = 3, types = { "Water" },    moves = { "Scald", "Bite" },                  guids = { "c8641e", "a0d19e" }, },
   { name = "Munna",           level = 2, types = { "Psychic" },  moves = { "Psywave", "Yawn" },                guids = { "3c0505" },                     evoData = { { cost = 1, ball = GREEN, gen = 5, guids = { "198c08" } } } },
@@ -877,7 +877,7 @@ gen6PokemonData =
   { name = "Dedenne",     level = 2, types = { "Electric" }, moves = { "Charm", "Nuzzle" },                  guids = { "251e0f" } },
   { name = "Carbink",     level = 3, types = { "Rock" },     moves = { "Stealth Rock", "Sharpen" },          guids = { "bd24b2" } },
   { name = "Goomy",       level = 2, types = { "Dragon" },   moves = { "Absorb", "Bubble" },                 guids = { "525dda" },                     evoData = { { cost = 2, ball = YELLOW, gen = 6, guids = { "2a9ba9" } } } },
-  { name = "Sliggoo",     level = 4, types = { "Dragon" },   moves = { "Muddy Water", "Dragon Pulse" },      guids = { "86de80", "2a9ba9" },           evoData = { { cost = 3, ball = RED, gen = 6, guids = { "84a03d", "980868" } } } },
+  { name = "Sliggoo",     level = 4, types = { "Dragon" },   moves = { "Mwuddy Water", "Dragon Pulse" },      guids = { "86de80", "2a9ba9" },           evoData = { { cost = 3, ball = RED, gen = 6, guids = { "84a03d", "980868" } } } },
   { name = "Goodra",      level = 7, types = { "Dragon" },   moves = { "Power Whip", "Outrage" },            guids = { "4010f0", "84a03d", "980868" } },
   { name = "Klefki",      level = 3, types = { "Steel" },    moves = { "Metal Sound", "Fairy Wind" },        guids = { "72532e" } },
   { name = "Phantump",    level = 3, types = { "Ghost" },    moves = { "Feint Attack", "Curse" },            guids = { "c97328" },                     evoData = { { cost = 1, ball = YELLOW, gen = 6, guids = { "e3f03d" } } } },
@@ -912,8 +912,8 @@ gen7PokemonData =
   { name = "Brionne",      level = 3, types = { "Water" },    moves = { "Icy Wind", "Aqua Jet" },              guids = { "d3529d", "454874" },           evoData = { { cost = 2, ball = RED, gen = 7, guids = { "d62cf2", "4026a1" } } } },
   { name = "Primarina",    level = 5, types = { "Water" },    moves = { "Moonblast", "Sparkling Aria" },       guids = { "de4d6a", "d62cf2", "4026a1" }, },
   { name = "Pikipek",      level = 1, types = { "Flying" },   moves = { "Growl", "Peck" },                     guids = { "441f65" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "5e7eae" } } } },
-  { name = "Trumbeak",     level = 3, types = { "Flying" },   moves = { "Rock Blast", "Echoed Voice" },        guids = { "c5f660", "5e7eae" },           evoData = { { cost = 2, ball = YELLOW, gen = 7, guids = { "8f7253", "4fda79" } } } },
-  { name = "Toucannon",    level = 5, types = { "Flying" },   moves = { "Beak Blast", "Hyper Voice" },         guids = { "a9acd3", "8f7253", "4fda79" } },
+  { name = "Trumbeak",     level = 3, types = { "Flying" },   moves = { "Rock Blast", "Echoed Voice" },        guids = { "c5f660", "5e7eae" },           evoData = { { cost = 1, ball = YELLOW, gen = 7, guids = { "8f7253", "4fda79" } } } },
+  { name = "Toucannon",    level = 4, types = { "Flying" },   moves = { "Beak Blast", "Hyper Voice" },         guids = { "a9acd3", "8f7253", "4fda79" } },
   { name = "Yungoos",      level = 1, types = { "Normal" },   moves = { "Sand Attack", "Tackle" },             guids = { "195460" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "fa17b3" } } } },
   { name = "Gumshoos",     level = 3, types = { "Normal" },   moves = { "Super Fang", "Crunch" },              guids = { "28ee0f", "fa17b3" } },
   { name = "Grubbin",      level = 1, types = { "Bug" },      moves = { "Vise Grip", "String Shot" },          guids = { "505be7" },                     evoData = { { cost = 2, ball = GREEN, gen = 7, guids = { "545c8d" } } } },

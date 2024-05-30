@@ -18,7 +18,7 @@ function onLoad(saved_data)
 
   self.createButton({ --Apply settings button
       label="+", click_function="battle",
-      function_owner=self, tooltip="Start Silph Co. Battle",
+      function_owner=self, tooltip="Start Team Rocket Battle",
       position= gymButtonPos, rotation={0,0,0}, height=800, width=800, font_size=20000
   })
 end
@@ -51,7 +51,7 @@ function battle()
   if sentToArena then
     self.editButton({
         index=0, label="-", click_function="recall",
-        function_owner=self, tooltip="Recall Silph Co. Member"
+        function_owner=self, tooltip="Recall Team Rocket Member"
     })
   end
 end
@@ -65,7 +65,7 @@ function recall()
 
   self.editButton({ --Apply settings button
       index=0, label="+", click_function="battle",
-      function_owner=self, tooltip="Start Silph Co. Battle"
+      function_owner=self, tooltip="Start Team Rocket Battle"
   })
 end
 
