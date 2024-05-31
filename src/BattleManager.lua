@@ -2433,6 +2433,9 @@ end
 
 function updateEvolveButtons(params, slotData, level)
 
+  --printToAll("TEMP | updateEvolveButtons, params: " .. dump_table(params))
+  --printToAll("TEMP | updateEvolveButtons, slotData: " .. dump_table(slotData))
+
   local buttonParams = {
       inArena = params.inArena,
       isAttacker = params.isAttacker,
@@ -2460,6 +2463,12 @@ function updateEvolveButtons(params, slotData, level)
           end
         elseif evolution.cost <= level then
           table.insert(evoList, evolution)
+        end
+      else
+        for _, evoGuid in ipairs(evolution.guids) do
+          local unallowedPokemon = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
+          printToAll("Evolving to " .. tostring(unallowedPokemon.name) .. " not available due to gen " .. tostring(evolution.gen) .. " not being enabled")
+          break
         end
       end
     end
@@ -2583,7 +2592,7 @@ function evolvePoke(params)
 
       -- If the ballGuid field is present, that indicates that the pokemon may not be in the standard evo pokeball.
       -- The is relevant in scenarios where:
-      --    pokemon evolve cyclically (Morpeko)
+      --    pokemon evolve cyclically (Morpeko & Gigamax/Dynamx/Whatevermax)
       if evolvedPokemon == nil and evoData.ballGuid ~= nil then
         local overriddenPokeball = getObjectFromGUID(evoData.ballGuid)
         pokemonInPokeball = overriddenPokeball.getObjects()
