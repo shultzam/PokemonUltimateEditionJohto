@@ -2574,26 +2574,10 @@ function evolvePoke(params)
       local pokeball = getObjectFromGUID(evolvePokeballGUID[evoData.ball])
       local pokemonInPokeball = pokeball.getObjects()
 
-      for i=1, #pokemonInPokeball do
-          pokeObj = pokemonInPokeball[i]
-          local pokeGUID = pokeObj.guid
-          for j=1, #evoGUIDS do
-            if pokeGUID == evoGUIDS[j] then
-              evolvedPokemonData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
-              evolvedPokemon = pokeball.takeObject({guid=pokeGUID})
-              evolvedPokemonGUID = pokeGUID
-            end
-          end
-
-          if evolvedPokemon ~= nil then
-            break
-          end
-      end
-
       -- If the ballGuid field is present, that indicates that the pokemon may not be in the standard evo pokeball.
       -- The is relevant in scenarios where:
       --    pokemon evolve cyclically (Morpeko & Gigamax/Dynamx/Whatevermax)
-      if evolvedPokemon == nil and evoData.ballGuid ~= nil then
+      if evoData.ballGuid ~= nil then
         local overriddenPokeball = getObjectFromGUID(evoData.ballGuid)
         pokemonInPokeball = overriddenPokeball.getObjects()
 
@@ -2614,6 +2598,24 @@ function evolvePoke(params)
         end
       end
 
+      if evolvedPokemon == nil then
+        for i=1, #pokemonInPokeball do
+            pokeObj = pokemonInPokeball[i]
+            local pokeGUID = pokeObj.guid
+            for j=1, #evoGUIDS do
+              if pokeGUID == evoGUIDS[j] then
+                evolvedPokemonData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
+                evolvedPokemon = pokeball.takeObject({guid=pokeGUID})
+                evolvedPokemonGUID = pokeGUID
+              end
+            end
+
+            if evolvedPokemon ~= nil then
+              break
+            end
+        end
+      end
+      
       setNewPokemon(pokemonData, evolvedPokemonData, evolvedPokemonGUID)
 
       if params.inArena then

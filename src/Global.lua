@@ -81,7 +81,7 @@ customPokemonData =
 -- Add pokemon here that are always included regardless of gens added to game.
 boardPokemonData = 
 {
-  { name = "Red Gyarados",      level = 5, types = { "Water" }, moves = { "Dragon Rage", "Waterfall" },  guids = { "390ee2" } },
+  { name = "Red Gyarados",      level = 5, types = { "Water" }, moves = { "Dragon Rage", "Waterfall" },  guids = { "390ee2" }, evoData = { { cost = "Mega", ball = MEGA, gen = 2, ballGuid = "140fbd", guids = { "bc99f5" } } } },
   { name = "Starter Sudowoodo", level = 3, types = { "Rock" },  moves = { "Rock Throw", "Mimic" },       guids = { "315879" } }
 }
 
@@ -278,7 +278,7 @@ gen1PokemonData =
   { name = "GMax Snorlax",      level = 4,    types = { "Normal" },    moves = { "Replenish", "Strike" },           guids = { "318baa", "cc9678" },         evoData = { { cost = 0, ball = BLUE, gen = 1, ballGuid = "140fbd", guids = { "81f09a", "a017f9" } } } },
   { name = "Mega Gyarados",     level = 4,    types = { "Rock" },      moves = { "Water Pulse", "Crunch" },         guids = { "f45bf6", "4d5c16" },         evoData = { { cost = 0, ball = GREEN, gen = 1, ballGuid = "140fbd", guids = { "d14d19", "985830" } } } },
   { name = "Mega Mewtwo X",     level = 7,    types = { "Psychic" },   moves = { "Aura Sphere", "Psystrike" },      guids = { "bf8dc5" },                   evoData = { { cost = 0, ball = LEGENDARY, gen = 1, ballGuid = "140fbd", guids = { "d78d06" } } } },
-  { name = "Mega Mewtwo Y",     level = 7,    types = { "Psychic" },   moves = { "Psycho Cut", "Me First" },        guids = { "a4bdc6" },                   evoData = { { cost = 0, ball = LEGENDARY, gen = 1, ballGuid = "140fbd", guids = { "d78d06" } } } },
+  { name = "Mega Mewtwo Y",     level = 7,    types = { "Psychic" },   moves = { "Psycho Cut", "Me First" },        guids = { "a4bdc6" },                   evoData = { { cost = 0, ball = LEGENDARY, gen = 1, ballGuid = "140fbd", guids = { "d78d06" } } } }
 } 
 
 gen2PokemonData =
@@ -313,7 +313,7 @@ gen2PokemonData =
   { name = "Xatu",       level = 4, types = { "Psychic", "Flying" }, moves = { "Future Sight", "Confuse Ray" },   guids = { "c056ff", "a31065" } },
   { name = "Mareep",     level = 1, types = { "Electric" },          moves = { "Growl", "Tackle" },               guids = { "64aa14" },                     evoData = { { cost = 1, ball = GREEN, gen = 2, guids = { "6e25fb" } } } },
   { name = "Flaaffy",    level = 2, types = { "Electric" },          moves = { "Thunder Shock", "Light Screen" }, guids = { "65023c", "6e25fb" },           evoData = { { cost = 2, ball = YELLOW, gen = 2, guids = { "433542", "089edd" } } } },
-  { name = "Ampharos",   level = 4, types = { "Electric" },          moves = { "Thunder Wave", "Thunder" },       guids = { "57b26e", "433542", "089edd" } },
+  { name = "Ampharos",   level = 4, types = { "Electric" },          moves = { "Thunder Wave", "Thunder" },       guids = { "57b26e", "433542", "089edd" }, evoData = { { cost = "Mega", ball = MEGA, gen = 2, ballGuid = "140fbd", guids = { "f282f0", "16d003" } } } },
   { name = "Bellossom",  level = 4, types = { "Grass" },             moves = { "Sleep Powder", "Solar Beam" },    guids = { "eda382", "14e4ad", "fd44a1" } },
   { name = "Marill",     level = 2, types = { "Water" },             moves = { "Defense Curl", "Water Gun" },     guids = { "d42c6f", "e76d9a" },           evoData = { { cost = 1, ball = BLUE, gen = 2, guids = { "47a0c6", "1ad3a2" } } } },
   { name = "Azumarill",  level = 3, types = { "Water" },             moves = { "Waterfall", "Rollout" },          guids = { "972ac4", "47a0c6", "1ad3a2" } },
@@ -341,13 +341,13 @@ gen2PokemonData =
   { name = "Forretress", level = 4, types = { "Bug", "Steel" },      moves = { "Double-Edge", "Spikes" },         guids = { "669297", "7b0bfe" } },
   { name = "Dunsparce",  level = 1, types = { "Normal" },            moves = { "Rage", "Glare" },                 guids = { "e86d8a" },                     evoData = { { cost = 2, ball = BLUE, gen = 9, guids = { "9c40ab" } } } },
   { name = "Gligar",     level = 4, types = { "Ground", "Flying" },  moves = { "Feint Attack", "Quick Attack" },  guids = { "f15436" },                     evoData = { { cost = 1, ball = YELLOW, gen = 4, guids = { "96a4fa" } } } },
-  { name = "Steelix",    level = 4, types = { "Steel", "Ground" },   moves = { "Iron Tail", "Crunch" },           guids = { "93482a", "9248b4" } },
+  { name = "Steelix",    level = 4, types = { "Steel", "Ground" },   moves = { "Iron Tail", "Crunch" },           guids = { "93482a", "9248b4" },           evoData = { { cost = "Mega", ball = MEGA, gen = 2, ballGuid = "140fbd", guids = { "8b5001", "86038a" } } } },
   { name = "Snubbull",   level = 2, types = { "Fairy" },             moves = { "Charm", "Rage" },                 guids = { "d85741" },                     evoData = { { cost = 1, ball = BLUE, gen = 2, guids = { "5351ec" } } } },
   { name = "Granbull",   level = 3, types = { "Fairy" },             moves = { "Bite", "Lick" },                  guids = { "13fcb1", "5351ec" } },
   { name = "Qwilfish",   level = 4, types = { "Water", "Poison" },   moves = { "Poison Sting", "Water Gun" },     guids = { "d28384" } },
-  { name = "Scizor",     level = 5, types = { "Bug", "Steel" },      moves = { "Metal Claw", "Wing Attack" },     guids = { "7e05b1", "22e6a3" } },
+  { name = "Scizor",     level = 5, types = { "Bug", "Steel" },      moves = { "Metal Claw", "Wing Attack" },     guids = { "7e05b1", "22e6a3" },           evoData = { { cost = "Mega", ball = MEGA, gen = 2, ballGuid = "140fbd", guids = { "ae958f", "1bb3d8" } } } },
   { name = "Shuckle",    level = 2, types = { "Bug", "Rock" },       moves = { "Withdraw", "Wrap" },              guids = { "3d91d1" } },
-  { name = "Heracross",  level = 4, types = { "Bug", "Fighting" },   moves = { "Horn Attack", "Counter" },        guids = { "6f8ffe" } },
+  { name = "Heracross",  level = 4, types = { "Bug", "Fighting" },   moves = { "Horn Attack", "Counter" },        guids = { "6f8ffe" },                     evoData = { { cost = "Mega", ball = MEGA, gen = 2, ballGuid = "140fbd", guids = { "926476" } } } },
   { name = "Sneasel",    level = 3, types = { "Dark", "Ice" },       moves = { "Feint Attack", "Quick Attack" },  guids = { "c13dc3" },                     evoData = { { cost = 1, ball = YELLOW, gen = 4, guids = { "9b517e" } } } },
   { name = "Teddiursa",  level = 3, types = { "Normal" },            moves = { "Fury Swipes", "Lick" },           guids = { "e9f2b7" },                     evoData = { { cost = 1, ball = YELLOW, gen = 2, guids = { "415c99" } } } },
   { name = "Ursaring",   level = 4, types = { "Normal" },            moves = { "Feint Attack", "Thrash" },        guids = { "e48590", "415c99" },           evoData = { { cost = 2, ball = RED, gen = 8, guids = { "7684c6", "2c6eaa" } }, { cost = 2, ball = RED, gen = 8, guids = { "0af179", "d9574b" } } } },
@@ -362,7 +362,7 @@ gen2PokemonData =
   { name = "Mantine",    level = 3, types = { "Water", "Flying" },   moves = { "Bubble Beam", "Wing Attack" },    guids = { "1142f0", "6fd093" } },
   { name = "Skarmory",   level = 4, types = { "Steel", "Flying" },   moves = { "Steel Wing", "Swift" },           guids = { "cfa0f1" } },
   { name = "Houndour",   level = 2, types = { "Dark", "Fire" },      moves = { "Ember", "Bite" },                 guids = { "0e8e22" },                     evoData = { { cost = 2, ball = YELLOW, gen = 2, guids = { "cf82ee" } } } },
-  { name = "Houndoom",   level = 4, types = { "Dark", "Fire" },      moves = { "Flamethrower", "Crunch" },        guids = { "5ef848", "cf82ee" } },
+  { name = "Houndoom",   level = 4, types = { "Dark", "Fire" },      moves = { "Flamethrower", "Crunch" },        guids = { "5ef848", "cf82ee" },           evoData = { { cost = "Mega", ball = MEGA, gen = 2, ballGuid = "140fbd", guids = { "b27904", "41f460" } } } },
   { name = "Kingdra",    level = 6, types = { "Dragon", "Water" },   moves = { "Hydro Pump", "Twister" },         guids = { "bc99c5", "0b677f", "3b17f1" } },
   { name = "Phanpy",     level = 3, types = { "Ground" },            moves = { "Take Down", "Rollout" },          guids = { "7c1ad0" },                     evoData = { { cost = 1, ball = YELLOW, gen = 2, guids = { "980292" } } } },
   { name = "Donphan",    level = 4, types = { "Ground" },            moves = { "Horn Attack", "Earthquake" },     guids = { "dcdc1d", "980292" } },
@@ -381,10 +381,19 @@ gen2PokemonData =
   { name = "Suicune",    level = 7, types = { "Water" },             moves = { "Aurora Beam", "Hydro Pump" },     guids = { "ab44f1" } },
   { name = "Larvitar",   level = 2, types = { "Rock", "Ground" },    moves = { "Bite", "Leer" },                  guids = { "625880" },                     evoData = { { cost = 2, ball = YELLOW, gen = 2, guids = { "aa8662" } } } },
   { name = "Pupitar",    level = 4, types = { "Rock", "Ground" },    moves = { "Earthquake", "Screech" },         guids = { "159d4d", "aa8662" },           evoData = { { cost = 3, ball = RED, gen = 2, guids = { "7195d5", "5764be" } } } },
-  { name = "Tyranitar",  level = 7, types = { "Rock", "Dark" },      moves = { "Rock Slide", "Crunch" },          guids = { "d2d545", "7195d5", "5764be" } },
+  { name = "Tyranitar",  level = 7, types = { "Rock", "Dark" },      moves = { "Rock Slide", "Crunch" },          guids = { "d2d545", "7195d5", "5764be" }, evoData = { { cost = "Mega", ball = MEGA, gen = 2, ballGuid = "140fbd", guids = { "bb5cd0", "0cd52e" } } } },
   { name = "Lugia",      level = 7, types = { "Psychic", "Flying" }, moves = { "Future Sight", "Aeroblast" },     guids = { "5e4745" } },
   { name = "Ho-oh",      level = 7, types = { "Fire", "Flying" },    moves = { "Ancient Power", "Sacred Fire" },  guids = { "22569b" } },
-  { name = "Celebi",     level = 7, types = { "Psychic", "Grass" },  moves = { "Solar Beam", "Psychic" },         guids = { "4d10a7" } }
+  { name = "Celebi",     level = 7, types = { "Psychic", "Grass" },  moves = { "Solar Beam", "Psychic" },         guids = { "4d10a7" } },
+
+  -- Mega evolutions.
+  { name = "Mega Ampharos",     level = 5,    types = { "Electric" },   moves = { "Charge Beam", "Dragon Pulse" },guids = { "f282f0", "16d003" },            evoData = { { cost = 0, ball = YELLOW, gen = 2, ballGuid = "140fbd", guids = { "57b26e", "433542", "089edd" } } } },
+  { name = "Mega Red Gyarados", level = 6,    types = { "Water" },      moves = { "Water Pulse", "Crunch" },      guids = { "bc99f5" },                      evoData = { { cost = 0, ball = YELLOW, gen = 2, ballGuid = "140fbd", guids = { "390ee2" } } } },
+  { name = "Mega Steelix",      level = 5,    types = { "Steel" },      moves = { "Earthquake", "Rock Slide" },   guids = { "8b5001", "86038a" },            evoData = { { cost = 0, ball = BLUE, gen = 2, ballGuid = "140fbd", guids = { "93482a", "9248b4" } } } },
+  { name = "Mega Scizor",       level = 6,    types = { "Bug" },        moves = { "Night Slash", "X-Scissor" },   guids = { "ae958f", "1bb3d8" },            evoData = { { cost = 0, ball = RED, gen = 2, ballGuid = "140fbd", guids = { "7e05b1", "22e6a3" } } } },
+  { name = "Mega Heracross",    level = 5,    types = { "Bug" },        moves = { "Close Combat", "Megahorn" },   guids = { "926476" },                      evoData = { { cost = 0, ball = BLUE, gen = 2, ballGuid = "140fbd", guids = { "6f8ffe" } } } },
+  { name = "Mega Houndoom",     level = 5,    types = { "Dark" },       moves = { "Dark Pulse", "Inferno" },      guids = { "b27904", "41f460" },            evoData = { { cost = 0, ball = YELLOW, gen = 2, ballGuid = "140fbd", guids = { "5ef848", "cf82ee" } } } },
+  { name = "Mega Tyranitar",    level = 7,    types = { "Rock" },       moves = { "Stone Edge", "Earthquake" },   guids = { "bb5cd0", "0cd52e" },            evoData = { { cost = 0, ball = RED, gen = 2, ballGuid = "140fbd", guids = { "d2d545", "7195d5", "5764be" } } } },
 }
 
 gen3PokemonData =
@@ -534,7 +543,10 @@ gen3PokemonData =
   { name = "Primal Groudon", level = 7, types = { "Fire" }, moves = { "Precipise Blades", "Lava Plume" },     guids = { "0d318f" } },
   { name = "Rayquaza",   level = 7, types = { "Dragon" },   moves = { "Extreme Speed", "Dragon Claw" },       guids = { "3ae691" } },
   { name = "Jirachi",    level = 7, types = { "Steel" },    moves = { "Doom Desire", "Psychic" },             guids = { "48d5bf" } },
-  { name = "Droxys",     level = 7, types = { "Psychic" },  moves = { "Psycho Boost", "Night Shade" },        guids = { "f4e2fe" } }
+  { name = "Droxys",     level = 7, types = { "Psychic" },  moves = { "Psycho Boost", "Night Shade" },        guids = { "f4e2fe" } },
+
+  -- Mega evolutions.
+  { name = "Mega Ampharos",     level = 5,    types = { "Electric" },   moves = { "Charge Beam", "Dragon Pulse" },guids = { "f282f0", "16d003" },            evoData = { { cost = 0, ball = YELLOW, gen = 2, ballGuid = "140fbd", guids = { "57b26e", "433542", "089edd" } } } },
 }
 
 gen4PokemonData =
