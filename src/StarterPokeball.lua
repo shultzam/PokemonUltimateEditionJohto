@@ -1,41 +1,41 @@
 local pokeballs = { "ec1e4b", "9c4411", "c988ea", "2cf16d", "986cb5", "f66036", "e46f90" }
-local evoPokeballs = { "757125", "6fd4a0", "23f409", "caf1c8", "35376b", "f353e7" }
+local evoPokeballs = { "757125", "6fd4a0", "23f409", "caf1c8", "35376b", "f353e7", "68c4b0" }
 local gyms = { "20bcd5", "ec01e5", "f2f4fe", "d8dc51", "b564fd", "22cc88", "c4bd30", "c9dd73" }
 
 local gen1Pokeballs = { "681d76", "d7d981", "818525", "30391b", "758036", "bb73fd", "78fdbb" }
-local gen1EvoPokeballs = { "e9d043", "7de53d", "f30baf", "ceb9a5", "5293ec" }
+local gen1EvoPokeballs = { "e9d043", "7de53d", "f30baf", "ceb9a5", "5293ec", "98bf25", "01efbd" }
 local gen1LeadersArr = { "1adc9d", "8b26e1", "3ddf5f", "c3b5fb" }
 
 local gen2Pokeballs = { "d87f03", "2fd969", "2c76f4", "710bab", "521e8b", "9f4fb9", "f5d806" }
-local gen2EvoPokeballs = { "c6e80b", "d86df8", "f59319", "538c67", "6f201a" }
+local gen2EvoPokeballs = { "c6e80b", "d86df8", "f59319", "538c67", "6f201a", "ad0f19", "02db20" }
 local gen2LeadersArr = { "d6be18", "c3650f", "ec20b2", "e68807" }
 
 local gen3Pokeballs = { "e05c61", "b3ede1", "80c3c3", "5ded3e", "4f4570", "ee7d71", "feea6b" }
-local gen3EvoPokeballs = { "31b1ec", "9b3ecb", "613cb1", "1b49a8", "8d3dfb", "fd9bcb" }
+local gen3EvoPokeballs = { "31b1ec", "9b3ecb", "613cb1", "1b49a8", "8d3dfb", "fd9bcb", "1bf5ba" }
 local gen3LeadersArr = { "797253", "61d7e4", "2a9746", "a926ef" }
 
 local gen4Pokeballs = { "be7627", "8079e7", "49e675", "f7a234", "fadfc3", "a63903", "9f5985" }
-local gen4EvoPokeballs = { "cccfb4", "e15056", "24a5c8", "a7d340", "bfb915" }
+local gen4EvoPokeballs = { "cccfb4", "e15056", "24a5c8", "a7d340", "bfb915", "7eb6b9", "96a1c9" }
 local gen4LeadersArr = { "d6b981", "9b50d1", "537124", "e98f45" }
 
 local gen5Pokeballs = { "291a17", "890df4", "1341cb", "6ee713", "de1f71", "48a192", "296ec5" }
-local gen5EvoPokeballs = { "db9cda", "425115", "aefa83", "cb4ad6", "e16953", "8abcf1" }
+local gen5EvoPokeballs = { "db9cda", "425115", "aefa83", "cb4ad6", "e16953", "8abcf1", "59de2d" }
 local gen5LeadersArr = { "cd0374", "fe76e1", "3869d0", "524ba4" }
 
 local gen6Pokeballs = { "590ae3", "d80d72", "ce15ef", "9fe972", "7f1ebb", "401e23", "1fa353" }
-local gen6EvoPokeballs = { "315a95", "f02e17", "943c81", "c67911", "de7f1f", "750e11" }
+local gen6EvoPokeballs = { "315a95", "f02e17", "943c81", "c67911", "de7f1f", "750e11", "21b1c8" }
 local gen6LeadersArr = { "150632", "c85052", "ba0a27", "5498d4" }
 
 local gen7Pokeballs = { "426038", "b3a265", "a77d5e", "44c820", "4903d2", "652a56", "405d8e" }
-local gen7EvoPokeballs = { "6d2737", "2b7b9b", "79e3f4", "21ba50", "74eeff", "432142" }
+local gen7EvoPokeballs = { "6d2737", "2b7b9b", "79e3f4", "21ba50", "74eeff", "432142", "79ee2f" }
 local gen7LeadersArr = { "58ca45", "157ff9", "eeba9c", "72fcef" }
 
 local gen8Pokeballs = { "307988", "09cb0e", "99b8aa", "d6ef76", "0faf4d", "ad4ceb", "a1750a" }
-local gen8EvoPokeballs = { "bc1673", "4f7b73", "2d873a", "a32b0d", "d2b2ca", "637026" }
+local gen8EvoPokeballs = { "bc1673", "4f7b73", "2d873a", "a32b0d", "d2b2ca", "637026", "02689f" }
 local gen8LeadersArr = { "227356", "b47fe7", "8e8fd2", "96992a" }
 
 local gen9Pokeballs = { "3168f8", "de981e", "7ced83", "345260", "d63e7c", "3fcea5", "79df8a" }
-local gen9EvoPokeballs = { "9c010b", "03ea82", "4217d6", "6ae5c4", "8963b5", "0dc3f5" }
+local gen9EvoPokeballs = { "9c010b", "03ea82", "4217d6", "6ae5c4", "8963b5", "0dc3f5", "4e3f1d" }
 local gen9LeadersArr = { "e4988b", "7269d7", "80f567", "6f3326" }
 
 local customPokeballs = { "a927cf", "acd90d", "63bb92", "88b157", "8aaeef", "915bb4", "47780a" }
@@ -378,7 +378,7 @@ function start()
     Wait.time(dealYellow, 6)
     Wait.time(dealRed, 8)
     Wait.time(dealLegendary, 10)
-    Wait.time(destroy, 10)
+    Wait.time(destroy, 15)
 
     Global.call("PlayRouteMusic",{})
 end

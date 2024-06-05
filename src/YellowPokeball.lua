@@ -1,7 +1,5 @@
 local color = "yellow"
--- TODO: copy locations
 local kantoLocations = {{6.75, 21.19}, {10.73, 17.87}, {18.68, 6.99}, {19.42, 13.10}, {25.28, 9.26}, {28.65, 18.73}, {24.49, 20.83}, {20.75, 22.49}, {-26.35, -9.23}, {-21.44, -5.79}, {-22.19, -0.74}}
-
 local chipY = 2
 local hasGameStarted = false
 local battleManager = "de7152"

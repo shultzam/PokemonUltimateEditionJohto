@@ -27,7 +27,7 @@ local isDefending = false
 local autoCamera = false
 
 -- Positions
-local badgesXPos = {0.46, 0.22, -0.02, -0.26, -0.5, -0.74, -0.98, -1.22}
+local badgesXPos = {0.15, -0.15, -0.35, -0.65, -0.85, -1.15, -1.35, -1.65}
 local pokemonXPos = {1.475,0.885,0.295,-0.295,-0.885,-1.475}
 local pokemonZPos = -0.1
 local statusZPos = -0.5
@@ -189,7 +189,6 @@ function checkLevel(index, modifier, evolving)
     rackData[index] = getObjectFromGUID(battleManager).call("setLevel", params)
 end
 
-
 function rackEvolve(index, oneOrTwo)
 
     local evolveParams = {
@@ -224,6 +223,19 @@ function rackEvolve(index, oneOrTwo)
     checkLevel(index, -evolveCost, false)
 end
 
+-- Helper function to print a table.
+function dump_table(o)
+    if type(o) == 'table' then
+        local s = '{ '
+        for k,v in pairs(o) do
+            if type(k) ~= 'number' then k = '"'..k..'"' end
+            s = s .. '['..k..'] = ' .. dump_table(v) .. ','
+        end
+        return s .. '} '
+    else
+        return tostring(o)
+    end
+end
 
 function rackCalcPoints(obj, color)
     local pointsParams = {

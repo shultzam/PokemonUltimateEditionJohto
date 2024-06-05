@@ -43,7 +43,7 @@ local orangeRack = "341ead"
 local purpleRack = "a990ef"
 local redRack = "06c308"
 local yellowRack = "fc9c59"
-local evolvePokeballGUID = {"757125", "6fd4a0", "23f409", "caf1c8", "35376b", "f353e7"}
+local evolvePokeballGUID = {"757125", "6fd4a0", "23f409", "caf1c8", "35376b", "f353e7", "68c4b0"}
 local evolvedPokeballGUID = "140fbd"
 local effectDice="6a319d"
 local critDice="229313"
@@ -170,6 +170,7 @@ function onLoad()
     self.createButton({label="SELECT", click_function="multiEvo6", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
     self.createButton({label="SELECT", click_function="multiEvo7", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
     self.createButton({label="SELECT", click_function="multiEvo8", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
+    self.createButton({label="SELECT", click_function="multiEvo9", function_owner=self, position={0, 1000, 0}, height=300, width=1000, font_size=200})
     
     self.createButton({label="BATTLE", click_function="battleWildPokemon", function_owner=self, position={defConfirmPos.x, 1000, -6.2}, height=300, width=1600, font_size=200})
     self.createButton({label="NEXT POKEMON", click_function="flipGymLeader", function_owner=self, position={3.5, 1000, -0.6}, height=300, width=1600, font_size=200})
@@ -227,7 +228,7 @@ function battleWildPokemon()
         if numMoves > 1 then
           showConfirmButton(DEFENDER, "RANDOM MOVE")
         end
-        self.editButton({index=35, label="END BATTLE"})
+        self.editButton({index=36, label="END BATTLE"})
       end
     else
       inBattle = false
@@ -237,7 +238,7 @@ function battleWildPokemon()
 
       clearPokemonData(DEFENDER)
       clearTrainerData(DEFENDER)
-      self.editButton({index=35, label="BATTLE"})
+      self.editButton({index=36, label="BATTLE"})
 
       Global.call("PlayRouteMusic",{})
     end
@@ -1738,7 +1739,7 @@ function sendToArenaGym(params)
 
    inBattle = true
 
-   updateMoves(DEFENDER, defenderPokemon)   -- GYMS DIE HERE on sendToArenaGym errors (Gen3: Wattson, Wallace)
+   updateMoves(DEFENDER, defenderPokemon)
 
    if scriptingEnabled then
       defenderData.attackValue.level = defenderPokemon.baseLevel
@@ -2454,11 +2455,24 @@ function updateEvolveButtons(params, slotData, level)
     for i=1, #evoData do
       local evolution = evoData[i]
       if selectedGens[evolution.gen] then 
-        if type(evolution.cost) == "string" then 
+        if type(evolution.cost) == "string" then
           for _, evoGuid in ipairs(evolution.guids) do
             local evoData = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
-            printToAll(evolution.cost .. " required to be played or attached to evolve into " .. evoData.name)
+            if evoData == nil then
+              break
+            end
+
+            -- Insert evo option into the table.
             table.insert(evoList, evolution)
+
+            -- Print the correct evolution instructions.
+            if evolution.cost == "Mega" then
+              printToAll("Mega Bracelet required and Mega Stone must be attached to evolve into " .. evoData.name)
+            elseif evolution.cost == "GMax" then
+              printToAll("Dynamax Band required to evolve into " .. evoData.name)
+            else
+              printToAll(evolution.cost .. " required to be played or attached to evolve into " .. evoData.name)
+            end
             break
           end
         elseif evolution.cost <= level then
@@ -2491,6 +2505,7 @@ function updateEvolveButtons(params, slotData, level)
       buttonParams.pokemonName = slotData.name
       buttonParams.evoName = evoPokemon.name
     end
+    hideEvoButtons(buttonParams)
     updateEvoButtons(buttonParams)
   else
     hideEvoButtons(buttonParams)
@@ -2516,8 +2531,14 @@ function evolvePoke(params)
       local evolution = pokemonData.evoData[i]
       if type(evolution.cost) == "string" then
         for _, evoGuid in ipairs(evolution.guids) do
-          local evoData = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
-          printToAll(evolution.cost .. " is required to be played or attached to evolve into " .. evoData.name)
+          -- local evoData = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
+          -- if evolution.cost == "Mega" then
+          --   printToAll("Dynamax Band required to evolve into " .. evoData.name)
+          -- elseif evolution.cost == "GMax" then
+          --   printToAll("Mega Bracelet required and Mega Stone must be attached to evolve into " .. evoData.name)
+          -- else
+          --   printToAll(evolution.cost .. " required to be played or attached to evolve into " .. evoData.name)
+          -- end
           table.insert(evoList, evolution)
           break
         end
@@ -2540,24 +2561,45 @@ function evolvePoke(params)
       local evoNum = 0
       local tokensWidth = ((numEvos * 2.8) + ((numEvos-1) * 0.2) )
       for i=1, #evoList do
-          local evoData = evoList[i]
-          local evoGUIDS = evoData.guids
-          local pokeball = getObjectFromGUID(evolvePokeballGUID[evoData.ball])
-          local pokemonInPokeball = pokeball.getObjects()
+        local evoData = evoList[i]
+        local evoGUIDS = evoData.guids
+        local pokeball = getObjectFromGUID(evolvePokeballGUID[evoData.ball])
+        local pokemonInPokeball = pokeball.getObjects()
+        for j=1, #pokemonInPokeball do
+          local pokeObj = pokemonInPokeball[j]
+          local pokeGUID = pokeObj.guid
+          for k=1, #evoGUIDS do
+            if pokeGUID == evoGUIDS[k] then
+              local evoData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
+              local xPos = 1.4 + (evoNum * 3) - (tokensWidth * 0.5)
+              local position = {xPos, 1, -28}
+              printToAll("TEMP | 2576 taking pokemon")
+              evolvedPokemon = pokeball.takeObject({guid=pokeGUID, position=position})
+              evoNum = evoNum + 1
+              --table.insert(multiEvoData, evoData)
+              break
+            end
+          end
+        end
+        if evoData.ballGuid ~= nil then
+          local extraPokeball = getObjectFromGUID(evoData.ballGuid)
+          local pokemonInPokeball = extraPokeball.getObjects()
           for j=1, #pokemonInPokeball do
-            pokeObj = pokemonInPokeball[j]
-            local pokeGUID = pokeObj.guid
+            local pokeObj = pokemonInPokeball[j]
+            local pokeGUID = extraPokeball.guid
             for k=1, #evoGUIDS do
               if pokeGUID == evoGUIDS[k] then
                 local evoData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
                 local xPos = 1.4 + (evoNum * 3) - (tokensWidth * 0.5)
                 local position = {xPos, 1, -28}
-                evolvedPokemon = pokeball.takeObject({guid=pokeGUID, position=position})
+                evolvedPokemon = extraPokeball.takeObject({guid=pokeGUID, position=position})
                 evoNum = evoNum + 1
                 --table.insert(multiEvoData, evoData)
+                break
               end
             end
           end
+        end
       end
 
       multiEvolving = true
@@ -2571,24 +2613,24 @@ function evolvePoke(params)
 
       local evoData = evoList[params.oneOrTwo]
       local evoGUIDS = evoData.guids
-      local pokeball = getObjectFromGUID(evolvePokeballGUID[evoData.ball])
-      local pokemonInPokeball = pokeball.getObjects()
 
       -- If the ballGuid field is present, that indicates that the pokemon may not be in the standard evo pokeball.
       -- The is relevant in scenarios where:
-      --    pokemon evolve cyclically (Morpeko & Gigamax/Dynamx/Whatevermax)
+      --    pokemon evolve cyclically (Morpeko & 1:1 GMax/Mega)
       if evoData.ballGuid ~= nil then
         local overriddenPokeball = getObjectFromGUID(evoData.ballGuid)
-        pokemonInPokeball = overriddenPokeball.getObjects()
+        local pokemonInSpecialPokeball = overriddenPokeball.getObjects()
 
-        for i=1, #pokemonInPokeball do
-          pokeObj = pokemonInPokeball[i]
+        for i=1, #pokemonInSpecialPokeball do
+          pokeObj = pokemonInSpecialPokeball[i]
           local pokeGUID = pokeObj.guid
           for j=1, #evoGUIDS do
             if pokeGUID == evoGUIDS[j] then
+              printToAll("TEMP | 2630 taking pokemon")
               evolvedPokemonData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
               evolvedPokemon = overriddenPokeball.takeObject({guid=pokeGUID})
               evolvedPokemonGUID = pokeGUID
+              break
             end
           end
 
@@ -2599,14 +2641,18 @@ function evolvePoke(params)
       end
 
       if evolvedPokemon == nil then
+        local pokeball = getObjectFromGUID(evolvePokeballGUID[evoData.ball])
+        local pokemonInPokeball = pokeball.getObjects()
         for i=1, #pokemonInPokeball do
             pokeObj = pokemonInPokeball[i]
             local pokeGUID = pokeObj.guid
             for j=1, #evoGUIDS do
               if pokeGUID == evoGUIDS[j] then
+                printToAll("TEMP | 2652 taking pokemon")
                 evolvedPokemonData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
                 evolvedPokemon = pokeball.takeObject({guid=pokeGUID})
                 evolvedPokemonGUID = pokeGUID
+                break
               end
             end
 
@@ -3005,6 +3051,11 @@ function multiEvo8()
   multiEvolve(8)
 end
 
+function multiEvo9()
+
+  multiEvolve(9)
+end
+
 function multiEvolve(index)
 
   multiEvolving = false
@@ -3264,7 +3315,7 @@ end
 function showWildPokemonButton(visible)
 
   local yPos = visible and 0.4 or 1000
-  self.editButton({index=35, position={defConfirmPos.x, yPos, -6.2}})
+  self.editButton({index=36, position={defConfirmPos.x, yPos, -6.2}})
 end
 
 function showMultiEvoButtons(evoData)
@@ -3285,7 +3336,7 @@ end
 function hideMultiEvoButtons()
 
   local buttonIndex = 26
-  for i=1, 8 do
+  for i=1, 9 do
       self.editButton({index=buttonIndex+i, position={0, 1000, 0}})
   end
 end
@@ -3293,7 +3344,7 @@ end
 function showFlipGymButton(visible)
 
   local yPos = visible and 0.5 or 1000
-  self.editButton({index=36, position={2.6, yPos, -0.6}})
+  self.editButton({index=37, position={2.6, yPos, -0.6}})
 end
 
 -- Helper function to print a table.
