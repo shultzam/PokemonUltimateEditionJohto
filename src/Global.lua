@@ -95,7 +95,7 @@ gen1PokemonData =
   { name = "Charmeleon",  level = 3, types = { "Fire" },               moves = { "Flamethrower", "Slash" },        guids = { "e40822", "7c5381" },          evoData = { { cost = 2, ball = RED, gen = 1, guids = { "6a3112", "8b9dab" } } } },
   { name = "Charizard",   level = 5, types = { "Fire", "Flying" },     moves = { "Fire Spin", "Wing Attack" },     guids = { "1c82ed", "6a3112", "8b9dab" },evoData = { { cost = "Mega", ball = MEGA, gen = 1, ballGuid = "140fbd", guids = { "79685a", "f0024f" } },
                                                                                                                                                                         { cost = "Mega", ball = MEGA, gen = 1, ballGuid = "140fbd", guids = { "1344e7", "64108c" } },
-                                                                                                                                                                        { cost = "Gmax", ball = MEGA, gen = 1, ballGuid = "140fbd", guids = { "9cb6b5", "c4abad" } } } },
+                                                                                                                                                                        { cost = "GMax", ball = MEGA, gen = 1, ballGuid = "140fbd", guids = { "9cb6b5", "c4abad" } } } },
   { name = "Squirtle",    level = 1, types = { "Water" },              moves = { "Bubble", "Tackle" },             guids = { "88717f" },                    evoData = { { cost = 2, ball = BLUE, gen = 1, guids = { "e89741" } } } },
   { name = "Wartortle",   level = 3, types = { "Water" },              moves = { "Water Gun", "Bite" },            guids = { "cb8d39", "e89741" },          evoData = { { cost = 2, ball = RED, gen = 1, guids = { "1783ad", "427b16" } } } },
   { name = "Blastoise",   level = 5, types = { "Water" },              moves = { "Hydro Pump", "Skull Bash" },     guids = { "80eaa8", "1783ad", "427b16" },evoData = { { cost = "Mega", ball = MEGA, gen = 1, ballGuid = "140fbd", guids = { "b28b0e", "0845e3" } }, { cost = "GMax", ball = MEGA, gen = 1, ballGuid = "140fbd", guids = { "308530", "b981cd" } } } },
@@ -116,7 +116,7 @@ gen1PokemonData =
   { name = "Arbok",       level = 3, types = { "Poison" },             moves = { "Acid", "Bite" },                 guids = { "4d4660", "297aec" } },
   { name = "Pikachu",     level = 1, types = { "Electric" },           moves = { "Thunder Shock", "Growl" },       guids = { "a17986", "e5c82a" },          evoData = { { cost = 2, ball = BLUE, gen = 1, guids = { "654bd9", "3541ed" } }, 
                                                                                                                                                                         { cost = 2, ball = BLUE, gen = 1, guids = { "1e53ce", "ef1a51" } }, 
-                                                                                                                                                                        { cost = "GMax", ball = MEGA, gen = 1, guids = { "e932e9", "558a12" } } } },
+                                                                                                                                                                        { cost = "GMax", ball = MEGA, gen = 1, ballGuid = "140fbd", guids = { "e932e9", "558a12" } } } },
   { name = "Raichu",      level = 3, types = { "Electric" },           moves = { "Thunderbolt", "Slam" },          guids = { "ffd6fb", "654bd9", "3541ed" } },
   { name = "Sandshrew",   level = 1, types = { "Ground" },             moves = { "Sand Attack", "Scratch" },       guids = { "6a3193" },                    evoData = { { cost = 2, ball = BLUE, gen = 1, guids = { "f4408c" } } } },
   { name = "Sandslash",   level = 3, types = { "Ground" },             moves = { "Swift", "Dig" },                 guids = { "53db8f", "f4408c" } },
@@ -144,7 +144,7 @@ gen1PokemonData =
   -- Gen 1 51-99
   { name = "Diglett",     level = 2, types = { "Ground" },             moves = { "Scratch", "Dig" },               guids = { "b79f00" },                    evoData = { { cost = 2, ball = BLUE, gen = 1, guids = { "3f6942" } } } },
   { name = "Dugtrio",     level = 4, types = { "Ground" },             moves = { "Earthquake", "Slash" },          guids = { "cfcb95", "3f6942" } },
-  { name = "Meowth",      level = 2, types = { "Normal" },             moves = { "Pay Day", "Bite" },              guids = { "312c52" },                    evoData = { { cost = 2, ball = BLUE, gen = 1, guids = { "98722a" } }, { cost = "Gmax", ball = MEGA, gen = 1, guids = { "48e2c5" } } } },
+  { name = "Meowth",      level = 2, types = { "Normal" },             moves = { "Pay Day", "Bite" },              guids = { "312c52" },                    evoData = { { cost = 2, ball = BLUE, gen = 1, guids = { "98722a" } }, { cost = "GMax", ball = MEGA, gen = 1, guids = { "48e2c5" } } } },
   { name = "Persian",     level = 4, types = { "Normal" },             moves = { "Fury Swipes", "Slash" },         guids = { "d56c1a", "98722a" } },
   { name = "Psyduck",     level = 2, types = { "Water" },              moves = { "Fury Swipes", "Disable" },       guids = { "eeee17" },                    evoData = { { cost = 3, ball = RED, gen = 1, guids = { "4696b8" } } } },
   { name = "Golduck",     level = 5, types = { "Water" },              moves = { "Confusion", "Hydro Pump" },      guids = { "5b9964", "4696b8" } },
@@ -256,14 +256,14 @@ gen1PokemonData =
 
   -- Mega evolutions.
   { name = "Mega Blastoise",    level = 6,    types = { "Water" },     moves = { "Flash Cannon", "Scald" },         guids = { "b28b0e", "0845e3" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "80eaa8", "1783ad", "427b16" } } } },
-  { name = "Gmax Blastoise",    level = 5,    types = { "Water" },     moves = { "Cannonade", "Strike" },           guids = { "308530", "b981cd" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "80eaa8", "1783ad", "427b16" } } } },
+  { name = "GMax Blastoise",    level = 5,    types = { "Water" },     moves = { "Cannonade", "Strike" },           guids = { "308530", "b981cd" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "80eaa8", "1783ad", "427b16" } } } },
   { name = "Mega Venusaur",     level = 6,    types = { "Grass" },     moves = { "Sludge Bomb", "Petal Dance" },    guids = { "c941db", "305e33" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "e69464", "85a0be", "6e6869" } } } },
   { name = "GMax Venusaur",     level = 5,    types = { "Grass" },     moves = { "Vine Lash", "Strike" },           guids = { "0fdf45", "55e05e" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "e69464", "85a0be", "6e6869" } } } },
   { name = "Mega Charizard X",  level = 6,    types = { "Fire" },      moves = { "Dragon Claw", "Inferno" },        guids = { "79685a", "f0024f" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "1c82ed", "6a3112", "8b9dab" } } } },
   { name = "Mega Charizard Y",  level = 6,    types = { "Fire" },      moves = { "Air Slash", "Inferno" },          guids = { "1344e7", "64108c" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "1c82ed", "6a3112", "8b9dab" } } } },
   { name = "GMax Charizard",    level = 6,    types = { "Fire" },      moves = { "Wildfire", "Airstream" },         guids = { "9cb6b5", "c4abad" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "1c82ed", "6a3112", "8b9dab" } } } },
   { name = "Mega Alakazam",     level = 6,    types = { "Psychic" },   moves = { "Dazzling Gleam", "Future Sight" },guids = { "9eade5", "8132c3" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "7117a7", "fa44b9", "74c0b4" } } } },
-  { name = "Gmax Pikachu",      level = 1,    types = { "Electric" },  moves = { "Volt Crash", "Guard" },           guids = { "e932e9", "558a12" },         evoData = { { cost = 0, ball = PINK, gen = 1, ballGuid = "140fbd", guids = { "a17986", "e5c82a" } } } },
+  { name = "GMax Pikachu",      level = 1,    types = { "Electric" },  moves = { "Volt Crash", "Guard" },           guids = { "e932e9", "558a12" },         evoData = { { cost = 0, ball = PINK, gen = 1, ballGuid = "140fbd", guids = { "a17986", "e5c82a" } } } },
   { name = "GMax Butterfree",   level = 3,    types = { "Bug" },       moves = { "Befuddle", "Airstream" },         guids = { "614df5", "47362b" },         evoData = { { cost = 0, ball = GREEN, gen = 1, ballGuid = "140fbd", guids = { "3cb9ed", "25d791", "d36522" } } } },
   { name = "GMax Machamp",      level = 6,    types = { "Fighting" },  moves = { "Chi Strike", "Strike" },          guids = { "8d22d5", "1bc1d8" },         evoData = { { cost = 0, ball = RED, gen = 1, ballGuid = "140fbd", guids = { "b5109b", "ff6a7f", "518720" } } } },
   { name = "GMax Meowth",       level = 2,    types = { "Normal" },    moves = { "Gold Rush", "Darkness"},          guids = { "48e2c5" },                   evoData = { { cost = 0, ball = PINK, gen = 1, ballGuid = "140fbd", guids = { "312c52" } } } },
@@ -371,7 +371,9 @@ gen2PokemonData =
   { name = "Porygon2",   level = 4, types = { "Normal" },            moves = { "Tri Attack", "Conversion2" },     guids = { "b7c99b", "145660" },           evoData = { { cost = 1, ball = YELLOW, gen = 4, guids = { "89624f", "ccdbee" } } } },
   { name = "Stantler",   level = 2, types = { "Normal" },            moves = { "Hypnosis", "Tackle" },            guids = { "3ba296" },                     evoData = { { cost = 2, ball = YELLOW, gen = 8, guids = { "163267" } } } },
   { name = "Smeargle",   level = 3, types = { "Normal" },            moves = { "Sketch", "Sketch" },              guids = { "5496a6" } },
-  { name = "Tyrogue",    level = 1, types = { "Fighting" },          moves = { "Tackle" },                        guids = { "b896b9" },                     evoData = { { cost = 3, ball = BLUE, gen = 1, guids = { "d55591" } }, { cost = 3, ball = BLUE, gen = 1, guids = { "10087d" } }, { cost = 3, ball = BLUE, gen = 2, guids = { "b53d14" } } } },
+  { name = "Tyrogue",    level = 1, types = { "Fighting" },          moves = { "Tackle" },                        guids = { "b896b9" },                     evoData = { { cost = 3, ball = BLUE, gen = 1, guids = { "d55591" } }, 
+                                                                                                                                                                        { cost = 3, ball = BLUE, gen = 1, guids = { "10087d" } }, 
+                                                                                                                                                                        { cost = 3, ball = BLUE, gen = 2, guids = { "b53d14" } } } },
   { name = "Hitmontop",  level = 4, types = { "Fighting" },          moves = { "Triple Kick", "Quick Attack" },   guids = { "1aeec6", "b53d14" } },
   { name = "Smoochum",   level = 1, types = { "Ice", "Psychic" },    moves = { "Pound", "Lick" },                 guids = { "961d64" },                     evoData = { { cost = 3, ball = YELLOW, gen = 2, guids = { "4bc360" } } } },
   { name = "Elekid",     level = 1, types = { "Electric" },          moves = { "Quick Attack", "Leer" },          guids = { "b6056a" },                     evoData = { { cost = 3, ball = YELLOW, gen = 2, guids = { "749909" } } } },
@@ -786,7 +788,7 @@ gen5PokemonData =
   { name = "Archen",          level = 4, types = { "Rock" },     moves = { "Quick Attack", "Dragon Claw" },    guids = { "dfadef" },                     evoData = { { cost = 2, ball = RED, gen = 5, guids = { "d1e259" } } } },
   { name = "Archeops",        level = 6, types = { "Rock" },     moves = { "Ancient Power", "Wing Attack" },   guids = { "bfc3cb", "d1e259" } },
   { name = "Trubbish",        level = 3, types = { "Poison" },   moves = { "Clear Smog", "Pound" },            guids = { "c0ee99" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "427e7e" } } } },
-  { name = "Garbodor",        level = 5, types = { "Poison" },   moves = { "Explosion", "Sludge" },            guids = { "5e6faf", "427e7e" },           evoData = { { cost = "Gmax", ball = MEGA, gen = 5, ballGuid = "140fbd", guids = { "43b26e", "a13dc7" } } } },
+  { name = "Garbodor",        level = 5, types = { "Poison" },   moves = { "Explosion", "Sludge" },            guids = { "5e6faf", "427e7e" },           evoData = { { cost = "GMax", ball = MEGA, gen = 5, ballGuid = "140fbd", guids = { "43b26e", "a13dc7" } } } },
   { name = "Zorua",           level = 3, types = { "Dark" },     moves = { "Fury Swipes", "Fake Tears" },      guids = { "852f7a" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "99e127" } } } },
   { name = "Zorark",          level = 5, types = { "Dark" },     moves = { "Shadow Claw", "Night Daze" },      guids = { "9ea40d", "99e127" } },
   { name = "Minccino",        level = 3, types = { "Normal" },   moves = { "Baby-Doll Eyes", "Echoed Voice" }, guids = { "4619bc" },                     evoData = { { cost = 2, ball = YELLOW, gen = 5, guids = { "fd401d" } } } },
@@ -1082,7 +1084,7 @@ gen7PokemonData =
   { name = "Blacephalon",  level = 7, types = { "Fire" },     moves = { "Shadow Ball", "Mind Blown" },         guids = { "38816d" } },
   { name = "Zerora",       level = 7, types = { "Electric" }, moves = { "Hone Claws", "Plasma Fists" },        guids = { "3bc718" } },
   { name = "Meltan",       level = 5, types = { "Steel" },    moves = { "Flash Cannon", "Acid Armor" },        guids = { "abc2d5" } ,                    evoData = { { cost = 2, ball = LEGENDARY, gen = 7, guids = { "aec8ec" } } } },
-  { name = "Melmetal",     level = 7, types = { "Steel" },    moves = { "Dbl. Iron Bash", "Hyper Beam" },      guids = { "f35bd5", "aec8ec" },           evoData = { { cost = "GMax", ball = MEGA, gen = 7, ballGuid = "140fbd", guids = { "89bba5" } } } },
+  { name = "Melmetal",     level = 7, types = { "Steel" },    moves = { "Dbl. Iron Bash", "Hyper Beam" },      guids = { "f35bd5", "aec8ec" },           evoData = { { cost = "GMax", ball = MEGA, gen = 7, ballGuid = "140fbd", guids = { "89bba5", "00eaca" } } } },
 
   -- Gen 7 Alolan
   { name = "Alolan Rattata",      level = 1, types = { "Dark" },     moves = { "Tail Whip", "Pursuit" },              guids = { "8dc2dc" },                     evoData = { { cost = 2, ball = BLUE, gen = 7, guids = { "673f0e" } } } },
@@ -1105,7 +1107,7 @@ gen7PokemonData =
   { name = "Alolan Marowak",      level = 5, types = { "Fire" },     moves = { "Shadow Bone", "Bone Club" },          guids = { "04850a" } },
 
   -- Mega evolutions.
-  { name = "GMax Melmetal",       level = 7, types = { "Steel" },    moves = { "Meltdown", "Strike" },                guids = { "89bba5" },                     evoData = { { cost = 0, ball = LEGENDARY, gen = 5, ballGuid = "140fbd", guids = { "f35bd5", "aec8ec" } } } },
+  { name = "GMax Melmetal",       level = 7, types = { "Steel" },    moves = { "Meltdown", "Strike" },                guids = { "89bba5", "00eaca" },                     evoData = { { cost = 0, ball = LEGENDARY, gen = 5, ballGuid = "140fbd", guids = { "f35bd5", "aec8ec" } } } },
 }
 
 gen8PokemonData =
@@ -1144,7 +1146,7 @@ gen8PokemonData =
   { name = "Carkol",        level = 3, types = { "Rock" }, moves = { "Rock Blast", "Flame Charge" },   guids = { "7e1e68", "19ffab"}, evoData = { { cost = 2, ball = RED, gen = 8, guids = { "678720", "5eecb1"} } }  }, -- 
   { name = "Coalossal",     level = 5, types = { "Rock" }, moves = { "Ancient Power", "Incinerate" }, guids = { "6ac20e", "678720", "5eecb1" },                evoData = { { cost = "GMax", ball = MEGA, gen = 8, ballGuid = "140fbd", guids = { "423aca", "6407e4" } } } },
   { name = "Applin",        level = 2, types = { "Grass" }, moves = { "Astonish", "Withdraw" },  guids = { "5d39a1" }, evoData = { { cost = 2, ball = YELLOW, gen = 8, guids = { "508cc7" } }, { cost = 2, ball = YELLOW, gen = 8, guids = { "3a326b" } }, { cost = 2, ball = YELLOW, gen = 9, guids = { "951a30" } } }},
-  { name = "Flapple",       level = 4, types = { "Grass" }, moves = { "Grav Apple", "Dragon Pulse" }, guids = { "beb575", "508cc7" },                    evoData = { { cost = "GMax", ball = MEGA, gen = 8, ballGuid = "140fbd", guids = { "c4ec8a", "00eaca"} } } },
+  { name = "Flapple",       level = 4, types = { "Grass" }, moves = { "Grav Apple", "Dragon Pulse" }, guids = { "beb575", "508cc7" },                    evoData = { { cost = "GMax", ball = MEGA, gen = 8, ballGuid = "140fbd", guids = { "c4ec8a", "975b3c"} } } },
   { name = "Appletun",      level = 4, types = { "Grass" }, moves = { "Apple Acid", "Dragon Pulse" },  guids = { "a26f34", "3a326b" },                   evoData = { { cost = "GMax", ball = MEGA, gen = 8, ballGuid = "140fbd", guids = { "945af3", "31aacc" } } } },
   { name = "Silicobra",     level = 3, types = { "Ground" }, moves = { "Sandstorm", "Wrap" }, guids = { "2f1d01" }, evoData = { { cost = 2, ball = YELLOW, gen = 8, guids = { "3e0da6"} } } },
   { name = "Sandaconda",    level = 5, types = { "Ground" }, moves = { "Sand Tomb", "Coil" }, guids = { "c91baf", "3e0da6" },                            evoData = { { cost = "GMax", ball = MEGA, gen = 8, ballGuid = "140fbd", guids = { "2e2482", "3ab61a" } } } },
@@ -1271,7 +1273,7 @@ gen8PokemonData =
   { name = "GMax Orbeetle",        level = 4, types = { "Bug" },      moves = { "Gravitas", "Flutterby" },              guids = { "27ad44", "aee305" },       evoData = { { cost = 0, ball = BLUE, gen = 8, ballGuid = "140fbd", guids = { "4150f3", "6e7247", "eb4403" } } } },
   { name = "GMax Drednaw",         level = 3, types = { "Water" },    moves = { "Stonesurge", "Darkness" },             guids = { "8054c2", "5cb470" },       evoData = { { cost = 0, ball = BLUE, gen = 8, ballGuid = "140fbd", guids = { "620b5e", "bf22b0" } } } },
   { name = "GMax Coalossal",       level = 5, types = { "Rock" },     moves = { "Volcalith", "Flare" },                 guids = { "423aca", "6407e4" },       evoData = { { cost = 0, ball = RED, gen = 8, ballGuid = "140fbd", guids = { "6ac20e", "678720", "5eecb1" } } } },
-  { name = "GMax Flapple",         level = 4, types = { "Grass" },    moves = { "Tartness", "Wyrmwind" },               guids = { "c4ec8a", "00eaca" },       evoData = { { cost = 0, ball = YELLOW, gen = 8, ballGuid = "140fbd", guids = { "beb575", "508cc7" } } } },
+  { name = "GMax Flapple",         level = 4, types = { "Grass" },    moves = { "Tartness", "Wyrmwind" },               guids = { "c4ec8a", "975b3c" },       evoData = { { cost = 0, ball = YELLOW, gen = 8, ballGuid = "140fbd", guids = { "beb575", "508cc7" } } } },
   { name = "GMax Appletun",        level = 4, types = { "Grass" },    moves = { "Sweetness", "Wyrmwind" },              guids = { "945af3", "31aacc" },       evoData = { { cost = 0, ball = YELLOW, gen = 8, ballGuid = "140fbd", guids = { "a26f34", "3a326b" } } } },
   { name = "GMax Sandaconda",      level = 5, types = { "Rock" },     moves = { "Sandblast", "Guard" },                 guids = { "2e2482", "3ab61a" },       evoData = { { cost = 0, ball = YELLOW, gen = 8, ballGuid = "140fbd", guids = { "c91baf", "3e0da6" } } } },
   { name = "GMax Toxtricity",      level = 4, types = { "Electric" }, moves = { "Stun Shock", "Ooze" },                 guids = { "1644af", "f8615c" },       evoData = { { cost = 0, ball = YELLOW, gen = 8, ballGuid = "140fbd", guids = { "0c6876", "bea82d" } } } },

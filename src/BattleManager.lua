@@ -51,6 +51,9 @@ local d4Dice="7c6144"
 local d6Dice="15df3c"
 local statusGUID = {burned="3b8a3d", poisoned="26c816", sleep="00dbc5", paralysed="040f66", frozen="d8769a", confused="d2fe3e"}
 
+local levelDiceXOffset = 0.205
+local levelDiceZOffset = 0.13
+
 local attackerData={
   type = nil,
   dice = {},
@@ -95,7 +98,7 @@ local decStatusAtkPos = {x=11.18, z=6.81}
 local movesAtkPos = {x=10.50, z=2.47}
 local teamAtkPos = {x=12.00, z=2.47}
 local recallAtkPos = {x=13.50, z=2.47}
-local atkEvolve1Pos = {x=5.0, z=5.07}
+local atkEvolve1Pos = {x=5.69, z=5.07}
 local atkEvolve2Pos = {x=8.90, z=5.07}
 local atkMoveZPos = 8.3
 local atkConfirmPos = {x=7.29, z=11.87}
@@ -108,7 +111,7 @@ local movesDefPos = {x=10.49, z=-2.34}
 local teamDefPos = {x=11.99, z=-2.34}
 local recallDefPos = {x=13.49, z=-2.34}
 local defEvolve1Pos = {x=5.69, z=-4.94}
-local defEvolve2Pos = {x=8.89, z=-4.94}
+local defEvolve2Pos = {x=8.90, z=-4.94}
 local defMoveZPos = -8.85
 local defConfirmPos = {x=7.35, z=-11.74}
 
@@ -2075,7 +2078,7 @@ function recall(params)
     -- Level Die
     if pokemonData.levelDiceGUID ~= nil then
         local dice = getObjectFromGUID(pokemonData.levelDiceGUID)
-        position = {params.pokemonXPos[params.index] - 0.20, 1, params.pokemonZPos - 0.13}
+        position = {params.pokemonXPos[params.index] - levelDiceXOffset, 1, params.pokemonZPos - levelDiceZOffset}
         dice.setPosition(rack.positionToWorld(position))
         dice.setRotation({dice.getRotation().x + params.xRotRecall, dice.getRotation().y + params.yRotRecall, dice.getRotation().z + params.zRotRecall})
         dice.setLock(false)
@@ -2531,14 +2534,6 @@ function evolvePoke(params)
       local evolution = pokemonData.evoData[i]
       if type(evolution.cost) == "string" then
         for _, evoGuid in ipairs(evolution.guids) do
-          -- local evoData = Global.call("GetAnyPokemonDataByGUID",{guid=evoGuid})
-          -- if evolution.cost == "Mega" then
-          --   printToAll("Dynamax Band required to evolve into " .. evoData.name)
-          -- elseif evolution.cost == "GMax" then
-          --   printToAll("Mega Bracelet required and Mega Stone must be attached to evolve into " .. evoData.name)
-          -- else
-          --   printToAll(evolution.cost .. " required to be played or attached to evolve into " .. evoData.name)
-          -- end
           table.insert(evoList, evolution)
           break
         end
@@ -2557,45 +2552,76 @@ function evolvePoke(params)
 
     if #evoList > 2 then -- More than 2 evos available so we need to spread them out
 
+      -- Use this to keep track of the evos already retrieved, by name.
+      local evosRetreivedTable = {}
+
       local numEvos = #evoList
       local evoNum = 0
       local tokensWidth = ((numEvos * 2.8) + ((numEvos-1) * 0.2) )
       for i=1, #evoList do
-        local evoData = evoList[i]
-        local evoGUIDS = evoData.guids
-        local pokeball = getObjectFromGUID(evolvePokeballGUID[evoData.ball])
+        local evoGUIDS = evoList[i].guids
+        local pokeball = getObjectFromGUID(evolvePokeballGUID[evoList[i].ball])
         local pokemonInPokeball = pokeball.getObjects()
         for j=1, #pokemonInPokeball do
           local pokeObj = pokemonInPokeball[j]
-          local pokeGUID = pokeObj.guid
           for k=1, #evoGUIDS do
-            if pokeGUID == evoGUIDS[k] then
-              local evoData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
-              local xPos = 1.4 + (evoNum * 3) - (tokensWidth * 0.5)
-              local position = {xPos, 1, -28}
-              printToAll("TEMP | 2576 taking pokemon")
-              evolvedPokemon = pokeball.takeObject({guid=pokeGUID, position=position})
-              evoNum = evoNum + 1
-              --table.insert(multiEvoData, evoData)
-              break
+            if pokeObj.guid == evoGUIDS[k] then
+              local evoPokeData = Global.call("GetPokemonDataByGUID",{guid=pokeObj.guid})
+
+              -- Check if we even need to retrieve this pokemon.
+              local continueCheck = true
+              for collectedEvoIndex=1, #evosRetreivedTable do
+                if evosRetreivedTable[collectedEvoIndex] == evoPokeData.name then
+                  continueCheck = false
+                  break
+                end
+              end
+              if continueCheck then
+                local xPos = 1.4 + (evoNum * 3) - (tokensWidth * 0.5)
+                local position = {xPos, 1, -28}
+                evolvedPokemon = pokeball.takeObject({guid=pokeObj.guid, position=position})
+                if evolvedPokemon.guid ~= nil then
+                  evoNum = evoNum + 1
+                  --table.insert(multiEvoData, evoData)
+
+                  -- Insert this pokemon into the table of retrieved pokemon.
+                  table.insert(evosRetreivedTable, evoPokeData.name)
+                  break
+                end
+              end
             end
           end
         end
-        if evoData.ballGuid ~= nil then
-          local extraPokeball = getObjectFromGUID(evoData.ballGuid)
+        if evoList[i].ballGuid ~= nil and evoNum < numEvos then
+          local extraPokeball = getObjectFromGUID(evoList[i].ballGuid)
           local pokemonInPokeball = extraPokeball.getObjects()
           for j=1, #pokemonInPokeball do
             local pokeObj = pokemonInPokeball[j]
-            local pokeGUID = extraPokeball.guid
             for k=1, #evoGUIDS do
-              if pokeGUID == evoGUIDS[k] then
-                local evoData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
-                local xPos = 1.4 + (evoNum * 3) - (tokensWidth * 0.5)
-                local position = {xPos, 1, -28}
-                evolvedPokemon = extraPokeball.takeObject({guid=pokeGUID, position=position})
-                evoNum = evoNum + 1
-                --table.insert(multiEvoData, evoData)
-                break
+              if pokeObj.guid == evoGUIDS[k] then
+                local evoPokeData = Global.call("GetPokemonDataByGUID",{guid=pokeObj.guid})
+                
+                -- Check if we even need to retrieve this pokemon.
+                local continueCheck = true
+                for collectedEvoIndex=1, #evosRetreivedTable do
+                  if evosRetreivedTable[collectedEvoIndex] == evoPokeData.name then
+                    continueCheck = false
+                    break
+                  end
+                end
+                if continueCheck then
+                  local xPos = 1.4 + (evoNum * 3) - (tokensWidth * 0.5)
+                  local position = {xPos, 1, -28}
+                  evolvedPokemon = extraPokeball.takeObject({guid=pokeObj.guid, position=position})
+                  if evolvedPokemon.guid ~= nil then
+                    evoNum = evoNum + 1
+                    --table.insert(multiEvoData, evoData)
+
+                    -- Insert this pokemon into the table of retrieved pokemon.
+                    table.insert(evosRetreivedTable, evoPokeData.name)
+                    break
+                  end
+                end
               end
             end
           end
@@ -2626,7 +2652,6 @@ function evolvePoke(params)
           local pokeGUID = pokeObj.guid
           for j=1, #evoGUIDS do
             if pokeGUID == evoGUIDS[j] then
-              printToAll("TEMP | 2630 taking pokemon")
               evolvedPokemonData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
               evolvedPokemon = overriddenPokeball.takeObject({guid=pokeGUID})
               evolvedPokemonGUID = pokeGUID
@@ -2648,7 +2673,6 @@ function evolvePoke(params)
             local pokeGUID = pokeObj.guid
             for j=1, #evoGUIDS do
               if pokeGUID == evoGUIDS[j] then
-                printToAll("TEMP | 2652 taking pokemon")
                 evolvedPokemonData = Global.call("GetPokemonDataByGUID",{guid=pokeGUID})
                 evolvedPokemon = pokeball.takeObject({guid=pokeGUID})
                 evolvedPokemonGUID = pokeGUID
@@ -2751,7 +2775,7 @@ function refreshPokemon(params)
             newSlotData.modifiers = {}
           end
 
-          local origin = {xPositions[i] - 0.20, 1.5, params.pokemonZPos - 0.13}
+          local origin = {xPositions[i] - levelDiceXOffset, 1.5, params.pokemonZPos - levelDiceZOffset}
           castParams.origin = rack.positionToWorld(origin)
           hits = Physics.cast(castParams)
 
@@ -2864,7 +2888,7 @@ function updateLevelDice(level, newLevel, params, levelDice)
       dicePos = {arenaDicePos.dice[1], 1.4, arenaDicePos.dice[2]}
     else
       local rack = getObjectFromGUID(params.rackGUID)
-      dicePos = rack.positionToWorld({params.pokemonXPos[params.index] - 0.20, 0.75, params.pokemonZPos - 0.13})
+      dicePos = rack.positionToWorld({params.pokemonXPos[params.index] - levelDiceXOffset, 0.75, params.pokemonZPos - levelDiceZOffset})
     end
     dice.setPosition(dicePos)
     dice.setRotation({270,yRotation,0})
@@ -3057,28 +3081,55 @@ function multiEvo9()
 end
 
 function multiEvolve(index)
-
   multiEvolving = false
   local params = multiEvoData.params
   local evoPokemon = multiEvoData.pokemonData
   local chosenEvoData = evoPokemon[index]
-  local evolvedPokemonGUID = chosenEvoData.guids[1]
+  local chosenEvoGuids = chosenEvoData.guids
 
   for i=1, #evoPokemon do
     local evoData = evoPokemon[i]
-    local evoGUID = evoData.guids[1]
-    if evoGUID ~= evolvedPokemonGUID then
-      local pokemon = getObjectFromGUID(evoGUID)
-      local pokeball = getObjectFromGUID(evolvePokeballGUID[evoData.ball])
-      pokeball.putObject(pokemon)
+    local evoDataGuids = evoData.guids
+
+    -- This check prevents us from putting away the wrong token.
+    local removeThisToken = true
+    for j = 1, #chosenEvoGuids do
+      for k = 1, #evoDataGuids do
+        if chosenEvoGuids[j] == evoDataGuids[k] then
+          removeThisToken = false
+          break
+        end
+      end
+    end
+    
+    if removeThisToken then
+      for m = 1, #evoDataGuids do
+        local status, pokemonToken = pcall(getObjectFromGUID, evoDataGuids[m])
+        if pokemonToken ~= nil then
+          local pokeball = getObjectFromGUID(evolvePokeballGUID[evoData.ball])
+          pokeball.putObject(pokemonToken)
+        end
+      end
     end
   end
 
   hideMultiEvoButtons()
-  local evolvedPokemon = getObjectFromGUID(evolvedPokemonGUID)
-  local evolvedPokemonData = Global.call("GetPokemonDataByGUID",{guid=evolvedPokemonGUID})
+  local evolvedPokemon = nil
+  local evolvedPokemonData = nil
+  local evolvedPokemonGUID = nil
+  local status = nil
+  for n = 1, #chosenEvoGuids do
+    if evolvedPokemon ~= nil then
+      break
+    end
+    status, evolvedPokemon = pcall(getObjectFromGUID, chosenEvoGuids[n])
+    if evolvedPokemon ~= nil then
+      evolvedPokemonGUID = chosenEvoGuids[n]
+      evolvedPokemonData = Global.call("GetPokemonDataByGUID",{guid=evolvedPokemonGUID})
+      break
+    end
+  end
   local rack = getObjectFromGUID(params.rackGUID)
-
 
   if params.inArena then
     if params.isAttacker then
@@ -3334,7 +3385,6 @@ function showMultiEvoButtons(evoData)
 end
 
 function hideMultiEvoButtons()
-
   local buttonIndex = 26
   for i=1, 9 do
       self.editButton({index=buttonIndex+i, position={0, 1000, 0}})
